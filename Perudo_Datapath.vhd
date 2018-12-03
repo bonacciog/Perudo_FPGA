@@ -11,8 +11,8 @@ entity Perudo_Datapath is
 			
 			-- Connections for the Controller
 			NUOVO_GIOCATORE							:	in		std_logic;
-			NUMERO_PER_GENERAZIONE_CASUALE		:	in		integer range MIN_NUMERO_PER_GENERAZIONE_CASUALE to MAX_NUMERO_PER_GENERAZIONE_CASUALE
-			ELIMINA_GIOCATORE 						:	in		std_logic;
+			NUMERO_PER_GENERAZIONE_CASUALE		:	in		integer range MIN_NUMERO_PER_GENERAZIONE_CASUALE to MAX_NUMERO_PER_GENERAZIONE_CASUALE;
+			ELIMINA_GIOCATORE 						:	in		std_logic
 			
 			-- Connections for the View
 	);
