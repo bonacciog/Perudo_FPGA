@@ -8,8 +8,8 @@ package perudo_package is
 	constant	MAX_DADI 										: positive  := 5;
 	constant MIN_GIOCATORI 									: positive	:= 1;
 	constant MAX_GIOCATORI 									: positive	:= 8;
-	constant MIN_NUMERO_PER_GENERAZIONE_CASUALE 		: positive	:= 8;
-	constant MAX_NUMERO_PER_GENERAZIONE_CASUALE 		: positive	:= 13;
+	constant MIN_NUMERO_PER_GENERAZIONE_CASUALE 		: positive	:= 1;
+	constant MAX_NUMERO_PER_GENERAZIONE_CASUALE 		: positive	:= 6;
 	
 
 	type dado_type is (UNO, DUE, TRE, QUATTRO, CINQUE, SEI, NOP);
@@ -22,16 +22,21 @@ package perudo_package is
 	
 	type giocatore_array is array (natural range <>) of giocatore;	
 	
-	function scegli_dado_casuale(number_for_rand : integer range MIN_NUMERO_PER_GENERAZIONE_CASUALE to MAX_NUMERO_PER_GENERAZIONE_CASUALE) return dado_type;
+	type scommessa_type is record
+		dado_scommesso : dado_type;
+		ricorrenza		: integer;
+	end record;
+	
+	function scegli_dado_casuale(numero_per_generazione_casuale : integer range MIN_NUMERO_PER_GENERAZIONE_CASUALE to MAX_NUMERO_PER_GENERAZIONE_CASUALE) return dado_type;
 	
 end package;
 
 package body perudo_package is
-	function scegli_dado_casuale(number_for_rand : integer range MIN_NUMERO_PER_GENERAZIONE_CASUALE to MAX_NUMERO_PER_GENERAZIONE_CASUALE)
+	function scegli_dado_casuale(numero_per_generazione_casuale : integer range MIN_NUMERO_PER_GENERAZIONE_CASUALE to MAX_NUMERO_PER_GENERAZIONE_CASUALE)
 			return dado_type is 
 			variable dado : dado_type;
 	begin
-		case (number_for_rand mod 7) is
+		case (numero_per_generazione_casuale mod 7) is
 			when 1		=>	dado := UNO;
 			when 2		=>	dado := DUE;
 			when 3		=>	dado := TRE;
