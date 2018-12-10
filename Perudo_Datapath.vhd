@@ -48,11 +48,11 @@ begin
 	ContatoreNumeroCasuale_RTL : process(CLOCK,RESET_N)
 	begin
 			-- Contatore per generazione numero casuale
-		if(RESET_N = '1') then
-			numero_per_generazione_casuale <= 1;
+		if(RESET_N = '0') then
+			numero_per_generazione_casuale <= MIN_NUMERO_PER_GENERAZIONE_CASUALE;
 		elsif(rising_edge(CLOCK)) then
-			if(numero_per_generazione_casuale = 6) then
-				numero_per_generazione_casuale <= 1;
+			if(numero_per_generazione_casuale = MAX_NUMERO_PER_GENERAZIONE_CASUALE) then
+				numero_per_generazione_casuale <= MIN_NUMERO_PER_GENERAZIONE_CASUALE;
 			else
 				numero_per_generazione_casuale <= numero_per_generazione_casuale + 1;
 			end if;
@@ -63,27 +63,28 @@ begin
 	begin
 			-- All'avvio del sistema la partita è composta di default da due giocatore (UTENTE, COM)
 		
-			-- Reset numero giocatori in campo
-		numero_giocatori_in_campo <= 0;
+		if(RESET_N = '0' or INIZIALIZZA_PARTITA = '1') then
+				-- Reset numero giocatori in campo
+			numero_giocatori_in_campo <= 0;
 		
-			-- Reset scommessa
-		scommessa_corrente.dado_scommesso <= NOP;
-		scommessa_corrente.ricorrenza <= 0;
+				-- Reset scommessa
+			scommessa_corrente.dado_scommesso <= NOP;
+			scommessa_corrente.ricorrenza <= 0;
 		
-			-- Assegno dadi ai due giocatori 
-		for j in 0 to MAX_GIOCATORI-1 loop
-			if(j=0 or j=1) then
-				for i in 0 to MAX_DADI-1 loop
-					giocatori_in_campo(j).dadi_in_mano(i) <=	scegli_dado_casuale(numero_per_generazione_casuale);
-				end loop;
-				numero_giocatori_in_campo <= numero_giocatori_in_campo + 1;
-			else
-				for i in 0 to MAX_DADI-1 loop
-					giocatori_in_campo(j).dadi_in_mano(i) <=	NOP;
-				end loop;
-			end if;	
-		end loop;
-		
+				-- Assegno dadi ai due giocatori 
+			for j in 0 to MAX_GIOCATORI-1 loop
+				if(j=0 or j=1) then
+					for i in 0 to MAX_DADI-1 loop
+						giocatori_in_campo(j).dadi_in_mano(i) <=	scegli_dado_casuale(numero_per_generazione_casuale);
+					end loop;
+					numero_giocatori_in_campo <= numero_giocatori_in_campo + 1;
+				else
+					for i in 0 to MAX_DADI-1 loop
+						giocatori_in_campo(j).dadi_in_mano(i) <=	NOP;
+					end loop;
+				end if;	
+			end loop;
+		end if;
 	end process;
 	
 	EliminaGiocatore_RTL : process(ELIMINA_GIOCATORE)
