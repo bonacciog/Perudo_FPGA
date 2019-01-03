@@ -16,16 +16,26 @@ entity Perudo_Datapath is
 			INIZIALIZZA_PARTITA						: 	in		std_logic;
 			ELIMINA_GIOCATORE 						:	in		std_logic;
 			
-				-- GET/SET
-			ESEGUI_SCOMMESSA							:	in		std_logic;
-			DADO_SCOMMESSO								: 	in		dado_type;
-			RICORRENZA									:	in		integer;
 			
+			ESEGUI_SCOMMESSA							:	in		std_logic;
+		--	?CAMBIA_DADO_SCOMMESSA					:	in		std_logic;
+		--	?CAMBIA_RICORRENZA						:	in		std_logic;
+			PROSSIMO_TURNO								:	in		std_logic;
+			ELIMINA_DADO								:	in		std_logic;
+			
+			DUBITO										:	out	std_logic;
+			PARTITA_INIZIATA							: 	out	std_logic;
+			TURNO_GIOCATORE							: 	out	std_logic;
+			FINE_PARTITA								: 	out	std_logic;
+			
+			-- Connections for the View
+			DADO_SCOMMESSO								:	in		dado_type;
+			RICORRENZA									:	in		integer;
 			DAMMI_GIOCATORI_IN_CAMPO				:	in		std_logic;
+			DAMMI_SCOMMESSA_CORRENTE				:	in		std_logic;			
+			
 			GIOCATORI_IN_CAMPO_OUT					:	out	giocatore_array(0 to MAX_GIOCATORI-1);
 			NUMERO_GIOCATORI_IN_CAMPO_OUT			: 	out 	integer range 0 to MAX_GIOCATORI;
-		
-			DAMMI_SCOMMESSA_CORRENTE				:	in		std_logic;
 			SCOMMESSA_CORRENTE_OUT					: 	out 	scommessa_type
 			
 			-- Connections for the View
