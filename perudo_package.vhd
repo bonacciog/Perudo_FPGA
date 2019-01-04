@@ -27,16 +27,16 @@ package perudo_package is
 		ricorrenza		: integer;
 	end record;
 	
-	function scegli_dado_casuale(numero_per_generazione_casuale : integer range MIN_NUMERO_PER_GENERAZIONE_CASUALE to MAX_NUMERO_PER_GENERAZIONE_CASUALE) return dado_type;
+	function scegli_dado_casuale(numero_per_generazione_casuale_dado : integer range MIN_NUMERO_PER_GENERAZIONE_CASUALE to MAX_NUMERO_PER_GENERAZIONE_CASUALE) return dado_type;
 	
 end package;
 
 package body perudo_package is
-	function scegli_dado_casuale(numero_per_generazione_casuale : integer range MIN_NUMERO_PER_GENERAZIONE_CASUALE to MAX_NUMERO_PER_GENERAZIONE_CASUALE)
+	function scegli_dado_casuale(numero_per_generazione_casuale_dado : integer range MIN_NUMERO_PER_GENERAZIONE_CASUALE to MAX_NUMERO_PER_GENERAZIONE_CASUALE)
 			return dado_type is 
 			variable dado : dado_type;
 	begin
-		case (numero_per_generazione_casuale mod 7) is
+		case (numero_per_generazione_casuale_dado mod 7) is
 			when 1		=>	dado := UNO;
 			when 2		=>	dado := DUE;
 			when 3		=>	dado := TRE;
