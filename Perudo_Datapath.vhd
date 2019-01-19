@@ -126,7 +126,7 @@ begin
 			numero_giocatori_in_campo <= 0;
 			
 				-- Reset scommessa
-			scommessa_corrente.dado_scommesso <= NOP;
+			scommessa_corrente.dado_scommesso <= NONE;
 			scommessa_corrente.ricorrenza <= 0;
 		
 				-- Assegno dadi ai due giocatori 
@@ -138,7 +138,7 @@ begin
 					numero_giocatori_in_campo <= numero_giocatori_in_campo + 1;
 				else
 					for i in 0 to MAX_DADI-1 loop
-						giocatori_in_campo(j).dadi_in_mano(i) <=	NOP;
+						giocatori_in_campo(j).dadi_in_mano(i) <=	NONE;
 					end loop;
 				end if;	
 			end loop;
@@ -149,7 +149,7 @@ begin
 	begin
 			-- Elimino ultimo giocatore
 		for i in 0 to MAX_DADI-1 loop
-			giocatori_in_campo(numero_giocatori_in_campo).dadi_in_mano(i) <=	NOP;
+			giocatori_in_campo(numero_giocatori_in_campo).dadi_in_mano(i) <=	NONE;
 		end loop;
 		
 		numero_giocatori_in_campo <= numero_giocatori_in_campo - 1;

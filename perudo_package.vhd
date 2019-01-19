@@ -12,7 +12,7 @@ package perudo_package is
 	constant MAX_NUMERO_PER_GENERAZIONE_CASUALE 		: positive	:= 6;
 	
 
-	type dado_type is (UNO, DUE, TRE, QUATTRO, CINQUE, SEI, NOP);
+	type dado_type is (UNO, DUE, TRE, QUATTRO, CINQUE, SEI, NONE);
 	
 	type dado_array is array (natural range <>) of dado_type;
 	
@@ -43,7 +43,7 @@ package body perudo_package is
 			when 4		=>	dado := QUATTRO;
 			when 5		=>	dado := CINQUE;
 			when 6		=>	dado := SEI;
-			when others => dado := NOP;
+			when others => dado := NONE;
 		end case;
 		return dado;
 	end function;
