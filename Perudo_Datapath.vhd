@@ -24,17 +24,17 @@ entity Perudo_Datapath is
 			TURNO_GIOCATORE							: 	out	std_logic;
 			FINE_PARTITA								: 	out	std_logic;
 			
-			PARTITA_INIZIATA							: 	inout	std_logic;
+			PARTITA_INIZIATA							: 	inout	std_logic
 			
 			-- Connections for the View
-			DADO_SCOMMESSO								:	in		dado_type;
-			RICORRENZA									:	in		integer;
-			DAMMI_GIOCATORI_IN_CAMPO				:	in		std_logic;
-			DAMMI_SCOMMESSA_CORRENTE				:	in		std_logic;			
+--			DADO_SCOMMESSO								:	in		dado_type;
+--			RICORRENZA									:	in		integer;
+--			DAMMI_GIOCATORI_IN_CAMPO				:	in		std_logic;
+--			DAMMI_SCOMMESSA_CORRENTE				:	in		std_logic;			
 			
-			GIOCATORI_IN_CAMPO_OUT					:	out	giocatore_array(0 to MAX_GIOCATORI-1);
-			NUMERO_GIOCATORI_IN_CAMPO_OUT			: 	out 	integer range 0 to MAX_GIOCATORI;
-			SCOMMESSA_CORRENTE_OUT					: 	out 	scommessa_type
+--			GIOCATORI_IN_CAMPO_OUT					:	out	giocatore_array(0 to MAX_GIOCATORI-1);
+--			NUMERO_GIOCATORI_IN_CAMPO_OUT			: 	out 	integer range 0 to MAX_GIOCATORI;
+--			SCOMMESSA_CORRENTE_OUT					: 	out 	scommessa_type
 			
 	);
 end entity;
@@ -171,17 +171,17 @@ begin
 	--	scommessa_corrente.ricorrenza <= RICORRENZA;
 	--end process;
 	
-	DammiGiocatoriInCampo : process(DAMMI_GIOCATORI_IN_CAMPO)
-	begin
-			-- Restituisco giocatori in campo e relativo numero
-		GIOCATORI_IN_CAMPO_OUT <= giocatori_in_campo;
-		NUMERO_GIOCATORI_IN_CAMPO_OUT <= numero_giocatori_in_campo;
-	end process;
+--	DammiGiocatoriInCampo : process(DAMMI_GIOCATORI_IN_CAMPO) 	-- INUTILI PER ORA
+--	begin
+--			-- Restituisco giocatori in campo e relativo numero
+--		GIOCATORI_IN_CAMPO_OUT <= giocatori_in_campo;
+--		NUMERO_GIOCATORI_IN_CAMPO_OUT <= numero_giocatori_in_campo;
+--	end process;
 	
-	DammiScommessaCorrente : process(DAMMI_SCOMMESSA_CORRENTE)
-	begin
-			-- Restituisco scommessa corrente
-		SCOMMESSA_CORRENTE_OUT <= scommessa_corrente;
-	end process;
+--	DammiScommessaCorrente : process(DAMMI_SCOMMESSA_CORRENTE)
+--	begin
+--			-- Restituisco scommessa corrente
+--		SCOMMESSA_CORRENTE_OUT <= scommessa_corrente;
+--	end process;
 	
 end architecture;
