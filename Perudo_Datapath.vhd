@@ -16,7 +16,6 @@ entity Perudo_Datapath is
 			INIZIA_PARTITA								: 	in		std_logic;
 			ELIMINA_GIOCATORE 						:	in		std_logic;
 			
-			
 			ESEGUI_SCOMMESSA							:	in		std_logic;
 			PROSSIMO_TURNO								:	in		std_logic;
 			ELIMINA_DADO								:	in		std_logic;
@@ -25,17 +24,17 @@ entity Perudo_Datapath is
 			TURNO_GIOCATORE							: 	out	std_logic;
 			FINE_PARTITA								: 	out	std_logic;
 			
-			PARTITA_INIZIATA							: 	inout	std_logic;
+			PARTITA_INIZIATA							: 	inout	std_logic
 			
 			-- Connections for the View
-			DADO_SCOMMESSO								:	in		dado_type;
-			RICORRENZA									:	in		integer;
-			DAMMI_GIOCATORI_IN_CAMPO				:	in		std_logic;
-			DAMMI_SCOMMESSA_CORRENTE				:	in		std_logic;			
+--			DADO_SCOMMESSO								:	in		dado_type;
+--			RICORRENZA									:	in		integer;
+--			DAMMI_GIOCATORI_IN_CAMPO				:	in		std_logic;
+--			DAMMI_SCOMMESSA_CORRENTE				:	in		std_logic;			
 			
-			GIOCATORI_IN_CAMPO_OUT					:	out	giocatore_array(0 to MAX_GIOCATORI-1);
-			NUMERO_GIOCATORI_IN_CAMPO_OUT			: 	out 	integer range 0 to MAX_GIOCATORI;
-			SCOMMESSA_CORRENTE_OUT					: 	out 	scommessa_type
+--			GIOCATORI_IN_CAMPO_OUT					:	out	giocatore_array(0 to MAX_GIOCATORI-1);
+--			NUMERO_GIOCATORI_IN_CAMPO_OUT			: 	out 	integer range 0 to MAX_GIOCATORI;
+--			SCOMMESSA_CORRENTE_OUT					: 	out 	scommessa_type
 			
 	);
 end entity;
@@ -56,6 +55,7 @@ architecture RTL of Perudo_Datapath is
 		-- Struttura dati scommessa
 	signal scommessa_corrente												: scommessa_type;
 	
+	
 begin
 	
 	ContatoreNumeroCasualeDado_RTL : process(CLOCK,RESET_N)
@@ -72,7 +72,7 @@ begin
 		end if;
 	end process;
 	
-	ContatoreIndiceTurnoCasuale_RTL : process(PROSSIMO_TURNO, PARTITA_INIZIATA, CLOCK,RESET_N)
+	ContatoreIndiceTurnoCasuale_RTL : process(PARTITA_INIZIATA, CLOCK,RESET_N)
 	begin
 			-- Contatore per generazione numero casuale per scelta del turno iniziale
 		if(RESET_N = '0') then
@@ -91,29 +91,25 @@ begin
 	
 	ProssimoTurno_RTL: process(PROSSIMO_TURNO)
 	begin
-		if(PROSSIMO_TURNO = '1') then
-			if(indice_turno_giocatore = (numero_giocatori_in_campo-1)) then
-				indice_turno_giocatore <= 0;
-				TURNO_GIOCATORE <= '1';
-			else
-				indice_turno_giocatore <= indice_turno_giocatore + 1;
-				TURNO_GIOCATORE <= '0';
-			end if;
+		if(indice_turno_giocatore = (numero_giocatori_in_campo-1)) then
+			indice_turno_giocatore <= 0;
+			TURNO_GIOCATORE <= '1';
+		else
+			indice_turno_giocatore <= indice_turno_giocatore + 1;
+			TURNO_GIOCATORE <= '0';
 		end if;
 	end process;
 	
 	IniziaPartita_RTL: process(INIZIA_PARTITA)
 	begin
-			if(INIZIA_PARTITA = '1') then
-				-- Dopo essere inizializzata la partita può iniziare, stabilendo successivamente il turno dei giocatori in maniera casuale.
-					-- Così facendo spengo anche il contatore
+			-- Dopo essere inizializzata la partita può iniziare, stabilendo successivamente il turno dei giocatori in maniera casuale.
+				-- Così facendo spengo anche il contatore
 			PARTITA_INIZIATA <= '1';
-				if(indice_turno_giocatore = 0) then
-						-- Inizia utente
-					TURNO_GIOCATORE <= '1';
-				else
-					TURNO_GIOCATORE <= '0';
-				end if;
+			if(indice_turno_giocatore = 0) then
+					-- Inizia utente
+				TURNO_GIOCATORE <= '1';
+			else
+				TURNO_GIOCATORE <= '0';
 			end if;
 	end process;
 	
@@ -168,24 +164,24 @@ begin
 		
 	end process;
 	
-	EseguiScommessa : process(ESEGUI_SCOMMESSA)
-	begin
+	--EseguiScommessa : process(ESEGUI_SCOMMESSA) -- CHI MANDA IL SEGNALE CHE LA SCOMMESSA DEVE ESSERE FATTA DAL GIOCATORE0 O DAL COM?
+	--begin													 -- IL CONTROLLER? O IL DATAPATH DISCRIMINA I CASI?
 			-- Assegno valori scommessa
-		scommessa_corrente.dado_scommesso <= DADO_SCOMMESSO;
-		scommessa_corrente.ricorrenza <= RICORRENZA;
-	end process;
+	--	scommessa_corrente.dado_scommesso <= DADO_SCOMMESSO;
+	--	scommessa_corrente.ricorrenza <= RICORRENZA;
+	--end process;
 	
-	DammiGiocatoriInCampo : process(DAMMI_GIOCATORI_IN_CAMPO)
-	begin
-			-- Restituisco giocatori in campo e relativo numero
-		GIOCATORI_IN_CAMPO_OUT <= giocatori_in_campo;
-		NUMERO_GIOCATORI_IN_CAMPO_OUT <= numero_giocatori_in_campo;
-	end process;
+--	DammiGiocatoriInCampo : process(DAMMI_GIOCATORI_IN_CAMPO) 	-- INUTILI PER ORA
+--	begin
+--			-- Restituisco giocatori in campo e relativo numero
+--		GIOCATORI_IN_CAMPO_OUT <= giocatori_in_campo;
+--		NUMERO_GIOCATORI_IN_CAMPO_OUT <= numero_giocatori_in_campo;
+--	end process;
 	
-	DammiScommessaCorrente : process(DAMMI_SCOMMESSA_CORRENTE)
-	begin
-			-- Restituisco scommessa corrente
-		SCOMMESSA_CORRENTE_OUT <= scommessa_corrente;
-	end process;
+--	DammiScommessaCorrente : process(DAMMI_SCOMMESSA_CORRENTE)
+--	begin
+--			-- Restituisco scommessa corrente
+--		SCOMMESSA_CORRENTE_OUT <= scommessa_corrente;
+--	end process;
 	
 end architecture;
