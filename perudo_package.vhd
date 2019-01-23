@@ -11,7 +11,14 @@ package perudo_package is
 	constant MIN_NUMERO_PER_GENERAZIONE_CASUALE 		: positive	:= 1;
 	constant MAX_NUMERO_PER_GENERAZIONE_CASUALE 		: positive	:= 6;
 	
-
+	constant PROBABILITA_DADO_UNO							: real		:= 1/3;
+	constant PROBABILITA_DADO_GENERICO					: real		:= 1/6;
+	constant SOGLIA_ALTA_PROBABILITA_GENERICO			: real		:= 0.40;
+	constant SOGLIA_BASSA_PROBABILITA					: real		:= 0.20;
+	constant SOGLIA_ALTA_PROBABILITA_UNO				: real;		-- QUANTO ERA?
+	constant SOGLIA_BASSA_PROBABILITA_UNO				: real;		-- QUANTO ERA? O CE N'ERA UNA UNICA?
+	
+		-- Tipi utili al Datapath	
 	type dado_type is (UNO, DUE, TRE, QUATTRO, CINQUE, SEI, NONE);
 	
 	type dado_array is array (natural range <>) of dado_type;
@@ -27,6 +34,11 @@ package perudo_package is
 		ricorrenza		: integer;
 	end record;
 	
+		-- Tipi utili alla gestione della logica
+	type valori_reali_array is array (natural range<>) of real;
+	type ricorrenza_dadi_array is array (dado_type'range) of integer;
+	
+		-- Funzione generatrice dado casuale
 	function scegli_dado_casuale(numero_per_generazione_casuale_dado : integer range MIN_NUMERO_PER_GENERAZIONE_CASUALE to MAX_NUMERO_PER_GENERAZIONE_CASUALE) return dado_type;
 	
 		-- Funzioni utili alla logica d'esecuzione scomessa COM
@@ -37,10 +49,12 @@ package perudo_package is
 	function funzione_di_massa_binomiale(p : real; n: integer; i: integer) return real;
 	function probabilita(prob_X : real; dadi_totali: integer; ricorrenza: integer) return real;
 	
-	function valore_massimo(valori: array (natural range <>) of real) return real; 
-	function dado_piu_ricorrente(dadi_in_mano	:	dado_array(0 to MAX_DADI-1)) return dado_type;
+			-- Utili alla scelta della scommessa
+	function dado_maggiore(dado_x : dado_type; dado_y : dado_type) return dado_type;
+	function valore_massimo(valori: valori_reali_array) return real; 
+	function dado_piu_ricorrente_in_mano(dadi_in_mano	:	dado_array(0 to MAX_DADI-1)) return dado_type; -- Restituisce il piu grande tra due equamente ricorrenti
 	function dado_maggiore_in_mano(dadi_in_mano	:	dado_array(0 to MAX_DADI-1)) return dado_type;
-	
+	function dadi_in_campo(giocatori_in_campo : giocatore_array(0 to MAX_GIOCATORI-1)) return integer;
 end package;
 
 package body perudo_package is
@@ -109,7 +123,7 @@ package body perudo_package is
 		return risultato;
 	end function;
 
-	function valore_massimo(valori: array (natural range <>) of real) 
+	function valore_massimo(valori: valori_reali_array) 
 			return real is
 			variable massimo : integer:=0;
 	begin
@@ -121,16 +135,78 @@ package body perudo_package is
 		return massimo;
 	end function;
 	
-	function dado_piu_ricorrente(dadi_in_mano	:	dado_array(0 to MAX_DADI-1)) 
+	function dado_piu_ricorrente_in_mano(dadi_in_mano	:	dado_array(0 to MAX_DADI-1)) 
 			return dado_type is
+			variable ricorrenza_dadi : ricorrenza_dadi_array;
+			variable risultato : dado_type;
+			variable ricorrenza_risultato : integer:=0;
 	begin
-	
+		for i in ricorrenza_dadi_array'range loop
+			ricorrenza_dadi(i) <= 0;
+		end loop;
+		
+		for i in dadi_in_mano'range loop
+			ricorrenza_dadi(dadi_in_mano(i)) <= ricorrenza_dadi(dadi_in_mano(i)) + 1;
+		end loop;
+		
+		for i in dadi_in_mano'range loop
+			if(ricorrenza_dadi(dadi_in_mano(i)) > ricorrenza_risultato) then
+				ricorrenza_risultato <= ricorrenza_dadi(dadi_in_mano(i));
+				risultato <= dadi_in_mano(i);
+			elsif(ricorrenza_dadi(dadi_in_mano(i)) = ricorrenza_risultato) then
+				risultato <= dado_maggiore(dadi_in_mano(i), risultato);
+			end if;
+		end loop;
+		
+		return risultato;
 	end function;
 	
-	function dado_maggiore_in_mano(dadi_in_mano	:	dado_array(0 to MAX_DADI-1))
+	function dado_maggiore(dado_x : dado_type; dado_y : dado_type)
 			return dado_type is 
-			variable ricorrenza_dadi : array (natural range <>) of integer;
+			variable valore_intero_dadi : ricorrenza_dadi_array;
+			variable risultato : dado_type;
 	begin
+		valore_intero_dadi(UNO) <= 1;
+		valore_intero_dadi(DUE) <= 2;
+		valore_intero_dadi(TRE) <= 3;
+		valore_intero_dadi(QUATTRO) <= 4;
+		valore_intero_dadi(CINQUE) <= 5;
+		valore_intero_dadi(SEI) <= 6;
+		valore_intero_dadi(NONE) <= 0;
+		
+		if(valore_intero_dadi(dado_x) > valore_intero_dadi(dado_y)) then
+			risultato <= dado_x;
+		else
+			risultato <= dado_y;
+		end if;
+		
+		return risultato;
+	end function;
+
+	function dado_maggiore_in_mano(dadi_in_mano	:	dado_array(0 to MAX_DADI-1)) 
+			return dado_type is
+			variable risultato : dado_type:=NONE;
+	begin
+		for i in dadi_in_mano'range loop
+			if(dado_maggiore(risultato, dadi_in_mano(i)) = dadi_in_mano(i)) then
+				risultato <= dadi_in_mano(i);
+			end if;
+		end loop;
+		
+		return risultato;
+	end function;
 	
-	end function;	
+	function dadi_in_campo(giocatori_in_campo : giocatore_array(0 to MAX_GIOCATORI-1)) 
+			return integer is
+			variable risultato : integer:=0;
+	begin
+		for j in 0 to MAX_GIOCATORI-1 loop
+			for i in 0 to MAX_DADI-1 loop
+				if (giocatori_in_campo(j).dadi_in_mano(i) /= NONE) then
+					risultato <= risultato + 1;
+				end if;
+			end loop;
+		end loop;
+		return risultato;
+	end function;
 end package body;
