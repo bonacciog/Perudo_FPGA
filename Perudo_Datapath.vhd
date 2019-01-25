@@ -97,11 +97,11 @@ begin
 	EliminaDado_RTL: process(ELIMINA_DADO)
 	begin
 			-- Elimino dado ultimo giocatore che ha scommesso
-		giocatori_in_campo(indice_turno_giocatore-1).dadi_in_mano(numero_dadi_in_mano-1) <= NONE;
-		giocatori_in_campo(indice_turno_giocatore-1).numero_dadi_in_mano <= giocatori_in_campo(numero_giocatori_in_campo-1).numero_dadi_in_mano - 1;
+		giocatori_in_campo(indice_turno_giocatore).dadi_in_mano(numero_dadi_in_mano-1) <= NONE;
+		giocatori_in_campo(indice_turno_giocatore).numero_dadi_in_mano <= giocatori_in_campo(indice_turno_giocatore).numero_dadi_in_mano - 1;
 		
 			-- Elimino giocatore perdente
-		if(giocatori_in_campo(indice_turno_giocatore-1).numero_dadi_in_mano = 0) then 
+		if(giocatori_in_campo(indice_turno_giocatore).numero_dadi_in_mano = 0) then 
 			numero_giocatori_in_campo <= numero_giocatori_in_campo - 1;
 			
 				-- Un giocatore ha vinto, partita finita
