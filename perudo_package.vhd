@@ -24,7 +24,8 @@ package perudo_package is
 	type dado_array is array (natural range <>) of dado_type;
 	
 	type giocatore is record
-		dadi_in_mano	:	dado_array(0 to MAX_DADI-1);
+		dadi_in_mano				:	dado_array(0 to MAX_DADI-1);
+		numero_dadi_in_mano		:  integer range 1 to MAX_DADI;
 	end record;
 	
 	type giocatore_array is array (natural range <>) of giocatore;	

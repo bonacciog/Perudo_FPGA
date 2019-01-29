@@ -13,28 +13,33 @@ entity Perudo_Datapath is
 			
 				-- Opzioni disponibili
 			NUOVO_GIOCATORE							:	in		std_logic;
-			INIZIA_PARTITA								: 	in		std_logic;
 			ELIMINA_GIOCATORE 						:	in		std_logic;
 			
-			ESEGUI_SCOMMESSA							:	in		std_logic;
+	
 			PROSSIMO_TURNO								:	in		std_logic;
 			ELIMINA_DADO								:	in		std_logic;
+
+			ESEGUI_SCOMMESSA_COM						:	in		std_logic;			
+			DADO_SCOMMESSO_COM						:	in		dado_type;
+			RICORRENZA_COM								:	in		integer;
 			
-			DUBITO										:	out	std_logic;
 			TURNO_GIOCATORE							: 	out	std_logic;
-			FINE_PARTITA								: 	out	std_logic;
 			
 			PARTITA_INIZIATA							: 	inout	std_logic
 			
 			-- Connections for the View
---			DADO_SCOMMESSO								:	in		dado_type;
---			RICORRENZA									:	in		integer;
---			DAMMI_GIOCATORI_IN_CAMPO				:	in		std_logic;
---			DAMMI_SCOMMESSA_CORRENTE				:	in		std_logic;			
+			INIZIA_PARTITA								: 	in		std_logic;
 			
---			GIOCATORI_IN_CAMPO_OUT					:	out	giocatore_array(0 to MAX_GIOCATORI-1);
---			NUMERO_GIOCATORI_IN_CAMPO_OUT			: 	out 	integer range 0 to MAX_GIOCATORI;
---			SCOMMESSA_CORRENTE_OUT					: 	out 	scommessa_type
+			ESEGUI_SCOMMESSA_G0						:	in		std_logic;
+			DADO_SCOMMESSO_G0							:	in		dado_type;
+			RICORRENZA_G0								:	in		integer;
+			DAMMI_GIOCATORI_IN_CAMPO				:	in		std_logic;
+			DAMMI_SCOMMESSA_CORRENTE				:	in		std_logic;			
+			
+			FINE_PARTITA								: 	out	std_logic;
+			GIOCATORI_IN_CAMPO_OUT					:	out	giocatore_array(0 to MAX_GIOCATORI-1);
+			NUMERO_GIOCATORI_IN_CAMPO_OUT			: 	out 	integer range 0 to MAX_GIOCATORI;
+			SCOMMESSA_CORRENTE_OUT					: 	out 	scommessa_type
 			
 	);
 end entity;
@@ -89,6 +94,28 @@ begin
 		end if;
 	end process;
 	
+	EliminaDado_RTL: process(ELIMINA_DADO)
+	begin
+			-- Elimino dado ultimo giocatore che ha scommesso
+		giocatori_in_campo(indice_turno_giocatore).dadi_in_mano(numero_dadi_in_mano-1) <= NONE;
+		giocatori_in_campo(indice_turno_giocatore).numero_dadi_in_mano <= giocatori_in_campo(indice_turno_giocatore).numero_dadi_in_mano - 1;
+		
+			-- Elimino giocatore perdente
+		if(giocatori_in_campo(indice_turno_giocatore).numero_dadi_in_mano = 0) then 
+			numero_giocatori_in_campo <= numero_giocatori_in_campo - 1;
+			
+				-- Un giocatore ha vinto, partita finita
+			if(numero_giocatori_in_campo = 1) then
+				FINE_PARTITA <= '1';
+			else
+						-- Scalo i giocatori
+				for j in indice_turno_giocatore to numero_giocatori_in_campo-1 loop
+					giocatori_in_campo(j) <= giocatori_in_campo(j+1);
+				end loop;			
+			end if;
+		end if;
+	end process;
+	
 	ProssimoTurno_RTL: process(PROSSIMO_TURNO)
 	begin
 		if(indice_turno_giocatore = (numero_giocatori_in_campo-1)) then
@@ -125,11 +152,16 @@ begin
 			scommessa_corrente.dado_scommesso <= NONE;
 			scommessa_corrente.ricorrenza <= 0;
 		
+			for j in 0 to MAX_GIOCATORI-1 loop
+				giocatori_in_campo(j).numero_dadi_in_mano <= 0; 
+			end loop;
+			
 				-- Assegno dadi ai due giocatori 
 			for j in 0 to MAX_GIOCATORI-1 loop
 				if(j=0 or j=1) then
 					for i in 0 to MAX_DADI-1 loop
 						giocatori_in_campo(j).dadi_in_mano(i) <=	scegli_dado_casuale(numero_per_generazione_casuale_dado);
+						giocatori_in_campo(j).numero_dadi_in_mano <= giocatori_in_campo(j).numero_dadi_in_mano + 1; 
 					end loop;
 					numero_giocatori_in_campo <= numero_giocatori_in_campo + 1;
 				else
@@ -143,45 +175,55 @@ begin
 	
 	EliminaGiocatore_RTL : process(ELIMINA_GIOCATORE)
 	begin
-			-- Elimino ultimo giocatore
-		for i in 0 to MAX_DADI-1 loop
-			giocatori_in_campo(numero_giocatori_in_campo).dadi_in_mano(i) <=	NONE;
-		end loop;
+		if(numero_giocatori_in_campo > 2) then
+				-- Elimino ultimo giocatore
+			for i in 0 to MAX_DADI-1 loop
+				giocatori_in_campo(numero_giocatori_in_campo).dadi_in_mano(i) <=	NONE;
+			end loop;
 		
-		numero_giocatori_in_campo <= numero_giocatori_in_campo - 1;
-		
+			numero_giocatori_in_campo <= numero_giocatori_in_campo - 1;
+		end if;
 	end process;
 	
 	
 	NuovoGiocatore_RTL : process(NUOVO_GIOCATORE)
 	begin
-			-- Aggiungo giocatore
-		for i in 0 to MAX_DADI-1 loop
-			giocatori_in_campo(numero_giocatori_in_campo).dadi_in_mano(i) <=	scegli_dado_casuale(numero_per_generazione_casuale_dado);
-		end loop;
+		if(numero_giocatori_in_campo<MAX_GIOCATORI) then
+				-- Aggiungo giocatore
+			for i in 0 to MAX_DADI-1 loop
+				giocatori_in_campo(numero_giocatori_in_campo).dadi_in_mano(i) <=	scegli_dado_casuale(numero_per_generazione_casuale_dado);
+				giocatori_in_campo(numero_giocatori_in_campo).numero_dadi_in_mano <= giocatori_in_campo(numero_giocatori_in_campo).numero_dadi_in_mano + 1;
+			end loop;
 		
-		numero_giocatori_in_campo <= numero_giocatori_in_campo + 1;
-		
+			numero_giocatori_in_campo <= numero_giocatori_in_campo + 1;
+		end if;
 	end process;
 	
-	--EseguiScommessa : process(ESEGUI_SCOMMESSA) -- CHI MANDA IL SEGNALE CHE LA SCOMMESSA DEVE ESSERE FATTA DAL GIOCATORE0 O DAL COM?
-	--begin													 -- IL CONTROLLER? O IL DATAPATH DISCRIMINA I CASI?
+	EseguiScommessa : process(ESEGUI_SCOMMESSA_COM, ESEGUI_SCOMMESSA_G0)
+	begin
 			-- Assegno valori scommessa
-	--	scommessa_corrente.dado_scommesso <= DADO_SCOMMESSO;
-	--	scommessa_corrente.ricorrenza <= RICORRENZA;
-	--end process;
+				-- COM
+		if(ESEGUI_SCOMMESSA_COM = '1') then
+			scommessa_corrente.dado_scommesso <= DADO_SCOMMESSO_COM;
+			scommessa_corrente.ricorrenza <= RICORRENZA_COM;
+				-- G0
+		elsif(ESEGUI_SCOMMESSA_G0 = '1') then
+			scommessa_corrente.dado_scommesso <= DADO_SCOMMESSO_G0;
+			scommessa_corrente.ricorrenza <= RICORRENZA_G0;
+		end if;
+	end process;
 	
---	DammiGiocatoriInCampo : process(DAMMI_GIOCATORI_IN_CAMPO) 	-- INUTILI PER ORA
---	begin
---			-- Restituisco giocatori in campo e relativo numero
---		GIOCATORI_IN_CAMPO_OUT <= giocatori_in_campo;
---		NUMERO_GIOCATORI_IN_CAMPO_OUT <= numero_giocatori_in_campo;
---	end process;
+	DammiGiocatoriInCampo : process(DAMMI_GIOCATORI_IN_CAMPO) 	
+	begin
+			-- Restituisco giocatori in campo e relativo numero
+		GIOCATORI_IN_CAMPO_OUT <= giocatori_in_campo;
+		NUMERO_GIOCATORI_IN_CAMPO_OUT <= numero_giocatori_in_campo;
+	end process;
 	
---	DammiScommessaCorrente : process(DAMMI_SCOMMESSA_CORRENTE)
---	begin
---			-- Restituisco scommessa corrente
---		SCOMMESSA_CORRENTE_OUT <= scommessa_corrente;
---	end process;
+	DammiScommessaCorrente : process(DAMMI_SCOMMESSA_CORRENTE)
+	begin
+			-- Restituisco scommessa corrente
+		SCOMMESSA_CORRENTE_OUT <= scommessa_corrente;
+	end process;
 	
 end architecture;
