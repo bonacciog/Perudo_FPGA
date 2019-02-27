@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Perudo
-Wed Jan 23 18:29:48 2019
+Wed Feb 27 16:21:21 2019
 Quartus II 32-bit Version 12.0 Build 178 05/31/2012 SJ Web Edition
 
 
@@ -36,7 +36,7 @@ applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +------------------------------------+------------------------------------------+
-; Analysis & Synthesis Status        ; Failed - Wed Jan 23 18:29:48 2019        ;
+; Analysis & Synthesis Status        ; Failed - Wed Feb 27 16:21:21 2019        ;
 ; Quartus II 32-bit Version          ; 12.0 Build 178 05/31/2012 SJ Web Edition ;
 ; Revision Name                      ; Perudo                                   ;
 ; Top-level Entity Name              ; Perudo                                   ;
@@ -154,9 +154,15 @@ Parallel compilation was disabled, but you have multiple processors available. E
 Info: *******************************************************************
 Info: Running Quartus II 32-bit Analysis & Synthesis
     Info: Version 12.0 Build 178 05/31/2012 SJ Web Edition
-    Info: Processing started: Wed Jan 23 18:29:46 2019
+    Info: Processing started: Wed Feb 27 16:21:19 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Perudo -c Perudo
 Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (12021): Found 2 design units, including 1 entities, in source file vga_controller.vhd
+    Info (12022): Found design unit 1: vga_controller-behavior
+    Info (12023): Found entity 1: vga_controller
+Info (12021): Found 2 design units, including 1 entities, in source file perudo_view.vhd
+    Info (12022): Found design unit 1: Perudo_View-RTL
+    Info (12023): Found entity 1: Perudo_View
 Info (12021): Found 2 design units, including 0 entities, in source file perudo_package.vhd
     Info (12022): Found design unit 1: perudo_package
     Info (12022): Found design unit 2: perudo_package-body
@@ -167,7 +173,7 @@ Error (10500): VHDL syntax error at Perudo_Controller.vhd(46) near text ")";  ex
 Info (12021): Found 0 design units, including 0 entities, in source file perudo_controller.vhd
 Error: Quartus II 32-bit Analysis & Synthesis was unsuccessful. 1 error, 1 warning
     Error: Peak virtual memory: 374 megabytes
-    Error: Processing ended: Wed Jan 23 18:29:48 2019
+    Error: Processing ended: Wed Feb 27 16:21:21 2019
     Error: Elapsed time: 00:00:02
     Error: Total CPU time (on all processors): 00:00:02
 
