@@ -116,27 +116,27 @@ begin
 		end if;
 	end process;
 	
-	ProssimoTurno_RTL: process(PROSSIMO_TURNO)
-	begin
-		if(indice_turno_giocatore = (numero_giocatori_in_campo-1)) then
-			indice_turno_giocatore <= 0;
-			TURNO_GIOCATORE <= '1';
-		else
-			indice_turno_giocatore <= indice_turno_giocatore + 1;
-			TURNO_GIOCATORE <= '0';
-		end if;
-	end process;
 	
-	IniziaPartita_RTL: process(INIZIA_PARTITA)
+	GestisciTurnoPartita_RTL: process(PROSSIMO_TURNO, INIZIA_PARTITA)
 	begin
-			-- Dopo essere inizializzata la partita può iniziare, stabilendo successivamente il turno dei giocatori in maniera casuale.
-				-- Così facendo spengo anche il contatore
-			PARTITA_INIZIATA <= '1';
-			if(indice_turno_giocatore = 0) then
-					-- Inizia utente
-				TURNO_GIOCATORE <= '1';
-			else
-				TURNO_GIOCATORE <= '0';
+			if(INIZIA_PARTITA = '1')
+				-- Dopo essere inizializzata la partita può iniziare, stabilendo successivamente il turno dei giocatori in maniera casuale.
+					-- Così facendo spengo anche il contatore
+				PARTITA_INIZIATA <= '1';
+				if(indice_turno_giocatore = 0) then
+						-- Inizia utente
+					TURNO_GIOCATORE <= '1';
+				else
+					TURNO_GIOCATORE <= '0';
+				end if;
+			elsif(PROSSIMO_TURNO = '1') then
+				if(indice_turno_giocatore = (numero_giocatori_in_campo-1)) then
+					indice_turno_giocatore <= 0;
+					TURNO_GIOCATORE <= '1';
+				else
+					indice_turno_giocatore <= indice_turno_giocatore + 1;
+					TURNO_GIOCATORE <= '0';
+				end if;
 			end if;
 	end process;
 	
