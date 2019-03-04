@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Perudo_Datapath
-Thu Feb 28 16:38:36 2019
+Mon Mar 04 14:34:29 2019
 Quartus II 32-bit Version 12.0 Build 178 05/31/2012 SJ Web Edition
 
 
@@ -36,7 +36,7 @@ applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +------------------------------------+------------------------------------------+
-; Analysis & Synthesis Status        ; Failed - Thu Feb 28 16:38:36 2019        ;
+; Analysis & Synthesis Status        ; Failed - Mon Mar 04 14:34:29 2019        ;
 ; Quartus II 32-bit Version          ; 12.0 Build 178 05/31/2012 SJ Web Edition ;
 ; Revision Name                      ; Perudo_Datapath                          ;
 ; Top-level Entity Name              ; Perudo_Datapath                          ;
@@ -159,20 +159,417 @@ Parallel compilation was disabled, but you have multiple processors available. E
 Info: *******************************************************************
 Info: Running Quartus II 32-bit Analysis & Synthesis
     Info: Version 12.0 Build 178 05/31/2012 SJ Web Edition
-    Info: Processing started: Thu Feb 28 16:38:34 2019
+    Info: Processing started: Mon Mar 04 14:34:28 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Perudo_Datapath -c Perudo_Datapath
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 2 design units, including 0 entities, in source file perudo_package.vhd
     Info (12022): Found design unit 1: perudo_package
     Info (12022): Found design unit 2: perudo_package-body
-Error (10500): VHDL syntax error at Perudo_Datapath.vhd(125) near text "PARTITA_INIZIATA";  expecting "then" File: H:/Ingegneria Informatica/Ingegneria Informatica M/Sistemi Digitali/Progetto Perudo/Perudo_FPGA/Simulazione componenti/Perudo_Datapath.vhd Line: 125
-Error (10500): VHDL syntax error at Perudo_Datapath.vhd(132) near text "elsif";  expecting "end", or "(", or an identifier ("elsif" is a reserved keyword), or a sequential statement File: H:/Ingegneria Informatica/Ingegneria Informatica M/Sistemi Digitali/Progetto Perudo/Perudo_FPGA/Simulazione componenti/Perudo_Datapath.vhd Line: 132
-Error (10500): VHDL syntax error at Perudo_Datapath.vhd(132) near text "then";  expecting ":=", or "<=" File: H:/Ingegneria Informatica/Ingegneria Informatica M/Sistemi Digitali/Progetto Perudo/Perudo_FPGA/Simulazione componenti/Perudo_Datapath.vhd Line: 132
-Error (10500): VHDL syntax error at Perudo_Datapath.vhd(140) near text "if";  expecting "process" File: H:/Ingegneria Informatica/Ingegneria Informatica M/Sistemi Digitali/Progetto Perudo/Perudo_FPGA/Simulazione componenti/Perudo_Datapath.vhd Line: 140
-Info (12021): Found 0 design units, including 0 entities, in source file perudo_datapath.vhd
-Error: Quartus II 32-bit Analysis & Synthesis was unsuccessful. 4 errors, 1 warning
+Info (12021): Found 2 design units, including 1 entities, in source file perudo_datapath.vhd
+    Info (12022): Found design unit 1: Perudo_Datapath-RTL
+    Info (12023): Found entity 1: Perudo_Datapath
+Info (12127): Elaborating entity "Perudo_Datapath" for the top level hierarchy
+Warning (10541): VHDL Signal Declaration warning at Perudo_Datapath.vhd(28): used implicit default value for signal "PARTITA_INIZIATA" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10492): VHDL Process Statement warning at Perudo_Datapath.vhd(94): signal "conteggio_controllato" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Perudo_Datapath.vhd(99): signal "indice_turno_giocatore" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Perudo_Datapath.vhd(103): signal "indice_turno_giocatore" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Perudo_Datapath.vhd(107): signal "indice_turno_giocatore" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Perudo_Datapath.vhd(107): signal "numero_giocatori_in_campo" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Perudo_Datapath.vhd(131): signal "numero_per_generazione_casuale_dado" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Perudo_Datapath.vhd(132): signal "giocatori_in_campo" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Perudo_Datapath.vhd(134): signal "numero_giocatori_in_campo" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Perudo_Datapath.vhd(143): signal "indice_turno_giocatore" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Perudo_Datapath.vhd(143): signal "giocatori_in_campo" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Perudo_Datapath.vhd(144): signal "giocatori_in_campo" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Perudo_Datapath.vhd(144): signal "indice_turno_giocatore" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Perudo_Datapath.vhd(147): signal "giocatori_in_campo" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Perudo_Datapath.vhd(147): signal "indice_turno_giocatore" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Perudo_Datapath.vhd(148): signal "numero_giocatori_in_campo" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Perudo_Datapath.vhd(151): signal "numero_giocatori_in_campo" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Perudo_Datapath.vhd(155): signal "indice_turno_giocatore" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Perudo_Datapath.vhd(155): signal "numero_giocatori_in_campo" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Perudo_Datapath.vhd(156): signal "giocatori_in_campo" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Perudo_Datapath.vhd(161): signal "numero_giocatori_in_campo" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Perudo_Datapath.vhd(164): signal "numero_giocatori_in_campo" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Perudo_Datapath.vhd(167): signal "numero_giocatori_in_campo" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Perudo_Datapath.vhd(170): signal "numero_giocatori_in_campo" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Perudo_Datapath.vhd(173): signal "numero_per_generazione_casuale_dado" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Perudo_Datapath.vhd(173): signal "numero_giocatori_in_campo" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Perudo_Datapath.vhd(174): signal "giocatori_in_campo" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Perudo_Datapath.vhd(174): signal "numero_giocatori_in_campo" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Perudo_Datapath.vhd(177): signal "numero_giocatori_in_campo" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10631): VHDL Process Statement warning at Perudo_Datapath.vhd(114): inferring latch(es) for signal or variable "numero_giocatori_in_campo", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at Perudo_Datapath.vhd(114): inferring latch(es) for signal or variable "giocatori_in_campo", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at Perudo_Datapath.vhd(114): inferring latch(es) for signal or variable "FINE_PARTITA", which holds its previous value in one or more paths through the process
+Warning (10492): VHDL Process Statement warning at Perudo_Datapath.vhd(192): signal "DADO_SCOMMESSO_COM" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Perudo_Datapath.vhd(193): signal "RICORRENZA_COM" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Perudo_Datapath.vhd(196): signal "DADO_SCOMMESSO_G0" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Perudo_Datapath.vhd(197): signal "RICORRENZA_G0" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10631): VHDL Process Statement warning at Perudo_Datapath.vhd(183): inferring latch(es) for signal or variable "scommessa_corrente", which holds its previous value in one or more paths through the process
+Warning (10492): VHDL Process Statement warning at Perudo_Datapath.vhd(204): signal "giocatori_in_campo" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Perudo_Datapath.vhd(205): signal "numero_giocatori_in_campo" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Perudo_Datapath.vhd(211): signal "scommessa_corrente" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Info (10041): Inferred latch for "scommessa_corrente.ricorrenza[0]" at Perudo_Datapath.vhd(183)
+Info (10041): Inferred latch for "scommessa_corrente.ricorrenza[1]" at Perudo_Datapath.vhd(183)
+Info (10041): Inferred latch for "scommessa_corrente.ricorrenza[2]" at Perudo_Datapath.vhd(183)
+Info (10041): Inferred latch for "scommessa_corrente.ricorrenza[3]" at Perudo_Datapath.vhd(183)
+Info (10041): Inferred latch for "scommessa_corrente.ricorrenza[4]" at Perudo_Datapath.vhd(183)
+Info (10041): Inferred latch for "scommessa_corrente.ricorrenza[5]" at Perudo_Datapath.vhd(183)
+Info (10041): Inferred latch for "scommessa_corrente.ricorrenza[6]" at Perudo_Datapath.vhd(183)
+Info (10041): Inferred latch for "scommessa_corrente.ricorrenza[7]" at Perudo_Datapath.vhd(183)
+Info (10041): Inferred latch for "scommessa_corrente.ricorrenza[8]" at Perudo_Datapath.vhd(183)
+Info (10041): Inferred latch for "scommessa_corrente.ricorrenza[9]" at Perudo_Datapath.vhd(183)
+Info (10041): Inferred latch for "scommessa_corrente.ricorrenza[10]" at Perudo_Datapath.vhd(183)
+Info (10041): Inferred latch for "scommessa_corrente.ricorrenza[11]" at Perudo_Datapath.vhd(183)
+Info (10041): Inferred latch for "scommessa_corrente.ricorrenza[12]" at Perudo_Datapath.vhd(183)
+Info (10041): Inferred latch for "scommessa_corrente.ricorrenza[13]" at Perudo_Datapath.vhd(183)
+Info (10041): Inferred latch for "scommessa_corrente.ricorrenza[14]" at Perudo_Datapath.vhd(183)
+Info (10041): Inferred latch for "scommessa_corrente.ricorrenza[15]" at Perudo_Datapath.vhd(183)
+Info (10041): Inferred latch for "scommessa_corrente.ricorrenza[16]" at Perudo_Datapath.vhd(183)
+Info (10041): Inferred latch for "scommessa_corrente.ricorrenza[17]" at Perudo_Datapath.vhd(183)
+Info (10041): Inferred latch for "scommessa_corrente.ricorrenza[18]" at Perudo_Datapath.vhd(183)
+Info (10041): Inferred latch for "scommessa_corrente.ricorrenza[19]" at Perudo_Datapath.vhd(183)
+Info (10041): Inferred latch for "scommessa_corrente.ricorrenza[20]" at Perudo_Datapath.vhd(183)
+Info (10041): Inferred latch for "scommessa_corrente.ricorrenza[21]" at Perudo_Datapath.vhd(183)
+Info (10041): Inferred latch for "scommessa_corrente.ricorrenza[22]" at Perudo_Datapath.vhd(183)
+Info (10041): Inferred latch for "scommessa_corrente.ricorrenza[23]" at Perudo_Datapath.vhd(183)
+Info (10041): Inferred latch for "scommessa_corrente.ricorrenza[24]" at Perudo_Datapath.vhd(183)
+Info (10041): Inferred latch for "scommessa_corrente.ricorrenza[25]" at Perudo_Datapath.vhd(183)
+Info (10041): Inferred latch for "scommessa_corrente.ricorrenza[26]" at Perudo_Datapath.vhd(183)
+Info (10041): Inferred latch for "scommessa_corrente.ricorrenza[27]" at Perudo_Datapath.vhd(183)
+Info (10041): Inferred latch for "scommessa_corrente.ricorrenza[28]" at Perudo_Datapath.vhd(183)
+Info (10041): Inferred latch for "scommessa_corrente.ricorrenza[29]" at Perudo_Datapath.vhd(183)
+Info (10041): Inferred latch for "scommessa_corrente.ricorrenza[30]" at Perudo_Datapath.vhd(183)
+Info (10041): Inferred latch for "scommessa_corrente.ricorrenza[31]" at Perudo_Datapath.vhd(183)
+Info (10041): Inferred latch for "scommessa_corrente.dado_scommesso.NONE" at Perudo_Datapath.vhd(183)
+Info (10041): Inferred latch for "scommessa_corrente.dado_scommesso.SEI" at Perudo_Datapath.vhd(183)
+Info (10041): Inferred latch for "scommessa_corrente.dado_scommesso.CINQUE" at Perudo_Datapath.vhd(183)
+Info (10041): Inferred latch for "scommessa_corrente.dado_scommesso.QUATTRO" at Perudo_Datapath.vhd(183)
+Info (10041): Inferred latch for "scommessa_corrente.dado_scommesso.TRE" at Perudo_Datapath.vhd(183)
+Info (10041): Inferred latch for "scommessa_corrente.dado_scommesso.DUE" at Perudo_Datapath.vhd(183)
+Info (10041): Inferred latch for "scommessa_corrente.dado_scommesso.UNO" at Perudo_Datapath.vhd(183)
+Info (10041): Inferred latch for "FINE_PARTITA" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[7].numero_dadi_in_mano[0]" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[7].numero_dadi_in_mano[1]" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[7].numero_dadi_in_mano[2]" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[7].dadi_in_mano[4].NONE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[7].dadi_in_mano[4].SEI" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[7].dadi_in_mano[4].CINQUE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[7].dadi_in_mano[4].QUATTRO" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[7].dadi_in_mano[4].TRE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[7].dadi_in_mano[4].DUE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[7].dadi_in_mano[4].UNO" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[7].dadi_in_mano[3].NONE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[7].dadi_in_mano[3].SEI" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[7].dadi_in_mano[3].CINQUE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[7].dadi_in_mano[3].QUATTRO" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[7].dadi_in_mano[3].TRE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[7].dadi_in_mano[3].DUE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[7].dadi_in_mano[3].UNO" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[7].dadi_in_mano[2].NONE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[7].dadi_in_mano[2].SEI" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[7].dadi_in_mano[2].CINQUE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[7].dadi_in_mano[2].QUATTRO" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[7].dadi_in_mano[2].TRE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[7].dadi_in_mano[2].DUE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[7].dadi_in_mano[2].UNO" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[7].dadi_in_mano[1].NONE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[7].dadi_in_mano[1].SEI" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[7].dadi_in_mano[1].CINQUE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[7].dadi_in_mano[1].QUATTRO" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[7].dadi_in_mano[1].TRE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[7].dadi_in_mano[1].DUE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[7].dadi_in_mano[1].UNO" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[7].dadi_in_mano[0].NONE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[7].dadi_in_mano[0].SEI" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[7].dadi_in_mano[0].CINQUE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[7].dadi_in_mano[0].QUATTRO" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[7].dadi_in_mano[0].TRE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[7].dadi_in_mano[0].DUE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[7].dadi_in_mano[0].UNO" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[6].numero_dadi_in_mano[0]" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[6].numero_dadi_in_mano[1]" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[6].numero_dadi_in_mano[2]" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[6].dadi_in_mano[4].NONE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[6].dadi_in_mano[4].SEI" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[6].dadi_in_mano[4].CINQUE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[6].dadi_in_mano[4].QUATTRO" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[6].dadi_in_mano[4].TRE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[6].dadi_in_mano[4].DUE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[6].dadi_in_mano[4].UNO" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[6].dadi_in_mano[3].NONE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[6].dadi_in_mano[3].SEI" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[6].dadi_in_mano[3].CINQUE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[6].dadi_in_mano[3].QUATTRO" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[6].dadi_in_mano[3].TRE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[6].dadi_in_mano[3].DUE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[6].dadi_in_mano[3].UNO" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[6].dadi_in_mano[2].NONE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[6].dadi_in_mano[2].SEI" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[6].dadi_in_mano[2].CINQUE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[6].dadi_in_mano[2].QUATTRO" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[6].dadi_in_mano[2].TRE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[6].dadi_in_mano[2].DUE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[6].dadi_in_mano[2].UNO" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[6].dadi_in_mano[1].NONE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[6].dadi_in_mano[1].SEI" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[6].dadi_in_mano[1].CINQUE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[6].dadi_in_mano[1].QUATTRO" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[6].dadi_in_mano[1].TRE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[6].dadi_in_mano[1].DUE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[6].dadi_in_mano[1].UNO" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[6].dadi_in_mano[0].NONE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[6].dadi_in_mano[0].SEI" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[6].dadi_in_mano[0].CINQUE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[6].dadi_in_mano[0].QUATTRO" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[6].dadi_in_mano[0].TRE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[6].dadi_in_mano[0].DUE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[6].dadi_in_mano[0].UNO" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[5].numero_dadi_in_mano[0]" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[5].numero_dadi_in_mano[1]" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[5].numero_dadi_in_mano[2]" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[5].dadi_in_mano[4].NONE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[5].dadi_in_mano[4].SEI" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[5].dadi_in_mano[4].CINQUE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[5].dadi_in_mano[4].QUATTRO" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[5].dadi_in_mano[4].TRE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[5].dadi_in_mano[4].DUE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[5].dadi_in_mano[4].UNO" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[5].dadi_in_mano[3].NONE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[5].dadi_in_mano[3].SEI" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[5].dadi_in_mano[3].CINQUE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[5].dadi_in_mano[3].QUATTRO" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[5].dadi_in_mano[3].TRE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[5].dadi_in_mano[3].DUE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[5].dadi_in_mano[3].UNO" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[5].dadi_in_mano[2].NONE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[5].dadi_in_mano[2].SEI" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[5].dadi_in_mano[2].CINQUE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[5].dadi_in_mano[2].QUATTRO" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[5].dadi_in_mano[2].TRE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[5].dadi_in_mano[2].DUE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[5].dadi_in_mano[2].UNO" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[5].dadi_in_mano[1].NONE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[5].dadi_in_mano[1].SEI" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[5].dadi_in_mano[1].CINQUE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[5].dadi_in_mano[1].QUATTRO" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[5].dadi_in_mano[1].TRE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[5].dadi_in_mano[1].DUE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[5].dadi_in_mano[1].UNO" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[5].dadi_in_mano[0].NONE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[5].dadi_in_mano[0].SEI" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[5].dadi_in_mano[0].CINQUE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[5].dadi_in_mano[0].QUATTRO" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[5].dadi_in_mano[0].TRE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[5].dadi_in_mano[0].DUE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[5].dadi_in_mano[0].UNO" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[4].numero_dadi_in_mano[0]" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[4].numero_dadi_in_mano[1]" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[4].numero_dadi_in_mano[2]" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[4].dadi_in_mano[4].NONE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[4].dadi_in_mano[4].SEI" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[4].dadi_in_mano[4].CINQUE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[4].dadi_in_mano[4].QUATTRO" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[4].dadi_in_mano[4].TRE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[4].dadi_in_mano[4].DUE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[4].dadi_in_mano[4].UNO" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[4].dadi_in_mano[3].NONE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[4].dadi_in_mano[3].SEI" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[4].dadi_in_mano[3].CINQUE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[4].dadi_in_mano[3].QUATTRO" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[4].dadi_in_mano[3].TRE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[4].dadi_in_mano[3].DUE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[4].dadi_in_mano[3].UNO" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[4].dadi_in_mano[2].NONE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[4].dadi_in_mano[2].SEI" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[4].dadi_in_mano[2].CINQUE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[4].dadi_in_mano[2].QUATTRO" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[4].dadi_in_mano[2].TRE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[4].dadi_in_mano[2].DUE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[4].dadi_in_mano[2].UNO" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[4].dadi_in_mano[1].NONE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[4].dadi_in_mano[1].SEI" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[4].dadi_in_mano[1].CINQUE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[4].dadi_in_mano[1].QUATTRO" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[4].dadi_in_mano[1].TRE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[4].dadi_in_mano[1].DUE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[4].dadi_in_mano[1].UNO" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[4].dadi_in_mano[0].NONE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[4].dadi_in_mano[0].SEI" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[4].dadi_in_mano[0].CINQUE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[4].dadi_in_mano[0].QUATTRO" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[4].dadi_in_mano[0].TRE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[4].dadi_in_mano[0].DUE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[4].dadi_in_mano[0].UNO" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[3].numero_dadi_in_mano[0]" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[3].numero_dadi_in_mano[1]" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[3].numero_dadi_in_mano[2]" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[3].dadi_in_mano[4].NONE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[3].dadi_in_mano[4].SEI" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[3].dadi_in_mano[4].CINQUE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[3].dadi_in_mano[4].QUATTRO" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[3].dadi_in_mano[4].TRE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[3].dadi_in_mano[4].DUE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[3].dadi_in_mano[4].UNO" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[3].dadi_in_mano[3].NONE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[3].dadi_in_mano[3].SEI" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[3].dadi_in_mano[3].CINQUE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[3].dadi_in_mano[3].QUATTRO" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[3].dadi_in_mano[3].TRE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[3].dadi_in_mano[3].DUE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[3].dadi_in_mano[3].UNO" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[3].dadi_in_mano[2].NONE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[3].dadi_in_mano[2].SEI" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[3].dadi_in_mano[2].CINQUE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[3].dadi_in_mano[2].QUATTRO" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[3].dadi_in_mano[2].TRE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[3].dadi_in_mano[2].DUE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[3].dadi_in_mano[2].UNO" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[3].dadi_in_mano[1].NONE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[3].dadi_in_mano[1].SEI" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[3].dadi_in_mano[1].CINQUE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[3].dadi_in_mano[1].QUATTRO" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[3].dadi_in_mano[1].TRE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[3].dadi_in_mano[1].DUE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[3].dadi_in_mano[1].UNO" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[3].dadi_in_mano[0].NONE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[3].dadi_in_mano[0].SEI" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[3].dadi_in_mano[0].CINQUE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[3].dadi_in_mano[0].QUATTRO" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[3].dadi_in_mano[0].TRE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[3].dadi_in_mano[0].DUE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[3].dadi_in_mano[0].UNO" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[2].numero_dadi_in_mano[0]" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[2].numero_dadi_in_mano[1]" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[2].numero_dadi_in_mano[2]" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[2].dadi_in_mano[4].NONE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[2].dadi_in_mano[4].SEI" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[2].dadi_in_mano[4].CINQUE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[2].dadi_in_mano[4].QUATTRO" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[2].dadi_in_mano[4].TRE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[2].dadi_in_mano[4].DUE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[2].dadi_in_mano[4].UNO" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[2].dadi_in_mano[3].NONE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[2].dadi_in_mano[3].SEI" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[2].dadi_in_mano[3].CINQUE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[2].dadi_in_mano[3].QUATTRO" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[2].dadi_in_mano[3].TRE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[2].dadi_in_mano[3].DUE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[2].dadi_in_mano[3].UNO" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[2].dadi_in_mano[2].NONE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[2].dadi_in_mano[2].SEI" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[2].dadi_in_mano[2].CINQUE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[2].dadi_in_mano[2].QUATTRO" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[2].dadi_in_mano[2].TRE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[2].dadi_in_mano[2].DUE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[2].dadi_in_mano[2].UNO" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[2].dadi_in_mano[1].NONE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[2].dadi_in_mano[1].SEI" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[2].dadi_in_mano[1].CINQUE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[2].dadi_in_mano[1].QUATTRO" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[2].dadi_in_mano[1].TRE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[2].dadi_in_mano[1].DUE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[2].dadi_in_mano[1].UNO" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[2].dadi_in_mano[0].NONE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[2].dadi_in_mano[0].SEI" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[2].dadi_in_mano[0].CINQUE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[2].dadi_in_mano[0].QUATTRO" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[2].dadi_in_mano[0].TRE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[2].dadi_in_mano[0].DUE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[2].dadi_in_mano[0].UNO" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[1].numero_dadi_in_mano[0]" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[1].numero_dadi_in_mano[1]" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[1].numero_dadi_in_mano[2]" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[1].dadi_in_mano[4].NONE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[1].dadi_in_mano[4].SEI" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[1].dadi_in_mano[4].CINQUE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[1].dadi_in_mano[4].QUATTRO" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[1].dadi_in_mano[4].TRE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[1].dadi_in_mano[4].DUE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[1].dadi_in_mano[4].UNO" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[1].dadi_in_mano[3].NONE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[1].dadi_in_mano[3].SEI" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[1].dadi_in_mano[3].CINQUE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[1].dadi_in_mano[3].QUATTRO" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[1].dadi_in_mano[3].TRE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[1].dadi_in_mano[3].DUE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[1].dadi_in_mano[3].UNO" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[1].dadi_in_mano[2].NONE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[1].dadi_in_mano[2].SEI" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[1].dadi_in_mano[2].CINQUE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[1].dadi_in_mano[2].QUATTRO" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[1].dadi_in_mano[2].TRE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[1].dadi_in_mano[2].DUE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[1].dadi_in_mano[2].UNO" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[1].dadi_in_mano[1].NONE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[1].dadi_in_mano[1].SEI" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[1].dadi_in_mano[1].CINQUE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[1].dadi_in_mano[1].QUATTRO" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[1].dadi_in_mano[1].TRE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[1].dadi_in_mano[1].DUE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[1].dadi_in_mano[1].UNO" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[1].dadi_in_mano[0].NONE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[1].dadi_in_mano[0].SEI" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[1].dadi_in_mano[0].CINQUE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[1].dadi_in_mano[0].QUATTRO" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[1].dadi_in_mano[0].TRE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[1].dadi_in_mano[0].DUE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[1].dadi_in_mano[0].UNO" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[0].numero_dadi_in_mano[0]" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[0].numero_dadi_in_mano[1]" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[0].numero_dadi_in_mano[2]" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[0].dadi_in_mano[4].NONE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[0].dadi_in_mano[4].SEI" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[0].dadi_in_mano[4].CINQUE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[0].dadi_in_mano[4].QUATTRO" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[0].dadi_in_mano[4].TRE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[0].dadi_in_mano[4].DUE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[0].dadi_in_mano[4].UNO" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[0].dadi_in_mano[3].NONE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[0].dadi_in_mano[3].SEI" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[0].dadi_in_mano[3].CINQUE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[0].dadi_in_mano[3].QUATTRO" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[0].dadi_in_mano[3].TRE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[0].dadi_in_mano[3].DUE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[0].dadi_in_mano[3].UNO" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[0].dadi_in_mano[2].NONE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[0].dadi_in_mano[2].SEI" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[0].dadi_in_mano[2].CINQUE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[0].dadi_in_mano[2].QUATTRO" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[0].dadi_in_mano[2].TRE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[0].dadi_in_mano[2].DUE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[0].dadi_in_mano[2].UNO" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[0].dadi_in_mano[1].NONE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[0].dadi_in_mano[1].SEI" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[0].dadi_in_mano[1].CINQUE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[0].dadi_in_mano[1].QUATTRO" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[0].dadi_in_mano[1].TRE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[0].dadi_in_mano[1].DUE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[0].dadi_in_mano[1].UNO" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[0].dadi_in_mano[0].NONE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[0].dadi_in_mano[0].SEI" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[0].dadi_in_mano[0].CINQUE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[0].dadi_in_mano[0].QUATTRO" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[0].dadi_in_mano[0].TRE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[0].dadi_in_mano[0].DUE" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "giocatori_in_campo[0].dadi_in_mano[0].UNO" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "numero_giocatori_in_campo[0]" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "numero_giocatori_in_campo[1]" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "numero_giocatori_in_campo[2]" at Perudo_Datapath.vhd(114)
+Info (10041): Inferred latch for "numero_giocatori_in_campo[3]" at Perudo_Datapath.vhd(114)
+Error (10818): Can't infer register for "TURNO_GIOCATORE" at Perudo_Datapath.vhd(84) because it does not hold its value outside the clock edge File: H:/Ingegneria Informatica/Ingegneria Informatica M/Sistemi Digitali/Progetto Perudo/Perudo_FPGA/Simulazione componenti/Perudo_Datapath.vhd Line: 84
+Info (10041): Inferred latch for "TURNO_GIOCATORE" at Perudo_Datapath.vhd(82)
+Error (10818): Can't infer register for "indice_turno_giocatore[0]" at Perudo_Datapath.vhd(84) because it does not hold its value outside the clock edge File: H:/Ingegneria Informatica/Ingegneria Informatica M/Sistemi Digitali/Progetto Perudo/Perudo_FPGA/Simulazione componenti/Perudo_Datapath.vhd Line: 84
+Info (10041): Inferred latch for "indice_turno_giocatore[0]" at Perudo_Datapath.vhd(82)
+Error (10818): Can't infer register for "indice_turno_giocatore[1]" at Perudo_Datapath.vhd(84) because it does not hold its value outside the clock edge File: H:/Ingegneria Informatica/Ingegneria Informatica M/Sistemi Digitali/Progetto Perudo/Perudo_FPGA/Simulazione componenti/Perudo_Datapath.vhd Line: 84
+Info (10041): Inferred latch for "indice_turno_giocatore[1]" at Perudo_Datapath.vhd(82)
+Error (10818): Can't infer register for "indice_turno_giocatore[2]" at Perudo_Datapath.vhd(84) because it does not hold its value outside the clock edge File: H:/Ingegneria Informatica/Ingegneria Informatica M/Sistemi Digitali/Progetto Perudo/Perudo_FPGA/Simulazione componenti/Perudo_Datapath.vhd Line: 84
+Info (10041): Inferred latch for "indice_turno_giocatore[2]" at Perudo_Datapath.vhd(82)
+Error (10822): HDL error at Perudo_Datapath.vhd(87): couldn't implement registers for assignments on this clock edge File: H:/Ingegneria Informatica/Ingegneria Informatica M/Sistemi Digitali/Progetto Perudo/Perudo_FPGA/Simulazione componenti/Perudo_Datapath.vhd Line: 87
+Error (12153): Can't elaborate top-level user hierarchy
+Error: Quartus II 32-bit Analysis & Synthesis was unsuccessful. 6 errors, 41 warnings
     Error: Peak virtual memory: 394 megabytes
-    Error: Processing ended: Thu Feb 28 16:38:36 2019
+    Error: Processing ended: Mon Mar 04 14:34:30 2019
     Error: Elapsed time: 00:00:02
     Error: Total CPU time (on all processors): 00:00:02
 
