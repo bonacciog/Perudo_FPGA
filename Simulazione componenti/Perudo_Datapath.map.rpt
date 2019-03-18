@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Perudo_Datapath
-Mon Mar 04 14:34:29 2019
+Mon Mar 18 13:49:11 2019
 Quartus II 32-bit Version 12.0 Build 178 05/31/2012 SJ Web Edition
 
 
@@ -36,7 +36,7 @@ applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +------------------------------------+------------------------------------------+
-; Analysis & Synthesis Status        ; Failed - Mon Mar 04 14:34:29 2019        ;
+; Analysis & Synthesis Status        ; Failed - Mon Mar 18 13:49:11 2019        ;
 ; Quartus II 32-bit Version          ; 12.0 Build 178 05/31/2012 SJ Web Edition ;
 ; Revision Name                      ; Perudo_Datapath                          ;
 ; Top-level Entity Name              ; Perudo_Datapath                          ;
@@ -159,7 +159,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 Info: *******************************************************************
 Info: Running Quartus II 32-bit Analysis & Synthesis
     Info: Version 12.0 Build 178 05/31/2012 SJ Web Edition
-    Info: Processing started: Mon Mar 04 14:34:28 2019
+    Info: Processing started: Mon Mar 18 13:49:06 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Perudo_Datapath -c Perudo_Datapath
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 2 design units, including 0 entities, in source file perudo_package.vhd
@@ -170,6 +170,7 @@ Info (12021): Found 2 design units, including 1 entities, in source file perudo_
     Info (12023): Found entity 1: Perudo_Datapath
 Info (12127): Elaborating entity "Perudo_Datapath" for the top level hierarchy
 Warning (10541): VHDL Signal Declaration warning at Perudo_Datapath.vhd(28): used implicit default value for signal "PARTITA_INIZIATA" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10492): VHDL Process Statement warning at Perudo_Datapath.vhd(87): signal "conteggio_controllato" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Warning (10492): VHDL Process Statement warning at Perudo_Datapath.vhd(94): signal "conteggio_controllato" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Warning (10492): VHDL Process Statement warning at Perudo_Datapath.vhd(99): signal "indice_turno_giocatore" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Warning (10492): VHDL Process Statement warning at Perudo_Datapath.vhd(103): signal "indice_turno_giocatore" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
@@ -559,6 +560,8 @@ Info (10041): Inferred latch for "numero_giocatori_in_campo[2]" at Perudo_Datapa
 Info (10041): Inferred latch for "numero_giocatori_in_campo[3]" at Perudo_Datapath.vhd(114)
 Error (10818): Can't infer register for "TURNO_GIOCATORE" at Perudo_Datapath.vhd(84) because it does not hold its value outside the clock edge File: H:/Ingegneria Informatica/Ingegneria Informatica M/Sistemi Digitali/Progetto Perudo/Perudo_FPGA/Simulazione componenti/Perudo_Datapath.vhd Line: 84
 Info (10041): Inferred latch for "TURNO_GIOCATORE" at Perudo_Datapath.vhd(82)
+Error (10818): Can't infer register for "conteggio_controllato" at Perudo_Datapath.vhd(84) because it does not hold its value outside the clock edge File: H:/Ingegneria Informatica/Ingegneria Informatica M/Sistemi Digitali/Progetto Perudo/Perudo_FPGA/Simulazione componenti/Perudo_Datapath.vhd Line: 84
+Info (10041): Inferred latch for "conteggio_controllato" at Perudo_Datapath.vhd(82)
 Error (10818): Can't infer register for "indice_turno_giocatore[0]" at Perudo_Datapath.vhd(84) because it does not hold its value outside the clock edge File: H:/Ingegneria Informatica/Ingegneria Informatica M/Sistemi Digitali/Progetto Perudo/Perudo_FPGA/Simulazione componenti/Perudo_Datapath.vhd Line: 84
 Info (10041): Inferred latch for "indice_turno_giocatore[0]" at Perudo_Datapath.vhd(82)
 Error (10818): Can't infer register for "indice_turno_giocatore[1]" at Perudo_Datapath.vhd(84) because it does not hold its value outside the clock edge File: H:/Ingegneria Informatica/Ingegneria Informatica M/Sistemi Digitali/Progetto Perudo/Perudo_FPGA/Simulazione componenti/Perudo_Datapath.vhd Line: 84
@@ -567,10 +570,10 @@ Error (10818): Can't infer register for "indice_turno_giocatore[2]" at Perudo_Da
 Info (10041): Inferred latch for "indice_turno_giocatore[2]" at Perudo_Datapath.vhd(82)
 Error (10822): HDL error at Perudo_Datapath.vhd(87): couldn't implement registers for assignments on this clock edge File: H:/Ingegneria Informatica/Ingegneria Informatica M/Sistemi Digitali/Progetto Perudo/Perudo_FPGA/Simulazione componenti/Perudo_Datapath.vhd Line: 87
 Error (12153): Can't elaborate top-level user hierarchy
-Error: Quartus II 32-bit Analysis & Synthesis was unsuccessful. 6 errors, 41 warnings
+Error: Quartus II 32-bit Analysis & Synthesis was unsuccessful. 7 errors, 42 warnings
     Error: Peak virtual memory: 394 megabytes
-    Error: Processing ended: Mon Mar 04 14:34:30 2019
-    Error: Elapsed time: 00:00:02
+    Error: Processing ended: Mon Mar 18 13:49:12 2019
+    Error: Elapsed time: 00:00:06
     Error: Total CPU time (on all processors): 00:00:02
 
 
