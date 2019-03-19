@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Perudo_Datapath
-Mon Mar 18 13:49:11 2019
+Tue Mar 19 17:19:17 2019
 Quartus II 32-bit Version 12.0 Build 178 05/31/2012 SJ Web Edition
 
 
@@ -10,7 +10,16 @@ Quartus II 32-bit Version 12.0 Build 178 05/31/2012 SJ Web Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Messages
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. User-Specified and Inferred Latches
+  9. General Register Statistics
+ 10. Inverted Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod0
+ 13. Elapsed Time Per Partition
+ 14. Analysis & Synthesis Messages
 
 
 
@@ -36,24 +45,24 @@ applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +------------------------------------+------------------------------------------+
-; Analysis & Synthesis Status        ; Failed - Mon Mar 18 13:49:11 2019        ;
+; Analysis & Synthesis Status        ; Successful - Tue Mar 19 17:19:17 2019    ;
 ; Quartus II 32-bit Version          ; 12.0 Build 178 05/31/2012 SJ Web Edition ;
 ; Revision Name                      ; Perudo_Datapath                          ;
 ; Top-level Entity Name              ; Perudo_Datapath                          ;
 ; Family                             ; Cyclone IV GX                            ;
-; Total logic elements               ; N/A until Partition Merge                ;
-;     Total combinational functions  ; N/A until Partition Merge                ;
-;     Dedicated logic registers      ; N/A until Partition Merge                ;
-; Total registers                    ; N/A until Partition Merge                ;
-; Total pins                         ; N/A until Partition Merge                ;
-; Total virtual pins                 ; N/A until Partition Merge                ;
-; Total memory bits                  ; N/A until Partition Merge                ;
-; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                ;
-; Total GXB Receiver Channel PCS     ; N/A until Partition Merge                ;
-; Total GXB Receiver Channel PMA     ; N/A until Partition Merge                ;
-; Total GXB Transmitter Channel PCS  ; N/A until Partition Merge                ;
-; Total GXB Transmitter Channel PMA  ; N/A until Partition Merge                ;
-; Total PLLs                         ; N/A until Partition Merge                ;
+; Total logic elements               ; 1,138                                    ;
+;     Total combinational functions  ; 1,138                                    ;
+;     Dedicated logic registers      ; 8                                        ;
+; Total registers                    ; 8                                        ;
+; Total pins                         ; 439                                      ;
+; Total virtual pins                 ; 0                                        ;
+; Total memory bits                  ; 0                                        ;
+; Embedded Multiplier 9-bit elements ; 0                                        ;
+; Total GXB Receiver Channel PCS     ; 0                                        ;
+; Total GXB Receiver Channel PMA     ; 0                                        ;
+; Total GXB Transmitter Channel PCS  ; 0                                        ;
+; Total GXB Transmitter Channel PMA  ; 0                                        ;
+; Total PLLs                         ; 0                                        ;
 +------------------------------------+------------------------------------------+
 
 
@@ -153,13 +162,262 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                                                          ;
++----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                                                                      ; Library ;
++----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+---------+
+; perudo_package.vhd               ; yes             ; User VHDL File               ; H:/Ingegneria Informatica/Ingegneria Informatica M/Sistemi Digitali/Progetto Perudo/Perudo_FPGA/Simulazione componenti/perudo_package.vhd         ;         ;
+; Perudo_Datapath.vhd              ; yes             ; User VHDL File               ; H:/Ingegneria Informatica/Ingegneria Informatica M/Sistemi Digitali/Progetto Perudo/Perudo_FPGA/Simulazione componenti/Perudo_Datapath.vhd        ;         ;
+; lpm_divide.tdf                   ; yes             ; Megafunction                 ; c:/altera/12.0/quartus/libraries/megafunctions/lpm_divide.tdf                                                                                     ;         ;
+; abs_divider.inc                  ; yes             ; Megafunction                 ; c:/altera/12.0/quartus/libraries/megafunctions/abs_divider.inc                                                                                    ;         ;
+; sign_div_unsign.inc              ; yes             ; Megafunction                 ; c:/altera/12.0/quartus/libraries/megafunctions/sign_div_unsign.inc                                                                                ;         ;
+; aglobal120.inc                   ; yes             ; Megafunction                 ; c:/altera/12.0/quartus/libraries/megafunctions/aglobal120.inc                                                                                     ;         ;
+; db/lpm_divide_adm.tdf            ; yes             ; Auto-Generated Megafunction  ; H:/Ingegneria Informatica/Ingegneria Informatica M/Sistemi Digitali/Progetto Perudo/Perudo_FPGA/Simulazione componenti/db/lpm_divide_adm.tdf      ;         ;
+; db/sign_div_unsign_5kh.tdf       ; yes             ; Auto-Generated Megafunction  ; H:/Ingegneria Informatica/Ingegneria Informatica M/Sistemi Digitali/Progetto Perudo/Perudo_FPGA/Simulazione componenti/db/sign_div_unsign_5kh.tdf ;         ;
+; db/alt_u_div_o7f.tdf             ; yes             ; Auto-Generated Megafunction  ; H:/Ingegneria Informatica/Ingegneria Informatica M/Sistemi Digitali/Progetto Perudo/Perudo_FPGA/Simulazione componenti/db/alt_u_div_o7f.tdf       ;         ;
+; db/add_sub_1tc.tdf               ; yes             ; Auto-Generated Megafunction  ; H:/Ingegneria Informatica/Ingegneria Informatica M/Sistemi Digitali/Progetto Perudo/Perudo_FPGA/Simulazione componenti/db/add_sub_1tc.tdf         ;         ;
+; db/add_sub_2tc.tdf               ; yes             ; Auto-Generated Megafunction  ; H:/Ingegneria Informatica/Ingegneria Informatica M/Sistemi Digitali/Progetto Perudo/Perudo_FPGA/Simulazione componenti/db/add_sub_2tc.tdf         ;         ;
++----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+---------+
+
+
++---------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary ;
++----------------------+----------------------+
+; Resource             ; Usage                ;
++----------------------+----------------------+
+; I/O pins             ; 439                  ;
+; Maximum fan-out node ; RESET_N~input        ;
+; Maximum fan-out      ; 369                  ;
+; Total fan-out        ; 5085                 ;
+; Average fan-out      ; 2.51                 ;
++----------------------+----------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                              ;
++----------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node             ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                              ; Library Name ;
++----------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------+--------------+
+; |Perudo_Datapath                       ; 1138 (1131)       ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 439  ; 0            ; |Perudo_Datapath                                                                                                 ;              ;
+;    |lpm_divide:Mod0|                   ; 7 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |Perudo_Datapath|lpm_divide:Mod0                                                                                 ;              ;
+;       |lpm_divide_adm:auto_generated|  ; 7 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |Perudo_Datapath|lpm_divide:Mod0|lpm_divide_adm:auto_generated                                                   ;              ;
+;          |sign_div_unsign_5kh:divider| ; 7 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |Perudo_Datapath|lpm_divide:Mod0|lpm_divide_adm:auto_generated|sign_div_unsign_5kh:divider                       ;              ;
+;             |alt_u_div_o7f:divider|    ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |Perudo_Datapath|lpm_divide:Mod0|lpm_divide_adm:auto_generated|sign_div_unsign_5kh:divider|alt_u_div_o7f:divider ;              ;
++----------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                                           ;
++------------------------------------------------------+-----------------------------------------------+------------------------+
+; Latch Name                                           ; Latch Enable Signal                           ; Free of Timing Hazards ;
++------------------------------------------------------+-----------------------------------------------+------------------------+
+; giocatori_in_campo[7].numero_dadi_in_mano[0]         ; giocatori_in_campo[7].numero_dadi_in_mano[2]  ; yes                    ;
+; giocatori_in_campo[7].numero_dadi_in_mano[1]         ; giocatori_in_campo[7].numero_dadi_in_mano[2]  ; yes                    ;
+; giocatori_in_campo[7].numero_dadi_in_mano[2]         ; giocatori_in_campo[7].numero_dadi_in_mano[2]  ; yes                    ;
+; giocatori_in_campo[7].dadi_in_mano[4].NONE_6387      ; giocatori_in_campo[7].dadi_in_mano[4].QUATTRO ; yes                    ;
+; giocatori_in_campo[7].dadi_in_mano[4].SEI_6412       ; giocatori_in_campo[7].dadi_in_mano[4].QUATTRO ; yes                    ;
+; giocatori_in_campo[7].dadi_in_mano[4].CINQUE_6437    ; giocatori_in_campo[7].dadi_in_mano[4].QUATTRO ; yes                    ;
+; giocatori_in_campo[7].dadi_in_mano[4].QUATTRO_6462   ; giocatori_in_campo[7].dadi_in_mano[4].QUATTRO ; yes                    ;
+; giocatori_in_campo[7].dadi_in_mano[4].TRE_6487       ; giocatori_in_campo[7].dadi_in_mano[4].QUATTRO ; yes                    ;
+; giocatori_in_campo[7].dadi_in_mano[4].DUE_6512       ; giocatori_in_campo[7].dadi_in_mano[4].QUATTRO ; yes                    ;
+; giocatori_in_campo[7].dadi_in_mano[4].UNO_6537       ; giocatori_in_campo[7].dadi_in_mano[4].QUATTRO ; yes                    ;
+; giocatori_in_campo[7].dadi_in_mano[3].NONE_6562      ; giocatori_in_campo[7].dadi_in_mano[3].SEI     ; yes                    ;
+; giocatori_in_campo[7].dadi_in_mano[3].SEI_6587       ; giocatori_in_campo[7].dadi_in_mano[3].SEI     ; yes                    ;
+; giocatori_in_campo[7].dadi_in_mano[3].CINQUE_6612    ; giocatori_in_campo[7].dadi_in_mano[3].SEI     ; yes                    ;
+; giocatori_in_campo[7].dadi_in_mano[3].QUATTRO_6637   ; giocatori_in_campo[7].dadi_in_mano[3].SEI     ; yes                    ;
+; giocatori_in_campo[7].dadi_in_mano[3].TRE_6662       ; giocatori_in_campo[7].dadi_in_mano[3].SEI     ; yes                    ;
+; giocatori_in_campo[7].dadi_in_mano[3].DUE_6687       ; giocatori_in_campo[7].dadi_in_mano[3].SEI     ; yes                    ;
+; giocatori_in_campo[7].dadi_in_mano[3].UNO_6712       ; giocatori_in_campo[7].dadi_in_mano[3].SEI     ; yes                    ;
+; giocatori_in_campo[7].dadi_in_mano[2].NONE_6737      ; giocatori_in_campo[7].dadi_in_mano[2].SEI     ; yes                    ;
+; giocatori_in_campo[7].dadi_in_mano[2].SEI_6762       ; giocatori_in_campo[7].dadi_in_mano[2].SEI     ; yes                    ;
+; giocatori_in_campo[7].dadi_in_mano[2].CINQUE_6787    ; giocatori_in_campo[7].dadi_in_mano[2].SEI     ; yes                    ;
+; giocatori_in_campo[7].dadi_in_mano[2].QUATTRO_6812   ; giocatori_in_campo[7].dadi_in_mano[2].SEI     ; yes                    ;
+; giocatori_in_campo[7].dadi_in_mano[2].TRE_6837       ; giocatori_in_campo[7].dadi_in_mano[2].SEI     ; yes                    ;
+; giocatori_in_campo[7].dadi_in_mano[2].DUE_6862       ; giocatori_in_campo[7].dadi_in_mano[2].SEI     ; yes                    ;
+; giocatori_in_campo[7].dadi_in_mano[2].UNO_6887       ; giocatori_in_campo[7].dadi_in_mano[2].SEI     ; yes                    ;
+; giocatori_in_campo[7].dadi_in_mano[1].NONE_6912      ; giocatori_in_campo[7].dadi_in_mano[1].SEI     ; yes                    ;
+; giocatori_in_campo[7].dadi_in_mano[1].SEI_6937       ; giocatori_in_campo[7].dadi_in_mano[1].SEI     ; yes                    ;
+; giocatori_in_campo[7].dadi_in_mano[1].CINQUE_6962    ; giocatori_in_campo[7].dadi_in_mano[1].SEI     ; yes                    ;
+; giocatori_in_campo[7].dadi_in_mano[1].QUATTRO_6987   ; giocatori_in_campo[7].dadi_in_mano[1].SEI     ; yes                    ;
+; giocatori_in_campo[7].dadi_in_mano[1].TRE_7012       ; giocatori_in_campo[7].dadi_in_mano[1].SEI     ; yes                    ;
+; giocatori_in_campo[7].dadi_in_mano[1].DUE_7037       ; giocatori_in_campo[7].dadi_in_mano[1].SEI     ; yes                    ;
+; giocatori_in_campo[7].dadi_in_mano[1].UNO_7062       ; giocatori_in_campo[7].dadi_in_mano[1].SEI     ; yes                    ;
+; giocatori_in_campo[7].dadi_in_mano[0].NONE_7087      ; giocatori_in_campo[7].dadi_in_mano[0].SEI     ; yes                    ;
+; giocatori_in_campo[7].dadi_in_mano[0].SEI_7112       ; giocatori_in_campo[7].dadi_in_mano[0].SEI     ; yes                    ;
+; giocatori_in_campo[7].dadi_in_mano[0].CINQUE_7137    ; giocatori_in_campo[7].dadi_in_mano[0].SEI     ; yes                    ;
+; giocatori_in_campo[7].dadi_in_mano[0].QUATTRO_7162   ; giocatori_in_campo[7].dadi_in_mano[0].SEI     ; yes                    ;
+; giocatori_in_campo[7].dadi_in_mano[0].TRE_7187       ; giocatori_in_campo[7].dadi_in_mano[0].SEI     ; yes                    ;
+; giocatori_in_campo[7].dadi_in_mano[0].DUE_7212       ; giocatori_in_campo[7].dadi_in_mano[0].SEI     ; yes                    ;
+; giocatori_in_campo[7].dadi_in_mano[0].UNO_7237       ; giocatori_in_campo[7].dadi_in_mano[0].SEI     ; yes                    ;
+; giocatori_in_campo[6].numero_dadi_in_mano[0]         ; giocatori_in_campo[6].numero_dadi_in_mano[2]  ; yes                    ;
+; giocatori_in_campo[6].numero_dadi_in_mano[1]         ; giocatori_in_campo[6].numero_dadi_in_mano[2]  ; yes                    ;
+; giocatori_in_campo[6].numero_dadi_in_mano[2]         ; giocatori_in_campo[6].numero_dadi_in_mano[2]  ; yes                    ;
+; giocatori_in_campo[6].dadi_in_mano[4].NONE_7352      ; giocatori_in_campo[6].dadi_in_mano[4].SEI     ; yes                    ;
+; giocatori_in_campo[6].dadi_in_mano[4].SEI_7377       ; giocatori_in_campo[6].dadi_in_mano[4].SEI     ; yes                    ;
+; giocatori_in_campo[6].dadi_in_mano[4].CINQUE_7402    ; giocatori_in_campo[6].dadi_in_mano[4].SEI     ; yes                    ;
+; giocatori_in_campo[6].dadi_in_mano[4].QUATTRO_7427   ; giocatori_in_campo[6].dadi_in_mano[4].SEI     ; yes                    ;
+; giocatori_in_campo[6].dadi_in_mano[4].TRE_7452       ; giocatori_in_campo[6].dadi_in_mano[4].SEI     ; yes                    ;
+; giocatori_in_campo[6].dadi_in_mano[4].DUE_7477       ; giocatori_in_campo[6].dadi_in_mano[4].SEI     ; yes                    ;
+; giocatori_in_campo[6].dadi_in_mano[4].UNO_7502       ; giocatori_in_campo[6].dadi_in_mano[4].SEI     ; yes                    ;
+; giocatori_in_campo[6].dadi_in_mano[3].NONE_7527      ; giocatori_in_campo[6].dadi_in_mano[3].SEI     ; yes                    ;
+; giocatori_in_campo[6].dadi_in_mano[3].SEI_7552       ; giocatori_in_campo[6].dadi_in_mano[3].SEI     ; yes                    ;
+; giocatori_in_campo[6].dadi_in_mano[3].CINQUE_7577    ; giocatori_in_campo[6].dadi_in_mano[3].SEI     ; yes                    ;
+; giocatori_in_campo[6].dadi_in_mano[3].QUATTRO_7602   ; giocatori_in_campo[6].dadi_in_mano[3].SEI     ; yes                    ;
+; giocatori_in_campo[6].dadi_in_mano[3].TRE_7627       ; giocatori_in_campo[6].dadi_in_mano[3].SEI     ; yes                    ;
+; giocatori_in_campo[6].dadi_in_mano[3].DUE_7652       ; giocatori_in_campo[6].dadi_in_mano[3].SEI     ; yes                    ;
+; giocatori_in_campo[6].dadi_in_mano[3].UNO_7677       ; giocatori_in_campo[6].dadi_in_mano[3].SEI     ; yes                    ;
+; giocatori_in_campo[6].dadi_in_mano[2].NONE_7702      ; giocatori_in_campo[6].dadi_in_mano[2].SEI     ; yes                    ;
+; giocatori_in_campo[6].dadi_in_mano[2].SEI_7727       ; giocatori_in_campo[6].dadi_in_mano[2].SEI     ; yes                    ;
+; giocatori_in_campo[6].dadi_in_mano[2].CINQUE_7752    ; giocatori_in_campo[6].dadi_in_mano[2].SEI     ; yes                    ;
+; giocatori_in_campo[6].dadi_in_mano[2].QUATTRO_7777   ; giocatori_in_campo[6].dadi_in_mano[2].SEI     ; yes                    ;
+; giocatori_in_campo[6].dadi_in_mano[2].TRE_7802       ; giocatori_in_campo[6].dadi_in_mano[2].SEI     ; yes                    ;
+; giocatori_in_campo[6].dadi_in_mano[2].DUE_7827       ; giocatori_in_campo[6].dadi_in_mano[2].SEI     ; yes                    ;
+; giocatori_in_campo[6].dadi_in_mano[2].UNO_7852       ; giocatori_in_campo[6].dadi_in_mano[2].SEI     ; yes                    ;
+; giocatori_in_campo[6].dadi_in_mano[1].NONE_7877      ; giocatori_in_campo[6].dadi_in_mano[1].SEI     ; yes                    ;
+; giocatori_in_campo[6].dadi_in_mano[1].SEI_7902       ; giocatori_in_campo[6].dadi_in_mano[1].SEI     ; yes                    ;
+; giocatori_in_campo[6].dadi_in_mano[1].CINQUE_7927    ; giocatori_in_campo[6].dadi_in_mano[1].SEI     ; yes                    ;
+; giocatori_in_campo[6].dadi_in_mano[1].QUATTRO_7952   ; giocatori_in_campo[6].dadi_in_mano[1].SEI     ; yes                    ;
+; giocatori_in_campo[6].dadi_in_mano[1].TRE_7977       ; giocatori_in_campo[6].dadi_in_mano[1].SEI     ; yes                    ;
+; giocatori_in_campo[6].dadi_in_mano[1].DUE_8002       ; giocatori_in_campo[6].dadi_in_mano[1].SEI     ; yes                    ;
+; giocatori_in_campo[6].dadi_in_mano[1].UNO_8027       ; giocatori_in_campo[6].dadi_in_mano[1].SEI     ; yes                    ;
+; giocatori_in_campo[6].dadi_in_mano[0].NONE_8052      ; giocatori_in_campo[6].dadi_in_mano[0].SEI     ; yes                    ;
+; giocatori_in_campo[6].dadi_in_mano[0].SEI_8077       ; giocatori_in_campo[6].dadi_in_mano[0].SEI     ; yes                    ;
+; giocatori_in_campo[6].dadi_in_mano[0].CINQUE_8102    ; giocatori_in_campo[6].dadi_in_mano[0].SEI     ; yes                    ;
+; giocatori_in_campo[6].dadi_in_mano[0].QUATTRO_8127   ; giocatori_in_campo[6].dadi_in_mano[0].SEI     ; yes                    ;
+; giocatori_in_campo[6].dadi_in_mano[0].TRE_8152       ; giocatori_in_campo[6].dadi_in_mano[0].SEI     ; yes                    ;
+; giocatori_in_campo[6].dadi_in_mano[0].DUE_8177       ; giocatori_in_campo[6].dadi_in_mano[0].SEI     ; yes                    ;
+; giocatori_in_campo[6].dadi_in_mano[0].UNO_8202       ; giocatori_in_campo[6].dadi_in_mano[0].SEI     ; yes                    ;
+; giocatori_in_campo[5].numero_dadi_in_mano[0]         ; giocatori_in_campo[5].numero_dadi_in_mano[2]  ; yes                    ;
+; giocatori_in_campo[5].numero_dadi_in_mano[1]         ; giocatori_in_campo[5].numero_dadi_in_mano[2]  ; yes                    ;
+; giocatori_in_campo[5].numero_dadi_in_mano[2]         ; giocatori_in_campo[5].numero_dadi_in_mano[2]  ; yes                    ;
+; giocatori_in_campo[5].dadi_in_mano[4].NONE_8317      ; giocatori_in_campo[5].dadi_in_mano[4].SEI     ; yes                    ;
+; giocatori_in_campo[5].dadi_in_mano[4].SEI_8342       ; giocatori_in_campo[5].dadi_in_mano[4].SEI     ; yes                    ;
+; giocatori_in_campo[5].dadi_in_mano[4].CINQUE_8367    ; giocatori_in_campo[5].dadi_in_mano[4].SEI     ; yes                    ;
+; giocatori_in_campo[5].dadi_in_mano[4].QUATTRO_8392   ; giocatori_in_campo[5].dadi_in_mano[4].SEI     ; yes                    ;
+; giocatori_in_campo[5].dadi_in_mano[4].TRE_8417       ; giocatori_in_campo[5].dadi_in_mano[4].SEI     ; yes                    ;
+; giocatori_in_campo[5].dadi_in_mano[4].DUE_8442       ; giocatori_in_campo[5].dadi_in_mano[4].SEI     ; yes                    ;
+; giocatori_in_campo[5].dadi_in_mano[4].UNO_8467       ; giocatori_in_campo[5].dadi_in_mano[4].SEI     ; yes                    ;
+; giocatori_in_campo[5].dadi_in_mano[3].NONE_8492      ; giocatori_in_campo[5].dadi_in_mano[3].SEI     ; yes                    ;
+; giocatori_in_campo[5].dadi_in_mano[3].SEI_8517       ; giocatori_in_campo[5].dadi_in_mano[3].SEI     ; yes                    ;
+; giocatori_in_campo[5].dadi_in_mano[3].CINQUE_8542    ; giocatori_in_campo[5].dadi_in_mano[3].SEI     ; yes                    ;
+; giocatori_in_campo[5].dadi_in_mano[3].QUATTRO_8567   ; giocatori_in_campo[5].dadi_in_mano[3].SEI     ; yes                    ;
+; giocatori_in_campo[5].dadi_in_mano[3].TRE_8592       ; giocatori_in_campo[5].dadi_in_mano[3].SEI     ; yes                    ;
+; giocatori_in_campo[5].dadi_in_mano[3].DUE_8617       ; giocatori_in_campo[5].dadi_in_mano[3].SEI     ; yes                    ;
+; giocatori_in_campo[5].dadi_in_mano[3].UNO_8642       ; giocatori_in_campo[5].dadi_in_mano[3].SEI     ; yes                    ;
+; giocatori_in_campo[5].dadi_in_mano[2].NONE_8667      ; giocatori_in_campo[5].dadi_in_mano[2].SEI     ; yes                    ;
+; giocatori_in_campo[5].dadi_in_mano[2].SEI_8692       ; giocatori_in_campo[5].dadi_in_mano[2].SEI     ; yes                    ;
+; giocatori_in_campo[5].dadi_in_mano[2].CINQUE_8717    ; giocatori_in_campo[5].dadi_in_mano[2].SEI     ; yes                    ;
+; giocatori_in_campo[5].dadi_in_mano[2].QUATTRO_8742   ; giocatori_in_campo[5].dadi_in_mano[2].SEI     ; yes                    ;
+; giocatori_in_campo[5].dadi_in_mano[2].TRE_8767       ; giocatori_in_campo[5].dadi_in_mano[2].SEI     ; yes                    ;
+; giocatori_in_campo[5].dadi_in_mano[2].DUE_8792       ; giocatori_in_campo[5].dadi_in_mano[2].SEI     ; yes                    ;
+; giocatori_in_campo[5].dadi_in_mano[2].UNO_8817       ; giocatori_in_campo[5].dadi_in_mano[2].SEI     ; yes                    ;
+; Number of user-specified and inferred latches = 347  ;                                               ;                        ;
++------------------------------------------------------+-----------------------------------------------+------------------------+
+Table restricted to first 100 entries. Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 8     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 7     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; numero_per_generazione_casuale_dado[0] ; 5       ;
+; Total number of inverted registers = 1 ;         ;
++----------------------------------------+---------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                              ;
++--------------------+-----------+---------------+----------------------+------------------------+---------------------------------------------------------------+----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered                                                    ; Example Multiplexer Output ;
++--------------------+-----------+---------------+----------------------+------------------------+---------------------------------------------------------------+----------------------------+
+; 6:1                ; 3 bits    ; 12 LEs        ; 3 LEs                ; 9 LEs                  ; |Perudo_Datapath|indice_turno_giocatore[2]                    ;                            ;
+; 8:1                ; 3 bits    ; 15 LEs        ; 15 LEs               ; 0 LEs                  ; |Perudo_Datapath|Mux15                                        ;                            ;
+; 8:1                ; 3 bits    ; 15 LEs        ; 15 LEs               ; 0 LEs                  ; |Perudo_Datapath|Mux10                                        ;                            ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; |Perudo_Datapath|numero_giocatori_in_campo[2]                 ;                            ;
+; 5:1                ; 5 bits    ; 15 LEs        ; 10 LEs               ; 5 LEs                  ; |Perudo_Datapath|giocatori_in_campo[7].dadi_in_mano[0].SEI    ;                            ;
+; 5:1                ; 5 bits    ; 15 LEs        ; 10 LEs               ; 5 LEs                  ; |Perudo_Datapath|giocatori_in_campo[6].dadi_in_mano[1].SEI    ;                            ;
+; 5:1                ; 5 bits    ; 15 LEs        ; 10 LEs               ; 5 LEs                  ; |Perudo_Datapath|giocatori_in_campo[5].dadi_in_mano[0].SEI    ;                            ;
+; 5:1                ; 5 bits    ; 15 LEs        ; 10 LEs               ; 5 LEs                  ; |Perudo_Datapath|giocatori_in_campo[4].dadi_in_mano[2].SEI    ;                            ;
+; 5:1                ; 5 bits    ; 15 LEs        ; 10 LEs               ; 5 LEs                  ; |Perudo_Datapath|giocatori_in_campo[3].dadi_in_mano[4].SEI    ;                            ;
+; 5:1                ; 5 bits    ; 15 LEs        ; 10 LEs               ; 5 LEs                  ; |Perudo_Datapath|giocatori_in_campo[2].dadi_in_mano[2].SEI    ;                            ;
+; 5:1                ; 5 bits    ; 15 LEs        ; 10 LEs               ; 5 LEs                  ; |Perudo_Datapath|giocatori_in_campo[1].dadi_in_mano[2].NONE   ;                            ;
+; 5:1                ; 5 bits    ; 15 LEs        ; 10 LEs               ; 5 LEs                  ; |Perudo_Datapath|giocatori_in_campo[0].dadi_in_mano[3].NONE   ;                            ;
+; 7:1                ; 35 bits   ; 140 LEs       ; 70 LEs               ; 70 LEs                 ; |Perudo_Datapath|giocatori_in_campo[7].dadi_in_mano[2].SEI    ;                            ;
+; 7:1                ; 3 bits    ; 12 LEs        ; 9 LEs                ; 3 LEs                  ; |Perudo_Datapath|giocatori_in_campo[7].numero_dadi_in_mano[0] ;                            ;
+; 7:1                ; 35 bits   ; 140 LEs       ; 70 LEs               ; 70 LEs                 ; |Perudo_Datapath|giocatori_in_campo[6].dadi_in_mano[1].SEI    ;                            ;
+; 7:1                ; 3 bits    ; 12 LEs        ; 9 LEs                ; 3 LEs                  ; |Perudo_Datapath|giocatori_in_campo[6].numero_dadi_in_mano[2] ;                            ;
+; 7:1                ; 35 bits   ; 140 LEs       ; 70 LEs               ; 70 LEs                 ; |Perudo_Datapath|giocatori_in_campo[5].dadi_in_mano[4].DUE    ;                            ;
+; 7:1                ; 3 bits    ; 12 LEs        ; 9 LEs                ; 3 LEs                  ; |Perudo_Datapath|giocatori_in_campo[5].numero_dadi_in_mano[2] ;                            ;
+; 7:1                ; 35 bits   ; 140 LEs       ; 70 LEs               ; 70 LEs                 ; |Perudo_Datapath|giocatori_in_campo[4].dadi_in_mano[0].NONE   ;                            ;
+; 7:1                ; 3 bits    ; 12 LEs        ; 9 LEs                ; 3 LEs                  ; |Perudo_Datapath|giocatori_in_campo[4].numero_dadi_in_mano[1] ;                            ;
+; 7:1                ; 35 bits   ; 140 LEs       ; 70 LEs               ; 70 LEs                 ; |Perudo_Datapath|giocatori_in_campo[3].dadi_in_mano[4].CINQUE ;                            ;
+; 7:1                ; 3 bits    ; 12 LEs        ; 9 LEs                ; 3 LEs                  ; |Perudo_Datapath|giocatori_in_campo[3].numero_dadi_in_mano[0] ;                            ;
+; 7:1                ; 35 bits   ; 140 LEs       ; 70 LEs               ; 70 LEs                 ; |Perudo_Datapath|giocatori_in_campo[2].dadi_in_mano[0].SEI    ;                            ;
+; 7:1                ; 3 bits    ; 12 LEs        ; 9 LEs                ; 3 LEs                  ; |Perudo_Datapath|giocatori_in_campo[2].numero_dadi_in_mano[0] ;                            ;
+; 8:1                ; 35 bits   ; 175 LEs       ; 105 LEs              ; 70 LEs                 ; |Perudo_Datapath|giocatori_in_campo[1].dadi_in_mano[0].SEI    ;                            ;
+; 8:1                ; 3 bits    ; 15 LEs        ; 12 LEs               ; 3 LEs                  ; |Perudo_Datapath|giocatori_in_campo[1].numero_dadi_in_mano[0] ;                            ;
+; 8:1                ; 35 bits   ; 175 LEs       ; 105 LEs              ; 70 LEs                 ; |Perudo_Datapath|giocatori_in_campo[0].dadi_in_mano[4].CINQUE ;                            ;
+; 8:1                ; 3 bits    ; 15 LEs        ; 12 LEs               ; 3 LEs                  ; |Perudo_Datapath|giocatori_in_campo[0].numero_dadi_in_mano[0] ;                            ;
++--------------------+-----------+---------------+----------------------+------------------------+---------------------------------------------------------------+----------------------------+
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Mod0 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 3              ; Untyped                ;
+; LPM_WIDTHD             ; 3              ; Untyped                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_adm ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:06     ;
++----------------+--------------+
+
+
 +-------------------------------+
 ; Analysis & Synthesis Messages ;
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus II 32-bit Analysis & Synthesis
     Info: Version 12.0 Build 178 05/31/2012 SJ Web Edition
-    Info: Processing started: Mon Mar 18 13:49:06 2019
+    Info: Processing started: Tue Mar 19 17:19:08 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Perudo_Datapath -c Perudo_Datapath
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 2 design units, including 0 entities, in source file perudo_package.vhd
@@ -171,11 +429,6 @@ Info (12021): Found 2 design units, including 1 entities, in source file perudo_
 Info (12127): Elaborating entity "Perudo_Datapath" for the top level hierarchy
 Warning (10541): VHDL Signal Declaration warning at Perudo_Datapath.vhd(28): used implicit default value for signal "PARTITA_INIZIATA" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
 Warning (10492): VHDL Process Statement warning at Perudo_Datapath.vhd(87): signal "conteggio_controllato" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at Perudo_Datapath.vhd(94): signal "conteggio_controllato" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at Perudo_Datapath.vhd(99): signal "indice_turno_giocatore" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at Perudo_Datapath.vhd(103): signal "indice_turno_giocatore" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at Perudo_Datapath.vhd(107): signal "indice_turno_giocatore" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at Perudo_Datapath.vhd(107): signal "numero_giocatori_in_campo" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Warning (10492): VHDL Process Statement warning at Perudo_Datapath.vhd(131): signal "numero_per_generazione_casuale_dado" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Warning (10492): VHDL Process Statement warning at Perudo_Datapath.vhd(132): signal "giocatori_in_campo" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Warning (10492): VHDL Process Statement warning at Perudo_Datapath.vhd(134): signal "numero_giocatori_in_campo" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
@@ -558,22 +811,736 @@ Info (10041): Inferred latch for "numero_giocatori_in_campo[0]" at Perudo_Datapa
 Info (10041): Inferred latch for "numero_giocatori_in_campo[1]" at Perudo_Datapath.vhd(114)
 Info (10041): Inferred latch for "numero_giocatori_in_campo[2]" at Perudo_Datapath.vhd(114)
 Info (10041): Inferred latch for "numero_giocatori_in_campo[3]" at Perudo_Datapath.vhd(114)
-Error (10818): Can't infer register for "TURNO_GIOCATORE" at Perudo_Datapath.vhd(84) because it does not hold its value outside the clock edge File: H:/Ingegneria Informatica/Ingegneria Informatica M/Sistemi Digitali/Progetto Perudo/Perudo_FPGA/Simulazione componenti/Perudo_Datapath.vhd Line: 84
-Info (10041): Inferred latch for "TURNO_GIOCATORE" at Perudo_Datapath.vhd(82)
-Error (10818): Can't infer register for "conteggio_controllato" at Perudo_Datapath.vhd(84) because it does not hold its value outside the clock edge File: H:/Ingegneria Informatica/Ingegneria Informatica M/Sistemi Digitali/Progetto Perudo/Perudo_FPGA/Simulazione componenti/Perudo_Datapath.vhd Line: 84
-Info (10041): Inferred latch for "conteggio_controllato" at Perudo_Datapath.vhd(82)
-Error (10818): Can't infer register for "indice_turno_giocatore[0]" at Perudo_Datapath.vhd(84) because it does not hold its value outside the clock edge File: H:/Ingegneria Informatica/Ingegneria Informatica M/Sistemi Digitali/Progetto Perudo/Perudo_FPGA/Simulazione componenti/Perudo_Datapath.vhd Line: 84
-Info (10041): Inferred latch for "indice_turno_giocatore[0]" at Perudo_Datapath.vhd(82)
-Error (10818): Can't infer register for "indice_turno_giocatore[1]" at Perudo_Datapath.vhd(84) because it does not hold its value outside the clock edge File: H:/Ingegneria Informatica/Ingegneria Informatica M/Sistemi Digitali/Progetto Perudo/Perudo_FPGA/Simulazione componenti/Perudo_Datapath.vhd Line: 84
-Info (10041): Inferred latch for "indice_turno_giocatore[1]" at Perudo_Datapath.vhd(82)
-Error (10818): Can't infer register for "indice_turno_giocatore[2]" at Perudo_Datapath.vhd(84) because it does not hold its value outside the clock edge File: H:/Ingegneria Informatica/Ingegneria Informatica M/Sistemi Digitali/Progetto Perudo/Perudo_FPGA/Simulazione componenti/Perudo_Datapath.vhd Line: 84
-Info (10041): Inferred latch for "indice_turno_giocatore[2]" at Perudo_Datapath.vhd(82)
-Error (10822): HDL error at Perudo_Datapath.vhd(87): couldn't implement registers for assignments on this clock edge File: H:/Ingegneria Informatica/Ingegneria Informatica M/Sistemi Digitali/Progetto Perudo/Perudo_FPGA/Simulazione componenti/Perudo_Datapath.vhd Line: 87
-Error (12153): Can't elaborate top-level user hierarchy
-Error: Quartus II 32-bit Analysis & Synthesis was unsuccessful. 7 errors, 42 warnings
-    Error: Peak virtual memory: 394 megabytes
-    Error: Processing ended: Mon Mar 18 13:49:12 2019
-    Error: Elapsed time: 00:00:06
-    Error: Total CPU time (on all processors): 00:00:02
+Info (278001): Inferred 1 megafunctions from design logic
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod0"
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Mod0"
+Info (12133): Instantiated megafunction "lpm_divide:Mod0" with the following parameter:
+    Info (12134): Parameter "LPM_WIDTHN" = "3"
+    Info (12134): Parameter "LPM_WIDTHD" = "3"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_adm.tdf
+    Info (12023): Found entity 1: lpm_divide_adm
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_5kh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_5kh
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_o7f.tdf
+    Info (12023): Found entity 1: alt_u_div_o7f
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_1tc.tdf
+    Info (12023): Found entity 1: add_sub_1tc
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_2tc.tdf
+    Info (12023): Found entity 1: add_sub_2tc
+Warning (13012): Latch giocatori_in_campo[7].numero_dadi_in_mano[0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[7].numero_dadi_in_mano[1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[7].numero_dadi_in_mano[2] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[7].dadi_in_mano[4].NONE_6387 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[7].dadi_in_mano[4].SEI_6412 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[7].dadi_in_mano[4].CINQUE_6437 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[7].dadi_in_mano[4].QUATTRO_6462 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[7].dadi_in_mano[4].TRE_6487 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[7].dadi_in_mano[4].DUE_6512 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[7].dadi_in_mano[4].UNO_6537 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[7].dadi_in_mano[3].NONE_6562 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[7].dadi_in_mano[3].SEI_6587 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[7].dadi_in_mano[3].CINQUE_6612 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[7].dadi_in_mano[3].QUATTRO_6637 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[7].dadi_in_mano[3].TRE_6662 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[7].dadi_in_mano[3].DUE_6687 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[7].dadi_in_mano[3].UNO_6712 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[7].dadi_in_mano[2].NONE_6737 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[7].dadi_in_mano[2].SEI_6762 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[7].dadi_in_mano[2].CINQUE_6787 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[7].dadi_in_mano[2].QUATTRO_6812 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[7].dadi_in_mano[2].TRE_6837 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[7].dadi_in_mano[2].DUE_6862 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[7].dadi_in_mano[2].UNO_6887 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[7].dadi_in_mano[1].NONE_6912 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[7].dadi_in_mano[1].SEI_6937 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[7].dadi_in_mano[1].CINQUE_6962 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[7].dadi_in_mano[1].QUATTRO_6987 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[7].dadi_in_mano[1].TRE_7012 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[7].dadi_in_mano[1].DUE_7037 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[7].dadi_in_mano[1].UNO_7062 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[7].dadi_in_mano[0].NONE_7087 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[7].dadi_in_mano[0].SEI_7112 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[7].dadi_in_mano[0].CINQUE_7137 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[7].dadi_in_mano[0].QUATTRO_7162 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[7].dadi_in_mano[0].TRE_7187 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[7].dadi_in_mano[0].DUE_7212 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[7].dadi_in_mano[0].UNO_7237 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[6].numero_dadi_in_mano[0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[6].numero_dadi_in_mano[1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[6].numero_dadi_in_mano[2] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[6].dadi_in_mano[4].NONE_7352 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[6].dadi_in_mano[4].SEI_7377 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[6].dadi_in_mano[4].CINQUE_7402 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[6].dadi_in_mano[4].QUATTRO_7427 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[6].dadi_in_mano[4].TRE_7452 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[6].dadi_in_mano[4].DUE_7477 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[6].dadi_in_mano[4].UNO_7502 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[6].dadi_in_mano[3].NONE_7527 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[6].dadi_in_mano[3].SEI_7552 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[6].dadi_in_mano[3].CINQUE_7577 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[6].dadi_in_mano[3].QUATTRO_7602 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[6].dadi_in_mano[3].TRE_7627 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[6].dadi_in_mano[3].DUE_7652 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[6].dadi_in_mano[3].UNO_7677 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[6].dadi_in_mano[2].NONE_7702 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[6].dadi_in_mano[2].SEI_7727 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[6].dadi_in_mano[2].CINQUE_7752 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[6].dadi_in_mano[2].QUATTRO_7777 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[6].dadi_in_mano[2].TRE_7802 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[6].dadi_in_mano[2].DUE_7827 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[6].dadi_in_mano[2].UNO_7852 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[6].dadi_in_mano[1].NONE_7877 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[6].dadi_in_mano[1].SEI_7902 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[6].dadi_in_mano[1].CINQUE_7927 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[6].dadi_in_mano[1].QUATTRO_7952 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[6].dadi_in_mano[1].TRE_7977 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[6].dadi_in_mano[1].DUE_8002 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[6].dadi_in_mano[1].UNO_8027 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[6].dadi_in_mano[0].NONE_8052 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[6].dadi_in_mano[0].SEI_8077 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[6].dadi_in_mano[0].CINQUE_8102 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[6].dadi_in_mano[0].QUATTRO_8127 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[6].dadi_in_mano[0].TRE_8152 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[6].dadi_in_mano[0].DUE_8177 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[6].dadi_in_mano[0].UNO_8202 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[5].numero_dadi_in_mano[0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[5].numero_dadi_in_mano[1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[5].numero_dadi_in_mano[2] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[5].dadi_in_mano[4].NONE_8317 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[5].dadi_in_mano[4].SEI_8342 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[5].dadi_in_mano[4].CINQUE_8367 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[5].dadi_in_mano[4].QUATTRO_8392 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[5].dadi_in_mano[4].TRE_8417 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[5].dadi_in_mano[4].DUE_8442 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[5].dadi_in_mano[4].UNO_8467 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[5].dadi_in_mano[3].NONE_8492 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[5].dadi_in_mano[3].SEI_8517 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[5].dadi_in_mano[3].CINQUE_8542 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[5].dadi_in_mano[3].QUATTRO_8567 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[5].dadi_in_mano[3].TRE_8592 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[5].dadi_in_mano[3].DUE_8617 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[5].dadi_in_mano[3].UNO_8642 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[5].dadi_in_mano[2].NONE_8667 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[5].dadi_in_mano[2].SEI_8692 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[5].dadi_in_mano[2].CINQUE_8717 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[5].dadi_in_mano[2].QUATTRO_8742 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[5].dadi_in_mano[2].TRE_8767 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[5].dadi_in_mano[2].DUE_8792 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[5].dadi_in_mano[2].UNO_8817 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[5].dadi_in_mano[1].NONE_8842 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[5].dadi_in_mano[1].SEI_8867 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[5].dadi_in_mano[1].CINQUE_8892 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[5].dadi_in_mano[1].QUATTRO_8917 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[5].dadi_in_mano[1].TRE_8942 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[5].dadi_in_mano[1].DUE_8967 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[5].dadi_in_mano[1].UNO_8992 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[5].dadi_in_mano[0].NONE_9017 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[5].dadi_in_mano[0].SEI_9042 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[5].dadi_in_mano[0].CINQUE_9067 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[5].dadi_in_mano[0].QUATTRO_9092 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[5].dadi_in_mano[0].TRE_9117 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[5].dadi_in_mano[0].DUE_9142 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[5].dadi_in_mano[0].UNO_9167 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[4].numero_dadi_in_mano[0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[4].numero_dadi_in_mano[1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[4].numero_dadi_in_mano[2] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[4].dadi_in_mano[4].NONE_9282 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[4].dadi_in_mano[4].SEI_9307 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[4].dadi_in_mano[4].CINQUE_9332 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[4].dadi_in_mano[4].QUATTRO_9357 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[4].dadi_in_mano[4].TRE_9382 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[4].dadi_in_mano[4].DUE_9407 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[4].dadi_in_mano[4].UNO_9432 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[4].dadi_in_mano[3].NONE_9457 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[4].dadi_in_mano[3].SEI_9482 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[4].dadi_in_mano[3].CINQUE_9507 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[4].dadi_in_mano[3].QUATTRO_9532 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[4].dadi_in_mano[3].TRE_9557 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[4].dadi_in_mano[3].DUE_9582 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[4].dadi_in_mano[3].UNO_9607 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[4].dadi_in_mano[2].NONE_9632 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[4].dadi_in_mano[2].SEI_9657 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[4].dadi_in_mano[2].CINQUE_9682 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[4].dadi_in_mano[2].QUATTRO_9707 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[4].dadi_in_mano[2].TRE_9732 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[4].dadi_in_mano[2].DUE_9757 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[4].dadi_in_mano[2].UNO_9782 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[4].dadi_in_mano[1].NONE_9807 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[4].dadi_in_mano[1].SEI_9832 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[4].dadi_in_mano[1].CINQUE_9857 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[4].dadi_in_mano[1].QUATTRO_9882 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[4].dadi_in_mano[1].TRE_9907 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[4].dadi_in_mano[1].DUE_9932 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[4].dadi_in_mano[1].UNO_9957 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[4].dadi_in_mano[0].NONE_9982 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[4].dadi_in_mano[0].SEI_10007 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[4].dadi_in_mano[0].CINQUE_10032 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[4].dadi_in_mano[0].QUATTRO_10057 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[4].dadi_in_mano[0].TRE_10082 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[4].dadi_in_mano[0].DUE_10107 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[4].dadi_in_mano[0].UNO_10132 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[3].numero_dadi_in_mano[0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[3].numero_dadi_in_mano[1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[3].numero_dadi_in_mano[2] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[3].dadi_in_mano[4].NONE_10247 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[3].dadi_in_mano[4].SEI_10272 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[3].dadi_in_mano[4].CINQUE_10297 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[3].dadi_in_mano[4].QUATTRO_10322 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[3].dadi_in_mano[4].TRE_10347 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[3].dadi_in_mano[4].DUE_10372 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[3].dadi_in_mano[4].UNO_10397 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[3].dadi_in_mano[3].NONE_10422 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[3].dadi_in_mano[3].SEI_10447 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[3].dadi_in_mano[3].CINQUE_10472 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[3].dadi_in_mano[3].QUATTRO_10497 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[3].dadi_in_mano[3].TRE_10522 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[3].dadi_in_mano[3].DUE_10547 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[3].dadi_in_mano[3].UNO_10572 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[3].dadi_in_mano[2].NONE_10597 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[3].dadi_in_mano[2].SEI_10622 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[3].dadi_in_mano[2].CINQUE_10647 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[3].dadi_in_mano[2].QUATTRO_10672 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[3].dadi_in_mano[2].TRE_10697 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[3].dadi_in_mano[2].DUE_10722 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[3].dadi_in_mano[2].UNO_10747 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[3].dadi_in_mano[1].NONE_10772 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[3].dadi_in_mano[1].SEI_10797 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[3].dadi_in_mano[1].CINQUE_10822 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[3].dadi_in_mano[1].QUATTRO_10847 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[3].dadi_in_mano[1].TRE_10872 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[3].dadi_in_mano[1].DUE_10897 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[3].dadi_in_mano[1].UNO_10922 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[3].dadi_in_mano[0].NONE_10947 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[3].dadi_in_mano[0].SEI_10972 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[3].dadi_in_mano[0].CINQUE_10997 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[3].dadi_in_mano[0].QUATTRO_11022 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[3].dadi_in_mano[0].TRE_11047 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[3].dadi_in_mano[0].DUE_11072 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[3].dadi_in_mano[0].UNO_11097 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[2].numero_dadi_in_mano[0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[2].numero_dadi_in_mano[1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[2].numero_dadi_in_mano[2] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[2].dadi_in_mano[4].NONE_11212 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[2].dadi_in_mano[4].SEI_11237 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[2].dadi_in_mano[4].CINQUE_11262 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[2].dadi_in_mano[4].QUATTRO_11287 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[2].dadi_in_mano[4].TRE_11312 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[2].dadi_in_mano[4].DUE_11337 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[2].dadi_in_mano[4].UNO_11362 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[2].dadi_in_mano[3].NONE_11387 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[2].dadi_in_mano[3].SEI_11412 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[2].dadi_in_mano[3].CINQUE_11437 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[2].dadi_in_mano[3].QUATTRO_11462 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[2].dadi_in_mano[3].TRE_11487 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[2].dadi_in_mano[3].DUE_11512 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[2].dadi_in_mano[3].UNO_11537 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[2].dadi_in_mano[2].NONE_11562 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[2].dadi_in_mano[2].SEI_11587 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[2].dadi_in_mano[2].CINQUE_11612 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[2].dadi_in_mano[2].QUATTRO_11637 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[2].dadi_in_mano[2].TRE_11662 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[2].dadi_in_mano[2].DUE_11687 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[2].dadi_in_mano[2].UNO_11712 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[2].dadi_in_mano[1].NONE_11737 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[2].dadi_in_mano[1].SEI_11762 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[2].dadi_in_mano[1].CINQUE_11787 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[2].dadi_in_mano[1].QUATTRO_11812 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[2].dadi_in_mano[1].TRE_11837 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[2].dadi_in_mano[1].DUE_11862 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[2].dadi_in_mano[1].UNO_11887 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[2].dadi_in_mano[0].NONE_11912 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[2].dadi_in_mano[0].SEI_11937 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[2].dadi_in_mano[0].CINQUE_11962 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[2].dadi_in_mano[0].QUATTRO_11987 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[2].dadi_in_mano[0].TRE_12012 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[2].dadi_in_mano[0].DUE_12037 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[2].dadi_in_mano[0].UNO_12062 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ELIMINA_DADO
+Warning (13012): Latch giocatori_in_campo[1].numero_dadi_in_mano[0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RESET_N
+Warning (13012): Latch giocatori_in_campo[1].numero_dadi_in_mano[1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RESET_N
+Warning (13012): Latch giocatori_in_campo[1].numero_dadi_in_mano[2] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RESET_N
+Warning (13012): Latch giocatori_in_campo[1].dadi_in_mano[4].NONE_12193 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RESET_N
+Warning (13012): Latch giocatori_in_campo[1].dadi_in_mano[4].SEI_12222 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RESET_N
+Warning (13012): Latch giocatori_in_campo[1].dadi_in_mano[4].CINQUE_12251 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RESET_N
+Warning (13012): Latch giocatori_in_campo[1].dadi_in_mano[4].QUATTRO_12280 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RESET_N
+Warning (13012): Latch giocatori_in_campo[1].dadi_in_mano[4].TRE_12309 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RESET_N
+Warning (13012): Latch giocatori_in_campo[1].dadi_in_mano[4].DUE_12338 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RESET_N
+Warning (13012): Latch giocatori_in_campo[1].dadi_in_mano[4].UNO_12367 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RESET_N
+Warning (13012): Latch giocatori_in_campo[1].dadi_in_mano[3].NONE_12396 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RESET_N
+Warning (13012): Latch giocatori_in_campo[1].dadi_in_mano[3].SEI_12425 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RESET_N
+Warning (13012): Latch giocatori_in_campo[1].dadi_in_mano[3].CINQUE_12454 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RESET_N
+Warning (13012): Latch giocatori_in_campo[1].dadi_in_mano[3].QUATTRO_12483 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RESET_N
+Warning (13012): Latch giocatori_in_campo[1].dadi_in_mano[3].TRE_12512 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RESET_N
+Warning (13012): Latch giocatori_in_campo[1].dadi_in_mano[3].DUE_12541 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RESET_N
+Warning (13012): Latch giocatori_in_campo[1].dadi_in_mano[3].UNO_12570 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RESET_N
+Warning (13012): Latch giocatori_in_campo[1].dadi_in_mano[2].NONE_12599 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RESET_N
+Warning (13012): Latch giocatori_in_campo[1].dadi_in_mano[2].SEI_12628 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RESET_N
+Warning (13012): Latch giocatori_in_campo[1].dadi_in_mano[2].CINQUE_12657 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RESET_N
+Warning (13012): Latch giocatori_in_campo[1].dadi_in_mano[2].QUATTRO_12686 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RESET_N
+Warning (13012): Latch giocatori_in_campo[1].dadi_in_mano[2].TRE_12715 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RESET_N
+Warning (13012): Latch giocatori_in_campo[1].dadi_in_mano[2].DUE_12744 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RESET_N
+Warning (13012): Latch giocatori_in_campo[1].dadi_in_mano[2].UNO_12773 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RESET_N
+Warning (13012): Latch giocatori_in_campo[1].dadi_in_mano[1].NONE_12802 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RESET_N
+Warning (13012): Latch giocatori_in_campo[1].dadi_in_mano[1].SEI_12831 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RESET_N
+Warning (13012): Latch giocatori_in_campo[1].dadi_in_mano[1].CINQUE_12860 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RESET_N
+Warning (13012): Latch giocatori_in_campo[1].dadi_in_mano[1].QUATTRO_12889 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RESET_N
+Warning (13012): Latch giocatori_in_campo[1].dadi_in_mano[1].TRE_12918 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RESET_N
+Warning (13012): Latch giocatori_in_campo[1].dadi_in_mano[1].DUE_12947 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RESET_N
+Warning (13012): Latch giocatori_in_campo[1].dadi_in_mano[1].UNO_12976 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RESET_N
+Warning (13012): Latch giocatori_in_campo[1].dadi_in_mano[0].NONE_13005 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RESET_N
+Warning (13012): Latch giocatori_in_campo[1].dadi_in_mano[0].SEI_13034 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RESET_N
+Warning (13012): Latch giocatori_in_campo[1].dadi_in_mano[0].CINQUE_13063 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RESET_N
+Warning (13012): Latch giocatori_in_campo[1].dadi_in_mano[0].QUATTRO_13092 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RESET_N
+Warning (13012): Latch giocatori_in_campo[1].dadi_in_mano[0].TRE_13121 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RESET_N
+Warning (13012): Latch giocatori_in_campo[1].dadi_in_mano[0].DUE_13150 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RESET_N
+Warning (13012): Latch giocatori_in_campo[1].dadi_in_mano[0].UNO_13179 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RESET_N
+Warning (13012): Latch giocatori_in_campo[0].numero_dadi_in_mano[0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RESET_N
+Warning (13012): Latch giocatori_in_campo[0].numero_dadi_in_mano[1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RESET_N
+Warning (13012): Latch giocatori_in_campo[0].numero_dadi_in_mano[2] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RESET_N
+Warning (13012): Latch giocatori_in_campo[0].dadi_in_mano[4].NONE_13310 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RESET_N
+Warning (13012): Latch giocatori_in_campo[0].dadi_in_mano[4].SEI_13339 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RESET_N
+Warning (13012): Latch giocatori_in_campo[0].dadi_in_mano[4].CINQUE_13368 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RESET_N
+Warning (13012): Latch giocatori_in_campo[0].dadi_in_mano[4].QUATTRO_13397 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RESET_N
+Warning (13012): Latch giocatori_in_campo[0].dadi_in_mano[4].TRE_13426 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RESET_N
+Warning (13012): Latch giocatori_in_campo[0].dadi_in_mano[4].DUE_13455 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RESET_N
+Warning (13012): Latch giocatori_in_campo[0].dadi_in_mano[4].UNO_13484 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RESET_N
+Warning (13012): Latch giocatori_in_campo[0].dadi_in_mano[3].NONE_13513 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RESET_N
+Warning (13012): Latch giocatori_in_campo[0].dadi_in_mano[3].SEI_13542 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RESET_N
+Warning (13012): Latch giocatori_in_campo[0].dadi_in_mano[3].CINQUE_13571 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RESET_N
+Warning (13012): Latch giocatori_in_campo[0].dadi_in_mano[3].QUATTRO_13600 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RESET_N
+Warning (13012): Latch giocatori_in_campo[0].dadi_in_mano[3].TRE_13629 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RESET_N
+Warning (13012): Latch giocatori_in_campo[0].dadi_in_mano[3].DUE_13658 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RESET_N
+Warning (13012): Latch giocatori_in_campo[0].dadi_in_mano[3].UNO_13687 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RESET_N
+Warning (13012): Latch giocatori_in_campo[0].dadi_in_mano[2].NONE_13716 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RESET_N
+Warning (13012): Latch giocatori_in_campo[0].dadi_in_mano[2].SEI_13745 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RESET_N
+Warning (13012): Latch giocatori_in_campo[0].dadi_in_mano[2].CINQUE_13774 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RESET_N
+Warning (13012): Latch giocatori_in_campo[0].dadi_in_mano[2].QUATTRO_13803 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RESET_N
+Warning (13012): Latch giocatori_in_campo[0].dadi_in_mano[2].TRE_13832 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RESET_N
+Warning (13012): Latch giocatori_in_campo[0].dadi_in_mano[2].DUE_13861 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RESET_N
+Warning (13012): Latch giocatori_in_campo[0].dadi_in_mano[2].UNO_13890 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RESET_N
+Warning (13012): Latch giocatori_in_campo[0].dadi_in_mano[1].NONE_13919 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RESET_N
+Warning (13012): Latch giocatori_in_campo[0].dadi_in_mano[1].SEI_13948 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RESET_N
+Warning (13012): Latch giocatori_in_campo[0].dadi_in_mano[1].CINQUE_13977 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RESET_N
+Warning (13012): Latch giocatori_in_campo[0].dadi_in_mano[1].QUATTRO_14006 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RESET_N
+Warning (13012): Latch giocatori_in_campo[0].dadi_in_mano[1].TRE_14035 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RESET_N
+Warning (13012): Latch giocatori_in_campo[0].dadi_in_mano[1].DUE_14064 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RESET_N
+Warning (13012): Latch giocatori_in_campo[0].dadi_in_mano[1].UNO_14093 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RESET_N
+Warning (13012): Latch giocatori_in_campo[0].dadi_in_mano[0].NONE_14122 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RESET_N
+Warning (13012): Latch giocatori_in_campo[0].dadi_in_mano[0].SEI_14151 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RESET_N
+Warning (13012): Latch giocatori_in_campo[0].dadi_in_mano[0].CINQUE_14180 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RESET_N
+Warning (13012): Latch giocatori_in_campo[0].dadi_in_mano[0].QUATTRO_14209 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RESET_N
+Warning (13012): Latch giocatori_in_campo[0].dadi_in_mano[0].TRE_14238 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RESET_N
+Warning (13012): Latch giocatori_in_campo[0].dadi_in_mano[0].DUE_14267 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RESET_N
+Warning (13012): Latch giocatori_in_campo[0].dadi_in_mano[0].UNO_14296 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RESET_N
+Warning (13012): Latch numero_giocatori_in_campo[1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal numero_giocatori_in_campo[1]
+Warning (13012): Latch numero_giocatori_in_campo[2] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal numero_giocatori_in_campo[2]
+Warning (13012): Latch numero_giocatori_in_campo[3] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal numero_giocatori_in_campo[3]
+Warning (13012): Latch scommessa_corrente.ricorrenza[0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESEGUI_SCOMMESSA_COM
+Warning (13012): Latch scommessa_corrente.ricorrenza[1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESEGUI_SCOMMESSA_COM
+Warning (13012): Latch scommessa_corrente.ricorrenza[2] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESEGUI_SCOMMESSA_COM
+Warning (13012): Latch scommessa_corrente.ricorrenza[3] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESEGUI_SCOMMESSA_COM
+Warning (13012): Latch scommessa_corrente.ricorrenza[4] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESEGUI_SCOMMESSA_COM
+Warning (13012): Latch scommessa_corrente.ricorrenza[5] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESEGUI_SCOMMESSA_COM
+Warning (13012): Latch scommessa_corrente.ricorrenza[6] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESEGUI_SCOMMESSA_COM
+Warning (13012): Latch scommessa_corrente.ricorrenza[7] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESEGUI_SCOMMESSA_COM
+Warning (13012): Latch scommessa_corrente.ricorrenza[8] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESEGUI_SCOMMESSA_COM
+Warning (13012): Latch scommessa_corrente.ricorrenza[9] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESEGUI_SCOMMESSA_COM
+Warning (13012): Latch scommessa_corrente.ricorrenza[10] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESEGUI_SCOMMESSA_COM
+Warning (13012): Latch scommessa_corrente.ricorrenza[11] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESEGUI_SCOMMESSA_COM
+Warning (13012): Latch scommessa_corrente.ricorrenza[12] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESEGUI_SCOMMESSA_COM
+Warning (13012): Latch scommessa_corrente.ricorrenza[13] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESEGUI_SCOMMESSA_COM
+Warning (13012): Latch scommessa_corrente.ricorrenza[14] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESEGUI_SCOMMESSA_COM
+Warning (13012): Latch scommessa_corrente.ricorrenza[15] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESEGUI_SCOMMESSA_COM
+Warning (13012): Latch scommessa_corrente.ricorrenza[16] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESEGUI_SCOMMESSA_COM
+Warning (13012): Latch scommessa_corrente.ricorrenza[17] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESEGUI_SCOMMESSA_COM
+Warning (13012): Latch scommessa_corrente.ricorrenza[18] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESEGUI_SCOMMESSA_COM
+Warning (13012): Latch scommessa_corrente.ricorrenza[19] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESEGUI_SCOMMESSA_COM
+Warning (13012): Latch scommessa_corrente.ricorrenza[20] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESEGUI_SCOMMESSA_COM
+Warning (13012): Latch scommessa_corrente.ricorrenza[21] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESEGUI_SCOMMESSA_COM
+Warning (13012): Latch scommessa_corrente.ricorrenza[22] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESEGUI_SCOMMESSA_COM
+Warning (13012): Latch scommessa_corrente.ricorrenza[23] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESEGUI_SCOMMESSA_COM
+Warning (13012): Latch scommessa_corrente.ricorrenza[24] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESEGUI_SCOMMESSA_COM
+Warning (13012): Latch scommessa_corrente.ricorrenza[25] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESEGUI_SCOMMESSA_COM
+Warning (13012): Latch scommessa_corrente.ricorrenza[26] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESEGUI_SCOMMESSA_COM
+Warning (13012): Latch scommessa_corrente.ricorrenza[27] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESEGUI_SCOMMESSA_COM
+Warning (13012): Latch scommessa_corrente.ricorrenza[28] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESEGUI_SCOMMESSA_COM
+Warning (13012): Latch scommessa_corrente.ricorrenza[29] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESEGUI_SCOMMESSA_COM
+Warning (13012): Latch scommessa_corrente.ricorrenza[30] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESEGUI_SCOMMESSA_COM
+Warning (13012): Latch scommessa_corrente.ricorrenza[31] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESEGUI_SCOMMESSA_COM
+Warning (13012): Latch scommessa_corrente.dado_scommesso.NONE_6225 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESEGUI_SCOMMESSA_COM
+Warning (13012): Latch scommessa_corrente.dado_scommesso.SEI_6231 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESEGUI_SCOMMESSA_COM
+Warning (13012): Latch scommessa_corrente.dado_scommesso.CINQUE_6237 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESEGUI_SCOMMESSA_COM
+Warning (13012): Latch scommessa_corrente.dado_scommesso.QUATTRO_6243 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESEGUI_SCOMMESSA_COM
+Warning (13012): Latch scommessa_corrente.dado_scommesso.TRE_6249 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESEGUI_SCOMMESSA_COM
+Warning (13012): Latch scommessa_corrente.dado_scommesso.DUE_6255 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESEGUI_SCOMMESSA_COM
+Warning (13012): Latch scommessa_corrente.dado_scommesso.UNO_6261 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESEGUI_SCOMMESSA_COM
+Info (13000): Registers with preset signals will power-up high
+Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "PARTITA_INIZIATA" is stuck at GND
+    Warning (13410): Pin "FINE_PARTITA" is stuck at VCC
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 3 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "INIZIA_PARTITA"
+    Warning (15610): No output dependent on input pin "DAMMI_GIOCATORI_IN_CAMPO"
+    Warning (15610): No output dependent on input pin "DAMMI_SCOMMESSA_CORRENTE"
+Info (21057): Implemented 1577 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 89 input pins
+    Info (21059): Implemented 350 output pins
+    Info (21061): Implemented 1138 logic cells
+Info: Quartus II 32-bit Analysis & Synthesis was successful. 0 errors, 736 warnings
+    Info: Peak virtual memory: 404 megabytes
+    Info: Processing ended: Tue Mar 19 17:19:17 2019
+    Info: Elapsed time: 00:00:09
+    Info: Total CPU time (on all processors): 00:00:07
 
 

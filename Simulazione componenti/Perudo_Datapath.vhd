@@ -90,7 +90,7 @@ begin
 				else
 					indice_turno_giocatore <= indice_turno_giocatore + 1;
 				end if;
-			elsif(PROSSIMO_TURNO = '1') then
+			elsif(rising_edge(CLOCK) and PROSSIMO_TURNO = '1') then
 				if(conteggio_controllato = '0') then
 					conteggio_controllato <= '1';
 				end if;
