@@ -25,7 +25,7 @@ entity Perudo_Datapath is
 			
 			TURNO_GIOCATORE							: 	out	std_logic;
 			
-			PARTITA_INIZIATA							: 	out	std_logic;
+			-- PARTITA_INIZIATA							: 	out	std_logic;
 			
 			-- Connections for the View
 			INIZIA_PARTITA								: 	in		std_logic;
@@ -65,7 +65,7 @@ architecture RTL of Perudo_Datapath is
 	
 begin
 	
-	ContatoreNumeroCasualeDado_RTL : process(CLOCK,RESET_N)
+	ContatoreNumeroCasualeDado_RTL : process(CLOCK,RESET_N, numero_per_generazione_casuale_dado)
 	begin
 			-- Contatore per generazione numero casuale per scelta dei dadi
 		if(RESET_N = '0') then
@@ -79,39 +79,43 @@ begin
 		end if;
 	end process;	
 	
-	GestoreTurnoPartita_RTL: process(PROSSIMO_TURNO, CLOCK, RESET_N)
+	GestoreTurnoPartita_RTL: process(PROSSIMO_TURNO, CLOCK, RESET_N, indice_turno_giocatore, conteggio_controllato, numero_giocatori_in_campo)
 	begin
 	      if(RESET_N = '0') then
 				indice_turno_giocatore <= 0;
 				conteggio_controllato <= '0';
-			elsif(rising_edge(CLOCK) and conteggio_controllato = '0') then
-				if(indice_turno_giocatore = (numero_giocatori_in_campo-1)) then
-					indice_turno_giocatore <= 0;
-				else
-					indice_turno_giocatore <= indice_turno_giocatore + 1;
-				end if;
-			elsif(rising_edge(CLOCK) and PROSSIMO_TURNO = '1') then
+			elsif(rising_edge(CLOCK)) then
 				if(conteggio_controllato = '0') then
-					conteggio_controllato <= '1';
-				end if;
-				-- Dopo essere inizializzata la partita può iniziare, stabilendo successivamente il turno dei giocatori in maniera casuale.
-					-- Così facendo spengo anche il contatore
-				if(indice_turno_giocatore = 0) then
-						-- Inizia utente
-					TURNO_GIOCATORE <= '1';
-					
-					indice_turno_giocatore <= indice_turno_giocatore + 1;
-				else
-					TURNO_GIOCATORE <= '0';
-					
 					if(indice_turno_giocatore = (numero_giocatori_in_campo-1)) then
 						indice_turno_giocatore <= 0;
+					else
+						indice_turno_giocatore <= indice_turno_giocatore + 1;
+					end if;
+				end if;
+			elsif(rising_edge(CLOCK)) then
+				if (PROSSIMO_TURNO = '1') then
+					if(conteggio_controllato = '0') then
+						conteggio_controllato <= '1';
+					end if;
+					-- Dopo essere inizializzata la partita può iniziare, stabilendo successivamente il turno dei giocatori in maniera casuale.
+						-- Così facendo spengo anche il contatore
+					if(indice_turno_giocatore = 0) then
+							-- Inizia utente
+						TURNO_GIOCATORE <= '1';
+					
+						indice_turno_giocatore <= indice_turno_giocatore + 1;
+					else
+						TURNO_GIOCATORE <= '0';
+					
+						if(indice_turno_giocatore = (numero_giocatori_in_campo-1)) then
+							indice_turno_giocatore <= 0;
+						end if;
 					end if;
 				end if;
 			end if;
 	end process;
 	
-	GestoreGiocatoriInCampo_RTL : process(NUOVO_GIOCATORE, ELIMINA_GIOCATORE, ELIMINA_DADO, RESET_N)
+	GestoreGiocatoriInCampo_RTL : process(NUOVO_GIOCATORE, ELIMINA_GIOCATORE, ELIMINA_DADO, RESET_N, numero_giocatori_in_campo, giocatori_in_campo, indice_turno_giocatore)
 	begin
 			-- All'avvio del sistema la partita è composta di default da due giocatore (UTENTE, COM)
 		
@@ -180,7 +184,7 @@ begin
 		
 	end process;
 	
-	EseguiScommessa : process(ESEGUI_SCOMMESSA_COM, ESEGUI_SCOMMESSA_G0, RESET_N)
+	EseguiScommessa : process(ESEGUI_SCOMMESSA_COM, ESEGUI_SCOMMESSA_G0, RESET_N, scommessa_corrente)
 	begin
 		if(RESET_N = '0') then
 			scommessa_corrente.dado_scommesso <= NONE;
@@ -198,14 +202,14 @@ begin
 		end if;
 	end process;
 	
-	DammiGiocatoriInCampo : process(DAMMI_GIOCATORI_IN_CAMPO) 	
+	DammiGiocatoriInCampo : process(DAMMI_GIOCATORI_IN_CAMPO, giocatori_in_campo, numero_giocatori_in_campo) 	
 	begin
 			-- Restituisco giocatori in campo e relativo numero
 		GIOCATORI_IN_CAMPO_OUT <= giocatori_in_campo;
 		NUMERO_GIOCATORI_IN_CAMPO_OUT <= numero_giocatori_in_campo;
 	end process;
 	
-	DammiScommessaCorrente : process(DAMMI_SCOMMESSA_CORRENTE)
+	DammiScommessaCorrente : process(DAMMI_SCOMMESSA_CORRENTE, scommessa_corrente)
 	begin
 			-- Restituisco scommessa corrente
 		SCOMMESSA_CORRENTE_OUT <= scommessa_corrente;
