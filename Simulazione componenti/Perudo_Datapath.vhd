@@ -65,7 +65,7 @@ architecture RTL of Perudo_Datapath is
 	
 begin
 	
-	ContatoreNumeroCasualeDado_RTL : process(CLOCK,RESET_N, numero_per_generazione_casuale_dado)
+	ContatoreNumeroCasualeDado_RTL : process(CLOCK,RESET_N)
 	begin
 			-- Contatore per generazione numero casuale per scelta dei dadi
 		if(RESET_N = '0') then
@@ -79,7 +79,7 @@ begin
 		end if;
 	end process;	
 	
-	GestoreTurnoPartita_RTL: process(PROSSIMO_TURNO, CLOCK, RESET_N, indice_turno_giocatore, conteggio_controllato, numero_giocatori_in_campo)
+	GestoreTurnoPartita_RTL: process(PROSSIMO_TURNO, CLOCK, RESET_N)
 	begin
 	      if(RESET_N = '0') then
 				indice_turno_giocatore <= 0;
@@ -115,7 +115,7 @@ begin
 			end if;
 	end process;
 	
-	GestoreGiocatoriInCampo_RTL : process(NUOVO_GIOCATORE, ELIMINA_GIOCATORE, ELIMINA_DADO, RESET_N, numero_giocatori_in_campo, giocatori_in_campo, indice_turno_giocatore)
+	GestoreGiocatoriInCampo_RTL : process(NUOVO_GIOCATORE, ELIMINA_GIOCATORE, ELIMINA_DADO, RESET_N)
 	begin
 			-- All'avvio del sistema la partita è composta di default da due giocatore (UTENTE, COM)
 		

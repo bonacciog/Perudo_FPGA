@@ -1,5 +1,5 @@
 Flow report for Perudo_Datapath
-Thu Mar 21 13:10:35 2019
+Wed Mar 27 16:01:45 2019
 Quartus II 32-bit Version 12.0 Build 178 05/31/2012 SJ Web Edition
 
 
@@ -38,7 +38,7 @@ applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +------------------------------------+------------------------------------------+
-; Flow Status                        ; Successful - Thu Mar 21 13:10:35 2019    ;
+; Flow Status                        ; Successful - Wed Mar 27 16:01:44 2019    ;
 ; Quartus II 32-bit Version          ; 12.0 Build 178 05/31/2012 SJ Web Edition ;
 ; Revision Name                      ; Perudo_Datapath                          ;
 ; Top-level Entity Name              ; Perudo_Datapath                          ;
@@ -64,7 +64,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 03/21/2019 13:10:27 ;
+; Start date & time ; 03/27/2019 16:01:31 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; Perudo_Datapath     ;
 +-------------------+---------------------+
@@ -75,7 +75,7 @@ applicable agreement for further details.
 +-------------------------------------+---------------------------------+---------------+-------------+------------+
 ; Assignment Name                     ; Value                           ; Default Value ; Entity Name ; Section Id ;
 +-------------------------------------+---------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 229521375699293.155317022709172 ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID               ; 229521375699293.155369889006284 ; --            ; --          ; --         ;
 ; PARTITION_COLOR                     ; 16764057                        ; --            ; --          ; Top        ;
 ; PARTITION_FITTER_PRESERVATION_LEVEL ; PLACEMENT_AND_ROUTING           ; --            ; --          ; Top        ;
 ; PARTITION_NETLIST_TYPE              ; SOURCE                          ; --            ; --          ; Top        ;
@@ -87,8 +87,8 @@ applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:08     ; 1.0                     ; 410 MB              ; 00:00:07                           ;
-; Total                ; 00:00:08     ; --                      ; --                  ; 00:00:07                           ;
+; Analysis & Synthesis ; 00:00:13     ; 1.0                     ; 404 MB              ; 00:00:10                           ;
+; Total                ; 00:00:13     ; --                      ; --                  ; 00:00:10                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
