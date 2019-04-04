@@ -34,6 +34,7 @@ entity Perudo_Controller is
 			PARTITA_INIZIATA							:	in		std_logic;
 			TURNO_GIOCATORE							:	in		std_logic;
 			DUBITO										:	in		std_logic;
+			FINE_PARTITA								:	in		std_logic;
 			
 			-- Connections with Perudo_View
 			
@@ -48,10 +49,15 @@ entity Perudo_Controller is
 end entity;
 
 architecture RTL of Perudo_Controller is
+	------------------------
+	--CONSTANT OR VARIABLES
+	------------------------
+	type     internal_state_type is (IDLE, INIT, TURN_PLAYER, TURN_FPGA, CHECK);
+	signal   internal_state      : internal_state_type;
+	------------------------
 begin
 	
-	process (CLOCK, RESET_N)
-		--variable first_time        : std_logic;
+	Main_Controller : process (CLOCK, RESET_N)
 		
 	begin
 		if (RESET_N = '0') then
@@ -82,6 +88,11 @@ begin
 			PROSSIMO_TURNO		 			<= '0';
 			ELIMINA_DADO					<= '0';
 			REDRAW							<= '0';
+			
+			------------------------------------------------
+			-- DA MODIFICARE INSERENDO CONTROLLI IN BASE 
+			-- ALLA VARIABILE internal_state
+			------------------------------------------------
 			
 			if (PARTITA_INIZIATA = '0') then								--INIZIALIZZAZIONE DEL TAVOLO DEI GIOCATORI
 			
@@ -134,5 +145,93 @@ begin
 			
 		end if;
 	end process;
+	
+	Update_State_Controller : process(CLOCK, RESET_N)
+	begin
+	
+		if (RESET_N = '0') then
 		
+			row_check_state       <= INIT;
+
+			
+		elsif rising_edge(CLOCK) then
+			--Put some variables at 0 if necessary (Ex. REMOVE_ROW        <= '0'))
+
+			case (internal_state) is
+			
+				when INIT =>
+					--Initializing state
+					if (PARTITA_INIZIATA = '1' && TURNO_GIOCATORE = '1') then
+						internal_state   <= TURN_PLAYER;
+						--Do something else if needed
+					end if;
+					if (PARTITA_INIZIATA = '1' && TURNO_GIOCATORE = '0') then
+						internal_state   <= TURN_FPGA;
+						--Do something else if needed
+					end if;
+					
+				when TURN_PLAYER =>
+					if (BUTTON_ESEGUI_SCOMMESSA = '1') then
+						internal_state   <= TURN_FPGA;
+						--Do something else if needed
+					end if;
+					if (DUBITO == '1') then
+						internal_state <= CHECK;
+						--Do something else if needed
+					end if;
+					
+				when TURN_FPGA =>
+					if (TURNO_GIOCATORE = '1') then
+						internal_state   <= TURN_PLAYER;
+						--Do something else if needed
+					end if;
+					if (DUBITO == '1') then
+						internal_state <= CHECK;
+						--Do something else if needed
+					end if;
+				
+				when CHECK =>
+					if (PROSSIMO_TURNO = '1' TURNO_GIOCATORE = '1') then
+						internal_state   <= TURN_PLAYER;
+						--Do something else if needed
+					end if;
+					if (PROSSIMO_TURNO = '1' TURNO_GIOCATORE = '0') then
+						internal_state   <= TURN_FPGA;
+						--Do something else if needed
+					end if;
+					if (FINE_PARTITA == '1') then
+						internal_state <= IDLE;
+						--Do something else if needed
+					end if;
+				
+			end case;
+		end if;
+	end process;
+		
+	Turn_FPGA_Controller : process(CLOCK, RESET_N)
+	begin
+		---------------
+		--IMPLEMENTARE
+		---------------
+		-- Utilizzare una variabile di stato per sapere il turno del giocatore
+		-- ¿Realizzare qui l'algoritmo?
+		
+		if (RESET_N = '0') then
+		
+			
+
+			
+		elsif rising_edge(CLOCK) then
+			--Put some variables at 0 if necessary
+
+			case (/* Variabile di stato per il turno_FPGA */) is
+			
+				/*
+				 ...
+				 ...
+				*/
+				
+			end case;
+		end if;
+	end process;
 end architecture;
