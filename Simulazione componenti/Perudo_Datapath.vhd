@@ -57,7 +57,7 @@ architecture RTL of Perudo_Datapath is
 	signal indice_turno_giocatore											: integer range 0 to MAX_GIOCATORI-1;
 	
 		-- Segnale che indica lo stato del funzionamento del contatore turno, 0 se ad ogni clock (per random), 1 se conteggio in caso di turno successivo
-	signal conteggio_controllato											: std_logic;
+	--signal conteggio_controllato											: std_logic;
 	
 		-- Struttura dati scommessa
 	signal scommessa_corrente												: scommessa_type;
@@ -80,10 +80,11 @@ begin
 	end process;	
 	
 	GestoreTurnoPartita_RTL: process(PROSSIMO_TURNO, CLOCK, RESET_N)
+	variable conteggio_controllato											: std_logic;
 	begin
 	      if(RESET_N = '0') then
 				indice_turno_giocatore <= 0;
-				conteggio_controllato <= '0';
+				conteggio_controllato := '0';
 			elsif(rising_edge(CLOCK)) then
 				if(conteggio_controllato = '0') then
 					if(indice_turno_giocatore = (numero_giocatori_in_campo-1)) then
@@ -95,7 +96,7 @@ begin
 			elsif(rising_edge(CLOCK)) then
 				if (PROSSIMO_TURNO = '1') then
 					if(conteggio_controllato = '0') then
-						conteggio_controllato <= '1';
+						conteggio_controllato := '1';
 					end if;
 					-- Dopo essere inizializzata la partita può iniziare, stabilendo successivamente il turno dei giocatori in maniera casuale.
 						-- Così facendo spengo anche il contatore
@@ -115,7 +116,7 @@ begin
 			end if;
 	end process;
 	
-	GestoreGiocatoriInCampo_RTL : process(NUOVO_GIOCATORE, ELIMINA_GIOCATORE, ELIMINA_DADO, RESET_N)
+	GestoreGiocatoriInCampo_RTL : process(giocatori_in_campo, indice_turno_giocatore, numero_giocatori_in_campo, numero_per_generazione_casuale_dado, NUOVO_GIOCATORE, ELIMINA_GIOCATORE, ELIMINA_DADO, RESET_N)
 	begin
 			-- All'avvio del sistema la partita è composta di default da due giocatore (UTENTE, COM)
 		
@@ -184,7 +185,7 @@ begin
 		
 	end process;
 	
-	EseguiScommessa : process(ESEGUI_SCOMMESSA_COM, ESEGUI_SCOMMESSA_G0, RESET_N, scommessa_corrente)
+	EseguiScommessa : process(ESEGUI_SCOMMESSA_COM, ESEGUI_SCOMMESSA_G0, RESET_N, DADO_SCOMMESSO_COM, RICORRENZA_COM, DADO_SCOMMESSO_G0,RICORRENZA_G0)
 	begin
 		if(RESET_N = '0') then
 			scommessa_corrente.dado_scommesso <= NONE;
