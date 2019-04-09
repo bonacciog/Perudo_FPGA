@@ -1,18 +1,14 @@
-Analysis & Synthesis Status : Successful - Mon Apr 08 14:56:12 2019
+Analysis & Synthesis Status : Successful - Tue Apr 09 15:59:50 2019
 Quartus II 32-bit Version : 12.0 Build 178 05/31/2012 SJ Web Edition
 Revision Name : Perudo_Datapath
 Top-level Entity Name : Perudo_Datapath
-Family : Cyclone IV GX
-Total logic elements : 862
-    Total combinational functions : 847
-    Dedicated logic registers : 355
-Total registers : 355
+Family : Cyclone II
+Total logic elements : 854
+    Total combinational functions : 839
+    Dedicated logic registers : 353
+Total registers : 353
 Total pins : 438
 Total virtual pins : 0
 Total memory bits : 0
 Embedded Multiplier 9-bit elements : 0
-Total GXB Receiver Channel PCS : 0
-Total GXB Receiver Channel PMA : 0
-Total GXB Transmitter Channel PCS : 0
-Total GXB Transmitter Channel PMA : 0
 Total PLLs : 0

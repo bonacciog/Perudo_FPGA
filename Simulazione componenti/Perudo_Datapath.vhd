@@ -55,10 +55,7 @@ architecture RTL of Perudo_Datapath is
 
 		-- Variabili utili per la generazione del turno giocatore d'inizio partita casuale e dei turni successivi	
 	signal indice_turno_giocatore											: integer range 0 to MAX_GIOCATORI-1;
-	
-		-- Segnale che indica lo stato del funzionamento del contatore turno, 0 se ad ogni clock (per random), 1 se conteggio in caso di turno successivo
-	--signal conteggio_controllato											: std_logic;
-	
+		
 		-- Struttura dati scommessa
 	signal scommessa_corrente												: scommessa_type;
 	
@@ -92,9 +89,7 @@ begin
 					else
 						indice_turno_giocatore <= indice_turno_giocatore + 1;
 					end if;
-				end if;
-			elsif(rising_edge(CLOCK)) then
-				if (PROSSIMO_TURNO = '1') then
+				elsif(PROSSIMO_TURNO = '1') then
 					if(conteggio_controllato = '0') then
 						conteggio_controllato := '1';
 					end if;
