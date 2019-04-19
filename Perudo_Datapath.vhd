@@ -25,7 +25,7 @@ entity Perudo_Datapath is
 			
 			TURNO_GIOCATORE							: 	out	std_logic;
 			
-			PARTITA_INIZIATA							: 	out	std_logic;
+			-- PARTITA_INIZIATA							: 	out	std_logic;
 			
 			-- Connections for the View
 			INIZIA_PARTITA								: 	in		std_logic;
@@ -55,10 +55,7 @@ architecture RTL of Perudo_Datapath is
 
 		-- Variabili utili per la generazione del turno giocatore d'inizio partita casuale e dei turni successivi	
 	signal indice_turno_giocatore											: integer range 0 to MAX_GIOCATORI-1;
-	
-		-- Segnale che indica lo stato del funzionamento del contatore turno, 0 se ad ogni clock (per random), 1 se conteggio in caso di turno successivo
-	signal conteggio_controllato											: std_logic;
-	
+		
 		-- Struttura dati scommessa
 	signal scommessa_corrente												: scommessa_type;
 	
@@ -80,38 +77,41 @@ begin
 	end process;	
 	
 	GestoreTurnoPartita_RTL: process(PROSSIMO_TURNO, CLOCK, RESET_N)
+	variable conteggio_controllato											: std_logic;
 	begin
 	      if(RESET_N = '0') then
 				indice_turno_giocatore <= 0;
-				conteggio_controllato <= '0';
-			elsif(rising_edge(CLOCK) and conteggio_controllato = '0') then
-				if(indice_turno_giocatore = (numero_giocatori_in_campo-1)) then
-					indice_turno_giocatore <= 0;
-				else
-					indice_turno_giocatore <= indice_turno_giocatore + 1;
-				end if;
-			elsif(rising_edge(CLOCK) and PROSSIMO_TURNO = '1') then
+				conteggio_controllato := '0';
+			elsif(rising_edge(CLOCK)) then
 				if(conteggio_controllato = '0') then
-					conteggio_controllato <= '1';
-				end if;
-				-- Dopo essere inizializzata la partita può iniziare, stabilendo successivamente il turno dei giocatori in maniera casuale.
-					-- Così facendo spengo anche il contatore
-				if(indice_turno_giocatore = 0) then
-						-- Inizia utente
-					TURNO_GIOCATORE <= '1';
-					
-					indice_turno_giocatore <= indice_turno_giocatore + 1;
-				else
-					TURNO_GIOCATORE <= '0';
-					
 					if(indice_turno_giocatore = (numero_giocatori_in_campo-1)) then
 						indice_turno_giocatore <= 0;
+					else
+						indice_turno_giocatore <= indice_turno_giocatore + 1;
+					end if;
+				elsif(PROSSIMO_TURNO = '1') then
+					if(conteggio_controllato = '0') then
+						conteggio_controllato := '1';
+					end if;
+					-- Dopo essere inizializzata la partita può iniziare, stabilendo successivamente il turno dei giocatori in maniera casuale.
+						-- Così facendo spengo anche il contatore
+					if(indice_turno_giocatore = 0) then
+							-- Inizia utente
+						TURNO_GIOCATORE <= '1';
+					
+						indice_turno_giocatore <= indice_turno_giocatore + 1;
+					else
+						TURNO_GIOCATORE <= '0';
+					
+						if(indice_turno_giocatore = (numero_giocatori_in_campo-1)) then
+							indice_turno_giocatore <= 0;
+						end if;
 					end if;
 				end if;
 			end if;
 	end process;
 	
-	GestoreGiocatoriInCampo_RTL : process(NUOVO_GIOCATORE, ELIMINA_GIOCATORE, ELIMINA_DADO, RESET_N)
+	GestoreGiocatoriInCampo_RTL : process(giocatori_in_campo, indice_turno_giocatore, numero_giocatori_in_campo, numero_per_generazione_casuale_dado, NUOVO_GIOCATORE, ELIMINA_GIOCATORE, ELIMINA_DADO, CLOCK, RESET_N)
 	begin
 			-- All'avvio del sistema la partita è composta di default da due giocatore (UTENTE, COM)
 		
@@ -138,74 +138,76 @@ begin
 					end loop;
 				end if;	
 			end loop;
-		elsif(ELIMINA_DADO = '1') then
-				-- Elimino dado ultimo giocatore che ha scommesso
-			giocatori_in_campo(indice_turno_giocatore).dadi_in_mano(giocatori_in_campo(indice_turno_giocatore).numero_dadi_in_mano-1) <= NONE;
-			giocatori_in_campo(indice_turno_giocatore).numero_dadi_in_mano <= giocatori_in_campo(indice_turno_giocatore).numero_dadi_in_mano - 1;
+		elsif(rising_edge(CLOCK)) then
+			if( ELIMINA_DADO = '1') then
+					-- Elimino dado ultimo giocatore che ha scommesso
+				giocatori_in_campo(indice_turno_giocatore).dadi_in_mano(giocatori_in_campo(indice_turno_giocatore).numero_dadi_in_mano-1) <= NONE;
+				giocatori_in_campo(indice_turno_giocatore).numero_dadi_in_mano <= giocatori_in_campo(indice_turno_giocatore).numero_dadi_in_mano - 1;
 		
-				-- Elimino giocatore perdente
-			if(giocatori_in_campo(indice_turno_giocatore).numero_dadi_in_mano = 0) then 
-				numero_giocatori_in_campo <= numero_giocatori_in_campo - 1;
+					-- Elimino giocatore perdente
+				if(giocatori_in_campo(indice_turno_giocatore).numero_dadi_in_mano = 0) then 
+					numero_giocatori_in_campo <= numero_giocatori_in_campo - 1;
 			
-					-- Un giocatore ha vinto, partita finita
-				if(numero_giocatori_in_campo = 1) then
-					FINE_PARTITA <= '1';
-				else
-						-- Scalo i giocatori
-					for j in indice_turno_giocatore to numero_giocatori_in_campo-1 loop
-						giocatori_in_campo(j) <= giocatori_in_campo(j+1);
-					end loop;			
+						-- Un giocatore ha vinto, partita finita
+					if(numero_giocatori_in_campo = 1) then
+						FINE_PARTITA <= '1';
+					else
+							-- Scalo i giocatori
+						for j in indice_turno_giocatore to numero_giocatori_in_campo-1 loop
+							giocatori_in_campo(j) <= giocatori_in_campo(j+1);
+						end loop;			
+					end if;
+				end if;
+			elsif(ELIMINA_GIOCATORE = '1') then
+				if(numero_giocatori_in_campo > 2) then
+					-- Elimino ultimo giocatore
+				for i in 0 to MAX_DADI-1 loop
+					giocatori_in_campo(numero_giocatori_in_campo).dadi_in_mano(i) <=	NONE;
+				end loop;
+		
+				numero_giocatori_in_campo <= numero_giocatori_in_campo - 1;
+				end if;
+			elsif(NUOVO_GIOCATORE = '1') then
+				if(numero_giocatori_in_campo<MAX_GIOCATORI) then
+					-- Aggiungo giocatore
+				for i in 0 to MAX_DADI-1 loop
+					giocatori_in_campo(numero_giocatori_in_campo).dadi_in_mano(i) <=	scegli_dado_casuale(numero_per_generazione_casuale_dado);
+					giocatori_in_campo(numero_giocatori_in_campo).numero_dadi_in_mano <= giocatori_in_campo(numero_giocatori_in_campo).numero_dadi_in_mano + 1;
+				end loop;
+		
+				numero_giocatori_in_campo <= numero_giocatori_in_campo + 1;
 				end if;
 			end if;
-		elsif(ELIMINA_GIOCATORE = '1') then
-			if(numero_giocatori_in_campo > 2) then
-				-- Elimino ultimo giocatore
-			for i in 0 to MAX_DADI-1 loop
-				giocatori_in_campo(numero_giocatori_in_campo).dadi_in_mano(i) <=	NONE;
-			end loop;
-		
-			numero_giocatori_in_campo <= numero_giocatori_in_campo - 1;
-			end if;
-		elsif(NUOVO_GIOCATORE = '1') then
-			if(numero_giocatori_in_campo<MAX_GIOCATORI) then
-				-- Aggiungo giocatore
-			for i in 0 to MAX_DADI-1 loop
-				giocatori_in_campo(numero_giocatori_in_campo).dadi_in_mano(i) <=	scegli_dado_casuale(numero_per_generazione_casuale_dado);
-				giocatori_in_campo(numero_giocatori_in_campo).numero_dadi_in_mano <= giocatori_in_campo(numero_giocatori_in_campo).numero_dadi_in_mano + 1;
-			end loop;
-		
-			numero_giocatori_in_campo <= numero_giocatori_in_campo + 1;
-			end if;
 		end if;
-		
 	end process;
 	
-	EseguiScommessa : process(ESEGUI_SCOMMESSA_COM, ESEGUI_SCOMMESSA_G0, RESET_N)
+	EseguiScommessa : process(ESEGUI_SCOMMESSA_COM, ESEGUI_SCOMMESSA_G0, DADO_SCOMMESSO_COM, RICORRENZA_COM, DADO_SCOMMESSO_G0,RICORRENZA_G0, CLOCK, RESET_N)
 	begin
 		if(RESET_N = '0') then
 			scommessa_corrente.dado_scommesso <= NONE;
 			scommessa_corrente.ricorrenza <= 0;
-	
-			-- Assegno valori scommessa
-				-- COM
-		elsif(ESEGUI_SCOMMESSA_COM = '1') then
-			scommessa_corrente.dado_scommesso <= DADO_SCOMMESSO_COM;
-			scommessa_corrente.ricorrenza <= RICORRENZA_COM;
+		elsif(rising_edge(CLOCK)) then
+				-- Assegno valori scommessa
+					-- COM
+			if(ESEGUI_SCOMMESSA_COM = '1') then
+				scommessa_corrente.dado_scommesso <= DADO_SCOMMESSO_COM;
+				scommessa_corrente.ricorrenza <= RICORRENZA_COM;
 				-- G0
-		elsif(ESEGUI_SCOMMESSA_G0 = '1') then
-			scommessa_corrente.dado_scommesso <= DADO_SCOMMESSO_G0;
-			scommessa_corrente.ricorrenza <= RICORRENZA_G0;
+			elsif(ESEGUI_SCOMMESSA_G0 = '1') then
+				scommessa_corrente.dado_scommesso <= DADO_SCOMMESSO_G0;
+				scommessa_corrente.ricorrenza <= RICORRENZA_G0;
+			end if;
 		end if;
 	end process;
 	
-	DammiGiocatoriInCampo : process(DAMMI_GIOCATORI_IN_CAMPO) 	
+	DammiGiocatoriInCampo : process(DAMMI_GIOCATORI_IN_CAMPO, giocatori_in_campo, numero_giocatori_in_campo) 	
 	begin
 			-- Restituisco giocatori in campo e relativo numero
 		GIOCATORI_IN_CAMPO_OUT <= giocatori_in_campo;
 		NUMERO_GIOCATORI_IN_CAMPO_OUT <= numero_giocatori_in_campo;
 	end process;
 	
-	DammiScommessaCorrente : process(DAMMI_SCOMMESSA_CORRENTE)
+	DammiScommessaCorrente : process(DAMMI_SCOMMESSA_CORRENTE, scommessa_corrente)
 	begin
 			-- Restituisco scommessa corrente
 		SCOMMESSA_CORRENTE_OUT <= scommessa_corrente;
