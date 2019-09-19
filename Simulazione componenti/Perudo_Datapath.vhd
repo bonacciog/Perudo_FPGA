@@ -99,13 +99,15 @@ begin
 							-- Inizia utente
 						TURNO_GIOCATORE <= '1';
 					
-						indice_turno_giocatore <= indice_turno_giocatore + 1;
 					else
 						TURNO_GIOCATORE <= '0';
 					
-						if(indice_turno_giocatore = (numero_giocatori_in_campo-1)) then
+
+					end if;
+					if(indice_turno_giocatore = (numero_giocatori_in_campo-1)) then
 							indice_turno_giocatore <= 0;
-						end if;
+					else
+						indice_turno_giocatore <= indice_turno_giocatore + 1;
 					end if;
 				end if;
 			end if;

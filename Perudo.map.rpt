@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Perudo
-Wed Feb 27 16:21:21 2019
+Thu Sep 19 16:32:55 2019
 Quartus II 32-bit Version 12.0 Build 178 05/31/2012 SJ Web Edition
 
 
@@ -36,7 +36,7 @@ applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +------------------------------------+------------------------------------------+
-; Analysis & Synthesis Status        ; Failed - Wed Feb 27 16:21:21 2019        ;
+; Analysis & Synthesis Status        ; Failed - Thu Sep 19 16:32:55 2019        ;
 ; Quartus II 32-bit Version          ; 12.0 Build 178 05/31/2012 SJ Web Edition ;
 ; Revision Name                      ; Perudo                                   ;
 ; Top-level Entity Name              ; Perudo                                   ;
@@ -154,7 +154,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 Info: *******************************************************************
 Info: Running Quartus II 32-bit Analysis & Synthesis
     Info: Version 12.0 Build 178 05/31/2012 SJ Web Edition
-    Info: Processing started: Wed Feb 27 16:21:19 2019
+    Info: Processing started: Thu Sep 19 16:32:53 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Perudo -c Perudo
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 2 design units, including 1 entities, in source file vga_controller.vhd
@@ -169,12 +169,22 @@ Info (12021): Found 2 design units, including 0 entities, in source file perudo_
 Info (12021): Found 2 design units, including 1 entities, in source file perudo_datapath.vhd
     Info (12022): Found design unit 1: Perudo_Datapath-RTL
     Info (12023): Found entity 1: Perudo_Datapath
-Error (10500): VHDL syntax error at Perudo_Controller.vhd(46) near text ")";  expecting an identifier, or "constant", or "file", or "signal", or "variable" File: H:/Ingegneria Informatica/Ingegneria Informatica M/Sistemi Digitali/Progetto Perudo/Perudo_FPGA/Perudo_Controller.vhd Line: 46
+Error (10500): VHDL syntax error at Perudo_Controller.vhd(140) near text "&";  expecting "(", or an identifier, or  unary operator File: C:/Users/giova/Desktop/Perudo_FPGA/Perudo_Controller.vhd Line: 140
+Error (10500): VHDL syntax error at Perudo_Controller.vhd(144) near text "&";  expecting "(", or an identifier, or  unary operator File: C:/Users/giova/Desktop/Perudo_FPGA/Perudo_Controller.vhd Line: 144
+Error (10500): VHDL syntax error at Perudo_Controller.vhd(150) near text "=";  expecting "(", or an identifier, or  unary operator File: C:/Users/giova/Desktop/Perudo_FPGA/Perudo_Controller.vhd Line: 150
+Error (10500): VHDL syntax error at Perudo_Controller.vhd(154) near text "=";  expecting "(", or an identifier, or  unary operator File: C:/Users/giova/Desktop/Perudo_FPGA/Perudo_Controller.vhd Line: 154
+Error (10500): VHDL syntax error at Perudo_Controller.vhd(164) near text "=";  expecting "(", or an identifier, or  unary operator File: C:/Users/giova/Desktop/Perudo_FPGA/Perudo_Controller.vhd Line: 164
+Error (10500): VHDL syntax error at Perudo_Controller.vhd(170) near text "TURNO_GIOCATORE";  expecting ")", or "," File: C:/Users/giova/Desktop/Perudo_FPGA/Perudo_Controller.vhd Line: 170
+Error (10500): VHDL syntax error at Perudo_Controller.vhd(174) near text "TURNO_GIOCATORE";  expecting ")", or "," File: C:/Users/giova/Desktop/Perudo_FPGA/Perudo_Controller.vhd Line: 174
+Error (10500): VHDL syntax error at Perudo_Controller.vhd(178) near text "=";  expecting "(", or an identifier, or  unary operator File: C:/Users/giova/Desktop/Perudo_FPGA/Perudo_Controller.vhd Line: 178
+Error (10995): VHDL error at Perudo_Controller.vhd(266): block comments are not supported in VHDL_1993 File: C:/Users/giova/Desktop/Perudo_FPGA/Perudo_Controller.vhd Line: 266
+Error (10500): VHDL syntax error at Perudo_Controller.vhd(266) near text "stato";  expecting "!", or "=>" File: C:/Users/giova/Desktop/Perudo_FPGA/Perudo_Controller.vhd Line: 266
+Error (10995): VHDL error at Perudo_Controller.vhd(268): block comments are not supported in VHDL_1993 File: C:/Users/giova/Desktop/Perudo_FPGA/Perudo_Controller.vhd Line: 268
 Info (12021): Found 0 design units, including 0 entities, in source file perudo_controller.vhd
-Error: Quartus II 32-bit Analysis & Synthesis was unsuccessful. 1 error, 1 warning
-    Error: Peak virtual memory: 374 megabytes
-    Error: Processing ended: Wed Feb 27 16:21:21 2019
+Error: Quartus II 32-bit Analysis & Synthesis was unsuccessful. 11 errors, 1 warning
+    Error: Peak virtual memory: 355 megabytes
+    Error: Processing ended: Thu Sep 19 16:32:55 2019
     Error: Elapsed time: 00:00:02
-    Error: Total CPU time (on all processors): 00:00:02
+    Error: Total CPU time (on all processors): 00:00:01
 
 

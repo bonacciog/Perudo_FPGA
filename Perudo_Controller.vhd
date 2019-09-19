@@ -51,7 +51,7 @@ entity Perudo_Controller is
 			INCREMENTA_RICORRENZA		 	: out  std_logic;
 			DECREMENTA_RICORRENZA		 	: out  std_logic;
 			
-			REDRAW								: out  std_logic;
+			REDRAW								: out  std_logic
 	);
 	
 end entity;
