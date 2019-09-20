@@ -1,5 +1,5 @@
 Flow report for SimoFicca
-Thu Sep 19 18:12:14 2019
+Fri Sep 20 15:59:31 2019
 Quartus II 32-bit Version 12.0 Build 178 05/31/2012 SJ Web Edition
 
 
@@ -38,7 +38,7 @@ applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +------------------------------------+------------------------------------------+
-; Flow Status                        ; Successful - Thu Sep 19 18:12:14 2019    ;
+; Flow Status                        ; Successful - Fri Sep 20 15:59:31 2019    ;
 ; Quartus II 32-bit Version          ; 12.0 Build 178 05/31/2012 SJ Web Edition ;
 ; Revision Name                      ; SimoFicca                                ;
 ; Top-level Entity Name              ; SimoFicca                                ;
@@ -49,7 +49,7 @@ applicable agreement for further details.
 ;     Total combinational functions  ; 48 / 18,752 ( < 1 % )                    ;
 ;     Dedicated logic registers      ; 27 / 18,752 ( < 1 % )                    ;
 ; Total registers                    ; 27                                       ;
-; Total pins                         ; 2 / 315 ( < 1 % )                        ;
+; Total pins                         ; 11 / 315 ( 3 % )                         ;
 ; Total virtual pins                 ; 0                                        ;
 ; Total memory bits                  ; 0 / 239,616 ( 0 % )                      ;
 ; Embedded Multiplier 9-bit elements ; 0 / 52 ( 0 % )                           ;
@@ -62,7 +62,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 09/19/2019 18:12:02 ;
+; Start date & time ; 09/20/2019 15:59:14 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; SimoFicca           ;
 +-------------------+---------------------+
@@ -73,7 +73,7 @@ applicable agreement for further details.
 +-------------------------------------+---------------------------------+---------------+-------------+------------+
 ; Assignment Name                     ; Value                           ; Default Value ; Entity Name ; Section Id ;
 +-------------------------------------+---------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 229521375699293.156890952108516 ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID               ; 229521375699293.156898795405564 ; --            ; --          ; --         ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                              ; --            ; --          ; --         ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                               ; --            ; --          ; --         ;
 ; PARTITION_COLOR                     ; 16764057                        ; --            ; --          ; Top        ;
@@ -87,11 +87,11 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:02     ; 1.0                     ; 367 MB              ; 00:00:02                           ;
-; Fitter                    ; 00:00:06     ; 1.0                     ; 432 MB              ; 00:00:05                           ;
-; TimeQuest Timing Analyzer ; 00:00:02     ; 1.0                     ; 330 MB              ; 00:00:02                           ;
-; Assembler                 ; 00:00:03     ; 1.0                     ; 336 MB              ; 00:00:03                           ;
-; Total                     ; 00:00:13     ; --                      ; --                  ; 00:00:12                           ;
+; Analysis & Synthesis      ; 00:00:03     ; 1.0                     ; 362 MB              ; 00:00:02                           ;
+; Fitter                    ; 00:00:07     ; 1.0                     ; 436 MB              ; 00:00:06                           ;
+; TimeQuest Timing Analyzer ; 00:00:02     ; 1.0                     ; 319 MB              ; 00:00:02                           ;
+; Assembler                 ; 00:00:03     ; 1.0                     ; 339 MB              ; 00:00:03                           ;
+; Total                     ; 00:00:15     ; --                      ; --                  ; 00:00:13                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

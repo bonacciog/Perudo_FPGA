@@ -1,5 +1,5 @@
 Assembler report for SimoFicca
-Thu Sep 19 18:12:14 2019
+Fri Sep 20 15:59:31 2019
 Quartus II 32-bit Version 12.0 Build 178 05/31/2012 SJ Web Edition
 
 
@@ -38,7 +38,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Thu Sep 19 18:12:14 2019 ;
+; Assembler Status      ; Successful - Fri Sep 20 15:59:31 2019 ;
 ; Revision Name         ; SimoFicca                             ;
 ; Top-level Entity Name ; SimoFicca                             ;
 ; Family                ; Cyclone II                            ;
@@ -95,7 +95,7 @@ applicable agreement for further details.
 +----------------+------------------------------------------------------------------------------------+
 ; Device         ; EP2C20F484C7                                                                       ;
 ; JTAG usercode  ; 0xFFFFFFFF                                                                         ;
-; Checksum       ; 0x001B6B47                                                                         ;
+; Checksum       ; 0x001B7365                                                                         ;
 +----------------+------------------------------------------------------------------------------------+
 
 
@@ -106,7 +106,7 @@ applicable agreement for further details.
 +--------------------+--------------------------------------------------------------------------------+
 ; Device             ; EPCS16                                                                         ;
 ; JTAG usercode      ; 0x00000000                                                                     ;
-; Checksum           ; 0x1DD920E1                                                                     ;
+; Checksum           ; 0x1DD919D0                                                                     ;
 ; Compression Ratio  ; 3                                                                              ;
 +--------------------+--------------------------------------------------------------------------------+
 
@@ -117,13 +117,13 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II 32-bit Assembler
     Info: Version 12.0 Build 178 05/31/2012 SJ Web Edition
-    Info: Processing started: Thu Sep 19 18:12:11 2019
+    Info: Processing started: Fri Sep 20 15:59:28 2019
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off SimoFicca -c SimoFicca
 Info (115031): Writing out detailed assembly data for power analysis
 Info (115030): Assembler is generating device programming files
 Info: Quartus II 32-bit Assembler was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 337 megabytes
-    Info: Processing ended: Thu Sep 19 18:12:14 2019
+    Info: Peak virtual memory: 340 megabytes
+    Info: Processing ended: Fri Sep 20 15:59:31 2019
     Info: Elapsed time: 00:00:03
     Info: Total CPU time (on all processors): 00:00:03
 
