@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Perudo
-Wed Sep 25 14:51:23 2019
+Wed Sep 25 17:47:40 2019
 Quartus II 64-Bit Version 12.1 Build 243 01/31/2013 Service Pack 1 SJ Web Edition
 
 
@@ -36,7 +36,7 @@ applicable agreement for further details.
 +------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                       ;
 +------------------------------------+-----------------------------------------------+
-; Analysis & Synthesis Status        ; Failed - Wed Sep 25 14:51:23 2019             ;
+; Analysis & Synthesis Status        ; Failed - Wed Sep 25 17:47:40 2019             ;
 ; Quartus II 64-Bit Version          ; 12.1 Build 243 01/31/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; Perudo                                        ;
 ; Top-level Entity Name              ; Perudo_DE1                                    ;
@@ -161,7 +161,7 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 12.1 Build 243 01/31/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Wed Sep 25 14:51:19 2019
+    Info: Processing started: Wed Sep 25 17:47:40 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Perudo -c Perudo
 Info (11104): Parallel Compilation has detected 8 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 4 of the 4 physical processors detected instead.
 Info (12021): Found 2 design units, including 1 entities, in source file perudo_de1.vhd
@@ -196,9 +196,9 @@ Error (10346): VHDL error at Perudo_DE1.vhd(85): formal port or parameter "NUMER
 Error (10784): HDL error at Perudo_Datapath.vhd(42): see declaration for object "NUMERO_GIOCATORI_IN_CAMPO_OUT" File: C:/Users/Simone/Desktop/Io/Università/magistrale/1 Anno/Sistemi Digitali/progettoGitHub/Perudo_FPGA/Perudo_Datapath.vhd Line: 42
 Error (10346): VHDL error at Perudo_DE1.vhd(85): formal port or parameter "SCOMMESSA_CORRENTE_OUT" must have actual or default value File: C:/Users/Simone/Desktop/Io/Università/magistrale/1 Anno/Sistemi Digitali/progettoGitHub/Perudo_FPGA/Perudo_DE1.vhd Line: 85
 Error: Quartus II 64-Bit Analysis & Synthesis was unsuccessful. 19 errors, 0 warnings
-    Error: Peak virtual memory: 4640 megabytes
-    Error: Processing ended: Wed Sep 25 14:51:23 2019
-    Error: Elapsed time: 00:00:04
-    Error: Total CPU time (on all processors): 00:00:02
+    Error: Peak virtual memory: 4642 megabytes
+    Error: Processing ended: Wed Sep 25 17:47:41 2019
+    Error: Elapsed time: 00:00:01
+    Error: Total CPU time (on all processors): 00:00:01
 
 
