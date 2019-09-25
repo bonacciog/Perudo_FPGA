@@ -2,6 +2,8 @@ library ieee;
 use ieee.numeric_std.all;
 use ieee.std_logic_1164.all;
 use work.perudo_package.all;
+use ieee.math_real.uniform;
+use ieee.math_real.floor;
 
 entity Perudo_Datapath is
 	port
@@ -12,8 +14,8 @@ entity Perudo_Datapath is
 			-- Connections for the Controller
 			
 				-- Opzioni disponibili
---			NUOVO_GIOCATORE							:	in		std_logic;
---			ELIMINA_GIOCATORE 						:	in		std_logic;
+	--		NUOVO_GIOCATORE							:	in		std_logic;
+		--	ELIMINA_GIOCATORE 						:	in		std_logic;
 			
 	
 			PROSSIMO_TURNO								:	in		std_logic;
@@ -37,7 +39,7 @@ entity Perudo_Datapath is
 		--	DAMMI_GIOCATORI_IN_CAMPO				:	in		std_logic;
 		--	DAMMI_SCOMMESSA_CORRENTE				:	in		std_logic;			
 			
---			FINE_PARTITA								: 	out	std_logic
+	--		FINE_PARTITA								: 	out	std_logic
 		--	GIOCATORI_IN_CAMPO_OUT					:	out	giocatore_array(0 to MAX_GIOCATORI-1);
 		--	NUMERO_GIOCATORI_IN_CAMPO_OUT			: 	out 	integer range 0 to MAX_GIOCATORI;
 		--	SCOMMESSA_CORRENTE_OUT					: 	out 	scommessa_type
@@ -48,34 +50,42 @@ end entity;
 architecture RTL of Perudo_Datapath is
 		-- Struttura dati giocatori in campo
 			-- L'utente Ã¨ il giocatore in campo all'indice 0
---	signal giocatori_in_campo												: giocatore_array(0 to MAX_GIOCATORI-1);
+	signal giocatori_in_campo												: giocatore_array(0 to MAX_GIOCATORI-1);
 	signal numero_giocatori_in_campo										: integer range 0 to MAX_GIOCATORI;
 		
 		-- Counter utile per la generazione del dado casuale
---	signal numero_per_generazione_casuale_dado						: integer range MIN_NUMERO_PER_GENERAZIONE_CASUALE to MAX_NUMERO_PER_GENERAZIONE_CASUALE;
+	signal numero_per_generazione_casuale_dado						: integer range MIN_NUMERO_PER_GENERAZIONE_CASUALE to MAX_NUMERO_PER_GENERAZIONE_CASUALE;
 
+  signal conta_in_avanti                : std_logic;
 		-- Variabili utili per la generazione del turno giocatore d'inizio partita casuale e dei turni successivi	
 	signal indice_turno_giocatore											: integer range 0 to MAX_GIOCATORI-1;
 		
 		-- Struttura dati scommessa
---	signal scommessa_corrente												: scommessa_type;
+	signal scommessa_corrente												: scommessa_type;
 	
 	
 begin
 	
---	ContatoreNumeroCasualeDado_RTL : process(CLOCK,RESET_N)
---	begin
---			-- Contatore per generazione numero casuale per scelta dei dadi
---		if(RESET_N = '0') then
---			numero_per_generazione_casuale_dado <= MIN_NUMERO_PER_GENERAZIONE_CASUALE;
---		elsif(rising_edge(CLOCK)) then
---			if(numero_per_generazione_casuale_dado = MAX_NUMERO_PER_GENERAZIONE_CASUALE) then
---				numero_per_generazione_casuale_dado <= MIN_NUMERO_PER_GENERAZIONE_CASUALE;
---			else
---				numero_per_generazione_casuale_dado <= numero_per_generazione_casuale_dado + 1;
---			end if;
---		end if;
---	end process;	
+	ContatoreEnable : process
+	begin
+	  conta_in_avanti <= '0';
+	  wait for 0.5 ns;
+	  conta_in_avanti <= '1';
+	end process;
+	
+	ContatoreNumeroCasualeDado_RTL : process(conta_in_avanti,RESET_N)
+	begin
+   	-- Contatore per generazione numero casuale per scelta dei dadi
+		if(RESET_N = '0') then
+			numero_per_generazione_casuale_dado <= MIN_NUMERO_PER_GENERAZIONE_CASUALE;
+		elsif(conta_in_avanti = '1' and RESET_N = '1') then
+			if(numero_per_generazione_casuale_dado = MAX_NUMERO_PER_GENERAZIONE_CASUALE) then
+				numero_per_generazione_casuale_dado <= MIN_NUMERO_PER_GENERAZIONE_CASUALE;
+			else
+				numero_per_generazione_casuale_dado <= numero_per_generazione_casuale_dado + 1;
+			end if;
+		end if;
+	end process;	
 	
 	GestoreTurnoPartita_RTL: process(INIZIA_PARTITA, PROSSIMO_TURNO, CLOCK, RESET_N)
 	variable conteggio_controllato											: std_logic;
@@ -86,7 +96,7 @@ begin
 				TURNO_GIOCATORE <= '0';
 			elsif(rising_edge(CLOCK)) then
 			  if(INIZIA_PARTITA = '1') then
-			   			-- Smetto di contare per il random, la partita è iniziata
+			   			-- Smetto di contare per il random, la partita ï¿½ iniziata
 					if(conteggio_controllato = '0') then
 						conteggio_controllato := '1';
 					end if;
@@ -101,8 +111,8 @@ begin
 					
 				end if;
 				
-			     -- Il conteggio controllato sempre perchè prima che la partita inizi si deve generare un turno random, 
-			     -- appena inizia non ce n'è bisogno, si va sempre a +1
+			     -- Il conteggio controllato sempre perchï¿½ prima che la partita inizi si deve generare un turno random, 
+			     -- appena inizia non ce n'ï¿½ bisogno, si va sempre a +1
 				if(conteggio_controllato = '0') then
 					if(indice_turno_giocatore = (numero_giocatori_in_campo-1)) then
 						indice_turno_giocatore <= 0;
@@ -121,33 +131,34 @@ begin
 
 	end process;
 	
---	GestoreGiocatoriInCampo_RTL : process(giocatori_in_campo, indice_turno_giocatore, numero_giocatori_in_campo, numero_per_generazione_casuale_dado, NUOVO_GIOCATORE, ELIMINA_GIOCATORE, ELIMINA_DADO, CLOCK, RESET_N)
---	begin
---			-- All'avvio del sistema la partita Ã¨ composta di default da due giocatore (UTENTE, COM)
---		
---		if(RESET_N = '0') then
---				-- Reset numero giocatori in campo
---			numero_giocatori_in_campo <= 0;
---		
---		
---			for j in 0 to MAX_GIOCATORI-1 loop
---				giocatori_in_campo(j).numero_dadi_in_mano <= 0; 
---			end loop;
---			
---				-- Assegno dadi ai due giocatori 
---			for j in 0 to MAX_GIOCATORI-1 loop
---				if(j=0 or j=1) then
---					for i in 0 to MAX_DADI-1 loop
---						giocatori_in_campo(j).dadi_in_mano(i) <=	scegli_dado_casuale(numero_per_generazione_casuale_dado);
---						giocatori_in_campo(j).numero_dadi_in_mano <= giocatori_in_campo(j).numero_dadi_in_mano + 1; 
---					end loop;
---					numero_giocatori_in_campo <= numero_giocatori_in_campo + 1;
---				else
---					for i in 0 to MAX_DADI-1 loop
---						giocatori_in_campo(j).dadi_in_mano(i) <=	NONE;
---					end loop;
---				end if;	
---			end loop;
+	GestoreGiocatoriInCampo_RTL : process(RESET_N) --NUOVO_GIOCATORE, ELIMINA_GIOCATORE, ELIMINA_DADO, CLOCK, )
+	begin
+			-- All'avvio del sistema la partita Ã¨ composta di default da due giocatore (UTENTE, COM)
+		
+		if(RESET_N = '0') then
+				-- Reset numero giocatori in campo
+			numero_giocatori_in_campo <= 0;
+		
+		
+			for j in 0 to MAX_GIOCATORI-1 loop
+				giocatori_in_campo(j).numero_dadi_in_mano <= 0; 
+			end loop;
+			
+				-- Assegno dadi ai due giocatori 
+			for j in 0 to MAX_GIOCATORI-1 loop
+				if(j=0 or j=1) then
+					for i in 0 to MAX_DADI-1 loop
+						giocatori_in_campo(j).dadi_in_mano(i) <=	scegli_dado_casuale(numero_per_generazione_casuale_dado);
+						giocatori_in_campo(j).numero_dadi_in_mano <= giocatori_in_campo(j).numero_dadi_in_mano + 1;
+					end loop;
+					numero_giocatori_in_campo <= numero_giocatori_in_campo + 1;
+				else
+					for i in 0 to MAX_DADI-1 loop
+						giocatori_in_campo(j).dadi_in_mano(i) <=	NONE;
+					end loop;
+				end if;	
+			end loop;
+		end if;
 --		elsif(rising_edge(CLOCK)) then
 --			if( ELIMINA_DADO = '1') then
 --					-- Elimino dado ultimo giocatore che ha scommesso
@@ -189,7 +200,7 @@ begin
 --				end if;
 --			end if;
 --		end if;
---	end process;
+	end process;
 	
 --	EseguiScommessa : process(ESEGUI_SCOMMESSA_COM, ESEGUI_SCOMMESSA_G0, DADO_SCOMMESSO_COM, RICORRENZA_COM, DADO_SCOMMESSO_G0,RICORRENZA_G0, CLOCK, RESET_N)
 --	begin
