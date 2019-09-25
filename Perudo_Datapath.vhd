@@ -18,6 +18,7 @@ entity Perudo_Datapath is
 	
 			PROSSIMO_TURNO								:	in		std_logic;
 			ELIMINA_DADO								:	in		std_logic;
+			INIZIA_PARTITA        					:	in		std_logic;
 
 			ESEGUI_SCOMMESSA_COM						:	in		std_logic;			
 			DADO_SCOMMESSO_COM						:	in		dado_type;
@@ -76,42 +77,50 @@ begin
 		end if;
 	end process;	
 	
-	GestoreTurnoPartita_RTL: process(PROSSIMO_TURNO, CLOCK, RESET_N)
+	GestoreTurnoPartita_RTL: process(INIZIA_PARTITA, PROSSIMO_TURNO, CLOCK, RESET_N)
 	variable conteggio_controllato											: std_logic;
 	begin
-	      if(RESET_N = '0') then
+	      if(RESET_N='0') then
 				indice_turno_giocatore <= 0;
 				conteggio_controllato := '0';
+				TURNO_GIOCATORE <= '0';
 			elsif(rising_edge(CLOCK)) then
+			  if(INIZIA_PARTITA = '1') then
+			   			-- Smetto di contare per il random, la partita è iniziata
+					if(conteggio_controllato = '0') then
+						conteggio_controllato := '1';
+					end if;
+					
+			  elsif(PROSSIMO_TURNO = '1') then		
+										
+					if(indice_turno_giocatore = (numero_giocatori_in_campo-1)) then
+						indice_turno_giocatore <= 0;
+					else
+						indice_turno_giocatore <= indice_turno_giocatore + 1;
+					end if;
+					
+				end if;
+				
+			     -- Il conteggio controllato sempre perchè prima che la partita inizi si deve generare un turno random, 
+			     -- appena inizia non ce n'è bisogno, si va sempre a +1
 				if(conteggio_controllato = '0') then
 					if(indice_turno_giocatore = (numero_giocatori_in_campo-1)) then
 						indice_turno_giocatore <= 0;
 					else
 						indice_turno_giocatore <= indice_turno_giocatore + 1;
 					end if;
-				elsif(PROSSIMO_TURNO = '1') then
-					if(conteggio_controllato = '0') then
-						conteggio_controllato := '1';
-					end if;
-					-- Dopo essere inizializzata la partita può iniziare, stabilendo successivamente il turno dei giocatori in maniera casuale.
-						-- Così facendo spengo anche il contatore
-					if(indice_turno_giocatore = 0) then
+				end if;
+			  if(indice_turno_giocatore = 0 and conteggio_controllato = '1') then
 							-- Inizia utente
 						TURNO_GIOCATORE <= '1';
 					
-					else
+				else
 						TURNO_GIOCATORE <= '0';
-					
-
-					end if;
-					if(indice_turno_giocatore = (numero_giocatori_in_campo-1)) then
-							indice_turno_giocatore <= 0;
-					else
-						indice_turno_giocatore <= indice_turno_giocatore + 1;
-					end if;
 				end if;
 			end if;
+
 	end process;
+
 	
 	GestoreGiocatoriInCampo_RTL : process(giocatori_in_campo, indice_turno_giocatore, numero_giocatori_in_campo, numero_per_generazione_casuale_dado, NUOVO_GIOCATORE, ELIMINA_GIOCATORE, ELIMINA_DADO, CLOCK, RESET_N)
 	begin
