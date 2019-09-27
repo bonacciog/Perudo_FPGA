@@ -15,7 +15,7 @@ entity Perudo_Datapath is
 			
 				-- Opzioni disponibili
 			NUOVO_GIOCATORE							:	in		std_logic;
-		--	ELIMINA_GIOCATORE 						:	in		std_logic;
+			ELIMINA_GIOCATORE 						:	in		std_logic;
 			
 	
 			PROSSIMO_TURNO								:	in		std_logic;
@@ -27,9 +27,10 @@ entity Perudo_Datapath is
 --			RICORRENZA_COM								:	in		integer;
 			
 			TURNO_GIOCATORE							: 	out	std_logic;
-			GIOCATORE_AGGIUNTO    :  out std_logic
+			GIOCATORE_AGGIUNTO    :  out std_logic;
+			GIOCATORE_ELIMINATO    :  out std_logic
 			
-			-- PARTITA_INIZIATA							: 	out	std_logic;
+		
 			
 			-- Connections for the View
 		--	INIZIA_PARTITA								: 	in		std_logic;
@@ -63,6 +64,9 @@ architecture RTL of Perudo_Datapath is
 	signal indice_giocatore                         : integer range -1 to MAX_GIOCATORI-1;
 	signal indice_dado                              : integer range -1 to MAX_DADI-1;
 	
+	
+	signal elimina_dado                             : std_logic; 
+	signal dado_eliminato                             : std_logic; 
 		-- Variabili utili per la generazione del turno giocatore d'inizio partita casuale e dei turni successivi	
 	signal indice_turno_giocatore											: integer range 0 to MAX_GIOCATORI-1;
 		
@@ -102,12 +106,12 @@ begin
 		end if;
 	end process;	
 	
-	AssegnatoreDadi_RTL : process(aggiungi_dado,CLOCK,RESET_N)
+	GestoreDadi_RTL : process(aggiungi_dado,CLOCK,RESET_N)
 	begin
 	  if(RESET_N = '0') then
 	     cicli_da_attendere <= -1;
 	     dado_aggiunto <= '0';
-	     
+	     dado_eliminato <= '0';
 
 		
 		
@@ -119,6 +123,7 @@ begin
 			end loop;
 	  elsif(rising_edge(CLOCK)) then
 	     dado_aggiunto <= '0';
+	     dado_eliminato <= '0';
 	     if(aggiungi_dado = '1') then
 	           -- sto iniziando adesso ad attendere, mi � appena arrivato il segnale aggiungi_dado
 	        if(cicli_da_attendere = -1) then
@@ -135,6 +140,10 @@ begin
 	        else
 	           cicli_da_attendere <= cicli_da_attendere - 1; 
 	        end if;
+	     
+	     elsif(elimina_dado = '1') then
+					   giocatori_in_campo(indice_giocatore).dadi_in_mano(indice_dado) <=	NONE;
+					   dado_eliminato <= '1';
 	     end if;
 	  end if;
 	end process;
@@ -147,8 +156,12 @@ begin
 	        indice_giocatore <= -1;
 	        indice_dado <= -1;
 	        GIOCATORE_AGGIUNTO <= '0';
+	        elimina_dado <= '0';
 	     elsif(rising_edge(CLOCK)) then
+	        
+	        elimina_dado <= '0';
 	        GIOCATORE_AGGIUNTO <= '0';
+	        
 	        if(NUOVO_GIOCATORE = '1') then
 	           if(indice_giocatore = -1) then
 	             indice_giocatore <= numero_giocatori_in_campo;
@@ -166,7 +179,25 @@ begin
 	                GIOCATORE_AGGIUNTO <= '1';
 	             end if;
 	           end if;
+	        elsif(ELIMINA_GIOCATORE = '1') then	           
+	           if(indice_giocatore = -1) then
+	               indice_giocatore <= numero_giocatori_in_campo - 1;
+	               indice_dado <= giocatori_in_campo(numero_giocatori_in_campo - 1).numero_dadi_in_mano-1;
+	               elimina_dado <= '1';
+	           elsif(dado_eliminato = '1') then
+	             elimina_dado <= '0';
+	             if(giocatori_in_campo(indice_giocatore).numero_dadi_in_mano > 0) then
+	                indice_dado <= giocatori_in_campo(indice_giocatore).numero_dadi_in_mano-1;
+	                elimina_dado <= '1';
+	             else
+					        numero_giocatori_in_campo <= numero_giocatori_in_campo - 1;
+					        indice_giocatore <= -1;
+	                indice_dado <= -1;
+	                GIOCATORE_ELIMINATO <= '1';
+	             end if;
+	           end if;
 	        end if;
+	        
 	     end if;	 
 	end process;
 	

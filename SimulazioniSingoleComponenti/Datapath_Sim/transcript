@@ -1,9 +1,3 @@
-# Compile of perudo_package.vhd failed with 2 errors.
-# Compile of perudo_package.vhd was successful.
-# Compile of Perudo_Datapath.vhd failed with 1 errors.
-# Compile of Perudo_Datapath.vhd failed with 1 errors.
-# Compile of Perudo_Datapath.vhd failed with 1 errors.
-# Compile of Perudo_Datapath.vhd was successful.
 vsim work.perudo_datapath
 # vsim work.perudo_datapath 
 # Loading std.standard
@@ -13,46 +7,7 @@ vsim work.perudo_datapath
 # Loading work.perudo_package(body)
 # Loading ieee.math_real(body)
 # Loading work.perudo_datapath(rtl)
-add wave -position insertpoint sim:/perudo_datapath/ContatoreNumeroCasualeDado_RTL/*
-# (vish-4014) No objects found matching '/perudo_datapath/ContatoreNumeroCasualeDado_RTL/*'.
-add wave -position insertpoint sim:/perudo_datapath/ContatoreCicliDiClockAttesa_RTL/*
-# (vish-4014) No objects found matching '/perudo_datapath/ContatoreCicliDiClockAttesa_RTL/*'.
-add wave -position insertpoint sim:/perudo_datapath/AssegnatoreDadi_RTL/*
-# (vish-4014) No objects found matching '/perudo_datapath/AssegnatoreDadi_RTL/*'.
-add wave -position insertpoint sim:/perudo_datapath/GestoreGiocatoriInCampo_RTL/*
-# (vish-4014) No objects found matching '/perudo_datapath/GestoreGiocatoriInCampo_RTL/*'.
 add wave sim:/perudo_datapath/*
-force -freeze sim:/perudo_datapath/CLOCK 1 0, 0 {10000 ps} -r 20000
-force -deposit sim:/perudo_datapath/RESET_N 0 0
-run
-force -freeze sim:/perudo_datapath/RESET_N 1 0
-run
-run
-force -deposit sim:/perudo_datapath/NUOVO_GIOCATORE 1 0
-run
-run
-run
-run
-run
-run
-# ** Fatal: (vsim-3421) Value 8 for indice_turno_giocatore is out of range 0 to 7.
-#    Time: 180 ns  Iteration: 0  Process: /perudo_datapath/GestoreTurnoPartita_RTL File: C:/Users/giova/Desktop/Perudo_FPGA/SimulazioniSingoleComponenti/Datapath_Sim/Perudo_Datapath.vhd
-# Fatal error in Process GestoreTurnoPartita_RTL at C:/Users/giova/Desktop/Perudo_FPGA/SimulazioniSingoleComponenti/Datapath_Sim/Perudo_Datapath.vhd line 204
-# 
-# HDL call sequence:
-# Stopped at C:/Users/giova/Desktop/Perudo_FPGA/SimulazioniSingoleComponenti/Datapath_Sim/Perudo_Datapath.vhd 204 Process GestoreTurnoPartita_RTL
-# 
-run
-# Cannot continue because of fatal error.
-# HDL call sequence:
-# Stopped at C:/Users/giova/Desktop/Perudo_FPGA/SimulazioniSingoleComponenti/Datapath_Sim/Perudo_Datapath.vhd 204 Process GestoreTurnoPartita_RTL
-# 
-run
-# Cannot continue because of fatal error.
-# HDL call sequence:
-# Stopped at C:/Users/giova/Desktop/Perudo_FPGA/SimulazioniSingoleComponenti/Datapath_Sim/Perudo_Datapath.vhd 204 Process GestoreTurnoPartita_RTL
-# 
-restart
 force -freeze sim:/perudo_datapath/CLOCK 1 0, 0 {10000 ps} -r 20000
 force -deposit sim:/perudo_datapath/RESET_N 0 0
 run
@@ -66,34 +21,109 @@ run
 run
 run
 run
-# ** Fatal: (vsim-3421) Value 8 for indice_turno_giocatore is out of range 0 to 7.
-#    Time: 180 ns  Iteration: 0  Process: /perudo_datapath/GestoreTurnoPartita_RTL File: C:/Users/giova/Desktop/Perudo_FPGA/SimulazioniSingoleComponenti/Datapath_Sim/Perudo_Datapath.vhd
-# Fatal error in Process GestoreTurnoPartita_RTL at C:/Users/giova/Desktop/Perudo_FPGA/SimulazioniSingoleComponenti/Datapath_Sim/Perudo_Datapath.vhd line 204
-# 
-# HDL call sequence:
-# Stopped at C:/Users/giova/Desktop/Perudo_FPGA/SimulazioniSingoleComponenti/Datapath_Sim/Perudo_Datapath.vhd 204 Process GestoreTurnoPartita_RTL
-# 
-step
-# Cannot continue because of fatal error.
-# HDL call sequence:
-# Stopped at C:/Users/giova/Desktop/Perudo_FPGA/SimulazioniSingoleComponenti/Datapath_Sim/Perudo_Datapath.vhd 204 Process GestoreTurnoPartita_RTL
-# 
-step
-# Cannot continue because of fatal error.
-# HDL call sequence:
-# Stopped at C:/Users/giova/Desktop/Perudo_FPGA/SimulazioniSingoleComponenti/Datapath_Sim/Perudo_Datapath.vhd 204 Process GestoreTurnoPartita_RTL
-# 
 run
-# Cannot continue because of fatal error.
-# HDL call sequence:
-# Stopped at C:/Users/giova/Desktop/Perudo_FPGA/SimulazioniSingoleComponenti/Datapath_Sim/Perudo_Datapath.vhd 204 Process GestoreTurnoPartita_RTL
-# 
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+force -deposit sim:/perudo_datapath/GIOCATORE_AGGIUNTO 0 0
+run
+run
+run
 restart
 force -freeze sim:/perudo_datapath/CLOCK 1 0, 0 {10000 ps} -r 20000
-run
 force -deposit sim:/perudo_datapath/RESET_N 0 0
 run
-force -freeze sim:/perudo_datapath/RESET_N 1 0
+force -deposit sim:/perudo_datapath/RESET_N 1 0
 run
 force -freeze sim:/perudo_datapath/NUOVO_GIOCATORE 1 0
 run
@@ -102,116 +132,8 @@ run
 run
 run
 run
-step
-step
-step
-step
-step
-step
-step
-step
-step
-step
-step
-step
-step
-step
-step
-step
-step
-step
-step
-step
-step
-# Next activity is in 10 ns.
-step
-step
-step
-step
-step
-step
-step
-step
-step
-step
-step
-step
-step
-step
-step
-step
-step
-step
-step
-step
-step
-step
-step
-step
-step
-step
-step
-step
-step
-step
-step
-step
-step
-step
-step
-step
-step
-step
-# ** Fatal: (vsim-3421) Value 8 for indice_turno_giocatore is out of range 0 to 7.
-#    Time: 200 ns  Iteration: 0  Process: /perudo_datapath/GestoreTurnoPartita_RTL File: C:/Users/giova/Desktop/Perudo_FPGA/SimulazioniSingoleComponenti/Datapath_Sim/Perudo_Datapath.vhd
-# Fatal error in Process GestoreTurnoPartita_RTL at C:/Users/giova/Desktop/Perudo_FPGA/SimulazioniSingoleComponenti/Datapath_Sim/Perudo_Datapath.vhd line 204
-# 
-# HDL call sequence:
-# Stopped at C:/Users/giova/Desktop/Perudo_FPGA/SimulazioniSingoleComponenti/Datapath_Sim/Perudo_Datapath.vhd 204 Process GestoreTurnoPartita_RTL
-# 
-step
-# Cannot continue because of fatal error.
-# HDL call sequence:
-# Stopped at C:/Users/giova/Desktop/Perudo_FPGA/SimulazioniSingoleComponenti/Datapath_Sim/Perudo_Datapath.vhd 204 Process GestoreTurnoPartita_RTL
-# 
-step
-# Cannot continue because of fatal error.
-# HDL call sequence:
-# Stopped at C:/Users/giova/Desktop/Perudo_FPGA/SimulazioniSingoleComponenti/Datapath_Sim/Perudo_Datapath.vhd 204 Process GestoreTurnoPartita_RTL
-# 
-step
-# Cannot continue because of fatal error.
-# HDL call sequence:
-# Stopped at C:/Users/giova/Desktop/Perudo_FPGA/SimulazioniSingoleComponenti/Datapath_Sim/Perudo_Datapath.vhd 204 Process GestoreTurnoPartita_RTL
-# 
-step
-# Cannot continue because of fatal error.
-# HDL call sequence:
-# Stopped at C:/Users/giova/Desktop/Perudo_FPGA/SimulazioniSingoleComponenti/Datapath_Sim/Perudo_Datapath.vhd 204 Process GestoreTurnoPartita_RTL
-# 
-step
-# Cannot continue because of fatal error.
-# HDL call sequence:
-# Stopped at C:/Users/giova/Desktop/Perudo_FPGA/SimulazioniSingoleComponenti/Datapath_Sim/Perudo_Datapath.vhd 204 Process GestoreTurnoPartita_RTL
-# 
-quit -sim
-# Compile of Perudo_Datapath.vhd was successful.
-vsim work.perudo_datapath
-# vsim work.perudo_datapath 
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading ieee.numeric_std(body)
-# Loading work.perudo_package(body)
-# Loading ieee.math_real(body)
-# Loading work.perudo_datapath(rtl)
-add wave sim:/perudo_datapath/*
-force -freeze sim:/perudo_datapath/CLOCK 1 0, 0 {10000 ps} -r 20000
-force -deposit sim:/perudo_datapath/RESET_N 0 0
 run
-force -freeze sim:/perudo_datapath/RESET_N 1 0
 run
-force -deposit sim:/perudo_datapath/NUOVO_GIOCATORE 1 0
 run
 run
 run
@@ -223,26 +145,9 @@ run
 run
 run
 run
-quit -sim
-# Compile of Perudo_Datapath.vhd failed with 1 errors.
-# Compile of Perudo_Datapath.vhd was successful.
-vsim work.perudo_datapath
-# vsim work.perudo_datapath 
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading ieee.numeric_std(body)
-# Loading work.perudo_package(body)
-# Loading ieee.math_real(body)
-# Loading work.perudo_datapath(rtl)
-add wave sim:/perudo_datapath/*
-force -freeze sim:/perudo_datapath/CLOCK 1 0, 0 {10000 ps} -r 20000
 run
-force -deposit sim:/perudo_datapath/RESET_N 0 0
 run
-force -freeze sim:/perudo_datapath/RESET_N 1 0
 run
-force -deposit sim:/perudo_datapath/NUOVO_GIOCATORE 1 0
 run
 run
 run
@@ -273,6 +178,7 @@ run
 run
 run
 run
+force -freeze sim:/perudo_datapath/NUOVO_GIOCATORE 0 0
 run
 run
 run
@@ -280,198 +186,13 @@ run
 run
 run
 run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-# ** Fatal: (vsim-3421) Value 5 for indice_dado is out of range -1 to 4.
-#    Time: 1100 ns  Iteration: 0  Process: /perudo_datapath/GestoreGiocatoriInCampo_RTL File: C:/Users/giova/Desktop/Perudo_FPGA/SimulazioniSingoleComponenti/Datapath_Sim/Perudo_Datapath.vhd
-# Fatal error in Process GestoreGiocatoriInCampo_RTL at C:/Users/giova/Desktop/Perudo_FPGA/SimulazioniSingoleComponenti/Datapath_Sim/Perudo_Datapath.vhd line 157
-# 
-# HDL call sequence:
-# Stopped at C:/Users/giova/Desktop/Perudo_FPGA/SimulazioniSingoleComponenti/Datapath_Sim/Perudo_Datapath.vhd 157 Process GestoreGiocatoriInCampo_RTL
-# 
 restart
 force -freeze sim:/perudo_datapath/CLOCK 1 0, 0 {10000 ps} -r 20000
 force -deposit sim:/perudo_datapath/RESET_N 0 0
 run
 force -freeze sim:/perudo_datapath/RESET_N 1 0
 run
-run
-run
-run
-force -deposit sim:/perudo_datapath/NUOVO_GIOCATORE 1 0
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-step
-step
-step
-step
-step
-step
-step
-step
-step
-step
-step
-step
-step
-step
-step -over
-step
-step
-# Next activity is in 10 ns.
-step
-step -current
-step
-step
-step
-step
-step
-step
-step
-step
-step
-step
-step
-step
-step
-step
-step
-step
-step
-step
-step
-step
-step
-step
-step
-step
-quit -sim
-# Compile of Perudo_Datapath.vhd failed with 2 errors.
-# Compile of Perudo_Datapath.vhd was successful.
-vsim work.perudo_datapath
-# vsim work.perudo_datapath 
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading ieee.numeric_std(body)
-# Loading work.perudo_package(body)
-# Loading ieee.math_real(body)
-# Loading work.perudo_datapath(rtl)
-add wave sim:/perudo_datapath/*
-force -freeze sim:/perudo_datapath/CLOCK 1 0, 0 {10000 ps} -r 20000
-force -deposit sim:/perudo_datapath/RESET_N 0 0
-run
-run
-force -freeze sim:/perudo_datapath/RESET_N 1 0
-run
-force -deposit sim:/perudo_datapath/NUOVO_GIOCATORE 1 0
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
+force -freeze sim:/perudo_datapath/NUOVO_GIOCATORE 1 0
 run
 run
 run
@@ -525,40 +246,163 @@ run
 run
 force -deposit sim:/perudo_datapath/NUOVO_GIOCATORE 0 0
 run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-force -deposit sim:/perudo_datapath/PROSSIMO_TURNO 1 0
-run
-force -deposit sim:/perudo_datapath/PROSSIMO_TURNO 0 0
-run
-run
-run
-force -deposit sim:/perudo_datapath/PROSSIMO_TURNO 1 0
-run
-force -deposit sim:/perudo_datapath/PROSSIMO_TURNO 0 0
-run
-run
-force -deposit sim:/perudo_datapath/PROSSIMO_TURNO 1 0
-run
-force -deposit sim:/perudo_datapath/PROSSIMO_TURNO 0 0
-run
-run
-force -freeze sim:/perudo_datapath/INIZIA_PARTITA 1 0
-run
-run
-force -deposit sim:/perudo_datapath/INIZIA_PARTITA 0 0
-run
-run
-force -deposit sim:/perudo_datapath/PROSSIMO_TURNO 1 0
-run
-force -deposit sim:/perudo_datapath/PROSSIMO_TURNO 0 0
-run
+force -deposit sim:/perudo_datapath/ELIMINA_GIOCATORE 1 0
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+# Next activity is in 10 ns.
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+# ** Fatal: (vsim-3734) Index value -1 is out of range 0 to 7.
+#    Time: 1100 ns  Iteration: 0  Process: /perudo_datapath/GestoreGiocatoriInCampo_RTL File: C:/Users/giova/Desktop/Perudo_FPGA/SimulazioniSingoleComponenti/Datapath_Sim/Perudo_Datapath.vhd
+# Fatal error in Process GestoreGiocatoriInCampo_RTL at C:/Users/giova/Desktop/Perudo_FPGA/SimulazioniSingoleComponenti/Datapath_Sim/Perudo_Datapath.vhd line 185
+# 
+# HDL call sequence:
+# Stopped at C:/Users/giova/Desktop/Perudo_FPGA/SimulazioniSingoleComponenti/Datapath_Sim/Perudo_Datapath.vhd 185 Process GestoreGiocatoriInCampo_RTL
+# 
 quit -sim
+# Compile of Perudo_Datapath.vhd was successful.
+vsim work.perudo_datapath
+# vsim work.perudo_datapath 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.perudo_package(body)
+# Loading ieee.math_real(body)
+# Loading work.perudo_datapath(rtl)
+add wave sim:/perudo_datapath/*
+force -freeze sim:/perudo_datapath/CLOCK 1 0, 0 {10000 ps} -r 20000
+force -deposit sim:/perudo_datapath/RESET_N 0 0
+run
+force -freeze sim:/perudo_datapath/RESET_N 1 0
+run
+force -deposit sim:/perudo_datapath/NUOVO_GIOCATORE 1 0
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+force -deposit sim:/perudo_datapath/NUOVO_GIOCATORE 0 0
+run
+force -deposit sim:/perudo_datapath/ELIMINA_GIOCATORE 1 0
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
