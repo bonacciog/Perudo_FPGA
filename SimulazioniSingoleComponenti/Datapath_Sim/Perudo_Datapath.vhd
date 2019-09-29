@@ -22,18 +22,23 @@ entity Perudo_Datapath is
 			INIZIA_PARTITA        :	in		std_logic;
 --			ELIMINA_DADO								:	in		std_logic;
 
---			ESEGUI_SCOMMESSA_COM						:	in		std_logic;			
---			DADO_SCOMMESSO_COM						:	in		dado_type;
---			RICORRENZA_COM								:	in		integer;
+			ESEGUI_SCOMMESSA_COM						:	in		std_logic;			
+			DADO_SCOMMESSO_COM						:	in		dado_type;
+			RICORRENZA_COM								:	in		integer;
+			ESEGUI_SCOMMESSA_G0						:	in		std_logic;
+			DADO_SCOMMESSO_G0							:	in		dado_type;
+			RICORRENZA_G0								:	in		integer;
+			
+			CHECK                :	in		std_logic;
 			
 			TURNO_GIOCATORE							: 	out	std_logic;
 			GIOCATORE_AGGIUNTO    :  out std_logic;
 			GIOCATORE_ELIMINATO    :  out std_logic
-			
+			PARTITA_INIZIATA        :	out		std_logic;
 		
 			
 			-- Connections for the View
-		--	INIZIA_PARTITA								: 	in		std_logic;
+		--									: 	in		std_logic;
 			
 		--	ESEGUI_SCOMMESSA_G0						:	in		std_logic;
 		--	DADO_SCOMMESSO_G0							:	in		dado_type;
@@ -143,6 +148,7 @@ begin
 	     
 	     elsif(elimina_dado = '1') then
 					   giocatori_in_campo(indice_giocatore).dadi_in_mano(indice_dado) <=	NONE;
+					   giocatori_in_campo(indice_giocatore).numero_dadi_in_mano <= giocatori_in_campo(indice_giocatore).numero_dadi_in_mano -1;
 					   dado_eliminato <= '1';
 	     end if;
 	  end if;
@@ -319,36 +325,24 @@ begin
 --		end if;
 --	end process;
 	
---	EseguiScommessa : process(ESEGUI_SCOMMESSA_COM, ESEGUI_SCOMMESSA_G0, DADO_SCOMMESSO_COM, RICORRENZA_COM, DADO_SCOMMESSO_G0,RICORRENZA_G0, CLOCK, RESET_N)
---	begin
---		if(RESET_N = '0') then
---			scommessa_corrente.dado_scommesso <= NONE;
---			scommessa_corrente.ricorrenza <= 0;
---		elsif(rising_edge(CLOCK)) then
+	EseguiScommessa : process(ESEGUI_SCOMMESSA_COM, ESEGUI_SCOMMESSA_G0, DADO_SCOMMESSO_COM, RICORRENZA_COM, DADO_SCOMMESSO_G0,RICORRENZA_G0, CLOCK, RESET_N)
+	begin
+		if(RESET_N = '0') then
+			scommessa_corrente.dado_scommesso <= NONE;
+			scommessa_corrente.ricorrenza <= 0;
+		elsif(rising_edge(CLOCK)) then
 				-- Assegno valori scommessa
 					-- COM
---			if(ESEGUI_SCOMMESSA_COM = '1') then
---				scommessa_corrente.dado_scommesso <= DADO_SCOMMESSO_COM;
---				scommessa_corrente.ricorrenza <= RICORRENZA_COM;
---				-- G0
---			elsif(ESEGUI_SCOMMESSA_G0 = '1') then
---				scommessa_corrente.dado_scommesso <= DADO_SCOMMESSO_G0;
---				scommessa_corrente.ricorrenza <= RICORRENZA_G0;
-	--		end if;
-	--	end if;
---	end process;
+			if(ESEGUI_SCOMMESSA_COM = '1') then
+				scommessa_corrente.dado_scommesso <= DADO_SCOMMESSO_COM;
+				scommessa_corrente.ricorrenza <= RICORRENZA_COM;
+				-- G0
+			elsif(ESEGUI_SCOMMESSA_G0 = '1') then
+				scommessa_corrente.dado_scommesso <= DADO_SCOMMESSO_G0;
+				scommessa_corrente.ricorrenza <= RICORRENZA_G0;
+			end if;
+		end if;
+	end process;
 	
---	DammiGiocatoriInCampo : process(DAMMI_GIOCATORI_IN_CAMPO, giocatori_in_campo, numero_giocatori_in_campo) 	
---	begin
---			-- Restituisco giocatori in campo e relativo numero
---		GIOCATORI_IN_CAMPO_OUT <= giocatori_in_campo;
---		NUMERO_GIOCATORI_IN_CAMPO_OUT <= numero_giocatori_in_campo;
---	end process;
-	
---	DammiScommessaCorrente : process(DAMMI_SCOMMESSA_CORRENTE, scommessa_corrente)
---	begin
---			-- Restituisco scommessa corrente
---		SCOMMESSA_CORRENTE_OUT <= scommessa_corrente;
---	end process;
 	
 end architecture;
