@@ -20,7 +20,8 @@ entity Perudo_Controller is
 		
 		
 		--Test
-		LEDR					: out std_logic_vector(9 downto 0)
+		LEDR					: out std_logic_vector(9 downto 0);
+		LEDG					: out std_logic_vector(7 downto 0)
 		
 	);
 	
@@ -43,6 +44,7 @@ architecture RTL of Perudo_Controller is
 	signal pulse2 							: std_logic := '0';
 	signal pulse3 							: std_logic := '0';
 	signal pulse4 							: std_logic := '0';
+	signal stato							: std_logic_vector(7 downto 0) := "00000000";
 	signal count 							: integer range 0 to 50000000 := 0;
 	
 begin
@@ -80,7 +82,7 @@ begin
 			doubt_old := '0';
 			
 			internal_state       <= INIT;
-			initialization_state <= NUM;
+			initialization_state <= AVATAR;
 			turn_player_state <= RICORRENZA;		
 			
 			INIZIA_PARTITA			<= '0';
@@ -91,40 +93,58 @@ begin
 
 			INIZIA_PARTITA			<= '0';
 			
-			if (TURNO_GIOCATORE = '1') then
-				internal_state <= TURN_PLAYER;
-			end if;
+--			if() then
+--				if (TURNO_GIOCATORE = '1') then
+--					internal_state <= TURN_PLAYER;
+--				else 
+--					internal_state <= TURN_FPGA;
+--				end if;
+--			end if;
 			
 			case (internal_state) is
 				------------------------------------------------------------
 				-- Fase di inizializzazione
 				------------------------------------------------------------
 				when INIT =>
+					
+					stato <= "00000001";
+					
 					case (initialization_state) is	
 					
 					when AVATAR =>
 						-- Choose the Avatar
 						if (BUTTON_NEXT = '1' and next_old = '0') then
 							--CAMBIA AVATAR
-							pulse2 <= '1';
+							-------------------------
+							--Codice per inviare alla grafica il 
+							--cambiamento di avatar
+							-------------------------
+							pulse1 <= '1';
 						elsif (BUTTON_PREV = '1' and prev_old = '0') then
 							--CAMBIA AVATAR
-							pulse2 <= '0';
+							-------------------------
+							--Codice per inviare alla grafica il 
+							--cambiamento di avatar
+							-------------------------
+							pulse1 <= '0';
 						elsif (BUTTON_ENTER = '1' and enter_old = '0') then
+							-------------------------
+							--Codice per inviare alla grafica il 
+							--salvataggio di avatar
+							-------------------------
+							--Go to the selection of the number of players
 							initialization_state <= NUM;
-							INIZIA_PARTITA <= '1';
-
 						end if;
 					when NUM =>
 						--Select number of players
-						if (BUTTON_NEXT = '1' and next_old = '0') then
+						if (BUTTON_NEXT = '1' and next_old = '0') then --Aggiungere and GIOCATORE_AGIUNTO = 0
 							--Add a player
-							pulse1 <= '1';
-						elsif (BUTTON_PREV = '1' and prev_old = '0') then
+							pulse2 <= '1';
+						elsif (BUTTON_PREV = '1' and prev_old = '0') then --Aggiungere and GIOCATORE_AGIUNTO = 0
 							--Remove a  player
-							pulse1 <= '0';
-						elsif (BUTTON_ENTER = '1' and enter_old = '0') then
-							--Go to the selection of the Avatar
+							pulse2 <= '0';
+						elsif (BUTTON_ENTER = '1' and enter_old = '0') then --Aggiungere and GIOCATORE_AGIUNTO = 1						
+							INIZIA_PARTITA <= '1';
 							initialization_state <= AVATAR;
 						end if;
 					
@@ -133,6 +153,9 @@ begin
 				-- Fase di gioco del Giocatore
 				------------------------------------------------------------
 				when TURN_PLAYER =>
+				
+					stato <= "00000010";
+				
 					case (turn_player_state) is
 				
 					when RICORRENZA =>
@@ -178,6 +201,8 @@ begin
 				------------------------------------------------------------
 				when TURN_FPGA =>
 				
+					stato <= "00000011";
+				
 				------------------------------------------------------------
 				-- Fase di controllo dadi
 				------------------------------------------------------------
@@ -198,5 +223,7 @@ begin
 	LEDR(1) <= pulse2;
 	LEDR(2) <= pulse3;
 	LEDR(3) <= pulse4;
+	
+	LEDG(7 downto 0)<=stato;
 end architecture;
 	
