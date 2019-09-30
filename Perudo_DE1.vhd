@@ -9,7 +9,8 @@ entity Perudo_DE1 is
 		KEY			: in  std_logic_vector(3 downto 0);
 		SW				: in  std_logic_vector(9 downto 9);
 		--Test
-		LEDR			: out std_logic_vector(9 downto 0)
+		LEDR			: out std_logic_vector(9 downto 0);
+		LEDG			: out std_logic_vector(7 downto 0)
 	);
 
 end;
@@ -75,7 +76,8 @@ begin
 			TURNO_GIOCATORE	=> turno_giocatore,
 			
 			--Test
-			LEDR				=> LEDR
+			LEDR				=> LEDR,
+			LEDG				=> LEDG
 			
 		);
 	
