@@ -495,3 +495,1610 @@ vsim work.perudo_datapath
 # Loading ieee.math_real(body)
 # Loading work.perudo_datapath(rtl)
 add wave sim:/perudo_datapath/*
+force -freeze sim:/perudo_datapath/CLOCK 1 0, 0 {10000 ps} -r 20000
+force -deposit sim:/perudo_datapath/RESET_N 0 0
+run
+force -deposit sim:/perudo_datapath/RESET_N 1 0
+run
+run
+force -deposit sim:/perudo_datapath/NUOVO_GIOCATORE 1 0
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+force -deposit sim:/perudo_datapath/NUOVO_GIOCATORE 0 0
+run
+run
+force -deposit sim:/perudo_datapath/INIZIA_PARTITA 1 0
+run
+force -deposit sim:/perudo_datapath/INIZIA_PARTITA 0 0
+run
+run
+run
+force -deposit sim:/perudo_datapath/DADO_SCOMMESSO CINQUE 0
+force -deposit sim:/perudo_datapath/RICORRENZA 5 0
+force -deposit sim:/perudo_datapath/ESEGUI_SCOMMESSA 1 0
+run
+force -deposit sim:/perudo_datapath/ESEGUI_SCOMMESSA 0 0
+run
+force -deposit sim:/perudo_datapath/PROSSIMO_TURNO 1 0
+run
+force -deposit sim:/perudo_datapath/PROSSIMO_TURNO 0 0
+run
+force -deposit sim:/perudo_datapath/CHECK 1 0
+run
+run
+run
+force -deposit sim:/perudo_datapath/CHECK 0 0
+run
+force -deposit sim:/perudo_datapath/PROSSIMO_TURNO 1 0
+run
+force -deposit sim:/perudo_datapath/PROSSIMO_TURNO 0 0
+run
+force -deposit sim:/perudo_datapath/ESEGUI_SCOMMESSA 1 0
+run
+force -deposit sim:/perudo_datapath/ESEGUI_SCOMMESSA 0 0
+run
+force -deposit sim:/perudo_datapath/CHECK 1 0
+run
+run
+run
+run
+run
+run
+force -deposit sim:/perudo_datapath/CHECK 0 0
+run
+force -deposit sim:/perudo_datapath/CHECK 1 0
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+# Compile of Perudo_Datapath.vhd was successful with warnings.
+# Compile of Perudo_Datapath.vhd was successful.
+quit -sim
+vsim work.perudo_datapath
+# vsim work.perudo_datapath 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.perudo_package(body)
+# Loading ieee.math_real(body)
+# Loading work.perudo_datapath(rtl)
+add wave sim:/perudo_datapath/*
+force -deposit sim:/perudo_datapath/RESET_N 0 0
+force -freeze sim:/perudo_datapath/CLOCK 1 0, 0 {10000 ps} -r 20000
+run
+force -deposit sim:/perudo_datapath/RESET_N 1 0
+run
+force -deposit sim:/perudo_datapath/NUOVO_GIOCATORE 1 0
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+force -deposit sim:/perudo_datapath/NUOVO_GIOCATORE 0 0
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+force -deposit sim:/perudo_datapath/NUOVO_GIOCATORE 1 0
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+force -deposit sim:/perudo_datapath/NUOVO_GIOCATORE 0 0
+run
+run
+force -deposit sim:/perudo_datapath/INIZIA_PARTITA 1 0
+run
+force -freeze sim:/perudo_datapath/INIZIA_PARTITA 0 0
+run
+force -deposit sim:/perudo_datapath/DADO_SCOMMESSO CINQUE 0
+force -deposit sim:/perudo_datapath/RICORRENZA 5 0
+run
+force -freeze sim:/perudo_datapath/ESEGUI_SCOMMESSA 1 0
+run
+force -deposit sim:/perudo_datapath/ESEGUI_SCOMMESSA 0 0
+run
+force -deposit sim:/perudo_datapath/CHECK 1 0
+run
+# ** Fatal: (vsim-3734) Index value -1 is out of range 0 to 7.
+#    Time: 2420 ns  Iteration: 0  Process: /perudo_datapath/GestoreGiocatoriInCampo_RTL File: C:/Users/giova/Desktop/Perudo_FPGA/SimulazioniSingoleComponenti/Datapath_Sim/Perudo_Datapath.vhd
+# Fatal error in Process GestoreGiocatoriInCampo_RTL at C:/Users/giova/Desktop/Perudo_FPGA/SimulazioniSingoleComponenti/Datapath_Sim/Perudo_Datapath.vhd line 225
+# 
+# HDL call sequence:
+# Stopped at C:/Users/giova/Desktop/Perudo_FPGA/SimulazioniSingoleComponenti/Datapath_Sim/Perudo_Datapath.vhd 225 Process GestoreGiocatoriInCampo_RTL
+# 
+run
+# Cannot continue because of fatal error.
+# HDL call sequence:
+# Stopped at C:/Users/giova/Desktop/Perudo_FPGA/SimulazioniSingoleComponenti/Datapath_Sim/Perudo_Datapath.vhd 225 Process GestoreGiocatoriInCampo_RTL
+# 
+run
+# Cannot continue because of fatal error.
+# HDL call sequence:
+# Stopped at C:/Users/giova/Desktop/Perudo_FPGA/SimulazioniSingoleComponenti/Datapath_Sim/Perudo_Datapath.vhd 225 Process GestoreGiocatoriInCampo_RTL
+# 
+run
+# Cannot continue because of fatal error.
+# HDL call sequence:
+# Stopped at C:/Users/giova/Desktop/Perudo_FPGA/SimulazioniSingoleComponenti/Datapath_Sim/Perudo_Datapath.vhd 225 Process GestoreGiocatoriInCampo_RTL
+# 
+run
+# Cannot continue because of fatal error.
+# HDL call sequence:
+# Stopped at C:/Users/giova/Desktop/Perudo_FPGA/SimulazioniSingoleComponenti/Datapath_Sim/Perudo_Datapath.vhd 225 Process GestoreGiocatoriInCampo_RTL
+# 
+run
+# Cannot continue because of fatal error.
+# HDL call sequence:
+# Stopped at C:/Users/giova/Desktop/Perudo_FPGA/SimulazioniSingoleComponenti/Datapath_Sim/Perudo_Datapath.vhd 225 Process GestoreGiocatoriInCampo_RTL
+# 
+run
+# Cannot continue because of fatal error.
+# HDL call sequence:
+# Stopped at C:/Users/giova/Desktop/Perudo_FPGA/SimulazioniSingoleComponenti/Datapath_Sim/Perudo_Datapath.vhd 225 Process GestoreGiocatoriInCampo_RTL
+# 
+run
+# Cannot continue because of fatal error.
+# HDL call sequence:
+# Stopped at C:/Users/giova/Desktop/Perudo_FPGA/SimulazioniSingoleComponenti/Datapath_Sim/Perudo_Datapath.vhd 225 Process GestoreGiocatoriInCampo_RTL
+# 
+run
+# Cannot continue because of fatal error.
+# HDL call sequence:
+# Stopped at C:/Users/giova/Desktop/Perudo_FPGA/SimulazioniSingoleComponenti/Datapath_Sim/Perudo_Datapath.vhd 225 Process GestoreGiocatoriInCampo_RTL
+# 
+run
+# Cannot continue because of fatal error.
+# HDL call sequence:
+# Stopped at C:/Users/giova/Desktop/Perudo_FPGA/SimulazioniSingoleComponenti/Datapath_Sim/Perudo_Datapath.vhd 225 Process GestoreGiocatoriInCampo_RTL
+# 
+run
+# Cannot continue because of fatal error.
+# HDL call sequence:
+# Stopped at C:/Users/giova/Desktop/Perudo_FPGA/SimulazioniSingoleComponenti/Datapath_Sim/Perudo_Datapath.vhd 225 Process GestoreGiocatoriInCampo_RTL
+# 
+run
+# Cannot continue because of fatal error.
+# HDL call sequence:
+# Stopped at C:/Users/giova/Desktop/Perudo_FPGA/SimulazioniSingoleComponenti/Datapath_Sim/Perudo_Datapath.vhd 225 Process GestoreGiocatoriInCampo_RTL
+# 
+run
+# Cannot continue because of fatal error.
+# HDL call sequence:
+# Stopped at C:/Users/giova/Desktop/Perudo_FPGA/SimulazioniSingoleComponenti/Datapath_Sim/Perudo_Datapath.vhd 225 Process GestoreGiocatoriInCampo_RTL
+# 
+quit -sim
+# Compile of Perudo_Datapath.vhd was successful.
+vsim work.perudo_datapath
+# vsim work.perudo_datapath 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.perudo_package(body)
+# Loading ieee.math_real(body)
+# Loading work.perudo_datapath(rtl)
+add wave sim:/perudo_datapath/*
+force -freeze sim:/perudo_datapath/CLOCK 1 0, 0 {10000 ps} -r 20000
+run
+force -deposit sim:/perudo_datapath/RESET_N 0 0
+run
+force -deposit sim:/perudo_datapath/RESET_N 1 0
+run
+force -deposit sim:/perudo_datapath/NUOVO_GIOCATORE 1 0
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+force -deposit sim:/perudo_datapath/GIOCATORE_AGGIUNTO 0 0
+run
+force -freeze sim:/perudo_datapath/INIZIA_PARTITA 1 0
+run
+force -deposit sim:/perudo_datapath/INIZIA_PARTITA 0 0
+run
+force -freeze sim:/perudo_datapath/DADO_SCOMMESSO QUATTRO 0
+force -freeze sim:/perudo_datapath/RICORRENZA 6 0
+run
+force -deposit sim:/perudo_datapath/ESEGUI_SCOMMESSA 1 0
+run
+force -deposit sim:/perudo_datapath/ESEGUI_SCOMMESSA 0 0
+run
+force -deposit sim:/perudo_datapath/CHECK 1 0
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+quit -sim
+# Compile of Perudo_Datapath.vhd failed with 3 errors.
+# Compile of Perudo_Datapath.vhd failed with 2 errors.
+# Compile of Perudo_Datapath.vhd failed with 1 errors.
+# Compile of Perudo_Datapath.vhd failed with 1 errors.
+# Compile of Perudo_Datapath.vhd failed with 1 errors.
+# Compile of Perudo_Datapath.vhd failed with 1 errors.
+# Compile of Perudo_Datapath.vhd failed with 1 errors.
+# Compile of Perudo_Datapath.vhd was successful.
+vsim work.perudo_datapath
+# vsim work.perudo_datapath 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.perudo_package(body)
+# Loading ieee.math_real(body)
+# Loading work.perudo_datapath(rtl)
+add watch sim:/perudo_datapath/*
+add wave sim:/perudo_datapath/*
+force -freeze sim:/perudo_datapath/CLOCK 1 0, 0 {10000 ps} -r 20000
+force -deposit sim:/perudo_datapath/RESET_N 0 0
+run
+force -deposit sim:/perudo_datapath/RESET_N 1 0
+run
+force -deposit sim:/perudo_datapath/NUOVO_GIOCATORE 1 0
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+force -deposit sim:/perudo_datapath/NUOVO_GIOCATORE 0 0
+run
+restart
+run
+force -deposit sim:/perudo_datapath/NUOVO_GIOCATORE 1 0
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+force -deposit sim:/perudo_datapath/NUOVO_GIOCATORE 0 0
+run
+force -deposit sim:/perudo_datapath/NUOVO_GIOCATORE 1 0
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+force -deposit sim:/perudo_datapath/NUOVO_GIOCATORE 0 0
+run
+force -deposit sim:/perudo_datapath/ELIMINA_GIOCATORE 1 0
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+force -deposit sim:/perudo_datapath/ELIMINA_GIOCATORE 0 0
+run
+force -deposit sim:/perudo_datapath/INIZIA_PARTITA 1 0
+run
+force -deposit sim:/perudo_datapath/INIZIA_PARTITA 0 0
+run
+force -deposit sim:/perudo_datapath/DADO_SCOMMESSO CINQUE 0
+force -deposit sim:/perudo_datapath/RICORRENZA 5 0
+force -deposit sim:/perudo_datapath/ESEGUI_SCOMMESSA 1 0
+run
+force -deposit sim:/perudo_datapath/ESEGUI_SCOMMESSA 0 0
+run
+force -deposit sim:/perudo_datapath/PROSSIMO_TURNO 1 0
+run
+force -deposit sim:/perudo_datapath/PROSSIMO_TURNO 0 0
+run
+force -deposit sim:/perudo_datapath/CHECK 1 0
+run
+# ** Fatal: (vsim-3734) Index value -1 is out of range 0 to 7.
+#    Time: 3460 ns  Iteration: 0  Process: /perudo_datapath/GestoreGiocatoriInCampo_RTL File: C:/Users/giova/Desktop/Perudo_FPGA/SimulazioniSingoleComponenti/Datapath_Sim/Perudo_Datapath.vhd
+# Fatal error in Process GestoreGiocatoriInCampo_RTL at C:/Users/giova/Desktop/Perudo_FPGA/SimulazioniSingoleComponenti/Datapath_Sim/Perudo_Datapath.vhd line 236
+# 
+# HDL call sequence:
+# Stopped at C:/Users/giova/Desktop/Perudo_FPGA/SimulazioniSingoleComponenti/Datapath_Sim/Perudo_Datapath.vhd 236 Process GestoreGiocatoriInCampo_RTL
+# 
+run
+# Cannot continue because of fatal error.
+# HDL call sequence:
+# Stopped at C:/Users/giova/Desktop/Perudo_FPGA/SimulazioniSingoleComponenti/Datapath_Sim/Perudo_Datapath.vhd 236 Process GestoreGiocatoriInCampo_RTL
+# 
+run
+# Cannot continue because of fatal error.
+# HDL call sequence:
+# Stopped at C:/Users/giova/Desktop/Perudo_FPGA/SimulazioniSingoleComponenti/Datapath_Sim/Perudo_Datapath.vhd 236 Process GestoreGiocatoriInCampo_RTL
+# 
+run
+# Cannot continue because of fatal error.
+# HDL call sequence:
+# Stopped at C:/Users/giova/Desktop/Perudo_FPGA/SimulazioniSingoleComponenti/Datapath_Sim/Perudo_Datapath.vhd 236 Process GestoreGiocatoriInCampo_RTL
+# 
+run
+# Cannot continue because of fatal error.
+# HDL call sequence:
+# Stopped at C:/Users/giova/Desktop/Perudo_FPGA/SimulazioniSingoleComponenti/Datapath_Sim/Perudo_Datapath.vhd 236 Process GestoreGiocatoriInCampo_RTL
+# 
+run
+# Cannot continue because of fatal error.
+# HDL call sequence:
+# Stopped at C:/Users/giova/Desktop/Perudo_FPGA/SimulazioniSingoleComponenti/Datapath_Sim/Perudo_Datapath.vhd 236 Process GestoreGiocatoriInCampo_RTL
+# 
+run
+# Cannot continue because of fatal error.
+# HDL call sequence:
+# Stopped at C:/Users/giova/Desktop/Perudo_FPGA/SimulazioniSingoleComponenti/Datapath_Sim/Perudo_Datapath.vhd 236 Process GestoreGiocatoriInCampo_RTL
+# 
+quit -sim
+vsim work.perudo_datapath
+# vsim work.perudo_datapath 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.perudo_package(body)
+# Loading ieee.math_real(body)
+# Loading work.perudo_datapath(rtl)
+add wave sim:/perudo_datapath/*
+force -freeze sim:/perudo_datapath/CLOCK 1 0, 0 {10000 ps} -r 20000
+force -deposit sim:/perudo_datapath/RESET_N 0 0
+run
+force -deposit sim:/perudo_datapath/RESET_N 1 0
+run
+force -deposit sim:/perudo_datapath/NUOVO_GIOCATORE 1 0
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+force -deposit sim:/perudo_datapath/NUOVO_GIOCATORE 0 0
+run
+force -deposit sim:/perudo_datapath/ELIMINA_GIOCATORE 1 0
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+force -deposit sim:/perudo_datapath/ELIMINA_GIOCATORE 0 0
+run
+force -deposit sim:/perudo_datapath/INIZIA_PARTITA 1 0
+run
+force -deposit sim:/perudo_datapath/INIZIA_PARTITA 0 0
+run
+run
+force -deposit sim:/perudo_datapath/RICORRENZA 4 0
+force -deposit sim:/perudo_datapath/ESEGUI_SCOMMESSA {} 0
+# ** Error: (vsim-4026) Value "" does not represent a literal of the enumeration type.
+# ** Error: (vsim-4011) Invalid force value: {} 0.
+# 
+run
+force -deposit sim:/perudo_datapath/ESEGUI_SCOMMESSA 1 0
+run
+force -deposit sim:/perudo_datapath/ESEGUI_SCOMMESSA 0 0
+run
+force -deposit sim:/perudo_datapath/PROSSIMO_TURNO 1 0
+run
+force -deposit sim:/perudo_datapath/PROSSIMO_TURNO 0 0
+run
+force -deposit sim:/perudo_datapath/CHECK 1 0
+step
+step
+step
+step
+step
+# Next activity is in 10 ns.
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+# Next activity is in 10 ns.
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+quit -sim
+vsim work.perudo_datapath
+# vsim work.perudo_datapath 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.perudo_package(body)
+# Loading ieee.math_real(body)
+# Loading work.perudo_datapath(rtl)
+add wave sim:/perudo_datapath/*
+force -freeze sim:/perudo_datapath/CLOCK 1 0, 0 {10000 ps} -r 20000
+run
+force -deposit sim:/perudo_datapath/RESET_N 0 0
+run
+force -freeze sim:/perudo_datapath/RESET_N 1 0
+run
+force -deposit sim:/perudo_datapath/NUOVO_GIOCATORE 1 0
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+force -deposit sim:/perudo_datapath/NUOVO_GIOCATORE 0 0
+run
+force -deposit sim:/perudo_datapath/INIZIA_PARTITA 1 0
+run
+force -deposit sim:/perudo_datapath/INIZIA_PARTITA 0 0
+run
+force -deposit sim:/perudo_datapath/RICORRENZA 4 0
+run
+force -deposit sim:/perudo_datapath/ESEGUI_SCOMMESSA {} 0
+# ** Error: (vsim-4026) Value "" does not represent a literal of the enumeration type.
+# ** Error: (vsim-4011) Invalid force value: {} 0.
+# 
+run
+force -deposit sim:/perudo_datapath/ESEGUI_SCOMMESSA 1 0
+run
+force -freeze sim:/perudo_datapath/ESEGUI_SCOMMESSA 0 0
+run
+force -deposit sim:/perudo_datapath/PROSSIMO_TURNO 1 0
+run
+force -deposit sim:/perudo_datapath/PROSSIMO_TURNO 0 0
+run
+force -deposit sim:/perudo_datapath/CHECK 1 0
+step
+step -over
+step
+step -out
+# Next activity is in 10 ns.
+step -current
+step -over -current
+step -over -current
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+# Next activity is in 10 ns.
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+# ** Fatal: (vsim-3734) Index value -1 is out of range 0 to 7.
+#    Time: 2280 ns  Iteration: 0  Process: /perudo_datapath/GestoreGiocatoriInCampo_RTL File: C:/Users/giova/Desktop/Perudo_FPGA/SimulazioniSingoleComponenti/Datapath_Sim/Perudo_Datapath.vhd
+# Fatal error in Process GestoreGiocatoriInCampo_RTL at C:/Users/giova/Desktop/Perudo_FPGA/SimulazioniSingoleComponenti/Datapath_Sim/Perudo_Datapath.vhd line 236
+# 
+# HDL call sequence:
+# Stopped at C:/Users/giova/Desktop/Perudo_FPGA/SimulazioniSingoleComponenti/Datapath_Sim/Perudo_Datapath.vhd 236 Process GestoreGiocatoriInCampo_RTL
+# 
+step
+# Cannot continue because of fatal error.
+# HDL call sequence:
+# Stopped at C:/Users/giova/Desktop/Perudo_FPGA/SimulazioniSingoleComponenti/Datapath_Sim/Perudo_Datapath.vhd 236 Process GestoreGiocatoriInCampo_RTL
+# 
+step
+# Cannot continue because of fatal error.
+# HDL call sequence:
+# Stopped at C:/Users/giova/Desktop/Perudo_FPGA/SimulazioniSingoleComponenti/Datapath_Sim/Perudo_Datapath.vhd 236 Process GestoreGiocatoriInCampo_RTL
+# 
+quit -sim
+# Compile of Perudo_Datapath.vhd was successful.
+vsim work.perudo_datapath
+# vsim work.perudo_datapath 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.perudo_package(body)
+# Loading ieee.math_real(body)
+# Loading work.perudo_datapath(rtl)
+add wave sim:/perudo_datapath/*
+force -freeze sim:/perudo_datapath/CLOCK 1 0, 0 {10000 ps} -r 20000
+force -deposit sim:/perudo_datapath/RESET_N 1 0
+force -deposit sim:/perudo_datapath/RESET_N 0 0
+run
+force -deposit sim:/perudo_datapath/RESET_N 1 0
+run
+force -deposit sim:/perudo_datapath/NUOVO_GIOCATORE {} 0
+# ** Error: (vsim-4026) Value "" does not represent a literal of the enumeration type.
+# ** Error: (vsim-4011) Invalid force value: {} 0.
+# 
+run
+force -deposit sim:/perudo_datapath/NUOVO_GIOCATORE 1 0
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+force -deposit sim:/perudo_datapath/NUOVO_GIOCATORE 0 0
+run
+force -deposit sim:/perudo_datapath/INIZIA_PARTITA 1 0
+run
+force -deposit sim:/perudo_datapath/INIZIA_PARTITA 0 0
+run
+force -deposit sim:/perudo_datapath/RICORRENZA 4 0
+force -deposit sim:/perudo_datapath/ESEGUI_SCOMMESSA 0 0
+run
+force -deposit sim:/perudo_datapath/ESEGUI_SCOMMESSA 1 0
+run
+force -deposit sim:/perudo_datapath/ESEGUI_SCOMMESSA 0 0
+run
+force -deposit sim:/perudo_datapath/PROSSIMO_TURNO 1 0
+run
+force -deposit sim:/perudo_datapath/PROSSIMO_TURNO 0 0
+run
+force -deposit sim:/perudo_datapath/CHECK 1 0
+run
+# ** Fatal: (vsim-3734) Index value -1 is out of range 0 to 7.
+#    Time: 2240 ns  Iteration: 0  Process: /perudo_datapath/GestoreGiocatoriInCampo_RTL File: C:/Users/giova/Desktop/Perudo_FPGA/SimulazioniSingoleComponenti/Datapath_Sim/Perudo_Datapath.vhd
+# Fatal error in Process GestoreGiocatoriInCampo_RTL at C:/Users/giova/Desktop/Perudo_FPGA/SimulazioniSingoleComponenti/Datapath_Sim/Perudo_Datapath.vhd line 236
+# 
+# HDL call sequence:
+# Stopped at C:/Users/giova/Desktop/Perudo_FPGA/SimulazioniSingoleComponenti/Datapath_Sim/Perudo_Datapath.vhd 236 Process GestoreGiocatoriInCampo_RTL
+# 
+run
+# Cannot continue because of fatal error.
+# HDL call sequence:
+# Stopped at C:/Users/giova/Desktop/Perudo_FPGA/SimulazioniSingoleComponenti/Datapath_Sim/Perudo_Datapath.vhd 236 Process GestoreGiocatoriInCampo_RTL
+# 
+run
+# Cannot continue because of fatal error.
+# HDL call sequence:
+# Stopped at C:/Users/giova/Desktop/Perudo_FPGA/SimulazioniSingoleComponenti/Datapath_Sim/Perudo_Datapath.vhd 236 Process GestoreGiocatoriInCampo_RTL
+# 
+run
+# Cannot continue because of fatal error.
+# HDL call sequence:
+# Stopped at C:/Users/giova/Desktop/Perudo_FPGA/SimulazioniSingoleComponenti/Datapath_Sim/Perudo_Datapath.vhd 236 Process GestoreGiocatoriInCampo_RTL
+# 
+run
+# Cannot continue because of fatal error.
+# HDL call sequence:
+# Stopped at C:/Users/giova/Desktop/Perudo_FPGA/SimulazioniSingoleComponenti/Datapath_Sim/Perudo_Datapath.vhd 236 Process GestoreGiocatoriInCampo_RTL
+# 
+run
+# Cannot continue because of fatal error.
+# HDL call sequence:
+# Stopped at C:/Users/giova/Desktop/Perudo_FPGA/SimulazioniSingoleComponenti/Datapath_Sim/Perudo_Datapath.vhd 236 Process GestoreGiocatoriInCampo_RTL
+# 
+run
+# Cannot continue because of fatal error.
+# HDL call sequence:
+# Stopped at C:/Users/giova/Desktop/Perudo_FPGA/SimulazioniSingoleComponenti/Datapath_Sim/Perudo_Datapath.vhd 236 Process GestoreGiocatoriInCampo_RTL
+# 
+quit -sim
+# Compile of Perudo_Datapath.vhd was successful.
