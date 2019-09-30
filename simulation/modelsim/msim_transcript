@@ -1,0 +1,200 @@
+# Reading C:/altera/12.1/modelsim_ase/tcl/vsim/pref.tcl 
+# do Perudo_run_msim_rtl_vhdl.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Copying c:\altera\12.1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied c:\altera\12.1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vcom -93 -work work {C:/Users/Simone/Desktop/Io/Università/magistrale/1 Anno/Sistemi Digitali/progettoGitHub/Perudo_FPGA/perudo_package.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1b Compiler 2012.04 Apr 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling package perudo_package
+# -- Compiling package body perudo_package
+# -- Loading package perudo_package
+# vcom -93 -work work {C:/Users/Simone/Desktop/Io/Università/magistrale/1 Anno/Sistemi Digitali/progettoGitHub/Perudo_FPGA/Perudo_Datapath.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1b Compiler 2012.04 Apr 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package perudo_package
+# -- Loading package MATH_REAL
+# -- Compiling entity Perudo_Datapath
+# -- Compiling architecture RTL of Perudo_Datapath
+# vcom -93 -work work {C:/Users/Simone/Desktop/Io/Università/magistrale/1 Anno/Sistemi Digitali/progettoGitHub/Perudo_FPGA/Perudo_Controller.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1b Compiler 2012.04 Apr 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package perudo_package
+# -- Compiling entity Perudo_Controller
+# -- Compiling architecture RTL of Perudo_Controller
+# vcom -93 -work work {C:/Users/Simone/Desktop/Io/Università/magistrale/1 Anno/Sistemi Digitali/progettoGitHub/Perudo_FPGA/Perudo_DE1.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1b Compiler 2012.04 Apr 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package perudo_package
+# -- Compiling entity Perudo_DE1
+# -- Compiling architecture RTL of Perudo_DE1
+# -- Loading entity Perudo_Controller
+# -- Loading package MATH_REAL
+# -- Loading entity Perudo_Datapath
+# 
+vsim work.perudo_de1
+# vsim work.perudo_de1 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.perudo_package(body)
+# Loading ieee.math_real(body)
+# Loading work.perudo_de1(rtl)
+# Loading work.perudo_controller(rtl)
+# Loading work.perudo_datapath(rtl)
+vsim work.perudo_controller work.perudo_datapath work.perudo_de1
+# vsim work.perudo_controller work.perudo_datapath work.perudo_de1 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.perudo_package(body)
+# Loading work.perudo_controller(rtl)
+# Loading ieee.math_real(body)
+# Loading work.perudo_datapath(rtl)
+# Loading work.perudo_de1(rtl)
+add wave sim:/perudo_controller/*
+add wave sim:/perudo_datapath/*
+add wave sim:/perudo_de1/*
+force -freeze sim:/perudo_de1/CLOCK_50 1 0, 0 {10000 ps} -r 20000
+run
+force -freeze sim:/perudo_de1/clock 1 0, 0 {10000 ps} -r 20000
+run
+run
+run
+force -freeze sim:/perudo_controller/CLOCK 1 0, 0 {10000 ps} -r 20000
+force -deposit sim:/perudo_controller/RESET_N 1 0
+run
+force -deposit sim:/perudo_controller/RESET_N 0 0
+run
+run
+run
+run
+run
+force -deposit sim:/perudo_controller/NUOVO_GIOCATORE 1 0
+force -deposit sim:/perudo_controller/BUTTON_NEXT 1 0
+run
+force -deposit sim:/perudo_controller/BUTTON_NEXT 0 0
+run
+force -deposit sim:/perudo_controller/BUTTON_ENTER 1 0
+run
+force -deposit sim:/perudo_controller/BUTTON_ENTER 0 0
+run
+force -freeze sim:/perudo_controller/initialization_state NUM 0
+run
+force -deposit sim:/perudo_controller/BUTTON_NEXT 1 0
+force -deposit sim:/perudo_controller/NUOVO_GIOCATORE 1 0
+run
+add wave sim:/perudo_datapath/*
+restart
+force -freeze sim:/perudo_datapath/CLOCK 1 0, 0 {10000 ps} -r 20000
+force -deposit sim:/perudo_datapath/RESET_N 1 0
+run
+force -deposit sim:/perudo_datapath/RESET_N 0 0
+run
+force -deposit sim:/perudo_datapath/NUOVO_GIOCATORE 1 0
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+force -freeze sim:/perudo_datapath/RESET_N 1 0
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+force -deposit sim:/perudo_datapath/NUOVO_GIOCATORE 0 0
+run
+run
+run
+force -deposit sim:/perudo_datapath/ELIMINA_GIOCATORE 1 0
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+force -deposit sim:/perudo_datapath/ELIMINA_GIOCATORE 0 0
+run
+run
+restart
+add wave sim:/perudo_controller/*
+add wave sim:/perudo_de1/*

@@ -1,5 +1,5 @@
 Assembler report for Perudo
-Fri Sep 27 15:43:20 2019
+Mon Sep 30 20:41:05 2019
 Quartus II 64-Bit Version 12.1 Build 243 01/31/2013 Service Pack 1 SJ Web Edition
 
 
@@ -38,7 +38,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Fri Sep 27 15:43:20 2019 ;
+; Assembler Status      ; Successful - Mon Sep 30 20:41:05 2019 ;
 ; Revision Name         ; Perudo                                ;
 ; Top-level Entity Name ; Perudo_DE1                            ;
 ; Family                ; Cyclone II                            ;
@@ -95,7 +95,7 @@ applicable agreement for further details.
 +----------------+-------------------------------------------------------------------------------------------------------------------------+
 ; Device         ; EP2C20F484C7                                                                                                            ;
 ; JTAG usercode  ; 0xFFFFFFFF                                                                                                              ;
-; Checksum       ; 0x001B20E1                                                                                                              ;
+; Checksum       ; 0x001C46AA                                                                                                              ;
 +----------------+-------------------------------------------------------------------------------------------------------------------------+
 
 
@@ -106,7 +106,7 @@ applicable agreement for further details.
 +--------------------+---------------------------------------------------------------------------------------------------------------------+
 ; Device             ; EPCS16                                                                                                              ;
 ; JTAG usercode      ; 0x00000000                                                                                                          ;
-; Checksum           ; 0x1DD9C653                                                                                                          ;
+; Checksum           ; 0x1DD75687                                                                                                          ;
 ; Compression Ratio  ; 3                                                                                                                   ;
 +--------------------+---------------------------------------------------------------------------------------------------------------------+
 
@@ -117,14 +117,14 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Assembler
     Info: Version 12.1 Build 243 01/31/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Fri Sep 27 15:43:18 2019
+    Info: Processing started: Mon Sep 30 20:41:03 2019
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off Perudo -c Perudo
 Info (115031): Writing out detailed assembly data for power analysis
 Info (115030): Assembler is generating device programming files
 Info: Quartus II 64-Bit Assembler was successful. 0 errors, 0 warnings
     Info: Peak virtual memory: 4584 megabytes
-    Info: Processing ended: Fri Sep 27 15:43:20 2019
+    Info: Processing ended: Mon Sep 30 20:41:05 2019
     Info: Elapsed time: 00:00:02
-    Info: Total CPU time (on all processors): 00:00:01
+    Info: Total CPU time (on all processors): 00:00:02
 
 
