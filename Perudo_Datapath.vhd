@@ -29,7 +29,6 @@ entity Perudo_Datapath is
 			-- PARTITA_INIZIATA							: 	out	std_logic;
 			
 			-- Connections for the View
-			INIZIA_PARTITA								: 	in		std_logic;
 			
 			ESEGUI_SCOMMESSA_G0						:	in		std_logic;
 			DADO_SCOMMESSO_G0							:	in		dado_type;

@@ -10,8 +10,8 @@ package perudo_package is
 	constant MAX_GIOCATORI 									: positive	:= 8;
 	constant MIN_NUMERO_PER_GENERAZIONE_CASUALE 		: positive	:= 1;
 	constant MAX_NUMERO_PER_GENERAZIONE_CASUALE 		: positive	:= 6;
-	constant MIN_ATTESA_CASUALE 		: integer	:= 0;
-	constant MAX_ATTESA_CASUALE 		: integer	:= 9;
+	constant MIN_ATTESA_CASUALE 		: positive	:= 0;
+	constant MAX_ATTESA_CASUALE 		: positive	:= 9;
 	
 --	constant PROBABILITA_DADO_UNO							: real		:= 0.33;
 --	constant PROBABILITA_DADO_GENERICO					: real		:= 0.17;
