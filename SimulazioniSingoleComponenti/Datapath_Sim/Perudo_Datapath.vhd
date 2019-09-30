@@ -139,7 +139,7 @@ begin
 					   giocatori_in_campo(indice_giocatore).numero_dadi_in_mano <= giocatori_in_campo(indice_giocatore).numero_dadi_in_mano -1;
 					   dado_eliminato <= '1';
 			 elsif(scala_giocatori = '1') then
-			     for j in indice_giocatore to numero_giocatori_in_campo-2 loop
+			     for j in indice_giocatore to numero_giocatori_in_campo-1 loop
 						 giocatori_in_campo(j) <= giocatori_in_campo(j+1);
 					 end loop;
 					 giocatori_scalati <= '1';
@@ -213,12 +213,16 @@ begin
 	               end loop;
 	             end loop;
 	             if(counter_check >= scommessa_corrente.ricorrenza) then
-	               indice_giocatore <= indice_turno_giocatore - 1;
-	               indice_dado <= giocatori_in_campo(indice_turno_giocatore - 1).numero_dadi_in_mano-1;
+	               indice_giocatore <= indice_turno_giocatore;
+	               indice_dado <= giocatori_in_campo(indice_turno_giocatore).numero_dadi_in_mano-1;
 	               elimina_dado <= '1';
 	             else
-	               indice_giocatore <= indice_turno_giocatore - 2;
-	               indice_dado <= giocatori_in_campo(indice_turno_giocatore - 2).numero_dadi_in_mano-1;
+	               if(indice_turno_giocatore = 0) then
+	                   indice_giocatore <= numero_giocatori_in_campo - 1;
+	               else
+	                 indice_giocatore <= indice_turno_giocatore - 1;
+	               end if;
+	               indice_dado <= giocatori_in_campo(indice_turno_giocatore - 1).numero_dadi_in_mano-1;
 	               elimina_dado <= '1';
 	             end if;
 	           elsif(dado_eliminato = '1') then

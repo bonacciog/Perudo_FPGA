@@ -249,3 +249,249 @@ run
 quit -sim
 # Compile of Perudo_Datapath.vhd failed with 2 errors.
 # Compile of Perudo_Datapath.vhd was successful.
+vsim work.perudo_datapath
+# vsim work.perudo_datapath 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.perudo_package(body)
+# Loading ieee.math_real(body)
+# Loading work.perudo_datapath(rtl)
+add wave sim:/perudo_datapath/*
+force -freeze sim:/perudo_datapath/CLOCK 1 0, 0 {10000 ps} -r 20000
+force -deposit sim:/perudo_datapath/RESET_N 0 0
+run
+force -deposit sim:/perudo_datapath/RESET_N 1 0
+run
+force -deposit sim:/perudo_datapath/NUOVO_GIOCATORE 1 0
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+force -deposit sim:/perudo_datapath/NUOVO_GIOCATORE 0 0
+run
+force -deposit sim:/perudo_datapath/NUOVO_GIOCATORE 1 0
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+force -deposit sim:/perudo_datapath/NUOVO_GIOCATORE 0 0
+run
+run
+run
+force -deposit sim:/perudo_datapath/INIZIA_PARTITA 1 0
+run
+force -deposit sim:/perudo_datapath/INIZIA_PARTITA 0 0
+run
+force -deposit sim:/perudo_datapath/DADO_SCOMMESSO UNO 0
+force -deposit sim:/perudo_datapath/RICORRENZA 4 0
+force -deposit sim:/perudo_datapath/ESEGUI_SCOMMESSA 1 0
+run
+force -deposit sim:/perudo_datapath/ESEGUI_SCOMMESSA 0 0
+run
+force -deposit sim:/perudo_datapath/PROSSIMO_TURNO 1 0
+run
+force -deposit sim:/perudo_datapath/PROSSIMO_TURNO 0 0
+run
+run
+force -deposit sim:/perudo_datapath/CHECK 1 0
+run
+run
+run
+force -deposit sim:/perudo_datapath/CHECK 0 0
+run
+force -deposit sim:/perudo_datapath/PROSSIMO_TURNO 1 0
+run
+force -deposit sim:/perudo_datapath/PROSSIMO_TURNO 0 0
+run
+force -deposit sim:/perudo_datapath/CHECK 1 0
+run
+run
+run
+force -deposit sim:/perudo_datapath/CHECK 0 0
+run
+force -deposit sim:/perudo_datapath/CHECK 1 0
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+# Compile of Perudo_Datapath.vhd was successful.
+quit -sim
+vsim work.perudo_datapath
+# vsim work.perudo_datapath 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.perudo_package(body)
+# Loading ieee.math_real(body)
+# Loading work.perudo_datapath(rtl)
+add wave sim:/perudo_datapath/*
