@@ -20,36 +20,23 @@ entity Perudo_Datapath is
 	
 			PROSSIMO_TURNO								:	in		std_logic;
 			INIZIA_PARTITA        :	in		std_logic;
---			ELIMINA_DADO								:	in		std_logic;
 
-			ESEGUI_SCOMMESSA_COM						:	in		std_logic;			
-			DADO_SCOMMESSO_COM						:	in		dado_type;
-			RICORRENZA_COM								:	in		integer;
-			ESEGUI_SCOMMESSA_G0						:	in		std_logic;
-			DADO_SCOMMESSO_G0							:	in		dado_type;
-			RICORRENZA_G0								:	in		integer;
+			ESEGUI_SCOMMESSA						:	in		std_logic;			
+			DADO_SCOMMESSO						:	in		dado_type;
+			RICORRENZA								:	in		integer;
 			
 			CHECK                :	in		std_logic;
-			
+			CHECKED              : out std_logic;
 			TURNO_GIOCATORE							: 	out	std_logic;
 			GIOCATORE_AGGIUNTO    :  out std_logic;
-			GIOCATORE_ELIMINATO    :  out std_logic
+			GIOCATORE_ELIMINATO    :  out std_logic;
 			PARTITA_INIZIATA        :	out		std_logic;
 		
 			
-			-- Connections for the View
-		--									: 	in		std_logic;
+		
 			
-		--	ESEGUI_SCOMMESSA_G0						:	in		std_logic;
-		--	DADO_SCOMMESSO_G0							:	in		dado_type;
-		--	RICORRENZA_G0								:	in		integer;
-		--	DAMMI_GIOCATORI_IN_CAMPO				:	in		std_logic;
-		--	DAMMI_SCOMMESSA_CORRENTE				:	in		std_logic;			
-			
-	--		FINE_PARTITA								: 	out	std_logic
-		--	GIOCATORI_IN_CAMPO_OUT					:	out	giocatore_array(0 to MAX_GIOCATORI-1);
-		--	NUMERO_GIOCATORI_IN_CAMPO_OUT			: 	out 	integer range 0 to MAX_GIOCATORI;
-		--	SCOMMESSA_CORRENTE_OUT					: 	out 	scommessa_type
+			FINE_PARTITA								: 	out	std_logic
+
 			
 	);
 end entity;
@@ -68,8 +55,8 @@ architecture RTL of Perudo_Datapath is
   signal dado_aggiunto                            : std_logic;
 	signal indice_giocatore                         : integer range -1 to MAX_GIOCATORI-1;
 	signal indice_dado                              : integer range -1 to MAX_DADI-1;
-	
-	
+	signal giocatori_scalati                          : std_logic;
+	signal scala_giocatori                          : std_logic;
 	signal elimina_dado                             : std_logic; 
 	signal dado_eliminato                             : std_logic; 
 		-- Variabili utili per la generazione del turno giocatore d'inizio partita casuale e dei turni successivi	
@@ -111,13 +98,13 @@ begin
 		end if;
 	end process;	
 	
-	GestoreDadi_RTL : process(aggiungi_dado,CLOCK,RESET_N)
+	GestoreDadi_RTL : process(aggiungi_dado,elimina_dado,scala_giocatori,CLOCK,RESET_N)
 	begin
 	  if(RESET_N = '0') then
 	     cicli_da_attendere <= -1;
 	     dado_aggiunto <= '0';
 	     dado_eliminato <= '0';
-
+       giocatori_scalati <= '0';
 		
 		
 			for j in 0 to MAX_GIOCATORI-1 loop
@@ -129,6 +116,7 @@ begin
 	  elsif(rising_edge(CLOCK)) then
 	     dado_aggiunto <= '0';
 	     dado_eliminato <= '0';
+	     giocatori_scalati <= '0';
 	     if(aggiungi_dado = '1') then
 	           -- sto iniziando adesso ad attendere, mi � appena arrivato il segnale aggiungi_dado
 	        if(cicli_da_attendere = -1) then
@@ -150,11 +138,17 @@ begin
 					   giocatori_in_campo(indice_giocatore).dadi_in_mano(indice_dado) <=	NONE;
 					   giocatori_in_campo(indice_giocatore).numero_dadi_in_mano <= giocatori_in_campo(indice_giocatore).numero_dadi_in_mano -1;
 					   dado_eliminato <= '1';
+			 elsif(scala_giocatori = '1') then
+			     for j in indice_giocatore to numero_giocatori_in_campo-2 loop
+						 giocatori_in_campo(j) <= giocatori_in_campo(j+1);
+					 end loop;
+					 giocatori_scalati <= '1';
 	     end if;
 	  end if;
 	end process;
 	
-	GestoreGiocatoriInCampo_RTL : process(NUOVO_GIOCATORE,CLOCK,RESET_N,dado_aggiunto)
+	GestoreGiocatoriInCampo_RTL : process(NUOVO_GIOCATORE,ELIMINA_GIOCATORE,CHECK,CLOCK,RESET_N,dado_aggiunto, giocatori_scalati, dado_eliminato)
+	variable counter_check : integer;
 	begin
 	     if(RESET_N = '0') then
 	     	  numero_giocatori_in_campo <= 0;
@@ -162,12 +156,19 @@ begin
 	        indice_giocatore <= -1;
 	        indice_dado <= -1;
 	        GIOCATORE_AGGIUNTO <= '0';
+	        GIOCATORE_ELIMINATO <= '0';
+	        FINE_PARTITA <= '0';
 	        elimina_dado <= '0';
+	        counter_check := 0;
+	        CHECKED <= '0';
+	        scala_giocatori <= '0';
 	     elsif(rising_edge(CLOCK)) then
-	        
+	        scala_giocatori <= '0';
 	        elimina_dado <= '0';
 	        GIOCATORE_AGGIUNTO <= '0';
-	        
+	        GIOCATORE_ELIMINATO <= '0';
+	        FINE_PARTITA <= '0';
+	        CHECKED <= '0';
 	        if(NUOVO_GIOCATORE = '1') then
 	           if(indice_giocatore = -1) then
 	             indice_giocatore <= numero_giocatori_in_campo;
@@ -202,6 +203,42 @@ begin
 	                GIOCATORE_ELIMINATO <= '1';
 	             end if;
 	           end if;
+	        elsif(CHECK = '1') then
+	           if(indice_giocatore = -1) then
+	             for i in 0 to numero_giocatori_in_campo-1 loop
+	               for j in 0 to giocatori_in_campo(i).numero_dadi_in_mano-1 loop
+	                 if(giocatori_in_campo(i).dadi_in_mano(j) = scommessa_corrente.dado_scommesso) then
+	                  counter_check := counter_check + 1;
+	                  end if;
+	               end loop;
+	             end loop;
+	             if(counter_check >= scommessa_corrente.ricorrenza) then
+	               indice_giocatore <= indice_turno_giocatore - 1;
+	               indice_dado <= giocatori_in_campo(indice_turno_giocatore - 1).numero_dadi_in_mano-1;
+	               elimina_dado <= '1';
+	             else
+	               indice_giocatore <= indice_turno_giocatore - 2;
+	               indice_dado <= giocatori_in_campo(indice_turno_giocatore - 2).numero_dadi_in_mano-1;
+	               elimina_dado <= '1';
+	             end if;
+	           elsif(dado_eliminato = '1') then
+	               counter_check := 0;	               
+	               if(giocatori_in_campo(indice_giocatore).numero_dadi_in_mano = 0) then 
+                    numero_giocatori_in_campo <= numero_giocatori_in_campo - 1;
+                    scala_giocatori <= '1';
+                 else
+                    CHECKED <= '1';
+                    indice_giocatore <= -1;
+					          indice_dado <= -1;
+                 end if;
+	           elsif(giocatori_scalati = '1')then
+	               CHECKED <= '1';
+                 if(numero_giocatori_in_campo = 1) then
+						        FINE_PARTITA <= '1';		
+					       end if;
+					       indice_giocatore <= -1;
+					       indice_dado <= -1;
+	           end if;
 	        end if;
 	        
 	     end if;	 
@@ -215,13 +252,14 @@ begin
 				indice_turno_giocatore <= 0;
 				conteggio_controllato := '0';
 				TURNO_GIOCATORE <= '0';
+				PARTITA_INIZIATA <= '0';
 			elsif(rising_edge(CLOCK)) then
 			  if(INIZIA_PARTITA = '1') then
 			   			-- Smetto di contare per il random, la partita � iniziata
 					if(conteggio_controllato = '0') then
 						conteggio_controllato := '1';
 					end if;
-					
+					PARTITA_INIZIATA <= '1';
 			  elsif(PROSSIMO_TURNO = '1') then		
 					if(numero_giocatori_in_campo /= 0) then					
 					if(indice_turno_giocatore = (numero_giocatori_in_campo-1)) then
@@ -242,90 +280,20 @@ begin
 						indice_turno_giocatore <= indice_turno_giocatore + 1;
 					end if;
 					end if;
-				end if;
-			  if(indice_turno_giocatore = 0 and conteggio_controllato = '1') then
+				else 
+			   if(indice_turno_giocatore = 0) then
 							-- Inizia utente
 						TURNO_GIOCATORE <= '1';
 					
-				else
+				  else
 						TURNO_GIOCATORE <= '0';
+				  end if;
 				end if;
 			end if;
 
 	end process;
 	
---	GestoreGiocatoriInCampo_RTL : process(RESET_N,NUOVO_GIOCATORE)--, ELIMINA_GIOCATORE, ELIMINA_DADO, CLOCK, )
-	--begin
-			-- All'avvio del sistema la partita è composta di default da due giocatore (UTENTE, COM)
-		
---		if(RESET_N = '0') then
-				-- Reset numero giocatori in campo
---			numero_giocatori_in_campo <= 0;
-		
-		
-	--		for j in 0 to MAX_GIOCATORI-1 loop
-	--			giocatori_in_campo(j).numero_dadi_in_mano <= 0; 
-	--		end loop;
-			
-				-- Assegno dadi ai due giocatori 
-	--		for j in 0 to MAX_GIOCATORI-1 loop
---				if(j=0 or j=1) then
---					for i in 0 to MAX_DADI-1 loop
---						giocatori_in_campo(j).dadi_in_mano(i) <=	scegli_dado_casuale(numero_per_generazione_casuale_dado);
---						giocatori_in_campo(j).numero_dadi_in_mano <= giocatori_in_campo(j).numero_dadi_in_mano + 1;
---					end loop;
---					numero_giocatori_in_campo <= numero_giocatori_in_campo + 1;
-	--			else
---					for i in 0 to MAX_DADI-1 loop
---						giocatori_in_campo(j).dadi_in_mano(i) <=	NONE;
---					end loop;
-			--	end if;	
---			end loop;
---		end if;
---		elsif(rising_edge(CLOCK)) then
---			if( ELIMINA_DADO = '1') then
---					-- Elimino dado ultimo giocatore che ha scommesso
---				giocatori_in_campo(indice_turno_giocatore).dadi_in_mano(giocatori_in_campo(indice_turno_giocatore).numero_dadi_in_mano-1) <= NONE;
---				giocatori_in_campo(indice_turno_giocatore).numero_dadi_in_mano <= giocatori_in_campo(indice_turno_giocatore).numero_dadi_in_mano - 1;
---		
---					-- Elimino giocatore perdente
---				if(giocatori_in_campo(indice_turno_giocatore).numero_dadi_in_mano = 0) then 
---					numero_giocatori_in_campo <= numero_giocatori_in_campo - 1;
---			
---						-- Un giocatore ha vinto, partita finita
---					if(numero_giocatori_in_campo = 1) then
---						FINE_PARTITA <= '1';
---					else
---							-- Scalo i giocatori
---						for j in indice_turno_giocatore to numero_giocatori_in_campo-1 loop
---							giocatori_in_campo(j) <= giocatori_in_campo(j+1);
---						end loop;			
---					end if;
---				end if;
---			elsif(ELIMINA_GIOCATORE = '1') then
---				if(numero_giocatori_in_campo > 2) then
---					-- Elimino ultimo giocatore
---				for i in 0 to MAX_DADI-1 loop
---					giocatori_in_campo(numero_giocatori_in_campo).dadi_in_mano(i) <=	NONE;
---				end loop;
---		
---				numero_giocatori_in_campo <= numero_giocatori_in_campo - 1;
---				end if;
---			elsif(NUOVO_GIOCATORE = '1') then
---				if(numero_giocatori_in_campo<MAX_GIOCATORI) then
---					-- Aggiungo giocatore
---				for i in 0 to MAX_DADI-1 loop
---					giocatori_in_campo(numero_giocatori_in_campo).dadi_in_mano(i) <=	scegli_dado_casuale(numero_per_generazione_casuale_dado);
---					giocatori_in_campo(numero_giocatori_in_campo).numero_dadi_in_mano <= giocatori_in_campo(numero_giocatori_in_campo).numero_dadi_in_mano + 1;
---				end loop;
---		
---				numero_giocatori_in_campo <= numero_giocatori_in_campo + 1;
---				end if;
---			end if;
---		end if;
---	end process;
-	
-	EseguiScommessa : process(ESEGUI_SCOMMESSA_COM, ESEGUI_SCOMMESSA_G0, DADO_SCOMMESSO_COM, RICORRENZA_COM, DADO_SCOMMESSO_G0,RICORRENZA_G0, CLOCK, RESET_N)
+	EseguiScommessa : process(ESEGUI_SCOMMESSA, DADO_SCOMMESSO, RICORRENZA,CLOCK, RESET_N)
 	begin
 		if(RESET_N = '0') then
 			scommessa_corrente.dado_scommesso <= NONE;
@@ -333,13 +301,9 @@ begin
 		elsif(rising_edge(CLOCK)) then
 				-- Assegno valori scommessa
 					-- COM
-			if(ESEGUI_SCOMMESSA_COM = '1') then
-				scommessa_corrente.dado_scommesso <= DADO_SCOMMESSO_COM;
-				scommessa_corrente.ricorrenza <= RICORRENZA_COM;
-				-- G0
-			elsif(ESEGUI_SCOMMESSA_G0 = '1') then
-				scommessa_corrente.dado_scommesso <= DADO_SCOMMESSO_G0;
-				scommessa_corrente.ricorrenza <= RICORRENZA_G0;
+			if(ESEGUI_SCOMMESSA = '1') then
+				scommessa_corrente.dado_scommesso <= DADO_SCOMMESSO;
+				scommessa_corrente.ricorrenza <= RICORRENZA;
 			end if;
 		end if;
 	end process;
