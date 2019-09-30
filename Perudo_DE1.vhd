@@ -30,19 +30,16 @@ architecture RTL of Perudo_DE1 is
 	signal nuovo_giocatore						:std_logic;
 	signal elimina_giocatore					:std_logic;
 	signal prossimo_turno						:std_logic;
-	signal elimina_dado							:std_logic;
-	signal esegui_scommessa_com				:std_logic;
-	signal dado_scommesso_com					:dado_type;
-	signal ricorrenza_com						:integer;
-	signal esegui_scommessa_g0					:std_logic;
-	signal dado_scommesso_g0					:dado_type;
-	signal ricorrenza_g0							:integer;
-	signal dammi_giocatori_in_campo			:std_logic;
-	signal dammi_scommessa_corrente			:std_logic;
+	signal esegui_scommessa						:std_logic;
+	signal dado_scommesso						:dado_type;
+	signal ricorrenza								:integer;
+	signal check									:std_logic;
+	signal checked									:std_logic;
+	signal giocatore_aggiunto					:std_logic;
+	signal giocatore_eliminato					:std_logic;
+	signal partita_iniziata						:std_logic;
 	signal fine_partita							:std_logic;
-	signal giocatori_in_campo_out				:giocatore_array(0 to MAX_GIOCATORI-1);
-	signal numero_giocatori_in_campo_out	:integer range 0 to MAX_GIOCATORI;
-	signal scommessa_corrente_out				:scommessa_type;
+	
 	-----------------------------------
 	
 begin
@@ -86,9 +83,9 @@ begin
 	----------------------------------------
 	datapath: entity work.Perudo_Datapath
 		port map(
-			CLOCK				=> CLOCK_50,
-			RESET_N			=> RESET_N,
-			INIZIA_PARTITA	=> inizia_partita,
+			CLOCK					=> CLOCK_50,
+			RESET_N				=> RESET_N,
+			INIZIA_PARTITA		=> inizia_partita,
 			TURNO_GIOCATORE	=> turno_giocatore,
 			
 			-----------------------------------
@@ -97,19 +94,16 @@ begin
 			NUOVO_GIOCATORE						=> nuovo_giocatore,
 			ELIMINA_GIOCATORE 					=> elimina_giocatore,
 			PROSSIMO_TURNO							=> prossimo_turno,
-			ELIMINA_DADO							=> elimina_dado,
-			ESEGUI_SCOMMESSA_COM					=> esegui_scommessa_com,
-			DADO_SCOMMESSO_COM					=> dado_scommesso_com,
-			RICORRENZA_COM							=> ricorrenza_com,
-			ESEGUI_SCOMMESSA_G0					=> esegui_scommessa_g0,
-			DADO_SCOMMESSO_G0						=> dado_scommesso_g0,
-			RICORRENZA_G0							=> ricorrenza_g0,
-			DAMMI_GIOCATORI_IN_CAMPO			=> dammi_giocatori_in_campo,
-			DAMMI_SCOMMESSA_CORRENTE			=>	dammi_scommessa_corrente,
-			FINE_PARTITA							=> fine_partita,
-			GIOCATORI_IN_CAMPO_OUT				=> giocatori_in_campo_out,
-			NUMERO_GIOCATORI_IN_CAMPO_OUT		=> numero_giocatori_in_campo_out,
-			SCOMMESSA_CORRENTE_OUT				=> scommessa_corrente_out
+			ESEGUI_SCOMMESSA						=> esegui_scommessa,
+			DADO_SCOMMESSO							=> dado_scommesso,
+			RICORRENZA								=> ricorrenza,
+			CHECK                				=> check,
+			CHECKED              				=> checked,
+			GIOCATORE_AGGIUNTO    				=> giocatore_aggiunto,
+			GIOCATORE_ELIMINATO   				=> giocatore_eliminato,
+			PARTITA_INIZIATA        			=> partita_iniziata,
+			FINE_PARTITA							=> fine_partita
+
 			---------------------------------
 		);
 	
