@@ -134,20 +134,21 @@ begin
 	        else
 	           cicli_da_attendere <= cicli_da_attendere - 1; 
 	        end if;
-	     
-	     elsif(elimina_dado = '1') then
+	     end if;
+	     if(elimina_dado = '1') then
 					   giocatori_in_campo(indice_giocatore).dadi_in_mano(indice_dado) <=	NONE;
 					   giocatori_in_campo(indice_giocatore).numero_dadi_in_mano <= giocatori_in_campo(indice_giocatore).numero_dadi_in_mano -1;
 					   dado_eliminato <= '1';
-		   elsif(reset_altri_giocatori = '1') then
+			 end if;
+		   if(reset_altri_giocatori = '1') then
 		        for j in numero_giocatori_in_campo to MAX_GIOCATORI-1 loop
 				      giocatori_in_campo(j).numero_dadi_in_mano <= 0;
 				      for i in 0 to MAX_DADI-1 loop
 						    giocatori_in_campo(j).dadi_in_mano(i) <=	NONE;
 				      end loop; 
 			      end loop;
+			 end if;
 			end if;
-	  end if;
 	end process;
 	
 	GestoreGiocatoriInCampo_RTL : process(NUOVO_GIOCATORE,ELIMINA_GIOCATORE,CHECK,RIGENERA,CLOCK,RESET_N,dado_aggiunto, dado_eliminato)
@@ -197,7 +198,7 @@ begin
 	                GIOCATORE_AGGIUNTO <= '1';
 	             end if;
 	           end if;
-	        elsif(ELIMINA_GIOCATORE = '1') then	           
+	        if(ELIMINA_GIOCATORE = '1') then	           
 	           if(indice_giocatore = -1) then
 	               indice_giocatore <= numero_giocatori_in_campo - 1;
 	               indice_dado <= giocatori_in_campo(numero_giocatori_in_campo - 1).numero_dadi_in_mano-1;
@@ -214,7 +215,8 @@ begin
 	                GIOCATORE_ELIMINATO <= '1';
 	             end if;
 	           end if;
-	        elsif(CHECK = '1') then
+	        end if;
+	        if(CHECK = '1') then
 	           if(indice_giocatore = -1) then
 	             for i in 0 to numero_giocatori_in_campo-1 loop
 	               for j in 0 to giocatori_in_campo(i).numero_dadi_in_mano-1 loop
@@ -251,7 +253,8 @@ begin
 						        FINE_PARTITA <= '1';	
 					       end if;
 	           end if;
-	        elsif(RIGENERA = '1')then
+	        end if;
+	        if(RIGENERA = '1')then
 	           if(giocatori_rigenerati < numero_giocatori_in_campo) then
 	               if(indice_giocatore = -1) then
 	                  dadi_da_rigenerare := giocatori_in_campo(giocatori_rigenerati).numero_dadi_in_mano;
@@ -288,11 +291,12 @@ begin
 	               end if;
 	           else
 	               indice_giocatore <= -1;
+	               giocatori_rigenerati := 0;
 	               indice_dado <= -1;
 	               RIGENERATI <= '1';
 	           end if;
 	        end if;
-	        
+	      end if;
 	     end if;	 
 	end process;
 	
@@ -312,7 +316,8 @@ begin
 						conteggio_controllato := '1';
 					end if;
 					PARTITA_INIZIATA <= '1';
-			  elsif(PROSSIMO_TURNO = '1') then		
+				end if;
+			  if(PROSSIMO_TURNO = '1') then		
 					if(numero_giocatori_in_campo /= 0) then					
 					if(indice_turno_giocatore = (numero_giocatori_in_campo-1)) then
 						indice_turno_giocatore <= 0;
@@ -320,6 +325,7 @@ begin
 						indice_turno_giocatore <= indice_turno_giocatore + 1;
 					end if;
 					end if;
+				end if;
 				end if;
 				
 			     -- Il conteggio controllato sempre perch� prima che la partita inizi si deve generare un turno random, 
@@ -340,7 +346,6 @@ begin
 				  else
 						TURNO_GIOCATORE <= '0';
 				  end if;
-				end if;
 			end if;
 
 	end process;
