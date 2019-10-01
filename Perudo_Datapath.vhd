@@ -187,21 +187,21 @@ begin
 	             end if;
 	           end if;
 	        elsif(ELIMINA_GIOCATORE = '1') then	           
-	           if(indice_giocatore = -1) then
-	               indice_giocatore <= numero_giocatori_in_campo - 1;
-	               indice_dado <= giocatori_in_campo(numero_giocatori_in_campo - 1).numero_dadi_in_mano-1;
-	               elimina_dado <= '1';
-	           elsif(dado_eliminato = '1') then
-	             elimina_dado <= '0';
-	             if(giocatori_in_campo(indice_giocatore).numero_dadi_in_mano > 0) then
-	                indice_dado <= giocatori_in_campo(indice_giocatore).numero_dadi_in_mano-1;
-	                elimina_dado <= '1';
-	             else
-					        numero_giocatori_in_campo <= numero_giocatori_in_campo - 1;
-					        indice_giocatore <= -1;
-	                indice_dado <= -1;
+--	           if(indice_giocatore = -1) then
+--	               indice_giocatore <= numero_giocatori_in_campo - 1;
+--	               indice_dado <= giocatori_in_campo(numero_giocatori_in_campo - 1).numero_dadi_in_mano-1;
+--	               elimina_dado <= '1';
+--	           elsif(dado_eliminato = '1') then
+--	             elimina_dado <= '0';
+--	             if(giocatori_in_campo(indice_giocatore).numero_dadi_in_mano > 0) then
+--	                indice_dado <= giocatori_in_campo(indice_giocatore).numero_dadi_in_mano-1;
+--	                elimina_dado <= '1';
+--	             else
+--					        numero_giocatori_in_campo <= numero_giocatori_in_campo - 1;
+--					        indice_giocatore <= -1;
+--	                indice_dado <= -1;
 	                GIOCATORE_ELIMINATO <= '1';
-	             end if;
+--	             end if;
 	           end if;
 	        elsif(CHECK = '1') then
 	           if(indice_giocatore = -1) then
