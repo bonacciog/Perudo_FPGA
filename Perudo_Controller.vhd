@@ -231,12 +231,12 @@ begin
 			-----------------------------------------
 			-- Segnale di Ack da parte del Datapath
 			-----------------------------------------
-			if(GIOCATORE_AGGIUNTO = '1') then
+			if(GIOCATORE_AGGIUNTO = '1' and nuovo_giocatore_old = '1') then
 				NUOVO_GIOCATORE <= '0';
 				nuovo_giocatore_old := '0';
 				numero_giocatori <= numero_giocatori + 1;
 			end if;
-			if(GIOCATORE_ELIMINATO = '1') then
+			if(GIOCATORE_ELIMINATO = '1' and elimina_giocatore_old = '1') then
 				ELIMINA_GIOCATORE <= '0';
 				elimina_giocatore_old := '0';
 				numero_giocatori <= numero_giocatori - 1;
