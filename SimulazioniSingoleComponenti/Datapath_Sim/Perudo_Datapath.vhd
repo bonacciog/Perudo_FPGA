@@ -198,6 +198,7 @@ begin
 	                GIOCATORE_AGGIUNTO <= '1';
 	             end if;
 	           end if;
+	        end if;
 	        if(ELIMINA_GIOCATORE = '1') then	           
 	           if(indice_giocatore = -1) then
 	               indice_giocatore <= numero_giocatori_in_campo - 1;
@@ -256,19 +257,20 @@ begin
 	        end if;
 	        if(RIGENERA = '1')then
 	           if(giocatori_rigenerati < numero_giocatori_in_campo) then
-	               if(indice_giocatore = -1) then
+	               if(dadi_da_rigenerare = 0) then
 	                  dadi_da_rigenerare := giocatori_in_campo(giocatori_rigenerati).numero_dadi_in_mano;
 	               end if;
 	               if(stato_rigenerazione = ELIMINAZIONE) then
 	                  if(dado_eliminato = '1') then
 	                     if(giocatori_in_campo(giocatori_rigenerati).numero_dadi_in_mano=0)then
 	                       stato_rigenerazione := AGGIUNTA;
+	                       indice_giocatore <= -1;
 	                     else
 	                         indice_giocatore <= giocatori_rigenerati;
 	                         indice_dado <= giocatori_in_campo(giocatori_rigenerati).numero_dadi_in_mano-1;
 	                         elimina_dado <= '1';
 	                     end if;
-	                  else
+	                  elsif(indice_giocatore = -1) then
 	                    indice_giocatore <= giocatori_rigenerati;
 	                    indice_dado <= giocatori_in_campo(giocatori_rigenerati).numero_dadi_in_mano-1;
 	                    elimina_dado <= '1';
@@ -278,12 +280,15 @@ begin
 	                      if(giocatori_in_campo(giocatori_rigenerati).numero_dadi_in_mano=dadi_da_rigenerare)then
 	                       stato_rigenerazione := ELIMINAZIONE;
 	                       giocatori_rigenerati := giocatori_rigenerati+1;
+	                       dadi_da_rigenerare := 0;
+	                       indice_giocatore <= -1;
+	                       aggiungi_dado <= '0';
 	                     else
 	                         indice_giocatore <= giocatori_rigenerati;
 	                         indice_dado <= giocatori_in_campo(giocatori_rigenerati).numero_dadi_in_mano;
 	                         aggiungi_dado <= '1';
 	                     end if;
-	                   else
+	                   elsif(indice_giocatore = -1) then
 	                         indice_giocatore <= giocatori_rigenerati;
 	                         indice_dado <= giocatori_in_campo(giocatori_rigenerati).numero_dadi_in_mano;
 	                         aggiungi_dado <= '1';
@@ -295,7 +300,6 @@ begin
 	               indice_dado <= -1;
 	               RIGENERATI <= '1';
 	           end if;
-	        end if;
 	      end if;
 	     end if;	 
 	end process;
