@@ -202,7 +202,7 @@ begin
 --	                indice_dado <= -1;
 	                GIOCATORE_ELIMINATO <= '1';
 --	             end if;
-	           end if;
+--	           end if;
 	        elsif(CHECK = '1') then
 	           if(indice_giocatore = -1) then
 	             for i in 0 to numero_giocatori_in_campo-1 loop

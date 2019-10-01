@@ -53,6 +53,12 @@ architecture RTL of Perudo_Controller is
 	signal numero_giocatori				: unsigned(9 downto 0) := "0000000000";
 	signal count 							: integer range 0 to 50000000 := 0;
 	
+	-----------------------
+	--Scommessa
+	signal ricorrenza_temp				: integer range 0 to 40 := 0;
+	signal dado_temp						: integer range 1 to 6 := 1;
+	-----------------------
+	
 begin
 
 	--Eventuali assegnamenti
@@ -178,11 +184,13 @@ begin
 				
 					when RICORRENZA =>
 						--Select recurrence
-						if (BUTTON_NEXT = '1' and next_old = '0') then
+						if (BUTTON_NEXT = '1' and next_old = '0' and ricorrenza_temp < 40) then
 							--Increment recurrence
+							ricorrenza_temp <= ricorrenza_temp + 1;
 							pulse3 <= '1';
-						elsif (BUTTON_PREV = '1' and prev_old = '0') then
+						elsif (BUTTON_PREV = '1' and prev_old = '0' and ricorrenza_temp > 0) then
 							--Decrement recurrence
+							ricorrenza_temp <= ricorrenza_temp - 1;
 							pulse3 <= '0';
 						elsif (BUTTON_ENTER = '1' and enter_old = '0') then
 							--Go to the selection of the die
@@ -195,13 +203,13 @@ begin
 						
 					when DADO =>
 						-- Choose the die
-						if (BUTTON_NEXT = '1' and next_old = '0') then
+						if (BUTTON_NEXT = '1' and next_old = '0' and dado_temp < 6) then
 							--Increment the number of the face
-							--
+							dado_temp <= dado_temp + 1;
 							pulse4 <= '1';
-						elsif (BUTTON_PREV = '1' and prev_old = '0') then
+						elsif (BUTTON_PREV = '1' and prev_old = '0' and dado_temp > 1) then
 							--Decrement the number of the face
-							--
+							dado_temp <= dado_temp - 1;
 							pulse4 <= '0';							
 						elsif (BUTTON_ENTER = '1' and enter_old = '0') then
 							turn_player_state <= RICORRENZA;
@@ -254,7 +262,7 @@ begin
 	
 	--LEDR(0) <= pulse1;
 	--LEDR(1) <= pulse2;
-	LEDR <= std_logic_vector(numero_giocatori);
+	LEDR <= std_logic_vector(to_signed(dado_temp,10));
 	--LEDR(2) <= pulse3;
 	--LEDR(3) <= pulse4;
 	
