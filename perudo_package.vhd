@@ -4,21 +4,19 @@ use ieee.std_logic_1164.all;
 ---use work.vga_package.all;
 
 package perudo_package is
-	constant MIN_DADI											: positive  := 1;
-	constant	MAX_DADI 										: positive  := 5;
-	constant MIN_GIOCATORI 									: positive	:= 1;
-	constant MAX_GIOCATORI 									: positive	:= 8;
-	constant MIN_NUMERO_PER_GENERAZIONE_CASUALE 		: positive	:= 1;
-	constant MAX_NUMERO_PER_GENERAZIONE_CASUALE 		: positive	:= 6;
-	constant MIN_ATTESA_CASUALE 		: integer	:= 0;
-	constant MAX_ATTESA_CASUALE 		: integer	:= 9;
-	
---	constant PROBABILITA_DADO_UNO							: real		:= 0.33;
---	constant PROBABILITA_DADO_GENERICO					: real		:= 0.17;
---	constant SOGLIA_ALTA_PROBABILITA_GENERICO			: real		:= 0.40;
---	constant SOGLIA_BASSA_PROBABILITA					: real		:= 0.20;
---	constant SOGLIA_ALTA_PROBABILITA_UNO				: real		:= 0.40;		-- QUANTO ERA? QUESTE SONO SBAGLIATE, SONO DI PROVA
--- constant SOGLIA_BASSA_PROBABILITA_UNO				: real		:= 0.20;		-- QUANTO ERA? O CE N'ERA UNA UNICA?
+	constant MIN_DADI										: positive  := 1;
+	constant	MAX_DADI 									: positive  := 5;
+	constant	MAX_DADI_TOTALI				         : positive  := 10;
+	constant MIN_GIOCATORI 								: positive	:= 1;
+	constant MAX_GIOCATORI 								: positive	:= 2;
+	constant VALORE_DADO_MIN		           		: positive	:= 1;
+	constant VALORE_DADO_MAX 		          		: positive	:= 6;
+	constant MIN_ATTESA_CASUALE 						: integer	:= 0;
+	constant MAX_ATTESA_CASUALE 						: integer	:= 9;
+	constant PROBABILITA_DADO_GENERICO				: real		:= 0.33333333;
+	constant PROBABILITA_DADO_UNO			     		: real		:= 0.16666667;
+	constant SOGLIA_DUBITO               			: real      := 0.1;
+
 	
 		-- Tipi utili al Datapath	
 	type dado_type is (UNO, DUE, TRE, QUATTRO, CINQUE, SEI, NONE);
@@ -26,194 +24,293 @@ package perudo_package is
 	type dado_array is array (natural range <>) of dado_type;
 	
 	type giocatore is record
-		dadi_in_mano				:	dado_array(0 to MAX_DADI-1);
-		numero_dadi_in_mano		:  integer range 0 to MAX_DADI;
+		dadi_in_mano				                   :	dado_array(0 to MAX_DADI-1);
+		numero_dadi_in_mano		              : integer range 0 to MAX_DADI;
 	end record;
 	
 	type giocatore_array is array (natural range <>) of giocatore;	
 	
 	type scommessa_type is record
-		dado_scommesso : dado_type;
-		ricorrenza		: integer;
+		dado_scommesso                     : dado_type;
+		ricorrenza		                       : integer;
 	end record;
 	
-		-- Tipi utili alla gestione della logica
---	type valori_reali_array is array (natural range<>) of real;
---	type ricorrenza_dadi_array is array (dado_type'range) of integer;
+	type ricorrenza_array is array (natural range <>) of integer;
+	
+	type scommessa_giocata_type is record
+		dado_scommesso                     : dado_type;
+		ricorrenze		                       : ricorrenza_array(MIN_DADI-1 to MAX_DADI_TOTALI-1);
+	end record;
+	
+	type scommessa_array is array (natural range <>) of scommessa_giocata_type;	
 	
 		-- Funzione generatrice dado casuale
-	function scegli_dado_casuale(numero_per_generazione_casuale_dado : integer range MIN_NUMERO_PER_GENERAZIONE_CASUALE to MAX_NUMERO_PER_GENERAZIONE_CASUALE) return dado_type;
+	function converti_da_intero_a_dado(valore_intero : integer range VALORE_DADO_MIN to VALORE_DADO_MAX) return dado_type;
 	
+	function converti_da_dado_a_intero(dado : dado_type) return integer;
+			
 		-- Funzioni utili alla logica d'esecuzione scomessa COM
-			-- Utili al calcolo della probabilita
---	function fattoriale(valore: integer) return real;
---	function coefficiente_binomiale(n : integer; i: integer) return real;
---	function potenza(base : real; esponente: integer) return real;
---	function funzione_di_massa_binomiale(p : real; n: integer; i: integer) return real;
---	function probabilita(prob_X : real; dadi_totali: integer; ricorrenza: integer) return real;
+  function dammi_tutte_le_azioni_possibili(scommessa_corrente : scommessa_type; dadi_totali_in_campo : integer) return  scommessa_array;
+	function dadi_in_campo(giocatori_in_campo : giocatore_array(0 to MAX_GIOCATORI-1)) return integer;
+	function scegli_scommessa(scommessa_corrente : scommessa_type; giocatori_in_campo : giocatore_array(0 to MAX_GIOCATORI-1); indice_giocatore : integer range 0 to MAX_GIOCATORI-1) return scommessa_type;
+  function ricorrenza_dado(dado : dado_type; dadi_in_mano : dado_array(0 to MAX_DADI-1)) return integer;
+
+	-- Utili al calcolo della probabilita
+	function fattoriale(valore: integer) return integer;
+	function coefficiente_binomiale(n : integer; i: integer) return real;
+	function potenza(base : real; esponente: integer) return real;
+	function funzione_di_massa_binomiale(p : real; n: integer; i: integer) return real;
+	function probabilita(prob_X : real; dadi_totali: integer; ricorrenza: integer) return real;
 	
-			-- Utili alla scelta della scommessa
---	function dado_maggiore(dado_x : dado_type; dado_y : dado_type) return dado_type;
---	function valore_massimo(valori: valori_reali_array) return real; 
---	function dado_piu_ricorrente_in_mano(dadi_in_mano	:	dado_array(0 to MAX_DADI-1)) return dado_type; -- Restituisce il piu grande tra due equamente ricorrenti
---	function dado_maggiore_in_mano(dadi_in_mano	:	dado_array(0 to MAX_DADI-1)) return dado_type;
---	function dadi_in_campo(giocatori_in_campo : giocatore_array(0 to MAX_GIOCATORI-1)) return integer;
+
+
 end package;
 
 package body perudo_package is
 
-	function scegli_dado_casuale(numero_per_generazione_casuale_dado : integer range MIN_NUMERO_PER_GENERAZIONE_CASUALE to MAX_NUMERO_PER_GENERAZIONE_CASUALE)
+	function converti_da_intero_a_dado(valore_intero : integer range VALORE_DADO_MIN to VALORE_DADO_MAX)
 			return dado_type is 
 			variable dado : dado_type;
 	begin
-		case (numero_per_generazione_casuale_dado mod 7) is
-			when 1		=>	dado := UNO;
-			when 2		=>	dado := DUE;
-			when 3		=>	dado := TRE;
-			when 4		=>	dado := QUATTRO;
-			when 5		=>	dado := CINQUE;
-			when 6		=>	dado := SEI;
-			when others => dado := NONE;
+		case (valore_intero) is
+			when 1		     =>	dado := UNO;
+			when 2		     =>	dado := DUE;
+			when 3		     =>	dado := TRE;
+			when 4		     =>	dado := QUATTRO;
+			when 5		     =>	dado := CINQUE;
+			when 6		     =>	dado := SEI;
+			when others  => dado := NONE;
 		end case;
 		return dado;
 	end function;
+	
+	
+	function converti_da_dado_a_intero(dado : dado_type) 
+		return integer is
+		variable result : integer range -1 to VALORE_DADO_MAX;
+	begin
+		case (dado) is
+			when UNO				 =>	result := 1;
+			when DUE				 =>	result := 2;
+			when TRE				 =>	result := 3;
+			when QUATTRO	=>	result := 4;
+			when CINQUE		=>	result := 5;
+			when SEI				 =>	result := 6;
+			when others 	=> result := -1;
+		end case;
+		return result;
+	end function;
+	
+	function ricorrenza_dado(dado : dado_type; dadi_in_mano : dado_array(0 to MAX_DADI-1)) 
+	         return integer is
+	variable result                : integer := 0;
+	begin
+	  for i in 0 to MAX_DADI-1 loop
+	    if(dado = dadi_in_mano(i)) then
+	       result := result + 1;
+	    end if;
+	  end loop;
+	  return result;
+	end function;
+	
+	function scegli_scommessa(scommessa_corrente : scommessa_type; giocatori_in_campo : giocatore_array(0 to MAX_GIOCATORI-1); indice_giocatore : integer) 
+	         return scommessa_type is
+	variable prob_tmp              : real := 0.0;
+	variable prob_attuale          : real := 0.0;
+	variable prob_dubito           : real := 0.0;
+	variable numero_altri_dadi     : integer := 0;
+	variable mia_ricorrenza        : integer := 0;
+	variable scommesse_possibili   : scommessa_array(VALORE_DADO_MIN-1 to VALORE_DADO_MAX-1);
+	variable scommessa_result      : scommessa_type;
+	variable dadi_totali_in_campo  : integer;
+	begin
+	  -- verifico prima se la scommessa � probabila, se non lo � dubito
+	  dadi_totali_in_campo := dadi_in_campo(giocatori_in_campo);
+	  
+	  if(scommessa_corrente.dado_scommesso = UNO) then
+	     prob_dubito := probabilita(PROBABILITA_DADO_UNO, (dadi_totali_in_campo-giocatori_in_campo(indice_giocatore).numero_dadi_in_mano), (scommessa_corrente.ricorrenza-ricorrenza_dado(scommessa_corrente.dado_scommesso, giocatori_in_campo(indice_giocatore).dadi_in_mano)));
+	  else
+	     prob_dubito := probabilita(PROBABILITA_DADO_GENERICO, (dadi_totali_in_campo-giocatori_in_campo(indice_giocatore).numero_dadi_in_mano), (scommessa_corrente.ricorrenza-ricorrenza_dado(scommessa_corrente.dado_scommesso, giocatori_in_campo(indice_giocatore).dadi_in_mano)));
+	  end if;
+	  
+	  if(prob_dubito <= SOGLIA_DUBITO) then
+	     scommessa_result.dado_scommesso := NONE;
+	     scommessa_result.ricorrenza := -1;
+	     return scommessa_result;
+	  end if;
+	  
+	  -- scommessa precedente probabile, perci� ora scommetto
+	  scommesse_possibili := dammi_tutte_le_azioni_possibili(scommessa_corrente, dadi_totali_in_campo);
+	  for i in VALORE_DADO_MIN-1 to VALORE_DADO_MAX-1 loop
+	    if(scommesse_possibili(i).dado_scommesso /= NONE) then
+	       mia_ricorrenza := ricorrenza_dado(scommesse_possibili(i).dado_scommesso, giocatori_in_campo(indice_giocatore).dadi_in_mano);
+	       for j in MIN_DADI-1 to MAX_DADI_TOTALI-1 loop
+	         if(j<dadi_totali_in_campo) then
+	           if(scommesse_possibili(i).dado_scommesso = UNO) then
+	             prob_tmp := probabilita(PROBABILITA_DADO_UNO, (dadi_totali_in_campo-giocatori_in_campo(indice_giocatore).numero_dadi_in_mano), (scommesse_possibili(i).ricorrenze(j)-mia_ricorrenza));
+	           else
+	             prob_tmp := probabilita(PROBABILITA_DADO_GENERICO, (dadi_totali_in_campo-giocatori_in_campo(indice_giocatore).numero_dadi_in_mano), (scommesse_possibili(i).ricorrenze(j)-mia_ricorrenza));
+	           end if;
+	           if(prob_tmp > prob_attuale) then
+	               prob_attuale := prob_tmp;
+	             	 scommessa_result.dado_scommesso := scommesse_possibili(i).dado_scommesso;
+	               scommessa_result.ricorrenza := scommesse_possibili(i).ricorrenze(j);
+	           end if;
+	         end if;
+	       end loop;
+	    end if;
+	  end loop;
+	  return scommessa_result;
+	end function;
+	
+	function dadi_in_campo(giocatori_in_campo : giocatore_array(0 to MAX_GIOCATORI-1)) 
+			return integer is
+			variable risultato : integer:=0;
+	begin
+		for j in 0 to MAX_GIOCATORI-1 loop
+		  if(giocatori_in_campo(j).dadi_in_mano(0) /= NONE) then
+			 risultato := risultato + giocatori_in_campo(j).numero_dadi_in_mano;
+			end if;
+		end loop;
+		return risultato;
+	end function;
+	
+	function dammi_tutte_le_azioni_possibili(scommessa_corrente : scommessa_type; dadi_totali_in_campo : integer) 
+	return  scommessa_array is
+	variable dado_scommesso 		       : integer range VALORE_DADO_MIN to VALORE_DADO_MAX;
+	variable totali_scommesse 		     : scommessa_array(VALORE_DADO_MIN-1 to VALORE_DADO_MAX-1);
+	variable totali_scommesse_dim  	 : integer := 0;
+	variable ricorrenze_dim  			     : integer := 0;
+	begin
+		dado_scommesso := converti_da_dado_a_intero(scommessa_corrente.dado_scommesso);
+		if(dado_scommesso /= 1) then
+			for i in VALORE_DADO_MIN+1 to VALORE_DADO_MAX loop
+				if(i >= dado_scommesso) then
+					totali_scommesse(totali_scommesse_dim).dado_scommesso := converti_da_intero_a_dado(i);
+					 -- 40 perch� sono il valore massimo di dadi in campo (previsti massimo 8 giocatori)
+					for j in MIN_DADI to MAX_DADI_TOTALI loop
+					  if(j<=dadi_totali_in_campo) then
+					    -- questo if � dovuto al fatto che � possibile avere stessa ricorrenza con dado per� maggiore
+					    if(i = dado_scommesso) then
+							   if(j>scommessa_corrente.ricorrenza) then
+								  totali_scommesse(totali_scommesse_dim).ricorrenze(ricorrenze_dim) := j;
+								  ricorrenze_dim := ricorrenze_dim +1;
+							   end if;
+							else
+							   if(j>=scommessa_corrente.ricorrenza) then
+								  totali_scommesse(totali_scommesse_dim).ricorrenze(ricorrenze_dim) := j;
+								  ricorrenze_dim := ricorrenze_dim +1;
+							   end if;
+							 end if;
+						end if;
+					end loop;
+					ricorrenze_dim:=0;
+					totali_scommesse_dim := totali_scommesse_dim + 1;
+				end if;
+			end loop;
+			-- scommessa lama
+			totali_scommesse(totali_scommesse_dim).dado_scommesso := UNO;
+			for j in MIN_DADI to MAX_DADI_TOTALI loop
+			  if(j>=integer(real(scommessa_corrente.ricorrenza)/real(2))) then
+					 totali_scommesse(totali_scommesse_dim).ricorrenze(ricorrenze_dim) := j;
+					 ricorrenze_dim := ricorrenze_dim +1;
+			  end if;
+			end loop;
+			ricorrenze_dim:=0;
+			totali_scommesse_dim := totali_scommesse_dim + 1;
+		else
+			for i in VALORE_DADO_MIN+1 to VALORE_DADO_MAX loop
+				totali_scommesse(totali_scommesse_dim).dado_scommesso := converti_da_intero_a_dado(i);
+				for j in MIN_DADI to MAX_DADI_TOTALI loop
+					if(j<=dadi_totali_in_campo) then
+						if(j>(scommessa_corrente.ricorrenza * 2)) then
+							totali_scommesse(totali_scommesse_dim).ricorrenze(ricorrenze_dim) := j;
+							ricorrenze_dim := ricorrenze_dim +1;							
+						end if;
+					end if;
+					
+				end loop;
+				ricorrenze_dim:=0;
+				totali_scommesse_dim := totali_scommesse_dim + 1;
+			end loop;
+				-- scommessa lama
+				totali_scommesse(totali_scommesse_dim).dado_scommesso := UNO;
+			  for j in MIN_DADI to MAX_DADI_TOTALI loop
+			    if(j>scommessa_corrente.ricorrenza) then
+					   totali_scommesse(totali_scommesse_dim).ricorrenze(ricorrenze_dim) := j;
+					   ricorrenze_dim := ricorrenze_dim +1;
+			    end if;
+			 end loop;
+			 ricorrenze_dim:=0;
+			 totali_scommesse_dim := totali_scommesse_dim + 1;
+		end if;
+		return totali_scommesse;
+	end function;
+	
 	
 --	function fattoriale(valore: integer) 
 --			return real is
 --	begin
 --		if(valore = 0) then
---			return 0.0;
+--			return 1.0;
 --		elsif (valore = 1) then
 --			return 1.0;
 --		else
 --			return fattoriale(valore - 1) * real(valore);
 --		end if;
 --	end function;
+
+	function fattoriale(valore: integer) 
+		   return integer is
+	variable fatt 		  : integer :=1;
+	variable valore_tmp : integer;
+	begin
+		valore_tmp := valore;
+		while 1 <= valore_tmp loop
+			fatt 		  := fatt*valore_tmp;
+			valore_tmp := valore_tmp - 1;
+		end loop;
+		return fatt;
+	end function;
 	
---	function coefficiente_binomiale(n : integer; i: integer) 
---			return real is
---	begin
- --     if((n-i)>=0 and n /= 0 and i /= 0) then
---			return (fattoriale(n))/(fattoriale(i)*fattoriale(n-i));
---		else 
---			return -1.0;
---	   end if;
---	end function;
+	function coefficiente_binomiale(n : integer; i: integer) 
+			return real is
+	begin
+      if((n-i)>=0 and n /= 0 and i /= 0) then
+			return real((fattoriale(n))/(fattoriale(i)*fattoriale(n-i)));
+		else 
+			return -1.0;
+	   end if;
+	end function;
 
---	function potenza(base : real; esponente: integer) 
---			return real is
---	begin
---		if(esponente = 0) then
---			return 1.0;
---		elsif(esponente = 1) then
---			return base;
---		elsif((esponente mod 2) = 0) then
---			return potenza(base*base, esponente/2);
---		else
---			return base*potenza(base*base, esponente/2);
---		end if;
---	end function;
---	
---	function funzione_di_massa_binomiale(p : real; n: integer; i: integer)
---			return real is
---	begin
---		return coefficiente_binomiale(n,i) * potenza(p,i) * potenza((1.0-p),(n-i));
---	end function;
---	
---	function probabilita(prob_X : real; dadi_totali: integer; ricorrenza: integer) 
---			return real is
---			variable risultato : real:=0.0;
---	begin
---		for j in ricorrenza to dadi_totali loop
---			risultato := risultato + funzione_di_massa_binomiale(prob_X, dadi_totali, j);
---		end loop;
---		return risultato;
---	end function;
-
---	function valore_massimo(valori: valori_reali_array) 
---			return real is
---			variable massimo : real:=0.0;
---	begin
---		for j in valori'left to valori'right loop
---			if(valori(j) > massimo) then
---				massimo := valori(j);
---			end if;
---		end loop;
---		return massimo;
---	end function;
---	
---	function dado_piu_ricorrente_in_mano(dadi_in_mano	:	dado_array(0 to MAX_DADI-1)) 
---			return dado_type is
---			variable ricorrenza_dadi : ricorrenza_dadi_array;
---			variable risultato : dado_type;
---			variable ricorrenza_risultato : integer:=0;
---	begin
---		for i in ricorrenza_dadi_array'range loop
---			ricorrenza_dadi(i) := 0;
---		end loop;
-		
---		for i in dadi_in_mano'range loop
---			ricorrenza_dadi(dadi_in_mano(i)) := ricorrenza_dadi(dadi_in_mano(i)) + 1;
---		end loop;
---		
---		for i in dadi_in_mano'range loop
---			if(ricorrenza_dadi(dadi_in_mano(i)) > ricorrenza_risultato) then
---				ricorrenza_risultato := ricorrenza_dadi(dadi_in_mano(i));
---				risultato := dadi_in_mano(i);
---			elsif(ricorrenza_dadi(dadi_in_mano(i)) = ricorrenza_risultato) then
---				risultato := dado_maggiore(dadi_in_mano(i), risultato);
---			end if;
---		end loop;
---		
---		return risultato;
---	end function;
---	
---	function dado_maggiore(dado_x : dado_type; dado_y : dado_type)
---			return dado_type is 
---			variable valore_intero_dadi : ricorrenza_dadi_array;
---			variable risultato : dado_type;
---	begin
---		valore_intero_dadi(UNO) := 1;
---		valore_intero_dadi(DUE) := 2;
---		valore_intero_dadi(TRE) := 3;
---		valore_intero_dadi(QUATTRO) := 4;
---		valore_intero_dadi(CINQUE) := 5;
---		valore_intero_dadi(SEI) := 6;
---		valore_intero_dadi(NONE) := 0;
---		
---		if(valore_intero_dadi(dado_x) > valore_intero_dadi(dado_y)) then
---			risultato := dado_x;
---		else
---			risultato := dado_y;
---		end if;
---		
---		return risultato;
---	end function;
-
---	function dado_maggiore_in_mano(dadi_in_mano	:	dado_array(0 to MAX_DADI-1)) 
---			return dado_type is
---			variable risultato : dado_type:=NONE;
---	begin
---		for i in dadi_in_mano'range loop
---			if(dado_maggiore(risultato, dadi_in_mano(i)) = dadi_in_mano(i)) then
---				risultato := dadi_in_mano(i);
---			end if;
---		end loop;
---		
---		return risultato;
---	end function;
---	
---	function dadi_in_campo(giocatori_in_campo : giocatore_array(0 to MAX_GIOCATORI-1)) 
---			return integer is
---			variable risultato : integer:=0;
---	begin
---		for j in 0 to MAX_GIOCATORI-1 loop
---			for i in 0 to MAX_DADI-1 loop
---				if (giocatori_in_campo(j).dadi_in_mano(i) /= NONE) then
---					risultato := risultato + 1;
---				end if;
---			end loop;
---		end loop;
---		return risultato;
---	end function;
+	function potenza(base : real; esponente: integer) 
+			return real is
+	begin
+		if(esponente = 0) then
+			return 1.0;
+		elsif(esponente = 1) then
+			return base;
+		elsif((esponente mod 2) = 0) then
+			return potenza(base*base, esponente/2);
+		else
+			return base*potenza(base*base, esponente/2);
+		end if;
+	end function;
+	
+	function funzione_di_massa_binomiale(p : real; n: integer; i: integer)
+			return real is
+	begin
+		return coefficiente_binomiale(n,i) * potenza(p,i) * potenza((1.0-p),(n-i));
+	end function;
+	
+	function probabilita(prob_X : real; dadi_totali: integer; ricorrenza: integer) 
+			return real is
+			variable risultato : real:=0.0;
+	begin
+		for j in ricorrenza to dadi_totali loop
+			risultato := risultato + funzione_di_massa_binomiale(prob_X, dadi_totali, j);
+		end loop;
+		return risultato;
+	end function;
+	
 end package body;
