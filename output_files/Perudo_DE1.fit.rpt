@@ -1,6 +1,6 @@
 Fitter report for Perudo_DE1
-Fri Oct 04 13:32:13 2019
-Quartus II 64-Bit Version 12.1 Build 243 01/31/2013 Service Pack 1 SJ Web Edition
+Tue Oct 08 17:36:22 2019
+Quartus II 32-bit Version 12.1 Build 243 01/31/2013 Service Pack 1 SJ Web Edition
 
 
 ---------------------
@@ -63,17 +63,17 @@ applicable agreement for further details.
 +------------------------------------------------------------------------------------+
 ; Fitter Summary                                                                     ;
 +------------------------------------+-----------------------------------------------+
-; Fitter Status                      ; Successful - Fri Oct 04 13:32:13 2019         ;
-; Quartus II 64-Bit Version          ; 12.1 Build 243 01/31/2013 SP 1 SJ Web Edition ;
+; Fitter Status                      ; Successful - Tue Oct 08 17:36:22 2019         ;
+; Quartus II 32-bit Version          ; 12.1 Build 243 01/31/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; Perudo_DE1                                    ;
 ; Top-level Entity Name              ; Perudo_DE1                                    ;
 ; Family                             ; Cyclone II                                    ;
 ; Device                             ; EP2C20F484C7                                  ;
 ; Timing Models                      ; Final                                         ;
-; Total logic elements               ; 444 / 18,752 ( 2 % )                          ;
-;     Total combinational functions  ; 424 / 18,752 ( 2 % )                          ;
-;     Dedicated logic registers      ; 170 / 18,752 ( < 1 % )                        ;
-; Total registers                    ; 170                                           ;
+; Total logic elements               ; 487 / 18,752 ( 3 % )                          ;
+;     Total combinational functions  ; 469 / 18,752 ( 3 % )                          ;
+;     Dedicated logic registers      ; 171 / 18,752 ( < 1 % )                        ;
+; Total registers                    ; 171                                           ;
 ; Total pins                         ; 24 / 315 ( 8 % )                              ;
 ; Total virtual pins                 ; 0                                             ;
 ; Total memory bits                  ; 0 / 239,616 ( 0 % )                           ;
@@ -141,12 +141,12 @@ applicable agreement for further details.
 ; Number detected on machine ; 8           ;
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
-; Average used               ; 2.09        ;
+; Average used               ; 2.71        ;
 ; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     1 processor            ; 100.0%      ;
-;     2-4 processors         ;  12.5%      ;
+;     2-4 processors         ;  25.0%      ;
 ;     5-8 processors         ;   0.0%      ;
 +----------------------------+-------------+
 
@@ -419,8 +419,8 @@ applicable agreement for further details.
 ; Type                ; Value                  ;
 +---------------------+------------------------+
 ; Placement (by node) ;                        ;
-;     -- Requested    ; 0 / 621 ( 0.00 % )     ;
-;     -- Achieved     ; 0 / 621 ( 0.00 % )     ;
+;     -- Requested    ; 0 / 668 ( 0.00 % )     ;
+;     -- Achieved     ; 0 / 668 ( 0.00 % )     ;
 ;                     ;                        ;
 ; Routing (by net)    ;                        ;
 ;     -- Requested    ; 0 / 0 ( 0.00 % )       ;
@@ -443,7 +443,7 @@ applicable agreement for further details.
 +--------------------------------+---------+-------------------+-------------------------+-------------------+
 ; Partition Name                 ; # Nodes ; # Preserved Nodes ; Preservation Level Used ; Netlist Type Used ;
 +--------------------------------+---------+-------------------+-------------------------+-------------------+
-; Top                            ; 618     ; 0                 ; N/A                     ; Source File       ;
+; Top                            ; 665     ; 0                 ; N/A                     ; Source File       ;
 ; hard_block:auto_generated_inst ; 3       ; 0                 ; N/A                     ; Source File       ;
 +--------------------------------+---------+-------------------+-------------------------+-------------------+
 
@@ -451,7 +451,7 @@ applicable agreement for further details.
 +--------------+
 ; Pin-Out File ;
 +--------------+
-The pin-out file can be found in C:/Users/Simone/Desktop/perudoTest/output_files/Perudo_DE1.pin.
+The pin-out file can be found in C:/Users/Simone/Desktop/Io/Università/magistrale/1 Anno/Sistemi Digitali/progettoGitHub/Perudo_FPGA/output_files/Perudo_DE1.pin.
 
 
 +----------------------------------------------------------------------+
@@ -459,26 +459,26 @@ The pin-out file can be found in C:/Users/Simone/Desktop/perudoTest/output_files
 +---------------------------------------------+------------------------+
 ; Resource                                    ; Usage                  ;
 +---------------------------------------------+------------------------+
-; Total logic elements                        ; 444 / 18,752 ( 2 % )   ;
-;     -- Combinational with no register       ; 274                    ;
-;     -- Register only                        ; 20                     ;
-;     -- Combinational with a register        ; 150                    ;
+; Total logic elements                        ; 487 / 18,752 ( 3 % )   ;
+;     -- Combinational with no register       ; 316                    ;
+;     -- Register only                        ; 18                     ;
+;     -- Combinational with a register        ; 153                    ;
 ;                                             ;                        ;
 ; Logic element usage by number of LUT inputs ;                        ;
-;     -- 4 input functions                    ; 232                    ;
-;     -- 3 input functions                    ; 62                     ;
-;     -- <=2 input functions                  ; 130                    ;
-;     -- Register only                        ; 20                     ;
+;     -- 4 input functions                    ; 245                    ;
+;     -- 3 input functions                    ; 78                     ;
+;     -- <=2 input functions                  ; 146                    ;
+;     -- Register only                        ; 18                     ;
 ;                                             ;                        ;
 ; Logic elements by mode                      ;                        ;
-;     -- normal mode                          ; 379                    ;
-;     -- arithmetic mode                      ; 45                     ;
+;     -- normal mode                          ; 429                    ;
+;     -- arithmetic mode                      ; 40                     ;
 ;                                             ;                        ;
-; Total registers*                            ; 170 / 19,649 ( < 1 % ) ;
-;     -- Dedicated logic registers            ; 170 / 18,752 ( < 1 % ) ;
+; Total registers*                            ; 171 / 19,649 ( < 1 % ) ;
+;     -- Dedicated logic registers            ; 171 / 18,752 ( < 1 % ) ;
 ;     -- I/O registers                        ; 0 / 897 ( 0 % )        ;
 ;                                             ;                        ;
-; Total LABs:  partially or completely used   ; 35 / 1,172 ( 3 % )     ;
+; Total LABs:  partially or completely used   ; 32 / 1,172 ( 3 % )     ;
 ; Virtual pins                                ; 0                      ;
 ; I/O pins                                    ; 24 / 315 ( 8 % )       ;
 ;     -- Clock pins                           ; 1 / 8 ( 13 % )         ;
@@ -494,11 +494,11 @@ The pin-out file can be found in C:/Users/Simone/Desktop/perudoTest/output_files
 ; ASMI blocks                                 ; 0 / 1 ( 0 % )          ;
 ; CRC blocks                                  ; 0 / 1 ( 0 % )          ;
 ; Average interconnect usage (total/H/V)      ; 0% / 0% / 0%           ;
-; Peak interconnect usage (total/H/V)         ; 2% / 1% / 3%           ;
-; Maximum fan-out                             ; 175                    ;
-; Highest non-global fan-out                  ; 60                     ;
-; Total fan-out                               ; 2003                   ;
-; Average fan-out                             ; 3.12                   ;
+; Peak interconnect usage (total/H/V)         ; 1% / 1% / 1%           ;
+; Maximum fan-out                             ; 179                    ;
+; Highest non-global fan-out                  ; 58                     ;
+; Total fan-out                               ; 2135                   ;
+; Average fan-out                             ; 3.13                   ;
 +---------------------------------------------+------------------------+
 *  Register count does not include registers inside RAM blocks or DSP blocks.
 
@@ -511,25 +511,25 @@ The pin-out file can be found in C:/Users/Simone/Desktop/perudoTest/output_files
 +---------------------------------------------+-----------------------+--------------------------------+
 ; Difficulty Clustering Region                ; Low                   ; Low                            ;
 ;                                             ;                       ;                                ;
-; Total logic elements                        ; 444 / 18752 ( 2 % )   ; 0 / 18752 ( 0 % )              ;
-;     -- Combinational with no register       ; 274                   ; 0                              ;
-;     -- Register only                        ; 20                    ; 0                              ;
-;     -- Combinational with a register        ; 150                   ; 0                              ;
+; Total logic elements                        ; 487 / 18752 ( 3 % )   ; 0 / 18752 ( 0 % )              ;
+;     -- Combinational with no register       ; 316                   ; 0                              ;
+;     -- Register only                        ; 18                    ; 0                              ;
+;     -- Combinational with a register        ; 153                   ; 0                              ;
 ;                                             ;                       ;                                ;
 ; Logic element usage by number of LUT inputs ;                       ;                                ;
-;     -- 4 input functions                    ; 232                   ; 0                              ;
-;     -- 3 input functions                    ; 62                    ; 0                              ;
-;     -- <=2 input functions                  ; 130                   ; 0                              ;
-;     -- Register only                        ; 20                    ; 0                              ;
+;     -- 4 input functions                    ; 245                   ; 0                              ;
+;     -- 3 input functions                    ; 78                    ; 0                              ;
+;     -- <=2 input functions                  ; 146                   ; 0                              ;
+;     -- Register only                        ; 18                    ; 0                              ;
 ;                                             ;                       ;                                ;
 ; Logic elements by mode                      ;                       ;                                ;
-;     -- normal mode                          ; 379                   ; 0                              ;
-;     -- arithmetic mode                      ; 45                    ; 0                              ;
+;     -- normal mode                          ; 429                   ; 0                              ;
+;     -- arithmetic mode                      ; 40                    ; 0                              ;
 ;                                             ;                       ;                                ;
-; Total registers                             ; 170                   ; 0                              ;
-;     -- Dedicated logic registers            ; 170 / 18752 ( < 1 % ) ; 0 / 18752 ( 0 % )              ;
+; Total registers                             ; 171                   ; 0                              ;
+;     -- Dedicated logic registers            ; 171 / 18752 ( < 1 % ) ; 0 / 18752 ( 0 % )              ;
 ;                                             ;                       ;                                ;
-; Total LABs:  partially or completely used   ; 35 / 1172 ( 3 % )     ; 0 / 1172 ( 0 % )               ;
+; Total LABs:  partially or completely used   ; 32 / 1172 ( 3 % )     ; 0 / 1172 ( 0 % )               ;
 ;                                             ;                       ;                                ;
 ; Virtual pins                                ; 0                     ; 0                              ;
 ; I/O pins                                    ; 24                    ; 0                              ;
@@ -545,8 +545,8 @@ The pin-out file can be found in C:/Users/Simone/Desktop/perudoTest/output_files
 ;     -- Registered Output Connections        ; 0                     ; 0                              ;
 ;                                             ;                       ;                                ;
 ; Internal Connections                        ;                       ;                                ;
-;     -- Total Connections                    ; 2003                  ; 0                              ;
-;     -- Registered Connections               ; 743                   ; 0                              ;
+;     -- Total Connections                    ; 2135                  ; 0                              ;
+;     -- Registered Connections               ; 780                   ; 0                              ;
 ;                                             ;                       ;                                ;
 ; External Connections                        ;                       ;                                ;
 ;     -- Top                                  ; 0                     ; 0                              ;
@@ -579,10 +579,10 @@ The pin-out file can be found in C:/Users/Simone/Desktop/perudoTest/output_files
 ; Name     ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Cell number ; Combinational Fan-Out ; Registered Fan-Out ; Global ; Input Register ; Power Up High ; PCI I/O Enabled ; Bus Hold ; Weak Pull Up ; I/O Standard ; Termination ; Location assigned by ;
 +----------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+-------------+----------------------+
 ; CLOCK_50 ; L1    ; 2        ; 0            ; 13           ; 0           ; 1                     ; 0                  ; yes    ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
-; KEY[0]   ; R22   ; 6        ; 50           ; 10           ; 1           ; 2                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
-; KEY[1]   ; R21   ; 6        ; 50           ; 10           ; 2           ; 3                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
-; KEY[2]   ; T22   ; 6        ; 50           ; 9            ; 0           ; 5                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
-; KEY[3]   ; T21   ; 6        ; 50           ; 9            ; 1           ; 2                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
+; KEY[0]   ; R22   ; 6        ; 50           ; 10           ; 1           ; 3                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
+; KEY[1]   ; R21   ; 6        ; 50           ; 10           ; 2           ; 4                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
+; KEY[2]   ; T22   ; 6        ; 50           ; 9            ; 0           ; 3                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
+; KEY[3]   ; T21   ; 6        ; 50           ; 9            ; 1           ; 3                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
 ; SW[9]    ; L2    ; 2        ; 0            ; 13           ; 1           ; 1                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
 +----------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+-------------+----------------------+
 
@@ -1164,9 +1164,9 @@ Note: User assignments will override these defaults. The user specified values a
 +-----------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+------------------------------------------+--------------+
 ; Compilation Hierarchy Node        ; Logic Cells ; Dedicated Logic Registers ; I/O Registers ; Memory Bits ; M4Ks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Full Hierarchy Name                      ; Library Name ;
 +-----------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+------------------------------------------+--------------+
-; |Perudo_DE1                       ; 444 (2)     ; 170 (2)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 24   ; 0            ; 274 (0)      ; 20 (2)            ; 150 (0)          ; |Perudo_DE1                              ;              ;
-;    |Perudo_Controller:controller| ; 105 (105)   ; 51 (51)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 42 (42)      ; 9 (9)             ; 54 (54)          ; |Perudo_DE1|Perudo_Controller:controller ;              ;
-;    |Perudo_Datapath:datapath|     ; 350 (350)   ; 117 (117)                 ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 232 (232)    ; 9 (9)             ; 109 (109)        ; |Perudo_DE1|Perudo_Datapath:datapath     ;              ;
+; |Perudo_DE1                       ; 487 (2)     ; 171 (2)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 24   ; 0            ; 316 (0)      ; 18 (1)            ; 153 (0)          ; |Perudo_DE1                              ;              ;
+;    |Perudo_Controller:controller| ; 104 (104)   ; 49 (49)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 54 (54)      ; 8 (8)             ; 42 (42)          ; |Perudo_DE1|Perudo_Controller:controller ;              ;
+;    |Perudo_Datapath:datapath|     ; 383 (383)   ; 120 (120)                 ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 262 (262)    ; 9 (9)             ; 112 (112)        ; |Perudo_DE1|Perudo_Datapath:datapath     ;              ;
 +-----------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -1198,8 +1198,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; KEY[3]   ; Input    ; (6) 2523 ps   ; (6) 2523 ps   ; --                    ; --  ;
 ; KEY[2]   ; Input    ; (6) 2523 ps   ; (6) 2523 ps   ; --                    ; --  ;
 ; SW[9]    ; Input    ; (0) 171 ps    ; (0) 171 ps    ; --                    ; --  ;
-; KEY[0]   ; Input    ; (6) 2523 ps   ; (6) 2523 ps   ; --                    ; --  ;
 ; KEY[1]   ; Input    ; (6) 2523 ps   ; (6) 2523 ps   ; --                    ; --  ;
+; KEY[0]   ; Input    ; (6) 2523 ps   ; (6) 2523 ps   ; --                    ; --  ;
 +----------+----------+---------------+---------------+-----------------------+-----+
 
 
@@ -1211,21 +1211,22 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; CLOCK_50                                                                 ;                   ;         ;
 ; KEY[3]                                                                   ;                   ;         ;
 ;      - Perudo_Controller:controller|Update_State_Controller~0            ; 1                 ; 6       ;
+;      - Perudo_Controller:controller|dado_temp[2]~6                       ; 1                 ; 6       ;
 ;      - Perudo_Controller:controller|\Update_State_Controller:prev_old~0  ; 1                 ; 6       ;
 ; KEY[2]                                                                   ;                   ;         ;
 ;      - Perudo_Controller:controller|Update_State_Controller~3            ; 0                 ; 6       ;
-;      - Perudo_Controller:controller|check_old~0                          ; 0                 ; 6       ;
-;      - Perudo_Controller:controller|Update_State_Controller~7            ; 0                 ; 6       ;
-;      - Perudo_Controller:controller|Selector1~4                          ; 0                 ; 6       ;
+;      - Perudo_Controller:controller|Update_State_Controller~9            ; 0                 ; 6       ;
 ;      - Perudo_Controller:controller|\Update_State_Controller:next_old~0  ; 0                 ; 6       ;
 ; SW[9]                                                                    ;                   ;         ;
-; KEY[0]                                                                   ;                   ;         ;
-;      - Perudo_Controller:controller|check_old~0                          ; 1                 ; 6       ;
-;      - Perudo_Controller:controller|\Update_State_Controller:doubt_old~0 ; 1                 ; 6       ;
 ; KEY[1]                                                                   ;                   ;         ;
-;      - Perudo_Controller:controller|INIZIA_PARTITA~0                     ; 0                 ; 6       ;
-;      - Perudo_Controller:controller|Selector1~2                          ; 0                 ; 6       ;
+;      - Perudo_Controller:controller|Update_State_Controller~6            ; 0                 ; 6       ;
+;      - Perudo_Controller:controller|turn_player_state~0                  ; 0                 ; 6       ;
+;      - Perudo_Controller:controller|Selector3~3                          ; 0                 ; 6       ;
 ;      - Perudo_Controller:controller|\Update_State_Controller:enter_old~0 ; 0                 ; 6       ;
+; KEY[0]                                                                   ;                   ;         ;
+;      - Perudo_Controller:controller|check_old~2                          ; 1                 ; 6       ;
+;      - Perudo_Controller:controller|turn_player_state~2                  ; 1                 ; 6       ;
+;      - Perudo_Controller:controller|\Update_State_Controller:doubt_old~0 ; 1                 ; 6       ;
 +--------------------------------------------------------------------------+-------------------+---------+
 
 
@@ -1234,29 +1235,30 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-------------------------------------------------------------------------+--------------------+---------+----------------------------+--------+----------------------+------------------+---------------------------+
 ; Name                                                                    ; Location           ; Fan-Out ; Usage                      ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
 +-------------------------------------------------------------------------+--------------------+---------+----------------------------+--------+----------------------+------------------+---------------------------+
-; CLOCK_50                                                                ; PIN_L1             ; 170     ; Clock                      ; yes    ; Global Clock         ; GCLK2            ; --                        ;
-; Perudo_Controller:controller|DAMMI_GIOCATORI_IN_CAMPO                   ; LCFF_X35_Y18_N21   ; 4       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; Perudo_Controller:controller|DAMMI_TURNO_GIOCATORE                      ; LCFF_X35_Y16_N9    ; 3       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; Perudo_Controller:controller|ESEGUI_SCOMMESSA                           ; LCFF_X33_Y18_N3    ; 13      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; Perudo_Controller:controller|Selector1~3                                ; LCCOMB_X34_Y18_N20 ; 14      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; Perudo_Controller:controller|\Update_State_Controller:check_old         ; LCFF_X34_Y18_N23   ; 49      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; Perudo_Controller:controller|ricorrenza_temp[5]~18                      ; LCCOMB_X34_Y18_N2  ; 6       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; Perudo_Datapath:datapath|Equal2~1                                       ; LCCOMB_X34_Y19_N10 ; 5       ; Sync. load                 ; no     ; --                   ; --               ; --                        ;
-; Perudo_Datapath:datapath|PARTITA_INIZIATA                               ; LCFF_X35_Y16_N1    ; 6       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; Perudo_Datapath:datapath|aggiungi_dado                                  ; LCFF_X36_Y19_N31   ; 9       ; Clock enable, Sync. clear  ; no     ; --                   ; --               ; --                        ;
-; Perudo_Datapath:datapath|giocatori_in_campo[0].numero_dadi_in_mano[2]~2 ; LCCOMB_X36_Y17_N0  ; 2       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; Perudo_Datapath:datapath|giocatori_in_campo[1].numero_dadi_in_mano[1]~2 ; LCCOMB_X37_Y19_N12 ; 2       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; Perudo_Datapath:datapath|giocatori_in_campo[2].numero_dadi_in_mano[2]~2 ; LCCOMB_X37_Y19_N26 ; 2       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; Perudo_Datapath:datapath|giocatori_in_campo[3].numero_dadi_in_mano[1]~2 ; LCCOMB_X38_Y17_N6  ; 2       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; Perudo_Datapath:datapath|giocatori_in_campo[4].numero_dadi_in_mano[2]~2 ; LCCOMB_X38_Y18_N0  ; 2       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; Perudo_Datapath:datapath|giocatori_in_campo[5].numero_dadi_in_mano[2]~2 ; LCCOMB_X38_Y17_N14 ; 2       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; Perudo_Datapath:datapath|giocatori_in_campo[6].numero_dadi_in_mano[1]~2 ; LCCOMB_X38_Y17_N4  ; 2       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; Perudo_Datapath:datapath|giocatori_in_campo[7].numero_dadi_in_mano[1]~2 ; LCCOMB_X38_Y18_N14 ; 2       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; Perudo_Datapath:datapath|indice_dado[0]~20                              ; LCCOMB_X36_Y19_N0  ; 3       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; Perudo_Datapath:datapath|indice_turno_giocatore[1]~3                    ; LCCOMB_X35_Y16_N14 ; 3       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; Perudo_Datapath:datapath|numero_giocatori_in_campo[2]~1                 ; LCCOMB_X36_Y19_N24 ; 4       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; RESET_N                                                                 ; LCFF_X49_Y14_N7    ; 18      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; RESET_N                                                                 ; LCFF_X49_Y14_N7    ; 175     ; Async. clear, Latch enable ; yes    ; Global Clock         ; GCLK6            ; --                        ;
+; CLOCK_50                                                                ; PIN_L1             ; 171     ; Clock                      ; yes    ; Global Clock         ; GCLK2            ; --                        ;
+; Perudo_Controller:controller|DAMMI_GIOCATORI_IN_CAMPO                   ; LCFF_X27_Y15_N3    ; 4       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; Perudo_Controller:controller|DAMMI_TURNO_GIOCATORE                      ; LCFF_X26_Y16_N9    ; 3       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; Perudo_Controller:controller|ESEGUI_SCOMMESSA_FPGA                      ; LCFF_X26_Y16_N21   ; 16      ; Sync. load                 ; no     ; --                   ; --               ; --                        ;
+; Perudo_Controller:controller|Selector3~3                                ; LCCOMB_X26_Y16_N28 ; 14      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; Perudo_Controller:controller|\Update_State_Controller:check_old         ; LCFF_X27_Y16_N17   ; 51      ; Clock enable, Sync. clear  ; no     ; --                   ; --               ; --                        ;
+; Perudo_Controller:controller|ricorrenza_temp[5]~14                      ; LCCOMB_X27_Y16_N30 ; 6       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; Perudo_Datapath:datapath|Equal2~1                                       ; LCCOMB_X18_Y16_N8  ; 5       ; Sync. load                 ; no     ; --                   ; --               ; --                        ;
+; Perudo_Datapath:datapath|PARTITA_INIZIATA                               ; LCFF_X26_Y16_N17   ; 6       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; Perudo_Datapath:datapath|aggiungi_dado                                  ; LCFF_X27_Y13_N25   ; 9       ; Clock enable, Sync. clear  ; no     ; --                   ; --               ; --                        ;
+; Perudo_Datapath:datapath|giocatori_in_campo[0].numero_dadi_in_mano[1]~2 ; LCCOMB_X25_Y14_N2  ; 2       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; Perudo_Datapath:datapath|giocatori_in_campo[1].numero_dadi_in_mano[2]~6 ; LCCOMB_X23_Y14_N14 ; 2       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; Perudo_Datapath:datapath|giocatori_in_campo[2].numero_dadi_in_mano[2]~2 ; LCCOMB_X24_Y13_N26 ; 2       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; Perudo_Datapath:datapath|giocatori_in_campo[3].numero_dadi_in_mano[2]~2 ; LCCOMB_X23_Y14_N16 ; 2       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; Perudo_Datapath:datapath|giocatori_in_campo[4].numero_dadi_in_mano[1]~1 ; LCCOMB_X23_Y14_N8  ; 2       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; Perudo_Datapath:datapath|giocatori_in_campo[5].numero_dadi_in_mano[1]~5 ; LCCOMB_X26_Y13_N16 ; 2       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; Perudo_Datapath:datapath|giocatori_in_campo[6].numero_dadi_in_mano[1]~3 ; LCCOMB_X25_Y13_N12 ; 2       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; Perudo_Datapath:datapath|giocatori_in_campo[7].numero_dadi_in_mano[2]~2 ; LCCOMB_X25_Y13_N18 ; 2       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; Perudo_Datapath:datapath|indice_dado[0]~19                              ; LCCOMB_X27_Y13_N0  ; 3       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; Perudo_Datapath:datapath|indice_turno_giocatore[0]~4                    ; LCCOMB_X26_Y16_N6  ; 3       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; Perudo_Datapath:datapath|numero_giocatori_in_campo[0]~3                 ; LCCOMB_X26_Y15_N18 ; 4       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; Perudo_Datapath:datapath|scommessa_corrente.ricorrenza[0]~0             ; LCCOMB_X21_Y16_N30 ; 14      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; RESET_N                                                                 ; LCFF_X24_Y16_N1    ; 15      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; RESET_N                                                                 ; LCFF_X24_Y16_N1    ; 179     ; Async. clear, Latch enable ; yes    ; Global Clock         ; GCLK8            ; --                        ;
 +-------------------------------------------------------------------------+--------------------+---------+----------------------------+--------+----------------------+------------------+---------------------------+
 
 
@@ -1265,8 +1267,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------+-----------------+---------+----------------------+------------------+---------------------------+
 ; Name     ; Location        ; Fan-Out ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
 +----------+-----------------+---------+----------------------+------------------+---------------------------+
-; CLOCK_50 ; PIN_L1          ; 170     ; Global Clock         ; GCLK2            ; --                        ;
-; RESET_N  ; LCFF_X49_Y14_N7 ; 175     ; Global Clock         ; GCLK6            ; --                        ;
+; CLOCK_50 ; PIN_L1          ; 171     ; Global Clock         ; GCLK2            ; --                        ;
+; RESET_N  ; LCFF_X24_Y16_N1 ; 179     ; Global Clock         ; GCLK8            ; --                        ;
 +----------+-----------------+---------+----------------------+------------------+---------------------------+
 
 
@@ -1275,46 +1277,51 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-------------------------------------------------------------------------------+---------+
 ; Name                                                                          ; Fan-Out ;
 +-------------------------------------------------------------------------------+---------+
-; Perudo_Datapath:datapath|Equal4~0                                             ; 60      ;
-; Perudo_Controller:controller|\Update_State_Controller:check_old               ; 49      ;
-; Perudo_Datapath:datapath|indice_giocatore[1]                                  ; 28      ;
-; Perudo_Datapath:datapath|numero_giocatori_in_campo[1]                         ; 28      ;
-; Perudo_Datapath:datapath|indice_giocatore[0]                                  ; 27      ;
+; Perudo_Datapath:datapath|Equal4~0                                             ; 58      ;
+; Perudo_Controller:controller|\Update_State_Controller:check_old               ; 51      ;
+; Perudo_Datapath:datapath|numero_giocatori_in_campo[1]                         ; 37      ;
+; Perudo_Datapath:datapath|numero_giocatori_in_campo[0]                         ; 32      ;
+; Perudo_Datapath:datapath|indice_giocatore[1]                                  ; 27      ;
 ; Perudo_Datapath:datapath|indice_turno_giocatore[1]                            ; 26      ;
-; Perudo_Datapath:datapath|numero_giocatori_in_campo[0]                         ; 25      ;
-; Perudo_Datapath:datapath|Mux8~4                                               ; 24      ;
-; Perudo_Datapath:datapath|indice_giocatore[2]                                  ; 23      ;
+; Perudo_Datapath:datapath|indice_giocatore[0]                                  ; 26      ;
+; Perudo_Datapath:datapath|Mux8~4                                               ; 25      ;
 ; Perudo_Datapath:datapath|indice_turno_giocatore[0]                            ; 22      ;
-; Perudo_Datapath:datapath|elimina_dado                                         ; 21      ;
-; Perudo_Datapath:datapath|Mux7~4                                               ; 17      ;
-; RESET_N                                                                       ; 17      ;
-; Perudo_Datapath:datapath|giocatori_in_campo~4                                 ; 16      ;
-; Perudo_Controller:controller|Selector1~3                                      ; 14      ;
-; Perudo_Controller:controller|ESEGUI_SCOMMESSA                                 ; 13      ;
+; Perudo_Datapath:datapath|indice_giocatore[2]                                  ; 22      ;
+; Perudo_Datapath:datapath|Mux7~4                                               ; 18      ;
+; Perudo_Datapath:datapath|numero_giocatori_in_campo[2]                         ; 17      ;
+; Perudo_Controller:controller|ESEGUI_SCOMMESSA_FPGA                            ; 16      ;
+; Perudo_Datapath:datapath|giocatori_in_campo~10                                ; 16      ;
+; Perudo_Controller:controller|Selector3~3                                      ; 14      ;
+; Perudo_Datapath:datapath|scommessa_corrente.ricorrenza[0]~0                   ; 14      ;
+; Perudo_Datapath:datapath|elimina_dado                                         ; 14      ;
+; RESET_N                                                                       ; 14      ;
+; Perudo_Datapath:datapath|scommessa_corrente.ricorrenza[30]                    ; 14      ;
 ; Perudo_Datapath:datapath|indice_turno_giocatore[2]                            ; 12      ;
-; Perudo_Datapath:datapath|numero_giocatori_in_campo[2]                         ; 11      ;
-; Perudo_Datapath:datapath|Mux6~4                                               ; 10      ;
-; Perudo_Controller:controller|\Update_State_Controller:elimina_giocatore_old   ; 10      ;
+; Perudo_Datapath:datapath|Mux6~4                                               ; 11      ;
+; Perudo_Datapath:datapath|numero_giocatori_in_campo[3]                         ; 10      ;
 ; Perudo_Datapath:datapath|Add4~4                                               ; 9       ;
 ; Perudo_Datapath:datapath|aggiungi_dado                                        ; 9       ;
-; Perudo_Controller:controller|\Update_State_Controller:nuovo_giocatore_old     ; 9       ;
-; Perudo_Datapath:datapath|GestoreGiocatoriInCampo_RTL~7                        ; 9       ;
-; Perudo_Datapath:datapath|\GestoreGiocatoriInCampo_RTL:giocatore_eliminato_old ; 9       ;
+; Perudo_Datapath:datapath|indice_dado[0]~4                                     ; 9       ;
+; Perudo_Controller:controller|\Update_State_Controller:elimina_giocatore_old   ; 9       ;
+; Perudo_Controller:controller|internal_state.TURN_PLAYER                       ; 9       ;
 ; Perudo_Datapath:datapath|Add2~0                                               ; 8       ;
-; Perudo_Datapath:datapath|indice_dado[0]~6                                     ; 8       ;
-; Perudo_Controller:controller|Update_State_Controller~8                        ; 7       ;
-; Perudo_Controller:controller|dado_temp[1]                                     ; 7       ;
-; Perudo_Controller:controller|dado_temp[2]                                     ; 7       ;
-; Perudo_Controller:controller|turn_player_state                                ; 7       ;
+; Perudo_Controller:controller|Update_State_Controller~8                        ; 8       ;
+; Perudo_Datapath:datapath|giocatori_in_campo[1].numero_dadi_in_mano[2]~4       ; 8       ;
+; Perudo_Controller:controller|\Update_State_Controller:nuovo_giocatore_old     ; 8       ;
+; Perudo_Datapath:datapath|GestoreGiocatoriInCampo_RTL~7                        ; 8       ;
+; Perudo_Datapath:datapath|\GestoreGiocatoriInCampo_RTL:giocatore_eliminato_old ; 8       ;
 ; Perudo_Datapath:datapath|numero_per_generazione_casuale_dado[0]               ; 7       ;
 ; Perudo_Datapath:datapath|giocatori_in_campo[0].dadi_in_mano[0].NONE~2         ; 7       ;
-; Perudo_Datapath:datapath|Add7~0                                               ; 7       ;
-; Perudo_Controller:controller|ricorrenza_temp[5]~18                            ; 6       ;
+; Perudo_Controller:controller|dado_temp[2]                                     ; 7       ;
+; Perudo_Controller:controller|turn_player_state                                ; 7       ;
+; Perudo_Datapath:datapath|LessThan10~29                                        ; 6       ;
 ; Perudo_Controller:controller|dado_temp[0]                                     ; 6       ;
-; Perudo_Datapath:datapath|Add10~1                                              ; 6       ;
+; Perudo_Controller:controller|ricorrenza_temp[5]~14                            ; 6       ;
 ; Perudo_Datapath:datapath|numero_per_generazione_casuale_dado[1]               ; 6       ;
 ; Perudo_Datapath:datapath|numero_per_generazione_casuale_dado[2]               ; 6       ;
-; Perudo_Datapath:datapath|numero_giocatori_in_campo[2]~2                       ; 6       ;
+; Perudo_Datapath:datapath|Add10~0                                              ; 6       ;
+; Perudo_Controller:controller|dado_temp[1]                                     ; 6       ;
+; Perudo_Datapath:datapath|Add7~0                                               ; 6       ;
 ; Perudo_Datapath:datapath|giocatori_in_campo[7].numero_dadi_in_mano[0]         ; 6       ;
 ; Perudo_Datapath:datapath|giocatori_in_campo[4].numero_dadi_in_mano[0]         ; 6       ;
 ; Perudo_Datapath:datapath|giocatori_in_campo[5].numero_dadi_in_mano[0]         ; 6       ;
@@ -1324,18 +1331,15 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Perudo_Datapath:datapath|giocatori_in_campo[2].numero_dadi_in_mano[0]         ; 6       ;
 ; Perudo_Datapath:datapath|giocatori_in_campo[1].numero_dadi_in_mano[0]         ; 6       ;
 ; Perudo_Datapath:datapath|PARTITA_INIZIATA                                     ; 6       ;
-; Perudo_Controller:controller|internal_state.TURN_PLAYER                       ; 6       ;
-; Perudo_Controller:controller|ricorrenza_temp[3]                               ; 6       ;
-; Perudo_Controller:controller|ricorrenza_temp[4]                               ; 6       ;
+; Perudo_Controller:controller|internal_state.INIT                              ; 6       ;
 ; Perudo_Controller:controller|ricorrenza_temp[5]                               ; 6       ;
-; KEY[2]                                                                        ; 5       ;
+; Perudo_Controller:controller|ricorrenza_temp[4]                               ; 6       ;
+; Perudo_Controller:controller|ricorrenza_temp[3]                               ; 6       ;
 ; Perudo_Controller:controller|LessThan5~0                                      ; 5       ;
+; Perudo_Datapath:datapath|dadi_in_mano~280                                     ; 5       ;
 ; Perudo_Datapath:datapath|cicli_casuali_attesa[0]                              ; 5       ;
 ; Perudo_Datapath:datapath|Equal2~1                                             ; 5       ;
-; Perudo_Datapath:datapath|dadi_in_mano~280                                     ; 5       ;
 ; Perudo_Datapath:datapath|Equal5~0                                             ; 5       ;
-; Perudo_Datapath:datapath|LessThan2~21                                         ; 5       ;
-; Perudo_Controller:controller|Update_State_Controller~0                        ; 5       ;
 ; Perudo_Datapath:datapath|giocatori_in_campo[7].numero_dadi_in_mano[2]         ; 5       ;
 ; Perudo_Datapath:datapath|giocatori_in_campo[4].numero_dadi_in_mano[2]         ; 5       ;
 ; Perudo_Datapath:datapath|giocatori_in_campo[5].numero_dadi_in_mano[2]         ; 5       ;
@@ -1352,119 +1356,152 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Perudo_Datapath:datapath|giocatori_in_campo[0].numero_dadi_in_mano[1]         ; 5       ;
 ; Perudo_Datapath:datapath|giocatori_in_campo[2].numero_dadi_in_mano[1]         ; 5       ;
 ; Perudo_Datapath:datapath|giocatori_in_campo[1].numero_dadi_in_mano[1]         ; 5       ;
-; Perudo_Datapath:datapath|numero_giocatori_in_campo[3]                         ; 5       ;
-; Perudo_Controller:controller|internal_state.INIT                              ; 5       ;
-; Perudo_Controller:controller|ricorrenza_temp[0]                               ; 5       ;
-; Perudo_Controller:controller|ricorrenza_temp[1]                               ; 5       ;
 ; Perudo_Controller:controller|ricorrenza_temp[2]                               ; 5       ;
+; Perudo_Controller:controller|ricorrenza_temp[1]                               ; 5       ;
+; Perudo_Controller:controller|ricorrenza_temp[0]                               ; 5       ;
 ; Perudo_Datapath:datapath|cicli_da_attendere[4]                                ; 5       ;
+; Perudo_Datapath:datapath|reset_altri_giocatori                                ; 5       ;
 ; Perudo_Datapath:datapath|dado_aggiunto                                        ; 5       ;
-; Perudo_Controller:controller|turn_player_state~2                              ; 4       ;
-; Perudo_Controller:controller|Mux2~0                                           ; 4       ;
+; KEY[1]                                                                        ; 4       ;
+; Perudo_Datapath:datapath|giocatori_in_campo[5].numero_dadi_in_mano[1]~6       ; 4       ;
+; Perudo_Controller:controller|Add2~2                                           ; 4       ;
 ; Perudo_Controller:controller|Mux3~0                                           ; 4       ;
-; Perudo_Controller:controller|Update_State_Controller~7                        ; 4       ;
+; Perudo_Datapath:datapath|giocatori_in_campo~39                                ; 4       ;
+; Perudo_Datapath:datapath|prossimo_turno_old                                   ; 4       ;
 ; Perudo_Datapath:datapath|cicli_casuali_attesa[3]                              ; 4       ;
 ; Perudo_Datapath:datapath|cicli_casuali_attesa[2]                              ; 4       ;
 ; Perudo_Datapath:datapath|cicli_casuali_attesa[1]                              ; 4       ;
-; Perudo_Datapath:datapath|prossimo_turno_old                                   ; 4       ;
-; Perudo_Datapath:datapath|giocatori_in_campo~29                                ; 4       ;
-; Perudo_Controller:controller|INIZIA_PARTITA~1                                 ; 4       ;
+; Perudo_Controller:controller|INIZIA_PARTITA~0                                 ; 4       ;
+; Perudo_Controller:controller|Update_State_Controller~9                        ; 4       ;
+; Perudo_Controller:controller|Update_State_Controller~6                        ; 4       ;
+; Perudo_Datapath:datapath|Equal5~1                                             ; 4       ;
+; Perudo_Datapath:datapath|giocatori_in_campo[7].numero_dadi_in_mano[2]~0       ; 4       ;
+; Perudo_Datapath:datapath|giocatori_in_campo[6].numero_dadi_in_mano[1]~0       ; 4       ;
 ; Perudo_Datapath:datapath|Decoder0~2                                           ; 4       ;
-; Perudo_Datapath:datapath|indice_giocatore[1]~16                               ; 4       ;
-; Perudo_Datapath:datapath|indice_giocatore[1]~15                               ; 4       ;
+; Perudo_Datapath:datapath|reset_altri_giocatori~1                              ; 4       ;
+; Perudo_Datapath:datapath|indice_giocatore[1]~8                                ; 4       ;
+; Perudo_Datapath:datapath|giocatori_in_campo[2].numero_dadi_in_mano[2]~0       ; 4       ;
 ; Perudo_Datapath:datapath|Equal11~0                                            ; 4       ;
-; Perudo_Datapath:datapath|Add10~0                                              ; 4       ;
+; Perudo_Datapath:datapath|reset_altri_giocatori~0                              ; 4       ;
 ; Perudo_Controller:controller|Update_State_Controller~3                        ; 4       ;
-; Perudo_Controller:controller|\Update_State_Controller:next_old                ; 4       ;
-; Perudo_Datapath:datapath|numero_giocatori_in_campo[2]~1                       ; 4       ;
+; Perudo_Controller:controller|Update_State_Controller~0                        ; 4       ;
+; Perudo_Datapath:datapath|numero_giocatori_in_campo[0]~3                       ; 4       ;
 ; Perudo_Controller:controller|DAMMI_GIOCATORI_IN_CAMPO                         ; 4       ;
-; Perudo_Controller:controller|Equal0~0                                         ; 4       ;
-; Perudo_Controller:controller|numero_giocatori[3]                              ; 4       ;
-; Perudo_Datapath:datapath|Add8~62                                              ; 4       ;
-; KEY[1]                                                                        ; 3       ;
+; Perudo_Datapath:datapath|Add8~28                                              ; 4       ;
+; Perudo_Datapath:datapath|Add8~16                                              ; 4       ;
+; KEY[0]                                                                        ; 3       ;
+; KEY[2]                                                                        ; 3       ;
+; KEY[3]                                                                        ; 3       ;
 ; Perudo_Controller:controller|RICORRENZA[0]~latch                              ; 3       ;
 ; Perudo_Controller:controller|RICORRENZA[1]~latch                              ; 3       ;
 ; Perudo_Controller:controller|RICORRENZA[2]~latch                              ; 3       ;
 ; Perudo_Controller:controller|RICORRENZA[3]~latch                              ; 3       ;
-; Perudo_Controller:controller|RICORRENZA[4]~latch                              ; 3       ;
 ; Perudo_Controller:controller|RICORRENZA[5]~latch                              ; 3       ;
+; Perudo_Controller:controller|RICORRENZA[4]~latch                              ; 3       ;
 ; Perudo_Controller:controller|DADO_SCOMMESSO.DUE~latch                         ; 3       ;
 ; Perudo_Controller:controller|DADO_SCOMMESSO.TRE~latch                         ; 3       ;
 ; Perudo_Controller:controller|DADO_SCOMMESSO.UNO~latch                         ; 3       ;
 ; Perudo_Controller:controller|DADO_SCOMMESSO.QUATTRO~latch                     ; 3       ;
 ; Perudo_Controller:controller|DADO_SCOMMESSO.CINQUE~latch                      ; 3       ;
 ; Perudo_Controller:controller|DADO_SCOMMESSO.SEI~latch                         ; 3       ;
-; Perudo_Datapath:datapath|indice_dado[0]~38                                    ; 3       ;
+; Perudo_Datapath:datapath|indice_dado[0]~37                                    ; 3       ;
+; Perudo_Controller:controller|dado_temp[2]~6                                   ; 3       ;
+; Perudo_Datapath:datapath|giocatori_in_campo[1].numero_dadi_in_mano[2]~7       ; 3       ;
 ; Perudo_Controller:controller|Mux1~0                                           ; 3       ;
 ; Perudo_Controller:controller|Mux4~0                                           ; 3       ;
 ; Perudo_Controller:controller|LessThan4~0                                      ; 3       ;
-; Perudo_Datapath:datapath|indice_dado[0]~20                                    ; 3       ;
-; Perudo_Datapath:datapath|Mux14~4                                              ; 3       ;
-; Perudo_Datapath:datapath|indice_dado[0]~18                                    ; 3       ;
+; Perudo_Datapath:datapath|indice_dado[0]~19                                    ; 3       ;
 ; Perudo_Datapath:datapath|Mux17~4                                              ; 3       ;
-; Perudo_Datapath:datapath|indice_dado~16                                       ; 3       ;
-; Perudo_Datapath:datapath|indice_dado[0]~13                                    ; 3       ;
+; Perudo_Datapath:datapath|indice_dado~14                                       ; 3       ;
+; Perudo_Datapath:datapath|indice_dado[0]~11                                    ; 3       ;
 ; Perudo_Datapath:datapath|Mux20~4                                              ; 3       ;
-; Perudo_Datapath:datapath|indice_dado[0]~7                                     ; 3       ;
-; Perudo_Datapath:datapath|indice_turno_giocatore[1]~3                          ; 3       ;
+; Perudo_Datapath:datapath|indice_dado[0]~5                                     ; 3       ;
+; Perudo_Datapath:datapath|Mux14~4                                              ; 3       ;
+; Perudo_Datapath:datapath|indice_turno_giocatore[0]~4                          ; 3       ;
 ; Perudo_Datapath:datapath|Equal12~2                                            ; 3       ;
 ; Perudo_Datapath:datapath|Equal11~1                                            ; 3       ;
-; Perudo_Controller:controller|INIZIA_PARTITA~0                                 ; 3       ;
-; Perudo_Datapath:datapath|Decoder0~7                                           ; 3       ;
-; Perudo_Datapath:datapath|Decoder0~6                                           ; 3       ;
-; Perudo_Datapath:datapath|Decoder0~5                                           ; 3       ;
-; Perudo_Datapath:datapath|Decoder0~4                                           ; 3       ;
-; Perudo_Datapath:datapath|Decoder0~3                                           ; 3       ;
-; Perudo_Datapath:datapath|Decoder0~1                                           ; 3       ;
-; Perudo_Datapath:datapath|Decoder0~0                                           ; 3       ;
-; Perudo_Datapath:datapath|Equal3~0                                             ; 3       ;
 ; Perudo_Controller:controller|DAMMI_TURNO_GIOCATORE                            ; 3       ;
 ; Perudo_Datapath:datapath|Add7~1                                               ; 3       ;
+; Perudo_Controller:controller|Update_State_Controller~7                        ; 3       ;
+; Perudo_Controller:controller|\Update_State_Controller:enter_old               ; 3       ;
+; Perudo_Datapath:datapath|Decoder0~6                                           ; 3       ;
+; Perudo_Datapath:datapath|giocatori_in_campo[3].numero_dadi_in_mano[2]~0       ; 3       ;
+; Perudo_Datapath:datapath|indice_giocatore[1]~13                               ; 3       ;
+; Perudo_Datapath:datapath|Equal3~0                                             ; 3       ;
 ; Perudo_Controller:controller|Update_State_Controller~4                        ; 3       ;
 ; Perudo_Controller:controller|Update_State_Controller~1                        ; 3       ;
+; Perudo_Controller:controller|numero_giocatori[3]                              ; 3       ;
+; Perudo_Datapath:datapath|indice_giocatore[3]                                  ; 3       ;
 ; Perudo_Datapath:datapath|GIOCATORE_AGGIUNTO~0                                 ; 3       ;
 ; Perudo_Datapath:datapath|Mux8~3                                               ; 3       ;
 ; Perudo_Datapath:datapath|Mux8~1                                               ; 3       ;
-; Perudo_Datapath:datapath|CHECKED~0                                            ; 3       ;
-; Perudo_Datapath:datapath|indice_giocatore[3]                                  ; 3       ;
-; Perudo_Datapath:datapath|cicli_da_attendere[3]                                ; 3       ;
-; Perudo_Datapath:datapath|cicli_da_attendere[2]                                ; 3       ;
-; Perudo_Datapath:datapath|cicli_da_attendere[1]                                ; 3       ;
-; Perudo_Datapath:datapath|cicli_da_attendere[0]                                ; 3       ;
 ; Perudo_Datapath:datapath|Add8~60                                              ; 3       ;
 ; Perudo_Datapath:datapath|Add8~58                                              ; 3       ;
 ; Perudo_Datapath:datapath|Add8~56                                              ; 3       ;
 ; Perudo_Datapath:datapath|Add8~54                                              ; 3       ;
+; Perudo_Datapath:datapath|Add8~52                                              ; 3       ;
+; Perudo_Datapath:datapath|Add8~50                                              ; 3       ;
+; Perudo_Datapath:datapath|Add8~48                                              ; 3       ;
+; Perudo_Datapath:datapath|Add8~46                                              ; 3       ;
+; Perudo_Datapath:datapath|Add8~44                                              ; 3       ;
+; Perudo_Datapath:datapath|Add8~42                                              ; 3       ;
+; Perudo_Datapath:datapath|Add8~40                                              ; 3       ;
+; Perudo_Datapath:datapath|Add8~38                                              ; 3       ;
 ; Perudo_Datapath:datapath|Add8~36                                              ; 3       ;
 ; Perudo_Datapath:datapath|Add8~34                                              ; 3       ;
-; Perudo_Datapath:datapath|Add8~12                                              ; 3       ;
-; KEY[0]                                                                        ; 2       ;
-; KEY[3]                                                                        ; 2       ;
-; Perudo_Datapath:datapath|LessThan1~4                                          ; 2       ;
-; Perudo_Datapath:datapath|giocatori_in_campo[7].numero_dadi_in_mano[1]~2       ; 2       ;
-; Perudo_Datapath:datapath|giocatori_in_campo[4].numero_dadi_in_mano[2]~2       ; 2       ;
-; Perudo_Datapath:datapath|giocatori_in_campo[5].numero_dadi_in_mano[2]~2       ; 2       ;
-; Perudo_Datapath:datapath|giocatori_in_campo[6].numero_dadi_in_mano[1]~2       ; 2       ;
-; Perudo_Datapath:datapath|giocatori_in_campo[3].numero_dadi_in_mano[1]~2       ; 2       ;
-; Perudo_Datapath:datapath|giocatori_in_campo[0].numero_dadi_in_mano[2]~2       ; 2       ;
-; Perudo_Datapath:datapath|giocatori_in_campo[2].numero_dadi_in_mano[2]~2       ; 2       ;
-; Perudo_Datapath:datapath|giocatori_in_campo[1].numero_dadi_in_mano[1]~2       ; 2       ;
-; Perudo_Controller:controller|Selector0~0                                      ; 2       ;
-; Perudo_Controller:controller|turn_player_state~1                              ; 2       ;
-; Perudo_Datapath:datapath|Mux13~4                                              ; 2       ;
+; Perudo_Datapath:datapath|Add8~32                                              ; 3       ;
+; Perudo_Datapath:datapath|Add8~30                                              ; 3       ;
+; Perudo_Datapath:datapath|Add8~24                                              ; 3       ;
+; Perudo_Datapath:datapath|Add8~22                                              ; 3       ;
+; Perudo_Datapath:datapath|Add8~20                                              ; 3       ;
+; Perudo_Datapath:datapath|Add8~18                                              ; 3       ;
+; Perudo_Datapath:datapath|Add8~10                                              ; 3       ;
+; Perudo_Datapath:datapath|Add8~8                                               ; 3       ;
+; Perudo_Datapath:datapath|cicli_da_attendere[3]                                ; 3       ;
+; Perudo_Datapath:datapath|cicli_da_attendere[2]                                ; 3       ;
+; Perudo_Datapath:datapath|cicli_da_attendere[1]                                ; 3       ;
+; Perudo_Datapath:datapath|cicli_da_attendere[0]                                ; 3       ;
+; Perudo_Datapath:datapath|LessThan9~4                                          ; 2       ;
+; Perudo_Datapath:datapath|giocatori_in_campo[0].numero_dadi_in_mano[1]~2       ; 2       ;
+; Perudo_Datapath:datapath|indice_dado[0]~17                                    ; 2       ;
+; Perudo_Datapath:datapath|indice_dado[0]~16                                    ; 2       ;
 ; Perudo_Datapath:datapath|Mux16~3                                              ; 2       ;
 ; Perudo_Datapath:datapath|Mux16~1                                              ; 2       ;
 ; Perudo_Datapath:datapath|Mux19~4                                              ; 2       ;
+; Perudo_Datapath:datapath|Mux13~4                                              ; 2       ;
 ; Perudo_Controller:controller|\Update_State_Controller:inizia_partita_old      ; 2       ;
+; Perudo_Controller:controller|dado_temp[2]~2                                   ; 2       ;
+; Perudo_Controller:controller|ESEGUI_SCOMMESSA                                 ; 2       ;
 ; Perudo_Controller:controller|PROSSIMO_TURNO                                   ; 2       ;
-; Perudo_Controller:controller|\Update_State_Controller:enter_old               ; 2       ;
-; Perudo_Datapath:datapath|PARTITA_INIZIATA~0                                   ; 2       ;
-; Perudo_Datapath:datapath|indice_giocatore[1]~23                               ; 2       ;
-; Perudo_Datapath:datapath|LessThan2~19                                         ; 2       ;
-; Perudo_Datapath:datapath|LessThan2~18                                         ; 2       ;
-; Perudo_Datapath:datapath|LessThan2~2                                          ; 2       ;
-; Perudo_Datapath:datapath|LessThan2~1                                          ; 2       ;
-; Perudo_Datapath:datapath|LessThan2~0                                          ; 2       ;
+; Perudo_Controller:controller|\Update_State_Controller:doubt_old               ; 2       ;
+; Perudo_Controller:controller|Selector3~2                                      ; 2       ;
+; Perudo_Datapath:datapath|giocatori_in_campo[7].numero_dadi_in_mano[2]~2       ; 2       ;
+; Perudo_Datapath:datapath|giocatori_in_campo[7].numero_dadi_in_mano[2]~1       ; 2       ;
+; Perudo_Datapath:datapath|giocatori_in_campo[4].numero_dadi_in_mano[1]~1       ; 2       ;
+; Perudo_Datapath:datapath|giocatori_in_campo[4].numero_dadi_in_mano[1]~0       ; 2       ;
+; Perudo_Datapath:datapath|giocatori_in_campo[5].numero_dadi_in_mano[1]~5       ; 2       ;
+; Perudo_Datapath:datapath|giocatori_in_campo[5].numero_dadi_in_mano[1]~4       ; 2       ;
+; Perudo_Datapath:datapath|giocatori_in_campo[6].numero_dadi_in_mano[1]~3       ; 2       ;
+; Perudo_Datapath:datapath|giocatori_in_campo[6].numero_dadi_in_mano[1]~2       ; 2       ;
+; Perudo_Datapath:datapath|giocatori_in_campo[3].numero_dadi_in_mano[2]~2       ; 2       ;
+; Perudo_Datapath:datapath|giocatori_in_campo[3].numero_dadi_in_mano[2]~1       ; 2       ;
+; Perudo_Datapath:datapath|giocatori_in_campo[2].numero_dadi_in_mano[2]~2       ; 2       ;
+; Perudo_Datapath:datapath|giocatori_in_campo[2].numero_dadi_in_mano[2]~1       ; 2       ;
+; Perudo_Datapath:datapath|giocatori_in_campo[1].numero_dadi_in_mano[2]~6       ; 2       ;
+; Perudo_Datapath:datapath|giocatori_in_campo[1].numero_dadi_in_mano[2]~5       ; 2       ;
+; Perudo_Datapath:datapath|Decoder0~7                                           ; 2       ;
+; Perudo_Datapath:datapath|Decoder0~5                                           ; 2       ;
+; Perudo_Datapath:datapath|giocatori_in_campo[6].numero_dadi_in_mano[1]~1       ; 2       ;
+; Perudo_Datapath:datapath|Decoder0~4                                           ; 2       ;
+; Perudo_Datapath:datapath|Decoder0~3                                           ; 2       ;
+; Perudo_Datapath:datapath|indice_giocatore[1]~17                               ; 2       ;
+; Perudo_Datapath:datapath|indice_giocatore[1]~14                               ; 2       ;
+; Perudo_Datapath:datapath|indice_giocatore[2]~12                               ; 2       ;
+; Perudo_Datapath:datapath|indice_giocatore[1]~11                               ; 2       ;
+; Perudo_Datapath:datapath|Decoder0~1                                           ; 2       ;
+; Perudo_Datapath:datapath|indice_giocatore~4                                   ; 2       ;
+; Perudo_Datapath:datapath|scommessa_corrente.ricorrenza[5]                     ; 2       ;
+; Perudo_Datapath:datapath|scommessa_corrente.ricorrenza[4]                     ; 2       ;
 ; Perudo_Datapath:datapath|giocatori_in_campo[0].dadi_in_mano[0].DUE            ; 2       ;
 ; Perudo_Datapath:datapath|giocatori_in_campo[0].dadi_in_mano[0].TRE            ; 2       ;
 ; Perudo_Datapath:datapath|giocatori_in_campo[0].dadi_in_mano[0].UNO            ; 2       ;
@@ -1472,98 +1509,96 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Perudo_Datapath:datapath|giocatori_in_campo[0].dadi_in_mano[0].CINQUE         ; 2       ;
 ; Perudo_Datapath:datapath|giocatori_in_campo[0].dadi_in_mano[0].SEI            ; 2       ;
 ; Perudo_Datapath:datapath|giocatori_in_campo[0].dadi_in_mano[0].NONE           ; 2       ;
-; Perudo_Datapath:datapath|indice_giocatore~3                                   ; 2       ;
-; Perudo_Controller:controller|check_old~0                                      ; 2       ;
-; Perudo_Controller:controller|internal_state.TURN_FPGA                         ; 2       ;
-; Perudo_Datapath:datapath|numero_giocatori_in_campo[2]~4                       ; 2       ;
+; Perudo_Datapath:datapath|Decoder0~0                                           ; 2       ;
+; Perudo_Datapath:datapath|indice_turno_giocatore[0]~2                          ; 2       ;
 ; Perudo_Controller:controller|nuovo_giocatore_old~0                            ; 2       ;
 ; Perudo_Datapath:datapath|GIOCATORE_AGGIUNTO                                   ; 2       ;
+; Perudo_Controller:controller|\Update_State_Controller:next_old                ; 2       ;
 ; Perudo_Controller:controller|Update_State_Controller~2                        ; 2       ;
 ; Perudo_Controller:controller|initialization_state                             ; 2       ;
-; Perudo_Datapath:datapath|CHECKED                                              ; 2       ;
-; Perudo_Controller:controller|pulse8                                           ; 2       ;
+; Perudo_Controller:controller|\Update_State_Controller:prev_old                ; 2       ;
+; Perudo_Controller:controller|Equal0~0                                         ; 2       ;
 ; Perudo_Controller:controller|numero_giocatori[2]                              ; 2       ;
 ; Perudo_Controller:controller|numero_giocatori[1]                              ; 2       ;
-; Perudo_Datapath:datapath|LessThan2~14                                         ; 2       ;
-; Perudo_Datapath:datapath|Add8~52                                              ; 2       ;
-; Perudo_Datapath:datapath|Add8~50                                              ; 2       ;
-; Perudo_Datapath:datapath|Add8~48                                              ; 2       ;
-; Perudo_Datapath:datapath|Add8~46                                              ; 2       ;
-; Perudo_Datapath:datapath|Add8~44                                              ; 2       ;
-; Perudo_Datapath:datapath|Add8~42                                              ; 2       ;
-; Perudo_Datapath:datapath|Add8~40                                              ; 2       ;
-; Perudo_Datapath:datapath|Add8~38                                              ; 2       ;
-; Perudo_Datapath:datapath|Add8~32                                              ; 2       ;
-; Perudo_Datapath:datapath|Add8~30                                              ; 2       ;
-; Perudo_Datapath:datapath|Add8~28                                              ; 2       ;
+; Perudo_Datapath:datapath|Add8~62                                              ; 2       ;
 ; Perudo_Datapath:datapath|Add8~26                                              ; 2       ;
-; Perudo_Datapath:datapath|Add8~24                                              ; 2       ;
-; Perudo_Datapath:datapath|Add8~22                                              ; 2       ;
-; Perudo_Datapath:datapath|Add8~20                                              ; 2       ;
-; Perudo_Datapath:datapath|Add8~18                                              ; 2       ;
-; Perudo_Datapath:datapath|Add8~16                                              ; 2       ;
 ; Perudo_Datapath:datapath|Add8~14                                              ; 2       ;
-; Perudo_Datapath:datapath|Add8~10                                              ; 2       ;
-; Perudo_Datapath:datapath|Add8~8                                               ; 2       ;
+; Perudo_Datapath:datapath|Add8~12                                              ; 2       ;
 ; Perudo_Datapath:datapath|Add8~6                                               ; 2       ;
 ; Perudo_Datapath:datapath|Add8~4                                               ; 2       ;
 ; Perudo_Datapath:datapath|Add8~2                                               ; 2       ;
 ; Perudo_Datapath:datapath|Add8~0                                               ; 2       ;
 ; Perudo_Controller:controller|ESEGUI_SCOMMESSA~feeder                          ; 1       ;
-; Perudo_Datapath:datapath|scommessa_corrente.dado_scommesso.NONE~feeder        ; 1       ;
 ; Perudo_Controller:controller|internal_state.INIT~feeder                       ; 1       ;
 ; SW[9]                                                                         ; 1       ;
 ; Perudo_Datapath:datapath|cicli_casuali_attesa[2]~_wirecell                    ; 1       ;
 ; Perudo_Datapath:datapath|cicli_casuali_attesa[1]~_wirecell                    ; 1       ;
-; Perudo_Datapath:datapath|cicli_casuali_attesa[0]~2                            ; 1       ;
 ; Perudo_Datapath:datapath|numero_per_generazione_casuale_dado[0]~3             ; 1       ;
-; Perudo_Controller:controller|\Update_State_Controller:enter_old~0             ; 1       ;
+; Perudo_Datapath:datapath|cicli_casuali_attesa[0]~2                            ; 1       ;
 ; Perudo_Controller:controller|\Update_State_Controller:doubt_old~0             ; 1       ;
+; Perudo_Controller:controller|\Update_State_Controller:enter_old~0             ; 1       ;
+; Perudo_Datapath:datapath|scommessa_corrente.dado_scommesso.NONE~0             ; 1       ;
 ; Perudo_Controller:controller|\Update_State_Controller:next_old~0              ; 1       ;
 ; Perudo_Controller:controller|\Update_State_Controller:prev_old~0              ; 1       ;
-; Perudo_Datapath:datapath|numero_giocatori_in_campo[0]~9                       ; 1       ;
+; Perudo_Datapath:datapath|numero_giocatori_in_campo[0]~10                      ; 1       ;
 ; Perudo_Controller:controller|internal_state.TURN_PLAYER~0                     ; 1       ;
 ; Perudo_Controller:controller|stato[0]~0                                       ; 1       ;
-; Perudo_Controller:controller|pulse10~0                                        ; 1       ;
-; Perudo_Controller:controller|Selector1~4                                      ; 1       ;
-; Perudo_Datapath:datapath|indice_dado~40                                       ; 1       ;
+; Perudo_Datapath:datapath|LessThan10~31                                        ; 1       ;
+; Perudo_Datapath:datapath|LessThan10~30                                        ; 1       ;
+; Perudo_Datapath:datapath|LessThan10~28                                        ; 1       ;
+; Perudo_Datapath:datapath|indice_dado~38                                       ; 1       ;
 ; Perudo_Datapath:datapath|Add4~5                                               ; 1       ;
-; Perudo_Datapath:datapath|indice_dado~39                                       ; 1       ;
-; Perudo_Datapath:datapath|indice_turno_giocatore~5                             ; 1       ;
-; Perudo_Datapath:datapath|giocatori_in_campo~40                                ; 1       ;
-; Perudo_Datapath:datapath|giocatori_in_campo~39                                ; 1       ;
+; Perudo_Datapath:datapath|giocatori_in_campo~53                                ; 1       ;
+; Perudo_Datapath:datapath|giocatori_in_campo~52                                ; 1       ;
 ; Perudo_Datapath:datapath|giocatori_in_campo[0].dadi_in_mano[0].NONE~3         ; 1       ;
+; Perudo_Datapath:datapath|indice_turno_giocatore~6                             ; 1       ;
 ; Perudo_Datapath:datapath|giocatore_eliminato_old~2                            ; 1       ;
-; Perudo_Datapath:datapath|indice_giocatore[1]~29                               ; 1       ;
-; Perudo_Controller:controller|dado_temp[0]~2                                   ; 1       ;
-; Perudo_Controller:controller|dado_temp[1]~1                                   ; 1       ;
-; Perudo_Controller:controller|Add2~2                                           ; 1       ;
-; Perudo_Controller:controller|dado_temp[2]~0                                   ; 1       ;
-; Perudo_Controller:controller|Add2~1                                           ; 1       ;
-; Perudo_Controller:controller|turn_player_state~5                              ; 1       ;
-; Perudo_Controller:controller|turn_player_state~4                              ; 1       ;
-; Perudo_Controller:controller|turn_player_state~3                              ; 1       ;
-; Perudo_Datapath:datapath|Add1~0                                               ; 1       ;
-; Perudo_Datapath:datapath|cicli_casuali_attesa~1                               ; 1       ;
-; Perudo_Datapath:datapath|cicli_casuali_attesa~0                               ; 1       ;
-; Perudo_Controller:controller|inizia_partita_old~0                             ; 1       ;
-; Perudo_Datapath:datapath|prossimo_turno_old~0                                 ; 1       ;
+; Perudo_Datapath:datapath|giocatori_in_campo~51                                ; 1       ;
+; Perudo_Datapath:datapath|giocatori_in_campo~50                                ; 1       ;
+; Perudo_Datapath:datapath|indice_giocatore[1]~27                               ; 1       ;
+; Perudo_Datapath:datapath|LessThan10~27                                        ; 1       ;
+; Perudo_Datapath:datapath|giocatori_in_campo~49                                ; 1       ;
+; Perudo_Datapath:datapath|numero_giocatori_in_campo~9                          ; 1       ;
 ; Perudo_Controller:controller|RICORRENZA[0]~data_lut                           ; 1       ;
 ; Perudo_Controller:controller|RICORRENZA[1]~data_lut                           ; 1       ;
 ; Perudo_Controller:controller|RICORRENZA[2]~data_lut                           ; 1       ;
 ; Perudo_Controller:controller|RICORRENZA[3]~data_lut                           ; 1       ;
-; Perudo_Controller:controller|RICORRENZA[4]~data_lut                           ; 1       ;
-; Perudo_Controller:controller|turn_player_state~0                              ; 1       ;
 ; Perudo_Controller:controller|RICORRENZA[5]~data_lut                           ; 1       ;
+; Perudo_Controller:controller|RICORRENZA[4]~data_lut                           ; 1       ;
 ; Perudo_Controller:controller|DADO_SCOMMESSO.DUE~data_lut                      ; 1       ;
 ; Perudo_Controller:controller|DADO_SCOMMESSO.TRE~data_lut                      ; 1       ;
 ; Perudo_Controller:controller|DADO_SCOMMESSO.UNO~data_lut                      ; 1       ;
 ; Perudo_Controller:controller|DADO_SCOMMESSO.QUATTRO~data_lut                  ; 1       ;
 ; Perudo_Controller:controller|DADO_SCOMMESSO.CINQUE~data_lut                   ; 1       ;
+; Perudo_Controller:controller|DADO_SCOMMESSO.SEI~data_lut                      ; 1       ;
+; Perudo_Controller:controller|inizia_partita_old~0                             ; 1       ;
+; Perudo_Controller:controller|dado_temp[0]~5                                   ; 1       ;
+; Perudo_Controller:controller|RICORRENZA[0]~head_lut                           ; 1       ;
+; Perudo_Controller:controller|RICORRENZA[0]~_emulated                          ; 1       ;
+; Perudo_Controller:controller|RICORRENZA[1]~head_lut                           ; 1       ;
+; Perudo_Controller:controller|RICORRENZA[1]~_emulated                          ; 1       ;
+; Perudo_Controller:controller|RICORRENZA[2]~head_lut                           ; 1       ;
+; Perudo_Controller:controller|RICORRENZA[2]~_emulated                          ; 1       ;
+; Perudo_Controller:controller|RICORRENZA[3]~head_lut                           ; 1       ;
+; Perudo_Controller:controller|RICORRENZA[3]~_emulated                          ; 1       ;
+; Perudo_Controller:controller|RICORRENZA[5]~head_lut                           ; 1       ;
+; Perudo_Controller:controller|RICORRENZA[5]~_emulated                          ; 1       ;
+; Perudo_Controller:controller|RICORRENZA[4]~head_lut                           ; 1       ;
+; Perudo_Controller:controller|RICORRENZA[4]~_emulated                          ; 1       ;
+; Perudo_Controller:controller|DADO_SCOMMESSO.DUE~head_lut                      ; 1       ;
+; Perudo_Controller:controller|DADO_SCOMMESSO.DUE~_emulated                     ; 1       ;
+; Perudo_Controller:controller|DADO_SCOMMESSO.TRE~head_lut                      ; 1       ;
+; Perudo_Controller:controller|DADO_SCOMMESSO.TRE~_emulated                     ; 1       ;
+; Perudo_Controller:controller|DADO_SCOMMESSO.UNO~head_lut                      ; 1       ;
+; Perudo_Controller:controller|DADO_SCOMMESSO.UNO~_emulated                     ; 1       ;
+; Perudo_Controller:controller|DADO_SCOMMESSO.QUATTRO~head_lut                  ; 1       ;
+; Perudo_Controller:controller|DADO_SCOMMESSO.QUATTRO~_emulated                 ; 1       ;
+; Perudo_Controller:controller|DADO_SCOMMESSO.CINQUE~head_lut                   ; 1       ;
+; Perudo_Controller:controller|DADO_SCOMMESSO.CINQUE~_emulated                  ; 1       ;
 ; Perudo_Datapath:datapath|numero_per_generazione_casuale_dado~2                ; 1       ;
 ; Perudo_Datapath:datapath|numero_per_generazione_casuale_dado~1                ; 1       ;
-; Perudo_Controller:controller|DADO_SCOMMESSO.SEI~data_lut                      ; 1       ;
-; Perudo_Datapath:datapath|indice_dado~37                                       ; 1       ;
+; Perudo_Controller:controller|DADO_SCOMMESSO.SEI~head_lut                      ; 1       ;
+; Perudo_Controller:controller|DADO_SCOMMESSO.SEI~_emulated                     ; 1       ;
 ; Perudo_Datapath:datapath|indice_dado~36                                       ; 1       ;
 ; Perudo_Datapath:datapath|indice_dado~35                                       ; 1       ;
 ; Perudo_Datapath:datapath|indice_dado~34                                       ; 1       ;
@@ -1580,23 +1615,10 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Perudo_Datapath:datapath|indice_dado~23                                       ; 1       ;
 ; Perudo_Datapath:datapath|indice_dado~22                                       ; 1       ;
 ; Perudo_Datapath:datapath|indice_dado~21                                       ; 1       ;
+; Perudo_Datapath:datapath|indice_dado~20                                       ; 1       ;
 ; Perudo_Datapath:datapath|Add9~2                                               ; 1       ;
-; Perudo_Datapath:datapath|Add6~0                                               ; 1       ;
-; Perudo_Datapath:datapath|Mux12~4                                              ; 1       ;
-; Perudo_Datapath:datapath|Mux12~3                                              ; 1       ;
-; Perudo_Datapath:datapath|Mux12~2                                              ; 1       ;
-; Perudo_Datapath:datapath|Mux12~1                                              ; 1       ;
-; Perudo_Datapath:datapath|Mux12~0                                              ; 1       ;
-; Perudo_Datapath:datapath|Mux13~3                                              ; 1       ;
-; Perudo_Datapath:datapath|Mux13~2                                              ; 1       ;
-; Perudo_Datapath:datapath|Mux13~1                                              ; 1       ;
-; Perudo_Datapath:datapath|Mux13~0                                              ; 1       ;
-; Perudo_Datapath:datapath|Mux14~3                                              ; 1       ;
-; Perudo_Datapath:datapath|Mux14~2                                              ; 1       ;
-; Perudo_Datapath:datapath|Mux14~1                                              ; 1       ;
-; Perudo_Datapath:datapath|Mux14~0                                              ; 1       ;
-; Perudo_Datapath:datapath|indice_dado[0]~19                                    ; 1       ;
-; Perudo_Datapath:datapath|indice_dado~17                                       ; 1       ;
+; Perudo_Datapath:datapath|indice_dado~18                                       ; 1       ;
+; Perudo_Datapath:datapath|indice_dado~15                                       ; 1       ;
 ; Perudo_Datapath:datapath|Add9~1                                               ; 1       ;
 ; Perudo_Datapath:datapath|Add9~0                                               ; 1       ;
 ; Perudo_Datapath:datapath|Mux17~3                                              ; 1       ;
@@ -1609,9 +1631,9 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Perudo_Datapath:datapath|Mux15~2                                              ; 1       ;
 ; Perudo_Datapath:datapath|Mux15~1                                              ; 1       ;
 ; Perudo_Datapath:datapath|Mux15~0                                              ; 1       ;
-; Perudo_Datapath:datapath|indice_dado~15                                       ; 1       ;
-; Perudo_Datapath:datapath|indice_dado~14                                       ; 1       ;
+; Perudo_Datapath:datapath|indice_dado~13                                       ; 1       ;
 ; Perudo_Datapath:datapath|indice_dado~12                                       ; 1       ;
+; Perudo_Datapath:datapath|indice_dado~10                                       ; 1       ;
 ; Perudo_Datapath:datapath|Mux20~3                                              ; 1       ;
 ; Perudo_Datapath:datapath|Mux20~2                                              ; 1       ;
 ; Perudo_Datapath:datapath|Mux20~1                                              ; 1       ;
@@ -1625,54 +1647,62 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Perudo_Datapath:datapath|Mux18~2                                              ; 1       ;
 ; Perudo_Datapath:datapath|Mux18~1                                              ; 1       ;
 ; Perudo_Datapath:datapath|Mux18~0                                              ; 1       ;
-; Perudo_Datapath:datapath|indice_dado~11                                       ; 1       ;
-; Perudo_Datapath:datapath|indice_dado~10                                       ; 1       ;
 ; Perudo_Datapath:datapath|indice_dado~9                                        ; 1       ;
 ; Perudo_Datapath:datapath|indice_dado~8                                        ; 1       ;
-; Perudo_Controller:controller|Selector1~2                                      ; 1       ;
-; Perudo_Datapath:datapath|elimina_dado~0                                       ; 1       ;
-; Perudo_Datapath:datapath|Equal2~0                                             ; 1       ;
-; Perudo_Datapath:datapath|aggiungi_dado~1                                      ; 1       ;
-; Perudo_Datapath:datapath|aggiungi_dado~0                                      ; 1       ;
-; Perudo_Controller:controller|Update_State_Controller~6                        ; 1       ;
-; Perudo_Datapath:datapath|indice_turno_giocatore~4                             ; 1       ;
-; Perudo_Datapath:datapath|indice_turno_giocatore~2                             ; 1       ;
-; Perudo_Datapath:datapath|Equal12~1                                            ; 1       ;
-; Perudo_Datapath:datapath|Equal12~0                                            ; 1       ;
-; Perudo_Controller:controller|RICORRENZA[0]~head_lut                           ; 1       ;
-; Perudo_Controller:controller|RICORRENZA[0]~_emulated                          ; 1       ;
-; Perudo_Controller:controller|RICORRENZA[1]~head_lut                           ; 1       ;
-; Perudo_Controller:controller|RICORRENZA[1]~_emulated                          ; 1       ;
-; Perudo_Controller:controller|RICORRENZA[2]~head_lut                           ; 1       ;
-; Perudo_Controller:controller|RICORRENZA[2]~_emulated                          ; 1       ;
-; Perudo_Controller:controller|RICORRENZA[3]~head_lut                           ; 1       ;
-; Perudo_Controller:controller|RICORRENZA[3]~_emulated                          ; 1       ;
-; Perudo_Controller:controller|RICORRENZA[4]~head_lut                           ; 1       ;
-; Perudo_Controller:controller|RICORRENZA[4]~_emulated                          ; 1       ;
-; Perudo_Controller:controller|RICORRENZA[5]~head_lut                           ; 1       ;
-; Perudo_Controller:controller|RICORRENZA[5]~_emulated                          ; 1       ;
-; Perudo_Datapath:datapath|giocatori_in_campo~38                                ; 1       ;
-; Perudo_Controller:controller|DADO_SCOMMESSO.DUE~head_lut                      ; 1       ;
-; Perudo_Controller:controller|DADO_SCOMMESSO.DUE~_emulated                     ; 1       ;
-; Perudo_Datapath:datapath|giocatori_in_campo~37                                ; 1       ;
+; Perudo_Datapath:datapath|indice_dado~7                                        ; 1       ;
+; Perudo_Datapath:datapath|indice_dado~6                                        ; 1       ;
+; Perudo_Datapath:datapath|Mux12~4                                              ; 1       ;
+; Perudo_Datapath:datapath|Mux12~3                                              ; 1       ;
+; Perudo_Datapath:datapath|Mux12~2                                              ; 1       ;
+; Perudo_Datapath:datapath|Mux12~1                                              ; 1       ;
+; Perudo_Datapath:datapath|Mux12~0                                              ; 1       ;
+; Perudo_Datapath:datapath|Add6~0                                               ; 1       ;
+; Perudo_Datapath:datapath|Mux14~3                                              ; 1       ;
+; Perudo_Datapath:datapath|Mux14~2                                              ; 1       ;
+; Perudo_Datapath:datapath|Mux14~1                                              ; 1       ;
+; Perudo_Datapath:datapath|Mux14~0                                              ; 1       ;
+; Perudo_Datapath:datapath|Mux13~3                                              ; 1       ;
+; Perudo_Datapath:datapath|Mux13~2                                              ; 1       ;
+; Perudo_Datapath:datapath|Mux13~1                                              ; 1       ;
+; Perudo_Datapath:datapath|Mux13~0                                              ; 1       ;
+; Perudo_Controller:controller|internal_state.TURN_FPGA                         ; 1       ;
+; Perudo_Datapath:datapath|prossimo_turno_old~0                                 ; 1       ;
+; Perudo_Datapath:datapath|Add1~0                                               ; 1       ;
+; Perudo_Datapath:datapath|cicli_casuali_attesa~1                               ; 1       ;
+; Perudo_Datapath:datapath|cicli_casuali_attesa~0                               ; 1       ;
+; Perudo_Controller:controller|Update_State_Controller~10                       ; 1       ;
+; Perudo_Datapath:datapath|CHECKED~0                                            ; 1       ;
+; Perudo_Controller:controller|dado_temp[1]~4                                   ; 1       ;
+; Perudo_Controller:controller|dado_temp[2]~3                                   ; 1       ;
+; Perudo_Controller:controller|Add2~1                                           ; 1       ;
+; Perudo_Controller:controller|turn_player_state~4                              ; 1       ;
+; Perudo_Controller:controller|turn_player_state~3                              ; 1       ;
+; Perudo_Controller:controller|turn_player_state~2                              ; 1       ;
+; Perudo_Controller:controller|turn_player_state~1                              ; 1       ;
+; Perudo_Controller:controller|turn_player_state~0                              ; 1       ;
+; Perudo_Datapath:datapath|scommessa_corrente~12                                ; 1       ;
+; Perudo_Datapath:datapath|scommessa_corrente~11                                ; 1       ;
+; Perudo_Datapath:datapath|scommessa_corrente~10                                ; 1       ;
+; Perudo_Datapath:datapath|scommessa_corrente~9                                 ; 1       ;
+; Perudo_Datapath:datapath|scommessa_corrente~8                                 ; 1       ;
+; Perudo_Datapath:datapath|scommessa_corrente~7                                 ; 1       ;
+; Perudo_Datapath:datapath|scommessa_corrente~6                                 ; 1       ;
+; Perudo_Datapath:datapath|giocatori_in_campo~48                                ; 1       ;
+; Perudo_Datapath:datapath|scommessa_corrente~5                                 ; 1       ;
+; Perudo_Datapath:datapath|giocatori_in_campo~47                                ; 1       ;
 ; Perudo_Datapath:datapath|numero_per_generazione_casuale_dado~0                ; 1       ;
-; Perudo_Controller:controller|DADO_SCOMMESSO.TRE~head_lut                      ; 1       ;
-; Perudo_Controller:controller|DADO_SCOMMESSO.TRE~_emulated                     ; 1       ;
-; Perudo_Datapath:datapath|giocatori_in_campo~36                                ; 1       ;
-; Perudo_Controller:controller|DADO_SCOMMESSO.UNO~head_lut                      ; 1       ;
-; Perudo_Controller:controller|DADO_SCOMMESSO.UNO~_emulated                     ; 1       ;
-; Perudo_Datapath:datapath|giocatori_in_campo~35                                ; 1       ;
-; Perudo_Datapath:datapath|giocatori_in_campo~34                                ; 1       ;
-; Perudo_Controller:controller|DADO_SCOMMESSO.QUATTRO~head_lut                  ; 1       ;
-; Perudo_Controller:controller|DADO_SCOMMESSO.QUATTRO~_emulated                 ; 1       ;
-; Perudo_Datapath:datapath|giocatori_in_campo~33                                ; 1       ;
-; Perudo_Datapath:datapath|giocatori_in_campo~32                                ; 1       ;
-; Perudo_Controller:controller|DADO_SCOMMESSO.CINQUE~head_lut                   ; 1       ;
-; Perudo_Controller:controller|DADO_SCOMMESSO.CINQUE~_emulated                  ; 1       ;
-; Perudo_Datapath:datapath|giocatori_in_campo~31                                ; 1       ;
-; Perudo_Datapath:datapath|giocatori_in_campo~30                                ; 1       ;
-; Perudo_Controller:controller|DADO_SCOMMESSO.SEI~head_lut                      ; 1       ;
-; Perudo_Controller:controller|DADO_SCOMMESSO.SEI~_emulated                     ; 1       ;
+; Perudo_Datapath:datapath|scommessa_corrente~4                                 ; 1       ;
+; Perudo_Datapath:datapath|giocatori_in_campo~46                                ; 1       ;
+; Perudo_Datapath:datapath|scommessa_corrente~3                                 ; 1       ;
+; Perudo_Datapath:datapath|giocatori_in_campo~45                                ; 1       ;
+; Perudo_Datapath:datapath|giocatori_in_campo~44                                ; 1       ;
+; Perudo_Datapath:datapath|scommessa_corrente~2                                 ; 1       ;
+; Perudo_Datapath:datapath|giocatori_in_campo~43                                ; 1       ;
+; Perudo_Datapath:datapath|giocatori_in_campo~42                                ; 1       ;
+; Perudo_Datapath:datapath|scommessa_corrente~1                                 ; 1       ;
+; Perudo_Datapath:datapath|giocatori_in_campo~41                                ; 1       ;
+; Perudo_Datapath:datapath|giocatori_in_campo~40                                ; 1       ;
+; Perudo_Datapath:datapath|scommessa_corrente~0                                 ; 1       ;
 ; Perudo_Datapath:datapath|indice_dado[0]                                       ; 1       ;
 ; Perudo_Datapath:datapath|indice_dado[1]                                       ; 1       ;
 ; Perudo_Datapath:datapath|indice_dado[2]                                       ; 1       ;
@@ -1708,20 +1738,56 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Perudo_Datapath:datapath|counter_check~2                                      ; 1       ;
 ; Perudo_Datapath:datapath|counter_check~1                                      ; 1       ;
 ; Perudo_Datapath:datapath|counter_check~0                                      ; 1       ;
+; Perudo_Datapath:datapath|indice_turno_giocatore~5                             ; 1       ;
+; Perudo_Datapath:datapath|indice_turno_giocatore~3                             ; 1       ;
+; Perudo_Datapath:datapath|Equal12~1                                            ; 1       ;
+; Perudo_Datapath:datapath|Equal12~0                                            ; 1       ;
+; Perudo_Datapath:datapath|elimina_dado~0                                       ; 1       ;
+; Perudo_Datapath:datapath|Equal2~0                                             ; 1       ;
+; Perudo_Datapath:datapath|aggiungi_dado~1                                      ; 1       ;
+; Perudo_Datapath:datapath|aggiungi_dado~0                                      ; 1       ;
+; Perudo_Datapath:datapath|numero_giocatori_in_campo[3]~8                       ; 1       ;
+; Perudo_Datapath:datapath|numero_giocatori_in_campo[3]~7                       ; 1       ;
+; Perudo_Datapath:datapath|numero_giocatori_in_campo[0]~6                       ; 1       ;
 ; Perudo_Datapath:datapath|GIOCATORE_AGGIUNTO~1                                 ; 1       ;
 ; Perudo_Controller:controller|initialization_state~1                           ; 1       ;
 ; Perudo_Controller:controller|initialization_state~0                           ; 1       ;
+; Perudo_Datapath:datapath|NR_GIOCATORI_IN_CAMPO[3]                             ; 1       ;
+; Perudo_Datapath:datapath|indice_giocatore~26                                  ; 1       ;
+; Perudo_Datapath:datapath|indice_giocatore~25                                  ; 1       ;
+; Perudo_Datapath:datapath|indice_giocatore~24                                  ; 1       ;
+; Perudo_Datapath:datapath|indice_giocatore~23                                  ; 1       ;
+; Perudo_Datapath:datapath|indice_giocatore~22                                  ; 1       ;
 ; Perudo_Datapath:datapath|Equal3~1                                             ; 1       ;
 ; Perudo_Controller:controller|nuovo_giocatore_old~1                            ; 1       ;
+; Perudo_Datapath:datapath|giocatori_in_campo~38                                ; 1       ;
+; Perudo_Datapath:datapath|giocatori_in_campo~37                                ; 1       ;
+; Perudo_Datapath:datapath|giocatori_in_campo~36                                ; 1       ;
+; Perudo_Datapath:datapath|giocatori_in_campo~35                                ; 1       ;
+; Perudo_Datapath:datapath|giocatori_in_campo~34                                ; 1       ;
+; Perudo_Datapath:datapath|giocatori_in_campo~33                                ; 1       ;
+; Perudo_Datapath:datapath|giocatori_in_campo~32                                ; 1       ;
+; Perudo_Datapath:datapath|giocatori_in_campo~31                                ; 1       ;
+; Perudo_Controller:controller|elimina_giocatore_old~0                          ; 1       ;
+; Perudo_Controller:controller|check_old~3                                      ; 1       ;
+; Perudo_Datapath:datapath|CHECKED                                              ; 1       ;
+; Perudo_Controller:controller|check_old~2                                      ; 1       ;
+; Perudo_Controller:controller|check_old~1                                      ; 1       ;
+; Perudo_Controller:controller|check_old~0                                      ; 1       ;
+; Perudo_Controller:controller|LessThan3~0                                      ; 1       ;
+; Perudo_Datapath:datapath|giocatori_in_campo~30                                ; 1       ;
+; Perudo_Datapath:datapath|giocatori_in_campo~29                                ; 1       ;
 ; Perudo_Datapath:datapath|giocatori_in_campo~28                                ; 1       ;
 ; Perudo_Datapath:datapath|giocatori_in_campo~27                                ; 1       ;
 ; Perudo_Datapath:datapath|giocatori_in_campo~26                                ; 1       ;
 ; Perudo_Datapath:datapath|giocatori_in_campo~25                                ; 1       ;
 ; Perudo_Datapath:datapath|giocatori_in_campo~24                                ; 1       ;
 ; Perudo_Datapath:datapath|giocatori_in_campo~23                                ; 1       ;
+; Perudo_Datapath:datapath|indice_giocatore[2]~21                               ; 1       ;
+; Perudo_Datapath:datapath|indice_giocatore~20                                  ; 1       ;
+; Perudo_Datapath:datapath|indice_giocatore~19                                  ; 1       ;
 ; Perudo_Datapath:datapath|giocatori_in_campo~22                                ; 1       ;
 ; Perudo_Datapath:datapath|giocatori_in_campo~21                                ; 1       ;
-; Perudo_Controller:controller|elimina_giocatore_old~0                          ; 1       ;
 ; Perudo_Datapath:datapath|giocatori_in_campo~20                                ; 1       ;
 ; Perudo_Datapath:datapath|giocatori_in_campo~19                                ; 1       ;
 ; Perudo_Datapath:datapath|giocatori_in_campo~18                                ; 1       ;
@@ -1729,51 +1795,48 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Perudo_Datapath:datapath|giocatori_in_campo~16                                ; 1       ;
 ; Perudo_Datapath:datapath|giocatori_in_campo~15                                ; 1       ;
 ; Perudo_Datapath:datapath|giocatori_in_campo~14                                ; 1       ;
+; Perudo_Datapath:datapath|indice_giocatore[1]~18                               ; 1       ;
+; Perudo_Datapath:datapath|indice_giocatore~16                                  ; 1       ;
+; Perudo_Datapath:datapath|indice_giocatore~15                                  ; 1       ;
+; Perudo_Datapath:datapath|indice_giocatore[1]~10                               ; 1       ;
+; Perudo_Datapath:datapath|indice_giocatore[1]~9                                ; 1       ;
 ; Perudo_Datapath:datapath|giocatori_in_campo~13                                ; 1       ;
 ; Perudo_Datapath:datapath|giocatori_in_campo~12                                ; 1       ;
-; Perudo_Datapath:datapath|giocatori_in_campo~11                                ; 1       ;
-; Perudo_Datapath:datapath|giocatori_in_campo~10                                ; 1       ;
-; Perudo_Datapath:datapath|giocatori_in_campo~9                                 ; 1       ;
-; Perudo_Datapath:datapath|giocatori_in_campo~8                                 ; 1       ;
-; Perudo_Datapath:datapath|giocatori_in_campo~7                                 ; 1       ;
-; Perudo_Datapath:datapath|giocatori_in_campo~6                                 ; 1       ;
-; Perudo_Datapath:datapath|giocatori_in_campo~5                                 ; 1       ;
-; Perudo_Controller:controller|INIZIA_PARTITA                                   ; 1       ;
-; Perudo_Datapath:datapath|indice_giocatore[1]~28                               ; 1       ;
-; Perudo_Datapath:datapath|indice_giocatore~27                                  ; 1       ;
-; Perudo_Datapath:datapath|indice_giocatore~26                                  ; 1       ;
-; Perudo_Datapath:datapath|indice_giocatore~25                                  ; 1       ;
-; Perudo_Datapath:datapath|indice_giocatore[2]~24                               ; 1       ;
-; Perudo_Datapath:datapath|indice_giocatore[1]~22                               ; 1       ;
-; Perudo_Datapath:datapath|indice_giocatore[1]~21                               ; 1       ;
-; Perudo_Datapath:datapath|indice_giocatore[1]~20                               ; 1       ;
-; Perudo_Datapath:datapath|indice_giocatore~19                                  ; 1       ;
-; Perudo_Datapath:datapath|indice_giocatore~18                                  ; 1       ;
-; Perudo_Datapath:datapath|indice_giocatore~17                                  ; 1       ;
-; Perudo_Datapath:datapath|indice_giocatore[1]~14                               ; 1       ;
-; Perudo_Datapath:datapath|LessThan2~25                                         ; 1       ;
-; Perudo_Datapath:datapath|LessThan2~24                                         ; 1       ;
-; Perudo_Datapath:datapath|LessThan2~23                                         ; 1       ;
-; Perudo_Datapath:datapath|LessThan2~22                                         ; 1       ;
-; Perudo_Datapath:datapath|indice_giocatore~13                                  ; 1       ;
-; Perudo_Datapath:datapath|indice_giocatore~12                                  ; 1       ;
-; Perudo_Datapath:datapath|indice_giocatore~11                                  ; 1       ;
-; Perudo_Datapath:datapath|indice_giocatore~10                                  ; 1       ;
-; Perudo_Datapath:datapath|indice_giocatore~9                                   ; 1       ;
-; Perudo_Datapath:datapath|indice_giocatore~8                                   ; 1       ;
 ; Perudo_Datapath:datapath|indice_giocatore~7                                   ; 1       ;
 ; Perudo_Datapath:datapath|indice_giocatore~6                                   ; 1       ;
 ; Perudo_Datapath:datapath|indice_giocatore~5                                   ; 1       ;
-; Perudo_Datapath:datapath|LessThan2~20                                         ; 1       ;
-; Perudo_Datapath:datapath|LessThan2~17                                         ; 1       ;
-; Perudo_Datapath:datapath|LessThan2~16                                         ; 1       ;
+; Perudo_Datapath:datapath|indice_giocatore~3                                   ; 1       ;
+; Perudo_Datapath:datapath|indice_giocatore~2                                   ; 1       ;
+; Perudo_Datapath:datapath|LessThan10~26                                        ; 1       ;
+; Perudo_Datapath:datapath|LessThan10~25                                        ; 1       ;
+; Perudo_Datapath:datapath|LessThan10~24                                        ; 1       ;
+; Perudo_Datapath:datapath|LessThan10~23                                        ; 1       ;
+; Perudo_Datapath:datapath|LessThan10~22                                        ; 1       ;
+; Perudo_Datapath:datapath|LessThan10~21                                        ; 1       ;
+; Perudo_Datapath:datapath|LessThan10~20                                        ; 1       ;
+; Perudo_Datapath:datapath|LessThan10~19                                        ; 1       ;
+; Perudo_Datapath:datapath|LessThan10~18                                        ; 1       ;
+; Perudo_Datapath:datapath|LessThan10~17                                        ; 1       ;
+; Perudo_Datapath:datapath|LessThan10~16                                        ; 1       ;
+; Perudo_Datapath:datapath|LessThan10~15                                        ; 1       ;
+; Perudo_Datapath:datapath|LessThan10~14                                        ; 1       ;
+; Perudo_Datapath:datapath|LessThan10~13                                        ; 1       ;
 ; Perudo_Datapath:datapath|scommessa_corrente.ricorrenza[0]                     ; 1       ;
 ; Perudo_Datapath:datapath|scommessa_corrente.ricorrenza[1]                     ; 1       ;
 ; Perudo_Datapath:datapath|scommessa_corrente.ricorrenza[2]                     ; 1       ;
 ; Perudo_Datapath:datapath|scommessa_corrente.ricorrenza[3]                     ; 1       ;
-; Perudo_Datapath:datapath|scommessa_corrente.ricorrenza[4]                     ; 1       ;
-; Perudo_Datapath:datapath|scommessa_corrente.ricorrenza[5]                     ; 1       ;
-; Perudo_Datapath:datapath|LessThan2~3                                          ; 1       ;
+; Perudo_Datapath:datapath|LessThan10~12                                        ; 1       ;
+; Perudo_Datapath:datapath|LessThan10~11                                        ; 1       ;
+; Perudo_Datapath:datapath|LessThan10~10                                        ; 1       ;
+; Perudo_Datapath:datapath|LessThan10~9                                         ; 1       ;
+; Perudo_Datapath:datapath|LessThan10~8                                         ; 1       ;
+; Perudo_Datapath:datapath|LessThan10~7                                         ; 1       ;
+; Perudo_Datapath:datapath|LessThan10~6                                         ; 1       ;
+; Perudo_Datapath:datapath|LessThan10~5                                         ; 1       ;
+; Perudo_Datapath:datapath|LessThan10~4                                         ; 1       ;
+; Perudo_Datapath:datapath|LessThan10~3                                         ; 1       ;
+; Perudo_Datapath:datapath|scommessa_corrente.ricorrenza[31]                    ; 1       ;
+; Perudo_Datapath:datapath|LessThan10~2                                         ; 1       ;
 ; Perudo_Datapath:datapath|WideNor0~3                                           ; 1       ;
 ; Perudo_Datapath:datapath|WideNor0~2                                           ; 1       ;
 ; Perudo_Datapath:datapath|scommessa_corrente.dado_scommesso.DUE                ; 1       ;
@@ -1818,49 +1881,39 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Perudo_Datapath:datapath|\GestoreGiocatoriInCampo_RTL:counter_check[29]       ; 1       ;
 ; Perudo_Datapath:datapath|\GestoreGiocatoriInCampo_RTL:counter_check[30]       ; 1       ;
 ; Perudo_Datapath:datapath|\GestoreGiocatoriInCampo_RTL:counter_check[31]       ; 1       ;
-; Perudo_Datapath:datapath|indice_giocatore~4                                   ; 1       ;
-; Perudo_Datapath:datapath|indice_giocatore~2                                   ; 1       ;
-; Perudo_Controller:controller|check_old~1                                      ; 1       ;
-; Perudo_Controller:controller|\Update_State_Controller:doubt_old               ; 1       ;
-; Perudo_Datapath:datapath|numero_giocatori_in_campo[3]~8                       ; 1       ;
-; Perudo_Datapath:datapath|numero_giocatori_in_campo[3]~7                       ; 1       ;
-; Perudo_Datapath:datapath|numero_giocatori_in_campo[2]~6                       ; 1       ;
+; Perudo_Datapath:datapath|giocatori_in_campo~11                                ; 1       ;
+; Perudo_Controller:controller|INIZIA_PARTITA                                   ; 1       ;
+; Perudo_Datapath:datapath|I_TURNO_GIOCATORE[1]                                 ; 1       ;
+; Perudo_Datapath:datapath|I_TURNO_GIOCATORE[2]                                 ; 1       ;
+; Perudo_Datapath:datapath|I_TURNO_GIOCATORE[0]                                 ; 1       ;
 ; Perudo_Datapath:datapath|numero_giocatori_in_campo[2]~5                       ; 1       ;
-; Perudo_Datapath:datapath|numero_giocatori_in_campo~3                          ; 1       ;
+; Perudo_Datapath:datapath|numero_giocatori_in_campo[2]~4                       ; 1       ;
 ; Perudo_Controller:controller|DAMMI_GIOCATORI_IN_CAMPO~0                       ; 1       ;
 ; Perudo_Controller:controller|Update_State_Controller~5                        ; 1       ;
-; Perudo_Controller:controller|\Update_State_Controller:prev_old                ; 1       ;
 ; Perudo_Datapath:datapath|Mux6~3                                               ; 1       ;
 ; Perudo_Datapath:datapath|Mux6~2                                               ; 1       ;
 ; Perudo_Datapath:datapath|Mux6~1                                               ; 1       ;
 ; Perudo_Datapath:datapath|Mux6~0                                               ; 1       ;
-; Perudo_Datapath:datapath|numero_giocatori_in_campo[2]~0                       ; 1       ;
+; Perudo_Datapath:datapath|numero_giocatori_in_campo[0]~2                       ; 1       ;
 ; Perudo_Datapath:datapath|Mux7~3                                               ; 1       ;
 ; Perudo_Datapath:datapath|Mux7~2                                               ; 1       ;
 ; Perudo_Datapath:datapath|Mux7~1                                               ; 1       ;
 ; Perudo_Datapath:datapath|Mux7~0                                               ; 1       ;
 ; Perudo_Datapath:datapath|Mux8~2                                               ; 1       ;
 ; Perudo_Datapath:datapath|Mux8~0                                               ; 1       ;
-; Perudo_Datapath:datapath|I_TURNO_GIOCATORE[0]                                 ; 1       ;
-; Perudo_Datapath:datapath|I_TURNO_GIOCATORE[1]                                 ; 1       ;
-; Perudo_Datapath:datapath|I_TURNO_GIOCATORE[2]                                 ; 1       ;
-; reset_sync_reg                                                                ; 1       ;
-; Perudo_Controller:controller|turno[0]                                         ; 1       ;
 ; Perudo_Controller:controller|turno[1]                                         ; 1       ;
 ; Perudo_Controller:controller|turno[2]                                         ; 1       ;
-; Perudo_Controller:controller|pulse8~0                                         ; 1       ;
-; Perudo_Datapath:datapath|NR_GIOCATORI_IN_CAMPO[3]                             ; 1       ;
+; Perudo_Controller:controller|turno[0]                                         ; 1       ;
+; reset_sync_reg                                                                ; 1       ;
 ; Perudo_Datapath:datapath|NR_GIOCATORI_IN_CAMPO[2]                             ; 1       ;
 ; Perudo_Datapath:datapath|NR_GIOCATORI_IN_CAMPO[1]                             ; 1       ;
 ; Perudo_Datapath:datapath|NR_GIOCATORI_IN_CAMPO[0]                             ; 1       ;
 ; Perudo_Controller:controller|stato[1]                                         ; 1       ;
 ; Perudo_Controller:controller|stato[0]                                         ; 1       ;
-; Perudo_Controller:controller|pulse10                                          ; 1       ;
-; Perudo_Controller:controller|pulse9                                           ; 1       ;
 ; Perudo_Controller:controller|numero_giocatori[0]                              ; 1       ;
-; Perudo_Controller:controller|ricorrenza_temp[5]~16                            ; 1       ;
+; Perudo_Controller:controller|ricorrenza_temp[5]~17                            ; 1       ;
+; Perudo_Controller:controller|ricorrenza_temp[4]~16                            ; 1       ;
 ; Perudo_Controller:controller|ricorrenza_temp[4]~15                            ; 1       ;
-; Perudo_Controller:controller|ricorrenza_temp[4]~14                            ; 1       ;
 ; Perudo_Controller:controller|ricorrenza_temp[3]~13                            ; 1       ;
 ; Perudo_Controller:controller|ricorrenza_temp[3]~12                            ; 1       ;
 ; Perudo_Controller:controller|ricorrenza_temp[2]~11                            ; 1       ;
@@ -1878,11 +1931,6 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Perudo_Datapath:datapath|cicli_da_attendere[1]~7                              ; 1       ;
 ; Perudo_Datapath:datapath|cicli_da_attendere[0]~6                              ; 1       ;
 ; Perudo_Datapath:datapath|cicli_da_attendere[0]~5                              ; 1       ;
-; Perudo_Datapath:datapath|LessThan2~13                                         ; 1       ;
-; Perudo_Datapath:datapath|LessThan2~11                                         ; 1       ;
-; Perudo_Datapath:datapath|LessThan2~9                                          ; 1       ;
-; Perudo_Datapath:datapath|LessThan2~7                                          ; 1       ;
-; Perudo_Datapath:datapath|LessThan2~5                                          ; 1       ;
 ; Perudo_Datapath:datapath|Add8~61                                              ; 1       ;
 ; Perudo_Datapath:datapath|Add8~59                                              ; 1       ;
 ; Perudo_Datapath:datapath|Add8~57                                              ; 1       ;
@@ -1922,152 +1970,156 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------------+------------------------+
 ; Other Routing Resource Type ; Usage                  ;
 +-----------------------------+------------------------+
-; Block interconnects         ; 539 / 54,004 ( < 1 % ) ;
+; Block interconnects         ; 571 / 54,004 ( 1 % )   ;
 ; C16 interconnects           ; 4 / 2,100 ( < 1 % )    ;
-; C4 interconnects            ; 188 / 36,000 ( < 1 % ) ;
-; Direct links                ; 212 / 54,004 ( < 1 % ) ;
+; C4 interconnects            ; 143 / 36,000 ( < 1 % ) ;
+; Direct links                ; 183 / 54,004 ( < 1 % ) ;
 ; Global clocks               ; 2 / 16 ( 13 % )        ;
-; Local interconnects         ; 248 / 18,752 ( 1 % )   ;
+; Local interconnects         ; 287 / 18,752 ( 2 % )   ;
 ; R24 interconnects           ; 9 / 1,900 ( < 1 % )    ;
-; R4 interconnects            ; 159 / 46,920 ( < 1 % ) ;
+; R4 interconnects            ; 235 / 46,920 ( < 1 % ) ;
 +-----------------------------+------------------------+
 
 
 +----------------------------------------------------------------------------+
 ; LAB Logic Elements                                                         ;
 +---------------------------------------------+------------------------------+
-; Number of Logic Elements  (Average = 12.69) ; Number of LABs  (Total = 35) ;
+; Number of Logic Elements  (Average = 15.22) ; Number of LABs  (Total = 32) ;
 +---------------------------------------------+------------------------------+
-; 1                                           ; 2                            ;
-; 2                                           ; 2                            ;
-; 3                                           ; 1                            ;
+; 1                                           ; 0                            ;
+; 2                                           ; 0                            ;
+; 3                                           ; 0                            ;
 ; 4                                           ; 0                            ;
-; 5                                           ; 1                            ;
+; 5                                           ; 0                            ;
 ; 6                                           ; 0                            ;
-; 7                                           ; 1                            ;
+; 7                                           ; 0                            ;
 ; 8                                           ; 0                            ;
-; 9                                           ; 0                            ;
-; 10                                          ; 1                            ;
-; 11                                          ; 0                            ;
+; 9                                           ; 1                            ;
+; 10                                          ; 0                            ;
+; 11                                          ; 1                            ;
 ; 12                                          ; 1                            ;
-; 13                                          ; 2                            ;
-; 14                                          ; 2                            ;
-; 15                                          ; 5                            ;
-; 16                                          ; 17                           ;
+; 13                                          ; 0                            ;
+; 14                                          ; 3                            ;
+; 15                                          ; 3                            ;
+; 16                                          ; 23                           ;
 +---------------------------------------------+------------------------------+
 
 
 +-------------------------------------------------------------------+
 ; LAB-wide Signals                                                  ;
 +------------------------------------+------------------------------+
-; LAB-wide Signals  (Average = 2.43) ; Number of LABs  (Total = 35) ;
+; LAB-wide Signals  (Average = 2.38) ; Number of LABs  (Total = 32) ;
 +------------------------------------+------------------------------+
-; 1 Async. clear                     ; 32                           ;
-; 1 Clock                            ; 34                           ;
-; 1 Clock enable                     ; 14                           ;
-; 2 Clock enables                    ; 5                            ;
+; 1 Async. clear                     ; 27                           ;
+; 1 Clock                            ; 29                           ;
+; 1 Clock enable                     ; 16                           ;
+; 1 Sync. clear                      ; 1                            ;
+; 1 Sync. load                       ; 1                            ;
+; 2 Clock enables                    ; 2                            ;
 +------------------------------------+------------------------------+
 
 
 +-----------------------------------------------------------------------------+
 ; LAB Signals Sourced                                                         ;
 +----------------------------------------------+------------------------------+
-; Number of Signals Sourced  (Average = 17.34) ; Number of LABs  (Total = 35) ;
+; Number of Signals Sourced  (Average = 20.41) ; Number of LABs  (Total = 32) ;
 +----------------------------------------------+------------------------------+
 ; 0                                            ; 0                            ;
 ; 1                                            ; 0                            ;
-; 2                                            ; 2                            ;
-; 3                                            ; 1                            ;
-; 4                                            ; 1                            ;
-; 5                                            ; 1                            ;
+; 2                                            ; 0                            ;
+; 3                                            ; 0                            ;
+; 4                                            ; 0                            ;
+; 5                                            ; 0                            ;
 ; 6                                            ; 0                            ;
 ; 7                                            ; 0                            ;
 ; 8                                            ; 0                            ;
 ; 9                                            ; 0                            ;
-; 10                                           ; 1                            ;
+; 10                                           ; 0                            ;
 ; 11                                           ; 1                            ;
 ; 12                                           ; 1                            ;
 ; 13                                           ; 0                            ;
-; 14                                           ; 2                            ;
+; 14                                           ; 0                            ;
 ; 15                                           ; 1                            ;
-; 16                                           ; 1                            ;
-; 17                                           ; 4                            ;
-; 18                                           ; 2                            ;
+; 16                                           ; 2                            ;
+; 17                                           ; 1                            ;
+; 18                                           ; 3                            ;
 ; 19                                           ; 4                            ;
-; 20                                           ; 2                            ;
-; 21                                           ; 0                            ;
-; 22                                           ; 2                            ;
-; 23                                           ; 0                            ;
-; 24                                           ; 2                            ;
+; 20                                           ; 5                            ;
+; 21                                           ; 2                            ;
+; 22                                           ; 3                            ;
+; 23                                           ; 2                            ;
+; 24                                           ; 1                            ;
 ; 25                                           ; 2                            ;
 ; 26                                           ; 2                            ;
-; 27                                           ; 2                            ;
+; 27                                           ; 1                            ;
 ; 28                                           ; 0                            ;
-; 29                                           ; 0                            ;
-; 30                                           ; 0                            ;
-; 31                                           ; 1                            ;
+; 29                                           ; 1                            ;
 +----------------------------------------------+------------------------------+
 
 
 +--------------------------------------------------------------------------------+
 ; LAB Signals Sourced Out                                                        ;
 +-------------------------------------------------+------------------------------+
-; Number of Signals Sourced Out  (Average = 7.94) ; Number of LABs  (Total = 35) ;
+; Number of Signals Sourced Out  (Average = 9.25) ; Number of LABs  (Total = 32) ;
 +-------------------------------------------------+------------------------------+
 ; 0                                               ; 0                            ;
-; 1                                               ; 4                            ;
+; 1                                               ; 0                            ;
 ; 2                                               ; 2                            ;
-; 3                                               ; 2                            ;
+; 3                                               ; 0                            ;
 ; 4                                               ; 1                            ;
-; 5                                               ; 2                            ;
-; 6                                               ; 1                            ;
-; 7                                               ; 5                            ;
-; 8                                               ; 2                            ;
-; 9                                               ; 5                            ;
-; 10                                              ; 2                            ;
-; 11                                              ; 1                            ;
-; 12                                              ; 1                            ;
-; 13                                              ; 2                            ;
-; 14                                              ; 0                            ;
-; 15                                              ; 1                            ;
-; 16                                              ; 4                            ;
+; 5                                               ; 0                            ;
+; 6                                               ; 6                            ;
+; 7                                               ; 2                            ;
+; 8                                               ; 3                            ;
+; 9                                               ; 2                            ;
+; 10                                              ; 4                            ;
+; 11                                              ; 4                            ;
+; 12                                              ; 3                            ;
+; 13                                              ; 0                            ;
+; 14                                              ; 1                            ;
+; 15                                              ; 2                            ;
+; 16                                              ; 2                            ;
 +-------------------------------------------------+------------------------------+
 
 
 +-----------------------------------------------------------------------------+
 ; LAB Distinct Inputs                                                         ;
 +----------------------------------------------+------------------------------+
-; Number of Distinct Inputs  (Average = 15.00) ; Number of LABs  (Total = 35) ;
+; Number of Distinct Inputs  (Average = 17.19) ; Number of LABs  (Total = 32) ;
 +----------------------------------------------+------------------------------+
 ; 0                                            ; 0                            ;
 ; 1                                            ; 0                            ;
-; 2                                            ; 1                            ;
-; 3                                            ; 0                            ;
-; 4                                            ; 3                            ;
-; 5                                            ; 3                            ;
-; 6                                            ; 2                            ;
-; 7                                            ; 1                            ;
+; 2                                            ; 0                            ;
+; 3                                            ; 1                            ;
+; 4                                            ; 0                            ;
+; 5                                            ; 0                            ;
+; 6                                            ; 0                            ;
+; 7                                            ; 0                            ;
 ; 8                                            ; 0                            ;
 ; 9                                            ; 0                            ;
-; 10                                           ; 0                            ;
-; 11                                           ; 2                            ;
-; 12                                           ; 0                            ;
-; 13                                           ; 4                            ;
-; 14                                           ; 1                            ;
-; 15                                           ; 0                            ;
-; 16                                           ; 3                            ;
-; 17                                           ; 3                            ;
-; 18                                           ; 0                            ;
-; 19                                           ; 2                            ;
-; 20                                           ; 2                            ;
-; 21                                           ; 0                            ;
-; 22                                           ; 0                            ;
+; 10                                           ; 3                            ;
+; 11                                           ; 1                            ;
+; 12                                           ; 1                            ;
+; 13                                           ; 2                            ;
+; 14                                           ; 2                            ;
+; 15                                           ; 4                            ;
+; 16                                           ; 1                            ;
+; 17                                           ; 2                            ;
+; 18                                           ; 2                            ;
+; 19                                           ; 3                            ;
+; 20                                           ; 1                            ;
+; 21                                           ; 3                            ;
+; 22                                           ; 2                            ;
 ; 23                                           ; 1                            ;
 ; 24                                           ; 0                            ;
-; 25                                           ; 1                            ;
-; 26                                           ; 2                            ;
-; 27                                           ; 0                            ;
-; 28                                           ; 4                            ;
+; 25                                           ; 0                            ;
+; 26                                           ; 0                            ;
+; 27                                           ; 1                            ;
+; 28                                           ; 1                            ;
+; 29                                           ; 0                            ;
+; 30                                           ; 0                            ;
+; 31                                           ; 0                            ;
+; 32                                           ; 1                            ;
 +----------------------------------------------+------------------------------+
 
 
@@ -2104,9 +2156,9 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Fitter Messages ;
 +-----------------+
 Info: *******************************************************************
-Info: Running Quartus II 64-Bit Fitter
+Info: Running Quartus II 32-bit Fitter
     Info: Version 12.1 Build 243 01/31/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Fri Oct 04 13:32:05 2019
+    Info: Processing started: Tue Oct 08 17:36:13 2019
 Info: Command: quartus_fit --read_settings_files=off --write_settings_files=off Perudo_DE1 -c Perudo_DE1
 Info (11104): Parallel Compilation has detected 8 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 4 of the 4 physical processors detected instead.
 Info (119006): Selected device EP2C20F484C7 for design "Perudo_DE1"
@@ -2132,15 +2184,15 @@ Info (176353): Automatically promoted node RESET_N
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock
     Info (176356): Following destination nodes may be non-global or may not use global or regional clocks
         Info (176357): Destination node Perudo_Controller:controller|stato[1]
-        Info (176357): Destination node Perudo_Controller:controller|pulse9
         Info (176357): Destination node Perudo_Controller:controller|stato[0]
-        Info (176357): Destination node Perudo_Controller:controller|pulse10
-        Info (176357): Destination node Perudo_Controller:controller|pulse8~0
         Info (176357): Destination node Perudo_Controller:controller|DADO_SCOMMESSO.SEI~head_lut
         Info (176357): Destination node Perudo_Controller:controller|DADO_SCOMMESSO.CINQUE~head_lut
         Info (176357): Destination node Perudo_Controller:controller|DADO_SCOMMESSO.QUATTRO~head_lut
         Info (176357): Destination node Perudo_Controller:controller|DADO_SCOMMESSO.UNO~head_lut
         Info (176357): Destination node Perudo_Controller:controller|DADO_SCOMMESSO.TRE~head_lut
+        Info (176357): Destination node Perudo_Controller:controller|DADO_SCOMMESSO.DUE~head_lut
+        Info (176357): Destination node Perudo_Controller:controller|RICORRENZA[4]~head_lut
+        Info (176357): Destination node Perudo_Controller:controller|RICORRENZA[5]~head_lut
         Info (176358): Non-global destination nodes limited to 10 nodes
 Info (176233): Starting register packing
 Info (176235): Finished register packing
@@ -2400,15 +2452,15 @@ Warning (15705): Ignored locations or region assignments to the following nodes
     Warning (15706): Node "VGA_R[2]" is assigned to location or region, but does not exist in design
     Warning (15706): Node "VGA_R[3]" is assigned to location or region, but does not exist in design
     Warning (15706): Node "VGA_VS" is assigned to location or region, but does not exist in design
-Info (171121): Fitter preparation operations ending: elapsed time is 00:00:00
+Info (171121): Fitter preparation operations ending: elapsed time is 00:00:01
 Info (170189): Fitter placement preparation operations beginning
 Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:00
 Info (170191): Fitter placement operations beginning
 Info (170137): Fitter placement was successful
-Info (170192): Fitter placement operations ending: elapsed time is 00:00:02
+Info (170192): Fitter placement operations ending: elapsed time is 00:00:01
 Info (170193): Fitter routing operations beginning
 Info (170195): Router estimated average interconnect usage is 0% of the available device resources
-    Info (170196): Router estimated peak interconnect usage is 1% of the available device resources in the region that extends from location X25_Y14 to location X37_Y27
+    Info (170196): Router estimated peak interconnect usage is 1% of the available device resources in the region that extends from location X12_Y14 to location X24_Y27
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:02
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
@@ -2438,17 +2490,17 @@ Info (306005): Delay annotation completed successfully
 Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:01
 Warning (171167): Found invalid Fitter assignments. See the Ignored Assignments panel in the Fitter Compilation Report for more information.
 Warning (169174): The Reserve All Unused Pins setting has not been specified, and will default to 'As output driving ground'.
-Info (144001): Generated suppressed messages file C:/Users/Simone/Desktop/perudoTest/output_files/Perudo_DE1.fit.smsg
-Info: Quartus II 64-Bit Fitter was successful. 0 errors, 261 warnings
-    Info: Peak virtual memory: 5055 megabytes
-    Info: Processing ended: Fri Oct 04 13:32:14 2019
+Info (144001): Generated suppressed messages file C:/Users/Simone/Desktop/Io/Università/magistrale/1 Anno/Sistemi Digitali/progettoGitHub/Perudo_FPGA/output_files/Perudo_DE1.fit.smsg
+Info: Quartus II 32-bit Fitter was successful. 0 errors, 261 warnings
+    Info: Peak virtual memory: 501 megabytes
+    Info: Processing ended: Tue Oct 08 17:36:22 2019
     Info: Elapsed time: 00:00:09
-    Info: Total CPU time (on all processors): 00:00:11
+    Info: Total CPU time (on all processors): 00:00:12
 
 
 +----------------------------+
 ; Fitter Suppressed Messages ;
 +----------------------------+
-The suppressed messages can be found in C:/Users/Simone/Desktop/perudoTest/output_files/Perudo_DE1.fit.smsg.
+The suppressed messages can be found in C:/Users/Simone/Desktop/Io/Università/magistrale/1 Anno/Sistemi Digitali/progettoGitHub/Perudo_FPGA/output_files/Perudo_DE1.fit.smsg.
 
 

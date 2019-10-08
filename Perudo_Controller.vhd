@@ -368,7 +368,7 @@ begin
 				inizia_partita_old 			:= '0';
 			end if;
 			if(CHECKED = '1') then
-				pulse10		<= '1';
+				--pulse10		<= '1';
 				CHECK			<= '0';
 				check_old	:= '0';
 			end if;
