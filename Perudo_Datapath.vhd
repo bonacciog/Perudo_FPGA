@@ -52,7 +52,7 @@ end entity;
 
 architecture RTL of Perudo_Datapath is
   
-  type     stati_rigenerazione is (ELIMINAZIONE, AGGIUNTA);
+	type     stati_rigenerazione is (ELIMINAZIONE, AGGIUNTA);
 		-- Struttura dati giocatori in campo
 			-- L'utente è il giocatore in campo all'indice 0
 	signal giocatori_in_campo											: giocatore_array(0 to MAX_GIOCATORI-1);

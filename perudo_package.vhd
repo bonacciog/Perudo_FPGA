@@ -4,18 +4,19 @@ use ieee.std_logic_1164.all;
 ---use work.vga_package.all;
 
 package perudo_package is
-	constant MIN_DADI										: positive  := 1;
-	constant	MAX_DADI 									: positive  := 5;
-	constant	MAX_DADI_TOTALI				         : positive  := 10;
-	constant MIN_GIOCATORI 								: positive	:= 1;
-	constant MAX_GIOCATORI 								: positive	:= 2;
-	constant VALORE_DADO_MIN		           		: positive	:= 1;
-	constant VALORE_DADO_MAX 		          		: positive	:= 6;
-	constant MIN_ATTESA_CASUALE 						: integer	:= 0;
-	constant MAX_ATTESA_CASUALE 						: integer	:= 9;
-	constant PROBABILITA_DADO_GENERICO				: real		:= 0.33333333;
-	constant PROBABILITA_DADO_UNO			     		: real		:= 0.16666667;
-	constant SOGLIA_DUBITO               			: real      := 0.1;
+	constant MIN_DADI											         : positive  := 1;
+	constant	MAX_DADI 										         : positive  := 5;
+	constant	MAX_DADI_TOTALI				         : positive  := 40;
+	constant MIN_GIOCATORI 									     : positive	 := 1;
+	constant MAX_GIOCATORI 									     : positive	 := 8;
+	constant VALORE_DADO_MIN		           : positive	 := 1;
+	constant VALORE_DADO_MAX 		          : positive	 := 6;
+	constant MIN_ATTESA_CASUALE 							  : integer	  := 0;
+	constant MAX_ATTESA_CASUALE 							  : integer	  := 9;
+	constant	MAX_SCOMMESSE										     : positive  := 240;
+	constant PROBABILITA_DADO_GENERICO			: real		    := 0.33333333;
+	constant PROBABILITA_DADO_UNO			     : real		    := 0.16666667;
+	constant SOGLIA_DUBITO               : real      := 0.1;
 
 	
 		-- Tipi utili al Datapath	
@@ -56,9 +57,7 @@ package perudo_package is
   function ricorrenza_dado(dado : dado_type; dadi_in_mano : dado_array(0 to MAX_DADI-1)) return integer;
 
 	-- Utili al calcolo della probabilita
-	function fattoriale(valore: integer) return integer;
-	function coefficiente_binomiale(n : integer; i: integer) return real;
-	function potenza(base : real; esponente: integer) return real;
+	function binomialCoefficient(N : positive; K : positive) return positive;
 	function funzione_di_massa_binomiale(p : real; n: integer; i: integer) return real;
 	function probabilita(prob_X : real; dadi_totali: integer; ricorrenza: integer) return real;
 	
@@ -118,7 +117,7 @@ package body perudo_package is
 	variable prob_tmp              : real := 0.0;
 	variable prob_attuale          : real := 0.0;
 	variable prob_dubito           : real := 0.0;
-	variable numero_altri_dadi     : integer := 0;
+  variable numero_altri_dadi     : integer := 0;
 	variable mia_ricorrenza        : integer := 0;
 	variable scommesse_possibili   : scommessa_array(VALORE_DADO_MIN-1 to VALORE_DADO_MAX-1);
 	variable scommessa_result      : scommessa_type;
@@ -247,60 +246,22 @@ package body perudo_package is
 		return totali_scommesse;
 	end function;
 	
-	
---	function fattoriale(valore: integer) 
---			return real is
---	begin
---		if(valore = 0) then
---			return 1.0;
---		elsif (valore = 1) then
---			return 1.0;
---		else
---			return fattoriale(valore - 1) * real(valore);
---		end if;
---	end function;
-
-	function fattoriale(valore: integer) 
-		   return integer is
-	variable fatt 		  : integer :=1;
-	variable valore_tmp : integer;
+	function binomialCoefficient(N : positive; K : positive) return positive is
+		variable Result		: positive;
 	begin
-		valore_tmp := valore;
-		while 1 <= valore_tmp loop
-			fatt 		  := fatt*valore_tmp;
-			valore_tmp := valore_tmp - 1;
+		Result		:= 1;
+		for i in 1 to K loop
+			Result := Result * (((N + 1) - i) / i);
 		end loop;
-		return fatt;
+		return Result;
 	end function;
 	
-	function coefficiente_binomiale(n : integer; i: integer) 
-			return real is
-	begin
-      if((n-i)>=0 and n /= 0 and i /= 0) then
-			return real((fattoriale(n))/(fattoriale(i)*fattoriale(n-i)));
-		else 
-			return -1.0;
-	   end if;
-	end function;
-
-	function potenza(base : real; esponente: integer) 
-			return real is
-	begin
-		if(esponente = 0) then
-			return 1.0;
-		elsif(esponente = 1) then
-			return base;
-		elsif((esponente mod 2) = 0) then
-			return potenza(base*base, esponente/2);
-		else
-			return base*potenza(base*base, esponente/2);
-		end if;
-	end function;
+	
 	
 	function funzione_di_massa_binomiale(p : real; n: integer; i: integer)
 			return real is
 	begin
-		return coefficiente_binomiale(n,i) * potenza(p,i) * potenza((1.0-p),(n-i));
+		return real(binomialCoefficient(n,i)) * (p**i) * ((1.0-p)**(n-i));
 	end function;
 	
 	function probabilita(prob_X : real; dadi_totali: integer; ricorrenza: integer) 
