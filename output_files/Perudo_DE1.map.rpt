@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Perudo_DE1
-Tue Oct 08 16:49:10 2019
+Wed Oct 09 14:10:17 2019
 Quartus II 32-bit Version 12.1 Build 243 01/31/2013 Service Pack 1 SJ Web Edition
 
 
@@ -88,7 +88,7 @@ applicable agreement for further details.
 +------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                       ;
 +------------------------------------+-----------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Oct 08 16:49:10 2019         ;
+; Analysis & Synthesis Status        ; Successful - Wed Oct 09 14:10:17 2019         ;
 ; Quartus II 32-bit Version          ; 12.1 Build 243 01/31/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; Perudo_DE1                                    ;
 ; Top-level Entity Name              ; Perudo_DE1                                    ;
@@ -1421,7 +1421,7 @@ Encoding Type:  One-Hot
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:03     ;
+; Top            ; 00:00:04     ;
 +----------------+--------------+
 
 
@@ -1431,7 +1431,7 @@ Encoding Type:  One-Hot
 Info: *******************************************************************
 Info: Running Quartus II 32-bit Analysis & Synthesis
     Info: Version 12.1 Build 243 01/31/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Tue Oct 08 16:49:02 2019
+    Info: Processing started: Wed Oct 09 14:10:07 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Perudo_DE1 -c Perudo_DE1
 Info (11104): Parallel Compilation has detected 4 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 2 of the 2 physical processors detected instead.
 Info (12021): Found 2 design units, including 0 entities, in source file perudo_package.vhd
@@ -1463,9 +1463,9 @@ Info (10018): Can't recognize finite state machine "DADO_SCOMMESSO" because it h
 Info (12128): Elaborating entity "Perudo_Datapath" for hierarchy "Perudo_Datapath:datapath"
 Warning (11792): VHDL warning at Perudo_Datapath.vhd(243): right bound of range must be a constant
 Warning (11792): VHDL warning at Perudo_Datapath.vhd(244): right bound of range must be a constant
-Warning (11791): VHDL warning at perudo_package.vhd(271): left bound of range must be a constant
-Warning (11792): VHDL warning at perudo_package.vhd(271): right bound of range must be a constant
-Warning (11792): VHDL warning at perudo_package.vhd(253): right bound of range must be a constant
+Warning (11791): VHDL warning at perudo_package.vhd(270): left bound of range must be a constant
+Warning (11792): VHDL warning at perudo_package.vhd(270): right bound of range must be a constant
+Warning (11792): VHDL warning at perudo_package.vhd(252): right bound of range must be a constant
 Info (13000): Registers with preset signals will power-up high
 Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
 Warning (13004): Presettable and clearable registers converted to equivalent circuits with latches. Registers power-up to an undefined state, and DEVCLRn places the registers in an undefined state.
@@ -1512,8 +1512,8 @@ Info (21057): Implemented 518 device resources after synthesis - the final resou
     Info (21061): Implemented 494 logic cells
 Info: Quartus II 32-bit Analysis & Synthesis was successful. 0 errors, 51 warnings
     Info: Peak virtual memory: 396 megabytes
-    Info: Processing ended: Tue Oct 08 16:49:10 2019
-    Info: Elapsed time: 00:00:08
+    Info: Processing ended: Wed Oct 09 14:10:18 2019
+    Info: Elapsed time: 00:00:11
     Info: Total CPU time (on all processors): 00:00:07
 
 
