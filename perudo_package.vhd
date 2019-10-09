@@ -13,7 +13,6 @@ package perudo_package is
 	constant VALORE_DADO_MAX 		          : positive	 := 6;
 	constant MIN_ATTESA_CASUALE 							  : integer	  := 0;
 	constant MAX_ATTESA_CASUALE 							  : integer	  := 9;
-	constant	MAX_SCOMMESSE										     : positive  := 240;
 	constant PROBABILITA_DADO_GENERICO			: real		    := 0.33333333;
 	constant PROBABILITA_DADO_UNO			     : real		    := 0.16666667;
 	constant SOGLIA_DUBITO               : real      := 0.1;
@@ -57,7 +56,7 @@ package perudo_package is
   function ricorrenza_dado(dado : dado_type; dadi_in_mano : dado_array(0 to MAX_DADI-1)) return integer;
 
 	-- Utili al calcolo della probabilita
-	function binomialCoefficient(N : positive; K : positive) return positive;
+	function binomialCoefficient(N : integer; K : integer) return real;
 	function funzione_di_massa_binomiale(p : real; n: integer; i: integer) return real;
 	function probabilita(prob_X : real; dadi_totali: integer; ricorrenza: integer) return real;
 	
@@ -246,12 +245,12 @@ package body perudo_package is
 		return totali_scommesse;
 	end function;
 	
-	function binomialCoefficient(N : positive; K : positive) return positive is
-		variable Result		: positive;
+	function binomialCoefficient(N : integer; K : integer) return real is
+		variable Result		: real;
 	begin
-		Result		:= 1;
+		Result		:= 1.0;
 		for i in 1 to K loop
-			Result := Result * (((N + 1) - i) / i);
+			Result := Result * real((((N + 1) - i) / i));
 		end loop;
 		return Result;
 	end function;
@@ -261,7 +260,7 @@ package body perudo_package is
 	function funzione_di_massa_binomiale(p : real; n: integer; i: integer)
 			return real is
 	begin
-		return real(binomialCoefficient(n,i)) * (p**i) * ((1.0-p)**(n-i));
+		return binomialCoefficient(n,i) * real((p**i) * ((1.0-p)**(n-i)));
 	end function;
 	
 	function probabilita(prob_X : real; dadi_totali: integer; ricorrenza: integer) 
