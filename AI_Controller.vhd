@@ -2,29 +2,27 @@ library ieee;
 use ieee.numeric_std.all;
 use ieee.std_logic_1164.all;
 use work.perudo_package.all;
-
+use IEEE.math_real.all;
 -- ---------------------------------------
 Entity AI_Controller is
 -- ---------------------------------------
 	port 
 	( 
-		CLOCK 					: in std_logic;
-		RESET_N					: in std_logic;
+		CLOCK 					             : in std_logic;
+		RESET_N					            : in std_logic;
 		
 		-- Connection with Datapath
-		SCEGLI_SCOMMESSA   	: in std_logic;
-		SCOMMESSA_CORRENTE 	: in scommessa_type;
-		--GIOCATORI_IN_CAMPO 	: in giocatore_array(0 to MAX_GIOCATORI-1);
-		INDICE_GIOCATORE 		: in integer;
+		SCEGLI_SCOMMESSA   	    : in std_logic;
+		SCOMMESSA_CORRENTE 	    : in scommessa_type;
+		GIOCATORI_IN_CAMPO 	    : in giocatore_array(0 to MAX_GIOCATORI-1);
+		INDICE_GIOCATORE 		     : in integer;
 		
-		SCOMMESSA_OK			: out std_logic;
-		SCOMMESSA_SCELTA 		: out scommessa_type
+		SCOMMESSA_OK			         : out std_logic;
+		SCOMMESSA_SCELTA 		     : out scommessa_type
 	);
 End Entity;
 
 architecture RTL of AI_Controller is
-
-  SIGNAL GIOCATORI_IN_CAMPO 	:  giocatore_array(0 to MAX_GIOCATORI-1);
 
 	function dammi_tutte_le_azioni_possibili(scommessa_corrente : scommessa_type; dadi_totali_in_campo : integer) 
 	return  scommessa_array is
@@ -122,27 +120,32 @@ architecture RTL of AI_Controller is
 	  return result;
 	end function;
 	
-	function binomialCoefficient(N : integer; K : integer) return real is
-		variable Result		: real;
+	function fattoriale(N : integer) return integer is
+	variable tmp     : integer; 
+	variable fatt    :  integer:=1;
 	begin
-		Result		:= 1.0;
-		for i in 1 to K loop
-			Result := Result * real((((N + 1) - i) / i));
-		end loop;
-		return Result;
+	  tmp := N;
+	  while tmp > 1 loop
+	    fatt := fatt * tmp;
+	    tmp := tmp-1;
+	  end loop;
+	  return fatt;
+	end function;
+	
+	function coeffBinomiale(N : integer; K : integer) return real is
+	begin
+		return real(fattoriale(N)/(fattoriale(K)*fattoriale(N-K)));
 	end function;
 	
 	-- segnali di comunicazione interna
-	signal prob_corrente					: real;
-	signal prob_ris						: real;
+	signal prob_corrente					    : real;
+	signal prob_ris						        : real;
 	signal calcola_probabilita			: std_logic;
-	signal probabilita_calcolata		: std_logic;
-	signal valore_X						: integer;
-	signal valore_N						: integer;
+	signal probabilita_calcolata	: std_logic;
+	signal valore_X						        : integer;
+	signal valore_N						        : integer;
 	
-	signal calcola_coeffbinomiale  	: std_logic;
-	signal coeffbinomiale_calcolato  : std_logic;
-	signal coeffbin_value	 			: real;
+
 ------\
 begin -- Architecture
 ------/
@@ -150,48 +153,27 @@ begin -- Architecture
 
 	ScegliScommessa_RTL : process(CLOCK,RESET_N, SCEGLI_SCOMMESSA) is
 	type stati_probabilita is (DUBITO, SCOMMESSA);
-	variable stato						 : stati_probabilita;
+	variable stato						           : stati_probabilita;
 	variable dadi_totali_in_campo  : integer;
 	variable scommesse_possibili   : scommessa_array(VALORE_DADO_MIN-1 to VALORE_DADO_MAX-1);
-	variable iteratore_scommesse	 : integer;
+	variable iteratore_scommesse	  : integer;
 	variable iteratore_ricorrenze	 : integer;
-	variable prob_tmp						: real;
+	variable prob_tmp						        : real;
 	begin
 		if(RESET_N = '0') then
-		  -- DA CANCELLARE
-		  for j in 0 to MAX_GIOCATORI-1 loop
-				giocatori_in_campo(j).numero_dadi_in_mano <= 0;
-				for i in 0 to MAX_DADI-1 loop
-						giocatori_in_campo(j).dadi_in_mano(i) <=	NONE;
-				end loop; 
-			end loop;   
-			
-			giocatori_in_campo(0).numero_dadi_in_mano <= 5;
-			giocatori_in_campo(0).dadi_in_mano(0) <= UNO;
-			giocatori_in_campo(0).dadi_in_mano(1) <= DUE;
-			giocatori_in_campo(0).dadi_in_mano(2) <= DUE;
-			giocatori_in_campo(0).dadi_in_mano(3) <= CINQUE;
-			giocatori_in_campo(0).dadi_in_mano(4) <= TRE;
-			giocatori_in_campo(1).numero_dadi_in_mano <= 5;
-			giocatori_in_campo(1).dadi_in_mano(0) <= QUATTRO;
-			giocatori_in_campo(1).dadi_in_mano(1) <= CINQUE;
-			giocatori_in_campo(1).dadi_in_mano(2) <= CINQUE;
-			giocatori_in_campo(1).dadi_in_mano(3) <= TRE;
-			giocatori_in_campo(1).dadi_in_mano(4) <= SEI;
-			----------------------------------------------
 		
 		
-			SCOMMESSA_SCELTA.dado_scommesso <= NONE;
-			SCOMMESSA_SCELTA.ricorrenza 	  <= -1;
-			stato 								  := DUBITO;
-			dadi_totali_in_campo				  := 0;
-			iteratore_ricorrenze				  := 0;
-			iteratore_scommesse 				  := 0;
-			prob_tmp								  := 0.0;
-			calcola_probabilita		   	  <= '0';
-			valore_X 							  <= 0;
-			valore_N 							  <= 0;
-			SCOMMESSA_OK 						  <= '0';
+			SCOMMESSA_SCELTA.dado_scommesso  <= NONE;
+			SCOMMESSA_SCELTA.ricorrenza 	    <= -1;
+			stato 								                 := DUBITO;
+			dadi_totali_in_campo				         := 0;
+			iteratore_ricorrenze				         := 0;
+			iteratore_scommesse 				         := 0;
+			prob_tmp								                 := 0.0;
+			calcola_probabilita		   	        <= '0';
+			valore_X 							                 <= 0;
+			valore_N 							                 <= 0;
+			SCOMMESSA_OK 						              <= '0';
 		elsif(rising_edge(CLOCK)) then
 			SCOMMESSA_OK <= '0';
 		
@@ -201,7 +183,7 @@ begin -- Architecture
 				end if;
 				
 				if(stato = DUBITO) then
-					if(probabilita_calcolata = '0') then
+					if(calcola_probabilita = '0') then
 						if(scommessa_corrente.dado_scommesso = UNO) then
 							prob_corrente <= PROBABILITA_DADO_UNO;
 						else
@@ -232,9 +214,9 @@ begin -- Architecture
 					if(iteratore_scommesse = 0 and iteratore_ricorrenze = 0) then
 						scommesse_possibili := dammi_tutte_le_azioni_possibili(scommessa_corrente, dadi_totali_in_campo);
 					end if;
-					if(probabilita_calcolata = '0') then
+					if(calcola_probabilita = '0') then
 						if(iteratore_scommesse < VALORE_DADO_MAX-1) then
-							if(iteratore_ricorrenze<=dadi_totali_in_campo)then
+							if(scommesse_possibili(iteratore_scommesse).ricorrenze(iteratore_ricorrenze)<=dadi_totali_in_campo-giocatori_in_campo(indice_giocatore).numero_dadi_in_mano and scommesse_possibili(iteratore_scommesse).ricorrenze(iteratore_ricorrenze)>0)then
 								if(scommesse_possibili(iteratore_scommesse).dado_scommesso = UNO) then
 									prob_corrente <= PROBABILITA_DADO_UNO;
 								else
@@ -242,12 +224,12 @@ begin -- Architecture
 								end if;
 								valore_X <= scommesse_possibili(iteratore_scommesse).ricorrenze(iteratore_ricorrenze) - ricorrenza_dado(scommesse_possibili(iteratore_scommesse).dado_scommesso, giocatori_in_campo(indice_giocatore).dadi_in_mano);
 								valore_N <= dadi_totali_in_campo-giocatori_in_campo(indice_giocatore).numero_dadi_in_mano;
-						
+						    
 								calcola_probabilita <= '1';
 								
-							else
+							elsif(scommesse_possibili(iteratore_scommesse).ricorrenze(iteratore_ricorrenze)>dadi_totali_in_campo-giocatori_in_campo(indice_giocatore).numero_dadi_in_mano)then
 								iteratore_ricorrenze := 0;
-								iteratore_scommesse	:= + 1;
+								iteratore_scommesse	:= iteratore_scommesse + 1;
 							end if;
 						else
 							iteratore_ricorrenze := 0;
@@ -263,12 +245,12 @@ begin -- Architecture
 							calcola_probabilita <= '0';
 							valore_X <= 0;
 							valore_N <= 0;
-							iteratore_ricorrenze := iteratore_ricorrenze +1;
 							if(prob_ris > prob_tmp) then
 								SCOMMESSA_SCELTA.dado_scommesso <= scommesse_possibili(iteratore_scommesse).dado_scommesso;
 								SCOMMESSA_SCELTA.ricorrenza <= scommesse_possibili(iteratore_scommesse).ricorrenze(iteratore_ricorrenze);
 								prob_tmp := prob_ris;
 							end if;
+						  iteratore_ricorrenze := iteratore_ricorrenze +1;
 						end if;
 					end if;
 				end if;
@@ -277,47 +259,35 @@ begin -- Architecture
 		end if;
 	end process;
 
-	CalcolaProbabilita_RTL : process(CLOCK, RESET_N, calcola_probabilita) is
-	
-	variable iteratore_ricorrenze_CB 	: integer;
+	CalcolaFitnessProbabilita_RTL : process(CLOCK, RESET_N, calcola_probabilita) is
+	variable prob_tmp                : real;
 	variable dadi_totali_in_campo	 : integer;
+	variable iteratore_ricorrenze_CB 	: integer;
 	begin
 		if(RESET_N = '0') then
-			probabilita_calcolata	<= '0';
-			prob_ris						<= 0.0;
+			probabilita_calcolata	     <= '0';
+			prob_tmp						             := 0.0;
+			prob_ris						             <= 0.0;
 			iteratore_ricorrenze_CB		:= 0;
-			calcola_coeffbinomiale  <= '0';
 		elsif(rising_edge(CLOCK)) then
 			probabilita_calcolata	<= '0';
 			if(calcola_probabilita = '1') then
-				if(iteratore_ricorrenze_CB = 0) then
-					prob_ris	<= 0.0;
-					iteratore_ricorrenze_CB	:= valore_X;
-				end if;
-				if(iteratore_ricorrenze_CB < valore_N) then
-					prob_ris <= prob_ris + binomialCoefficient(valore_N,iteratore_ricorrenze_CB) * real((prob_corrente**iteratore_ricorrenze_CB) * ((1.0-prob_corrente)**(valore_N-iteratore_ricorrenze_CB)));
-					iteratore_ricorrenze_CB := iteratore_ricorrenze_CB + 1;
+			  if(iteratore_ricorrenze_CB = 0) then
+			   iteratore_ricorrenze_CB := valore_X;
+			  end if;
+				if(iteratore_ricorrenze_CB <= valore_N) then
+					 prob_tmp := prob_tmp + coeffBinomiale(valore_N,iteratore_ricorrenze_CB) * real((prob_corrente**iteratore_ricorrenze_CB) * ((1.0-prob_corrente)**(valore_N-iteratore_ricorrenze_CB)));
+					 iteratore_ricorrenze_CB := iteratore_ricorrenze_CB + 1;
 				else
-					probabilita_calcolata	<= '1';
-					iteratore_ricorrenze_CB		:= 0;
+				   prob_ris <= prob_tmp;
+					 probabilita_calcolata	<= '1';
+				  
 				end if;
-			end if;
+			else
+			  prob_ris						<= 0.0;
+			  prob_tmp						:= 0.0;
+			  iteratore_ricorrenze_CB		:= 0;
+			end if;			
 		end if;
 	end process;
-
-	
-	
-	--	
---	function coefficiente_binomiale(n : integer; i: integer) 
---			return real is
---	begin
---      if((n-i)>=0 and n /= 0 and i /= 0) then
---			return real((fattoriale(n))/(fattoriale(i)*fattoriale(n-i)));
---		else 
---			return -1.0;
---	   end if;
---	end function;
-
-
-
 end architecture;
