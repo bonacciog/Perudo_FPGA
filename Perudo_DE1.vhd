@@ -47,6 +47,12 @@ architecture RTL of Perudo_DE1 is
 	signal i_turno_giocatore 					:integer range 0 to MAX_GIOCATORI-1;
 	signal prossimo_turno_ack 					:std_logic;
 	signal esegui_scommessa_fpga				:std_logic;
+	
+	signal scegli_scommessa						:std_logic;
+	signal scommessa_attuale					:scommessa_type;
+	signal giocatori								:giocatore_array(0 to MAX_GIOCATORI-1);
+	signal scommessa_ok							:std_logic;
+	signal scommessa_scelta						:scommessa_type;
 			
 	
 	--Da cancellare
@@ -110,7 +116,6 @@ begin
 			LEDG				=> LEDG
 			
 		);
-	
 	----------------------------------------
 	-- MAPPING DATAPATH
 	----------------------------------------
@@ -145,7 +150,15 @@ begin
 			
 			
 			DAMMI_GIOCATORI_IN_CAMPO			=> dammi_giocatori_in_campo,
-			NR_GIOCATORI_IN_CAMPO				=> nr_giocatori_in_campo
+			NR_GIOCATORI_IN_CAMPO				=> nr_giocatori_in_campo,
+			
+			--AI_Controller
+			SCEGLI_SCOMMESSA   	    			=> scegli_scommessa,
+			SCOMMESSA_ATTUALE 	    			=> scommessa_attuale,
+			GIOCATORI			 	    			=> giocatori,
+			
+			SCOMMESSA_OK							=> scommessa_ok,
+			SCOMMESSA_SCELTA						=> scommessa_scelta
 
 		);
 	
@@ -169,4 +182,21 @@ begin
 --		end if;
 --	end process;
 
+	----------------------------------------
+	-- MAPPING AI_CONTROLLER
+	----------------------------------------
+	ai_controller : entity work.AI_Controller
+		port map(
+			CLOCK          						=> CLOCK_50,
+			RESET_N        						=> RESET_N,
+			
+			SCEGLI_SCOMMESSA   	    			=> scegli_scommessa,
+			SCOMMESSA_ATTUALE 	    			=> scommessa_attuale,
+			GIOCATORI			 	    			=> giocatori,
+			I_TURNO_GIOCATORE 		   		=> i_turno_giocatore,
+			
+			SCOMMESSA_OK							=> scommessa_ok,
+			SCOMMESSA_SCELTA						=> scommessa_scelta
+			
+		);
 end architecture;

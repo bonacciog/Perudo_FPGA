@@ -12,9 +12,9 @@ package perudo_package is
 	constant VALORE_DADO_MAX 		          						: positive	:= 6;
 	constant MIN_ATTESA_CASUALE 							 			: integer	:= 0;
 	constant MAX_ATTESA_CASUALE 							  			: integer	:= 9;
-	constant PROBABILITA_DADO_GENERICO								: real		:= 0.33333333;
-	constant PROBABILITA_DADO_UNO			     						: real		:= 0.16666667;
-	constant SOGLIA_DUBITO               							: real      := 0.1;
+	constant PROBABILITA_DADO_GENERICO								: integer	:= 33;
+	constant PROBABILITA_DADO_UNO			     						: integer	:= 16;
+	constant SOGLIA_DUBITO               							: integer   := 10;
 
 	
 		-- Tipi utili al Datapath	

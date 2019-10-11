@@ -38,13 +38,18 @@ entity Perudo_Datapath is
 			--Da cancellare
 			TEST											: out std_logic;
 			
-			DAMMI_TURNO_GIOCATORE					: in std_logic;
+			DAMMI_TURNO_GIOCATORE					: in  std_logic;
 			I_TURNO_GIOCATORE							: out integer range 0 to MAX_GIOCATORI-1;
 			PROSSIMO_TURNO_ACK						: out std_logic;
 			
-			DAMMI_GIOCATORI_IN_CAMPO				: in std_logic;
-			NR_GIOCATORI_IN_CAMPO					: out integer range 0 to MAX_GIOCATORI
+			DAMMI_GIOCATORI_IN_CAMPO				: in  std_logic;
+			NR_GIOCATORI_IN_CAMPO					: out integer range 0 to MAX_GIOCATORI;
 			
+			SCEGLI_SCOMMESSA							: out std_logic;
+			SCOMMESSA_ATTUALE							: out scommessa_type;
+			GIOCATORI									: out giocatore_array(0 to MAX_GIOCATORI-1);
+			SCOMMESSA_SCELTA							: in  scommessa_type;
+			SCOMMESSA_OK								: in  std_logic
 			
 			
 	);
@@ -71,11 +76,9 @@ architecture RTL of Perudo_Datapath is
 	signal dado_eliminato                             			: std_logic; 
 		-- Variabili utili per la generazione del turno giocatore d'inizio partita casuale e dei turni successivi	
 	signal indice_turno_giocatore										: integer range 0 to MAX_GIOCATORI-1;
-	signal prossimo_turno_old											:std_logic;
-		-- Struttura dati scommessa
+	signal prossimo_turno_old											: std_logic;
+		-- Struttura dati scommessa	
 	signal scommessa_corrente											: scommessa_type;
-	
-	
 begin
 	
 
@@ -376,16 +379,20 @@ begin
 	EseguiScommessa : process(ESEGUI_SCOMMESSA_FPGA, ESEGUI_SCOMMESSA, DADO_SCOMMESSO, RICORRENZA,CLOCK, RESET_N)
 	begin
 		if(RESET_N = '0') then
-			scommessa_corrente.dado_scommesso <= NONE;
-			scommessa_corrente.ricorrenza <= 0;
+			scommessa_corrente.dado_scommesso 	<= NONE;
+			scommessa_corrente.ricorrenza 		<= 0;
+			
+			SCOMMESSA_ATTUALE.dado_scommesso		<= scommessa_corrente.dado_scommesso;
+			SCOMMESSA_ATTUALE.ricorrenza			<= scommessa_corrente.ricorrenza;
+			
+			SCEGLI_SCOMMESSA   	<= '0';
+			GIOCATORI				<= giocatori_in_campo;
 			
 			--Da cancellare
 			TEST <= '0';
 			
 		elsif(rising_edge(CLOCK)) then
-				-- Assegno valori scommessa
-					-- COM
-					
+
 			--Da cancellare
 			TEST <= '0';
 			
@@ -393,12 +400,18 @@ begin
 				scommessa_corrente.dado_scommesso 	<= DADO_SCOMMESSO;
 				scommessa_corrente.ricorrenza 		<= RICORRENZA;
 				
-
+				SCOMMESSA_ATTUALE.dado_scommesso		<= scommessa_corrente.dado_scommesso;
+				SCOMMESSA_ATTUALE.ricorrenza			<= scommessa_corrente.ricorrenza;
 				
 			end if;
 			
 			if(ESEGUI_SCOMMESSA_FPGA = '1') then
-				scommessa_corrente <= scegli_scommessa(scommessa_corrente, giocatori_in_campo, indice_turno_giocatore);
+				SCEGLI_SCOMMESSA   	<= '1';
+				GIOCATORI				<= giocatori_in_campo;
+			end if;
+			
+			if(SCOMMESSA_OK = '1') then
+				SCEGLI_SCOMMESSA   	<= '0';
 				--Da cancellare
 				TEST <= '1';
 			end if;

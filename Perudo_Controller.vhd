@@ -322,6 +322,7 @@ begin
 					stato <= "00000011";
 					
 					ESEGUI_SCOMMESSA_FPGA <= '1';
+					DAMMI_TURNO_GIOCATORE <= '1';
 					
 					if (BUTTON_NEXT = '1' and next_old = '0' and test = '1') then
 							
@@ -435,4 +436,3 @@ begin
 	
 	LEDG(7 downto 0)<=stato;
 end architecture;
-	
