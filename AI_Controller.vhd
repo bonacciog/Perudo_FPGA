@@ -26,7 +26,7 @@ architecture RTL of AI_Controller is
 
 	function dammi_tutte_le_azioni_possibili(SCOMMESSA_ATTUALE : scommessa_type; dadi_totali_in_campo : integer) 
 	return  scommessa_array is
-	variable dado_scommesso					: integer range VALORE_DADO_MIN to VALORE_DADO_MAX;
+	variable dado_scommesso					: integer ;--range VALORE_DADO_MIN to VALORE_DADO_MAX;
 	variable totali_scommesse				: scommessa_array(VALORE_DADO_MIN-1 to VALORE_DADO_MAX-1);
 	variable totali_scommesse_dim			: integer := 0;
 	variable ricorrenze_dim					: integer := 0;
@@ -38,20 +38,21 @@ architecture RTL of AI_Controller is
 					totali_scommesse(totali_scommesse_dim).dado_scommesso := converti_da_intero_a_dado(i);
 					 -- 40 perché sono il valore massimo di dadi in campo (previsti massimo 8 giocatori)
 					for j in MIN_DADI to MAX_DADI_TOTALI loop
-					  if(j<=dadi_totali_in_campo) then
-					    -- questo if è dovuto al fatto che è possibile avere stessa ricorrenza con dado però maggiore
-					    if(i = dado_scommesso) then
-							   if(j>SCOMMESSA_ATTUALE.ricorrenza) then
-								  totali_scommesse(totali_scommesse_dim).ricorrenze(ricorrenze_dim) := j;
-								  ricorrenze_dim := ricorrenze_dim +1;
-							   end if;
-							else
-							   if(j>=SCOMMESSA_ATTUALE.ricorrenza) then
-								  totali_scommesse(totali_scommesse_dim).ricorrenze(ricorrenze_dim) := j;
-								  ricorrenze_dim := ricorrenze_dim +1;
-							   end if;
-							 end if;
-						end if;
+						  if(j<=dadi_totali_in_campo) then
+							 -- questo if è dovuto al fatto che è possibile avere stessa ricorrenza con dado però maggiore
+							 if(i = dado_scommesso) then
+									if(j>SCOMMESSA_ATTUALE.ricorrenza) then
+									  totali_scommesse(totali_scommesse_dim).ricorrenze(ricorrenze_dim) := j;
+									  ricorrenze_dim := ricorrenze_dim +1;
+									end if;
+								else
+									if(j>=SCOMMESSA_ATTUALE.ricorrenza) then
+									  totali_scommesse(totali_scommesse_dim).ricorrenze(ricorrenze_dim) := j;
+									  ricorrenze_dim := ricorrenze_dim +1;
+									end if;
+								 end if;
+							end if;
+						
 					end loop;
 					ricorrenze_dim:=0;
 					totali_scommesse_dim := totali_scommesse_dim + 1;
@@ -60,10 +61,11 @@ architecture RTL of AI_Controller is
 			-- scommessa lama
 			totali_scommesse(totali_scommesse_dim).dado_scommesso := UNO;
 			for j in MIN_DADI to MAX_DADI_TOTALI loop
-			  if(j>=(SCOMMESSA_ATTUALE.ricorrenza/2)) then
-					 totali_scommesse(totali_scommesse_dim).ricorrenze(ricorrenze_dim) := j;
-					 ricorrenze_dim := ricorrenze_dim +1;
-			  end if;
+				  if(j>=(SCOMMESSA_ATTUALE.ricorrenza/2)) then
+						 totali_scommesse(totali_scommesse_dim).ricorrenze(ricorrenze_dim) := j;
+						 ricorrenze_dim := ricorrenze_dim +1;
+				  end if;
+
 			end loop;
 			ricorrenze_dim:=0;
 			totali_scommesse_dim := totali_scommesse_dim + 1;
@@ -71,13 +73,13 @@ architecture RTL of AI_Controller is
 			for i in VALORE_DADO_MIN+1 to VALORE_DADO_MAX loop
 				totali_scommesse(totali_scommesse_dim).dado_scommesso := converti_da_intero_a_dado(i);
 				for j in MIN_DADI to MAX_DADI_TOTALI loop
-					if(j<=dadi_totali_in_campo) then
-						if(j>(SCOMMESSA_ATTUALE.ricorrenza * 2)) then
-							totali_scommesse(totali_scommesse_dim).ricorrenze(ricorrenze_dim) := j;
-							ricorrenze_dim := ricorrenze_dim +1;							
+						if(j<=dadi_totali_in_campo) then
+							if(j>(SCOMMESSA_ATTUALE.ricorrenza * 2)) then
+								totali_scommesse(totali_scommesse_dim).ricorrenze(ricorrenze_dim) := j;
+								ricorrenze_dim := ricorrenze_dim +1;							
+							end if;
 						end if;
-					end if;
-					
+
 				end loop;
 				ricorrenze_dim:=0;
 				totali_scommesse_dim := totali_scommesse_dim + 1;
@@ -89,6 +91,7 @@ architecture RTL of AI_Controller is
 					   totali_scommesse(totali_scommesse_dim).ricorrenze(ricorrenze_dim) := j;
 					   ricorrenze_dim := ricorrenze_dim +1;
 			    end if;
+
 			 end loop;
 			 ricorrenze_dim:=0;
 			 totali_scommesse_dim := totali_scommesse_dim + 1;
@@ -120,33 +123,34 @@ architecture RTL of AI_Controller is
 	  return result;
 	end function;
 	
-	function fattoriale(N : integer) return integer is
-	variable tmp     : integer; 
+	function fattoriale(N : integer range 0 to 35) return integer is
 	variable fatt    :  integer:=1;
 	begin
-	  tmp := N;
-	  while tmp > 1 loop
-	    fatt := fatt * tmp;
-	    tmp := tmp-1;
+	  for i in 1 to 35 loop
+		 if(i <= N) then
+			fatt := fatt * i;
+		 end if;
 	  end loop;
 	  return fatt;
 	end function;
 	
-	function coeffBinomiale(N : integer; K : integer range 0 to 5) return integer is
-	variable i  	: integer;
-	variable num	: integer;
-	variable res	: integer;
+	function potenza(base : integer; esponente: integer range 0 to 35) 
+			return integer is
 	begin
-		i		:= N;
-		num	:= N;
-		res	:= 1;
-		--return fattoriale(N)/(fattoriale(K)*fattoriale(N-K)) * 100; old fattoriale
-		while  i <= (N-K+1) loop
-			res 	:= res*i;
-			num 	:= num - 1;
-			i 		:= i - 1;
-		end loop;
-		return (res/fattoriale(K));
+		if(esponente = 0) then
+			return 1;
+		elsif(esponente = 1) then
+			return base;
+		elsif((esponente mod 2) = 0) then
+			return potenza(base*base, esponente/2);
+		else
+			return base*potenza(base*base, esponente/2);
+		end if;
+	end function;
+	
+	function coeffBinomiale(N : integer range 0 to 35; K : integer range 0 to 35) return integer is
+	begin
+		return fattoriale(N)/(fattoriale(K)*fattoriale(N-K)) * 100; 
 	end function;
 	
 	-- segnali di comunicazione interna
@@ -274,7 +278,7 @@ begin -- Architecture
 	CalcolaFitnessProbabilita_RTL : process(CLOCK, RESET_N, calcola_probabilita) is
 	variable prob_tmp                : integer;
 	variable dadi_totali_in_campo	 	: integer;
-	variable iteratore_ricorrenze_CB : integer;
+	variable iteratore_ricorrenze_CB : integer range 0 to 35;
 	begin
 		if(RESET_N = '0') then
 			probabilita_calcolata	   <= '0';
@@ -288,7 +292,7 @@ begin -- Architecture
 			   iteratore_ricorrenze_CB := valore_X;
 			  end if;
 				if(iteratore_ricorrenze_CB <= valore_N) then
-					 prob_tmp := prob_tmp + coeffBinomiale(valore_N,iteratore_ricorrenze_CB) * (prob_corrente**iteratore_ricorrenze_CB) * ((100-prob_corrente)**(valore_N-iteratore_ricorrenze_CB));
+					 prob_tmp := prob_tmp + coeffBinomiale(valore_N,iteratore_ricorrenze_CB) * potenza(prob_corrente,iteratore_ricorrenze_CB) * potenza((100-prob_corrente),(valore_N-iteratore_ricorrenze_CB));
 					 iteratore_ricorrenze_CB := iteratore_ricorrenze_CB + 1;
 				else
 				   prob_ris <= prob_tmp;
