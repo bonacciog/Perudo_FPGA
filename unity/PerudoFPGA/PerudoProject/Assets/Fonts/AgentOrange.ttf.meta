@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 8fbd6f54bc5a4d447a68e163cd2f1591
+timeCreated: 1549900540
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 30
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Agent Orange
+  fontNames:
+  - Agent Orange
+  fallbackFontReferences: []
+  customCharacters: 123456
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

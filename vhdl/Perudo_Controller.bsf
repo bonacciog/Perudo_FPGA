@@ -1,0 +1,323 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 1991-2012 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+*/
+(header "symbol" (version "1.1"))
+(symbol
+	(rect 16 16 456 416)
+	(text "Perudo_Controller" (rect 5 0 76 12)(font "Arial" ))
+	(text "inst" (rect 8 384 20 396)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "CLOCK" (rect 0 0 34 12)(font "Arial" ))
+		(text "CLOCK" (rect 21 27 55 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32)(line_width 1))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "RESET_N" (rect 0 0 47 12)(font "Arial" ))
+		(text "RESET_N" (rect 21 43 68 55)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48)(line_width 1))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "BUTTON_PREV" (rect 0 0 74 12)(font "Arial" ))
+		(text "BUTTON_PREV" (rect 21 59 95 71)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64)(line_width 1))
+	)
+	(port
+		(pt 0 80)
+		(input)
+		(text "BUTTON_NEXT" (rect 0 0 70 12)(font "Arial" ))
+		(text "BUTTON_NEXT" (rect 21 75 91 87)(font "Arial" ))
+		(line (pt 0 80)(pt 16 80)(line_width 1))
+	)
+	(port
+		(pt 0 96)
+		(input)
+		(text "BUTTON_ENTER" (rect 0 0 80 12)(font "Arial" ))
+		(text "BUTTON_ENTER" (rect 21 91 101 103)(font "Arial" ))
+		(line (pt 0 96)(pt 16 96)(line_width 1))
+	)
+	(port
+		(pt 0 112)
+		(input)
+		(text "BUTTON_DOUBT" (rect 0 0 77 12)(font "Arial" ))
+		(text "BUTTON_DOUBT" (rect 21 107 98 119)(font "Arial" ))
+		(line (pt 0 112)(pt 16 112)(line_width 1))
+	)
+	(port
+		(pt 0 128)
+		(input)
+		(text "PARTITA_INIZIATA" (rect 0 0 94 12)(font "Arial" ))
+		(text "PARTITA_INIZIATA" (rect 21 123 115 135)(font "Arial" ))
+		(line (pt 0 128)(pt 16 128)(line_width 1))
+	)
+	(port
+		(pt 0 144)
+		(input)
+		(text "GIOCATORE_AGGIUNTO" (rect 0 0 118 12)(font "Arial" ))
+		(text "GIOCATORE_AGGIUNTO" (rect 21 139 139 151)(font "Arial" ))
+		(line (pt 0 144)(pt 16 144)(line_width 1))
+	)
+	(port
+		(pt 0 160)
+		(input)
+		(text "GIOCATORE_ELIMINATO" (rect 0 0 120 12)(font "Arial" ))
+		(text "GIOCATORE_ELIMINATO" (rect 21 155 141 167)(font "Arial" ))
+		(line (pt 0 160)(pt 16 160)(line_width 1))
+	)
+	(port
+		(pt 0 176)
+		(input)
+		(text "CHECKED" (rect 0 0 49 12)(font "Arial" ))
+		(text "CHECKED" (rect 21 171 70 183)(font "Arial" ))
+		(line (pt 0 176)(pt 16 176)(line_width 1))
+	)
+	(port
+		(pt 0 192)
+		(input)
+		(text "NR_GIOCATORI_IN_CAMPO[3..0]" (rect 0 0 154 12)(font "Arial" ))
+		(text "NR_GIOCATORI_IN_CAMPO[3..0]" (rect 21 187 175 199)(font "Arial" ))
+		(line (pt 0 192)(pt 16 192)(line_width 3))
+	)
+	(port
+		(pt 0 208)
+		(input)
+		(text "I_TURNO_GIOCATORE[2..0]" (rect 0 0 129 12)(font "Arial" ))
+		(text "I_TURNO_GIOCATORE[2..0]" (rect 21 203 150 215)(font "Arial" ))
+		(line (pt 0 208)(pt 16 208)(line_width 3))
+	)
+	(port
+		(pt 0 224)
+		(input)
+		(text "PROSSIMO_TURNO_ACK" (rect 0 0 120 12)(font "Arial" ))
+		(text "PROSSIMO_TURNO_ACK" (rect 21 219 141 231)(font "Arial" ))
+		(line (pt 0 224)(pt 16 224)(line_width 1))
+	)
+	(port
+		(pt 0 240)
+		(input)
+		(text "SCOMMESSA_FPGA_DONE" (rect 0 0 130 12)(font "Arial" ))
+		(text "SCOMMESSA_FPGA_DONE" (rect 21 235 151 247)(font "Arial" ))
+		(line (pt 0 240)(pt 16 240)(line_width 1))
+	)
+	(port
+		(pt 0 256)
+		(input)
+		(text "SCOMMESSA_DONE" (rect 0 0 97 12)(font "Arial" ))
+		(text "SCOMMESSA_DONE" (rect 21 251 118 263)(font "Arial" ))
+		(line (pt 0 256)(pt 16 256)(line_width 1))
+	)
+	(port
+		(pt 0 272)
+		(input)
+		(text "RIGENERATI" (rect 0 0 63 12)(font "Arial" ))
+		(text "RIGENERATI" (rect 21 267 84 279)(font "Arial" ))
+		(line (pt 0 272)(pt 16 272)(line_width 1))
+	)
+	(port
+		(pt 0 288)
+		(input)
+		(text "FINE_PARTITA" (rect 0 0 73 12)(font "Arial" ))
+		(text "FINE_PARTITA" (rect 21 283 94 295)(font "Arial" ))
+		(line (pt 0 288)(pt 16 288)(line_width 1))
+	)
+	(port
+		(pt 0 304)
+		(input)
+		(text "TEST" (rect 0 0 24 12)(font "Arial" ))
+		(text "TEST" (rect 21 299 45 311)(font "Arial" ))
+		(line (pt 0 304)(pt 16 304)(line_width 1))
+	)
+	(port
+		(pt 0 320)
+		(input)
+		(text "COUNTER[31..0]" (rect 0 0 73 12)(font "Arial" ))
+		(text "COUNTER[31..0]" (rect 21 315 94 327)(font "Arial" ))
+		(line (pt 0 320)(pt 16 320)(line_width 3))
+	)
+	(port
+		(pt 0 336)
+		(input)
+		(text "I_GIOCATORE_DADO_ELIMINATO[31..0]" (rect 0 0 187 12)(font "Arial" ))
+		(text "I_GIOCATORE_DADO_ELIMINATO[31..0]" (rect 21 331 208 343)(font "Arial" ))
+		(line (pt 0 336)(pt 16 336)(line_width 3))
+	)
+	(port
+		(pt 0 352)
+		(input)
+		(text "ENABLE_BUTTONS" (rect 0 0 92 12)(font "Arial" ))
+		(text "ENABLE_BUTTONS" (rect 21 347 113 359)(font "Arial" ))
+		(line (pt 0 352)(pt 16 352)(line_width 1))
+	)
+	(port
+		(pt 440 32)
+		(output)
+		(text "INIZIA_PARTITA" (rect 0 0 80 12)(font "Arial" ))
+		(text "INIZIA_PARTITA" (rect 339 27 419 39)(font "Arial" ))
+		(line (pt 440 32)(pt 424 32)(line_width 1))
+	)
+	(port
+		(pt 440 48)
+		(output)
+		(text "PROSSIMO_TURNO" (rect 0 0 92 12)(font "Arial" ))
+		(text "PROSSIMO_TURNO" (rect 327 43 419 55)(font "Arial" ))
+		(line (pt 440 48)(pt 424 48)(line_width 1))
+	)
+	(port
+		(pt 440 64)
+		(output)
+		(text "NUOVO_GIOCATORE" (rect 0 0 102 12)(font "Arial" ))
+		(text "NUOVO_GIOCATORE" (rect 317 59 419 71)(font "Arial" ))
+		(line (pt 440 64)(pt 424 64)(line_width 1))
+	)
+	(port
+		(pt 440 80)
+		(output)
+		(text "ELIMINA_GIOCATORE" (rect 0 0 107 12)(font "Arial" ))
+		(text "ELIMINA_GIOCATORE" (rect 312 75 419 87)(font "Arial" ))
+		(line (pt 440 80)(pt 424 80)(line_width 1))
+	)
+	(port
+		(pt 440 96)
+		(output)
+		(text "ESEGUI_SCOMMESSA" (rect 0 0 106 12)(font "Arial" ))
+		(text "ESEGUI_SCOMMESSA" (rect 313 91 419 103)(font "Arial" ))
+		(line (pt 440 96)(pt 424 96)(line_width 1))
+	)
+	(port
+		(pt 440 112)
+		(output)
+		(text "RICORRENZA[31..0]" (rect 0 0 94 12)(font "Arial" ))
+		(text "RICORRENZA[31..0]" (rect 325 107 419 119)(font "Arial" ))
+		(line (pt 440 112)(pt 424 112)(line_width 3))
+	)
+	(port
+		(pt 440 128)
+		(output)
+		(text "CHECK" (rect 0 0 35 12)(font "Arial" ))
+		(text "CHECK" (rect 384 123 419 135)(font "Arial" ))
+		(line (pt 440 128)(pt 424 128)(line_width 1))
+	)
+	(port
+		(pt 440 144)
+		(output)
+		(text "DAMMI_GIOCATORI_IN_CAMPO" (rect 0 0 153 12)(font "Arial" ))
+		(text "DAMMI_GIOCATORI_IN_CAMPO" (rect 266 139 419 151)(font "Arial" ))
+		(line (pt 440 144)(pt 424 144)(line_width 1))
+	)
+	(port
+		(pt 440 160)
+		(output)
+		(text "DAMMI_TURNO_GIOCATORE" (rect 0 0 141 12)(font "Arial" ))
+		(text "DAMMI_TURNO_GIOCATORE" (rect 278 155 419 167)(font "Arial" ))
+		(line (pt 440 160)(pt 424 160)(line_width 1))
+	)
+	(port
+		(pt 440 176)
+		(output)
+		(text "ESEGUI_SCOMMESSA_FPGA" (rect 0 0 139 12)(font "Arial" ))
+		(text "ESEGUI_SCOMMESSA_FPGA" (rect 280 171 419 183)(font "Arial" ))
+		(line (pt 440 176)(pt 424 176)(line_width 1))
+	)
+	(port
+		(pt 440 192)
+		(output)
+		(text "RIGENERA" (rect 0 0 55 12)(font "Arial" ))
+		(text "RIGENERA" (rect 364 187 419 199)(font "Arial" ))
+		(line (pt 440 192)(pt 424 192)(line_width 1))
+	)
+	(port
+		(pt 440 208)
+		(output)
+		(text "LEDR[9..0]" (rect 0 0 48 12)(font "Arial" ))
+		(text "LEDR[9..0]" (rect 371 203 419 215)(font "Arial" ))
+		(line (pt 440 208)(pt 424 208)(line_width 3))
+	)
+	(port
+		(pt 440 224)
+		(output)
+		(text "LEDG[7..0]" (rect 0 0 47 12)(font "Arial" ))
+		(text "LEDG[7..0]" (rect 372 219 419 231)(font "Arial" ))
+		(line (pt 440 224)(pt 424 224)(line_width 3))
+	)
+	(port
+		(pt 440 240)
+		(output)
+		(text "MESSAGE[7..0]" (rect 0 0 69 12)(font "Arial" ))
+		(text "MESSAGE[7..0]" (rect 350 235 419 247)(font "Arial" ))
+		(line (pt 440 240)(pt 424 240)(line_width 3))
+	)
+	(port
+		(pt 440 256)
+		(output)
+		(text "REDRAW" (rect 0 0 49 12)(font "Arial" ))
+		(text "REDRAW" (rect 370 251 419 263)(font "Arial" ))
+		(line (pt 440 256)(pt 424 256)(line_width 1))
+	)
+	(port
+		(pt 440 272)
+		(output)
+		(text "REDRAW_DICE" (rect 0 0 79 12)(font "Arial" ))
+		(text "REDRAW_DICE" (rect 340 267 419 279)(font "Arial" ))
+		(line (pt 440 272)(pt 424 272)(line_width 1))
+	)
+	(port
+		(pt 440 288)
+		(output)
+		(text "REDRAW_TURN" (rect 0 0 83 12)(font "Arial" ))
+		(text "REDRAW_TURN" (rect 336 283 419 295)(font "Arial" ))
+		(line (pt 440 288)(pt 424 288)(line_width 1))
+	)
+	(port
+		(pt 440 304)
+		(output)
+		(text "REDRAW_FPGA_BET" (rect 0 0 107 12)(font "Arial" ))
+		(text "REDRAW_FPGA_BET" (rect 312 299 419 311)(font "Arial" ))
+		(line (pt 440 304)(pt 424 304)(line_width 1))
+	)
+	(port
+		(pt 440 320)
+		(output)
+		(text "REDRAW_DUBITO" (rect 0 0 90 12)(font "Arial" ))
+		(text "REDRAW_DUBITO" (rect 329 315 419 327)(font "Arial" ))
+		(line (pt 440 320)(pt 424 320)(line_width 1))
+	)
+	(port
+		(pt 440 336)
+		(output)
+		(text "REDRAW_PERDENTE" (rect 0 0 110 12)(font "Arial" ))
+		(text "REDRAW_PERDENTE" (rect 309 331 419 343)(font "Arial" ))
+		(line (pt 440 336)(pt 424 336)(line_width 1))
+	)
+	(port
+		(pt 440 352)
+		(output)
+		(text "REDRAW_TURN_PLAYER" (rect 0 0 132 12)(font "Arial" ))
+		(text "REDRAW_TURN_PLAYER" (rect 287 347 419 359)(font "Arial" ))
+		(line (pt 440 352)(pt 424 352)(line_width 1))
+	)
+	(drawing
+		(rectangle (rect 16 16 424 384)(line_width 1))
+	)
+)

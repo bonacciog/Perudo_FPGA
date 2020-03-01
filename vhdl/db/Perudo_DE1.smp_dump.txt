@@ -1,0 +1,954 @@
+
+State Machine - |Perudo_DE1|AI_Controller:ai_controller|SCOMMESSA_SCELTA.dado_scommesso
+Name SCOMMESSA_SCELTA.dado_scommesso.UNO~reg0 SCOMMESSA_SCELTA.dado_scommesso.SEI~reg0 SCOMMESSA_SCELTA.dado_scommesso.CINQUE~reg0 SCOMMESSA_SCELTA.dado_scommesso.QUATTRO~reg0 SCOMMESSA_SCELTA.dado_scommesso.TRE~reg0 SCOMMESSA_SCELTA.dado_scommesso.DUE~reg0 SCOMMESSA_SCELTA.dado_scommesso.NONE~reg0 
+SCOMMESSA_SCELTA.dado_scommesso.NONE~reg0 0 0 0 0 0 0 0 
+SCOMMESSA_SCELTA.dado_scommesso.DUE~reg0 0 0 0 0 0 1 1 
+SCOMMESSA_SCELTA.dado_scommesso.TRE~reg0 0 0 0 0 1 0 1 
+SCOMMESSA_SCELTA.dado_scommesso.QUATTRO~reg0 0 0 0 1 0 0 1 
+SCOMMESSA_SCELTA.dado_scommesso.CINQUE~reg0 0 0 1 0 0 0 1 
+SCOMMESSA_SCELTA.dado_scommesso.SEI~reg0 0 1 0 0 0 0 1 
+SCOMMESSA_SCELTA.dado_scommesso.UNO~reg0 1 0 0 0 0 0 1 
+
+State Machine - |Perudo_DE1|AI_Controller:ai_controller|\ScegliScommessa_RTL:scommesse_possibili[6].dado_scommesso
+Name \ScegliScommessa_RTL:scommesse_possibili[6].dado_scommesso.NONE \ScegliScommessa_RTL:scommesse_possibili[6].dado_scommesso.SEI \ScegliScommessa_RTL:scommesse_possibili[6].dado_scommesso.CINQUE \ScegliScommessa_RTL:scommesse_possibili[6].dado_scommesso.QUATTRO \ScegliScommessa_RTL:scommesse_possibili[6].dado_scommesso.TRE \ScegliScommessa_RTL:scommesse_possibili[6].dado_scommesso.DUE \ScegliScommessa_RTL:scommesse_possibili[6].dado_scommesso.UNO 
+\ScegliScommessa_RTL:scommesse_possibili[6].dado_scommesso.UNO 0 0 0 0 0 0 0 
+\ScegliScommessa_RTL:scommesse_possibili[6].dado_scommesso.DUE 0 0 0 0 0 1 1 
+\ScegliScommessa_RTL:scommesse_possibili[6].dado_scommesso.TRE 0 0 0 0 1 0 1 
+\ScegliScommessa_RTL:scommesse_possibili[6].dado_scommesso.QUATTRO 0 0 0 1 0 0 1 
+\ScegliScommessa_RTL:scommesse_possibili[6].dado_scommesso.CINQUE 0 0 1 0 0 0 1 
+\ScegliScommessa_RTL:scommesse_possibili[6].dado_scommesso.SEI 0 1 0 0 0 0 1 
+\ScegliScommessa_RTL:scommesse_possibili[6].dado_scommesso.NONE 1 0 0 0 0 0 1 
+
+State Machine - |Perudo_DE1|AI_Controller:ai_controller|\ScegliScommessa_RTL:scommesse_possibili[5].dado_scommesso
+Name \ScegliScommessa_RTL:scommesse_possibili[5].dado_scommesso.NONE \ScegliScommessa_RTL:scommesse_possibili[5].dado_scommesso.SEI \ScegliScommessa_RTL:scommesse_possibili[5].dado_scommesso.CINQUE \ScegliScommessa_RTL:scommesse_possibili[5].dado_scommesso.QUATTRO \ScegliScommessa_RTL:scommesse_possibili[5].dado_scommesso.TRE \ScegliScommessa_RTL:scommesse_possibili[5].dado_scommesso.DUE \ScegliScommessa_RTL:scommesse_possibili[5].dado_scommesso.UNO 
+\ScegliScommessa_RTL:scommesse_possibili[5].dado_scommesso.UNO 0 0 0 0 0 0 0 
+\ScegliScommessa_RTL:scommesse_possibili[5].dado_scommesso.DUE 0 0 0 0 0 1 1 
+\ScegliScommessa_RTL:scommesse_possibili[5].dado_scommesso.TRE 0 0 0 0 1 0 1 
+\ScegliScommessa_RTL:scommesse_possibili[5].dado_scommesso.QUATTRO 0 0 0 1 0 0 1 
+\ScegliScommessa_RTL:scommesse_possibili[5].dado_scommesso.CINQUE 0 0 1 0 0 0 1 
+\ScegliScommessa_RTL:scommesse_possibili[5].dado_scommesso.SEI 0 1 0 0 0 0 1 
+\ScegliScommessa_RTL:scommesse_possibili[5].dado_scommesso.NONE 1 0 0 0 0 0 1 
+
+State Machine - |Perudo_DE1|AI_Controller:ai_controller|\ScegliScommessa_RTL:scommesse_possibili[4].dado_scommesso
+Name \ScegliScommessa_RTL:scommesse_possibili[4].dado_scommesso.NONE \ScegliScommessa_RTL:scommesse_possibili[4].dado_scommesso.SEI \ScegliScommessa_RTL:scommesse_possibili[4].dado_scommesso.CINQUE \ScegliScommessa_RTL:scommesse_possibili[4].dado_scommesso.QUATTRO \ScegliScommessa_RTL:scommesse_possibili[4].dado_scommesso.TRE \ScegliScommessa_RTL:scommesse_possibili[4].dado_scommesso.DUE \ScegliScommessa_RTL:scommesse_possibili[4].dado_scommesso.UNO 
+\ScegliScommessa_RTL:scommesse_possibili[4].dado_scommesso.UNO 0 0 0 0 0 0 0 
+\ScegliScommessa_RTL:scommesse_possibili[4].dado_scommesso.DUE 0 0 0 0 0 1 1 
+\ScegliScommessa_RTL:scommesse_possibili[4].dado_scommesso.TRE 0 0 0 0 1 0 1 
+\ScegliScommessa_RTL:scommesse_possibili[4].dado_scommesso.QUATTRO 0 0 0 1 0 0 1 
+\ScegliScommessa_RTL:scommesse_possibili[4].dado_scommesso.CINQUE 0 0 1 0 0 0 1 
+\ScegliScommessa_RTL:scommesse_possibili[4].dado_scommesso.SEI 0 1 0 0 0 0 1 
+\ScegliScommessa_RTL:scommesse_possibili[4].dado_scommesso.NONE 1 0 0 0 0 0 1 
+
+State Machine - |Perudo_DE1|AI_Controller:ai_controller|\ScegliScommessa_RTL:scommesse_possibili[3].dado_scommesso
+Name \ScegliScommessa_RTL:scommesse_possibili[3].dado_scommesso.NONE \ScegliScommessa_RTL:scommesse_possibili[3].dado_scommesso.SEI \ScegliScommessa_RTL:scommesse_possibili[3].dado_scommesso.CINQUE \ScegliScommessa_RTL:scommesse_possibili[3].dado_scommesso.QUATTRO \ScegliScommessa_RTL:scommesse_possibili[3].dado_scommesso.TRE \ScegliScommessa_RTL:scommesse_possibili[3].dado_scommesso.DUE \ScegliScommessa_RTL:scommesse_possibili[3].dado_scommesso.UNO 
+\ScegliScommessa_RTL:scommesse_possibili[3].dado_scommesso.UNO 0 0 0 0 0 0 0 
+\ScegliScommessa_RTL:scommesse_possibili[3].dado_scommesso.DUE 0 0 0 0 0 1 1 
+\ScegliScommessa_RTL:scommesse_possibili[3].dado_scommesso.TRE 0 0 0 0 1 0 1 
+\ScegliScommessa_RTL:scommesse_possibili[3].dado_scommesso.QUATTRO 0 0 0 1 0 0 1 
+\ScegliScommessa_RTL:scommesse_possibili[3].dado_scommesso.CINQUE 0 0 1 0 0 0 1 
+\ScegliScommessa_RTL:scommesse_possibili[3].dado_scommesso.SEI 0 1 0 0 0 0 1 
+\ScegliScommessa_RTL:scommesse_possibili[3].dado_scommesso.NONE 1 0 0 0 0 0 1 
+
+State Machine - |Perudo_DE1|AI_Controller:ai_controller|\ScegliScommessa_RTL:scommesse_possibili[2].dado_scommesso
+Name \ScegliScommessa_RTL:scommesse_possibili[2].dado_scommesso.NONE \ScegliScommessa_RTL:scommesse_possibili[2].dado_scommesso.SEI \ScegliScommessa_RTL:scommesse_possibili[2].dado_scommesso.CINQUE \ScegliScommessa_RTL:scommesse_possibili[2].dado_scommesso.QUATTRO \ScegliScommessa_RTL:scommesse_possibili[2].dado_scommesso.TRE \ScegliScommessa_RTL:scommesse_possibili[2].dado_scommesso.DUE \ScegliScommessa_RTL:scommesse_possibili[2].dado_scommesso.UNO 
+\ScegliScommessa_RTL:scommesse_possibili[2].dado_scommesso.UNO 0 0 0 0 0 0 0 
+\ScegliScommessa_RTL:scommesse_possibili[2].dado_scommesso.DUE 0 0 0 0 0 1 1 
+\ScegliScommessa_RTL:scommesse_possibili[2].dado_scommesso.TRE 0 0 0 0 1 0 1 
+\ScegliScommessa_RTL:scommesse_possibili[2].dado_scommesso.QUATTRO 0 0 0 1 0 0 1 
+\ScegliScommessa_RTL:scommesse_possibili[2].dado_scommesso.CINQUE 0 0 1 0 0 0 1 
+\ScegliScommessa_RTL:scommesse_possibili[2].dado_scommesso.SEI 0 1 0 0 0 0 1 
+\ScegliScommessa_RTL:scommesse_possibili[2].dado_scommesso.NONE 1 0 0 0 0 0 1 
+
+State Machine - |Perudo_DE1|AI_Controller:ai_controller|\ScegliScommessa_RTL:scommesse_possibili[1].dado_scommesso
+Name \ScegliScommessa_RTL:scommesse_possibili[1].dado_scommesso.NONE \ScegliScommessa_RTL:scommesse_possibili[1].dado_scommesso.SEI \ScegliScommessa_RTL:scommesse_possibili[1].dado_scommesso.CINQUE \ScegliScommessa_RTL:scommesse_possibili[1].dado_scommesso.QUATTRO \ScegliScommessa_RTL:scommesse_possibili[1].dado_scommesso.TRE \ScegliScommessa_RTL:scommesse_possibili[1].dado_scommesso.DUE \ScegliScommessa_RTL:scommesse_possibili[1].dado_scommesso.UNO 
+\ScegliScommessa_RTL:scommesse_possibili[1].dado_scommesso.UNO 0 0 0 0 0 0 0 
+\ScegliScommessa_RTL:scommesse_possibili[1].dado_scommesso.DUE 0 0 0 0 0 1 1 
+\ScegliScommessa_RTL:scommesse_possibili[1].dado_scommesso.TRE 0 0 0 0 1 0 1 
+\ScegliScommessa_RTL:scommesse_possibili[1].dado_scommesso.QUATTRO 0 0 0 1 0 0 1 
+\ScegliScommessa_RTL:scommesse_possibili[1].dado_scommesso.CINQUE 0 0 1 0 0 0 1 
+\ScegliScommessa_RTL:scommesse_possibili[1].dado_scommesso.SEI 0 1 0 0 0 0 1 
+\ScegliScommessa_RTL:scommesse_possibili[1].dado_scommesso.NONE 1 0 0 0 0 0 1 
+
+State Machine - |Perudo_DE1|AI_Controller:ai_controller|\ScegliScommessa_RTL:dado_tmp
+Name \ScegliScommessa_RTL:dado_tmp.UNO \ScegliScommessa_RTL:dado_tmp.SEI \ScegliScommessa_RTL:dado_tmp.CINQUE \ScegliScommessa_RTL:dado_tmp.QUATTRO \ScegliScommessa_RTL:dado_tmp.TRE \ScegliScommessa_RTL:dado_tmp.DUE \ScegliScommessa_RTL:dado_tmp.NONE 
+\ScegliScommessa_RTL:dado_tmp.NONE 0 0 0 0 0 0 0 
+\ScegliScommessa_RTL:dado_tmp.DUE 0 0 0 0 0 1 1 
+\ScegliScommessa_RTL:dado_tmp.TRE 0 0 0 0 1 0 1 
+\ScegliScommessa_RTL:dado_tmp.QUATTRO 0 0 0 1 0 0 1 
+\ScegliScommessa_RTL:dado_tmp.CINQUE 0 0 1 0 0 0 1 
+\ScegliScommessa_RTL:dado_tmp.SEI 0 1 0 0 0 0 1 
+\ScegliScommessa_RTL:dado_tmp.UNO 1 0 0 0 0 0 1 
+
+State Machine - |Perudo_DE1|Perudo_View_Controller:view_controller|tx_state
+Name tx_state.START_PERDENTE tx_state.PERDENTE tx_state.DUBITO tx_state.RICORRENZA tx_state.DADO tx_state.START_INVIO_SCOMMESSA tx_state.TURNO_GIOCATORE tx_state.TURNO tx_state.CONFERMA tx_state.DADI tx_state.NUMERO_DADI tx_state.INDICE_GIOCATORE tx_state.TOT_GIOCATORI tx_state.START tx_state.SEND_MESSAGE tx_state.IDLE 
+tx_state.IDLE 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+tx_state.SEND_MESSAGE 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+tx_state.START 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+tx_state.TOT_GIOCATORI 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+tx_state.INDICE_GIOCATORE 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+tx_state.NUMERO_DADI 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+tx_state.DADI 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+tx_state.CONFERMA 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+tx_state.TURNO 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+tx_state.TURNO_GIOCATORE 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+tx_state.START_INVIO_SCOMMESSA 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+tx_state.DADO 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+tx_state.RICORRENZA 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+tx_state.DUBITO 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+tx_state.PERDENTE 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+tx_state.START_PERDENTE 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |Perudo_DE1|Perudo_Datapath:datapath|GIOCATORI[7].dadi_in_mano[4]
+Name GIOCATORI[7].dadi_in_mano[4].NONE~reg0 GIOCATORI[7].dadi_in_mano[4].SEI~reg0 GIOCATORI[7].dadi_in_mano[4].CINQUE~reg0 GIOCATORI[7].dadi_in_mano[4].QUATTRO~reg0 GIOCATORI[7].dadi_in_mano[4].TRE~reg0 GIOCATORI[7].dadi_in_mano[4].DUE~reg0 GIOCATORI[7].dadi_in_mano[4].UNO~reg0 
+GIOCATORI[7].dadi_in_mano[4].UNO~reg0 0 0 0 0 0 0 0 
+GIOCATORI[7].dadi_in_mano[4].DUE~reg0 0 0 0 0 0 1 1 
+GIOCATORI[7].dadi_in_mano[4].TRE~reg0 0 0 0 0 1 0 1 
+GIOCATORI[7].dadi_in_mano[4].QUATTRO~reg0 0 0 0 1 0 0 1 
+GIOCATORI[7].dadi_in_mano[4].CINQUE~reg0 0 0 1 0 0 0 1 
+GIOCATORI[7].dadi_in_mano[4].SEI~reg0 0 1 0 0 0 0 1 
+GIOCATORI[7].dadi_in_mano[4].NONE~reg0 1 0 0 0 0 0 1 
+
+State Machine - |Perudo_DE1|Perudo_Datapath:datapath|GIOCATORI[7].dadi_in_mano[3]
+Name GIOCATORI[7].dadi_in_mano[3].NONE~reg0 GIOCATORI[7].dadi_in_mano[3].SEI~reg0 GIOCATORI[7].dadi_in_mano[3].CINQUE~reg0 GIOCATORI[7].dadi_in_mano[3].QUATTRO~reg0 GIOCATORI[7].dadi_in_mano[3].TRE~reg0 GIOCATORI[7].dadi_in_mano[3].DUE~reg0 GIOCATORI[7].dadi_in_mano[3].UNO~reg0 
+GIOCATORI[7].dadi_in_mano[3].UNO~reg0 0 0 0 0 0 0 0 
+GIOCATORI[7].dadi_in_mano[3].DUE~reg0 0 0 0 0 0 1 1 
+GIOCATORI[7].dadi_in_mano[3].TRE~reg0 0 0 0 0 1 0 1 
+GIOCATORI[7].dadi_in_mano[3].QUATTRO~reg0 0 0 0 1 0 0 1 
+GIOCATORI[7].dadi_in_mano[3].CINQUE~reg0 0 0 1 0 0 0 1 
+GIOCATORI[7].dadi_in_mano[3].SEI~reg0 0 1 0 0 0 0 1 
+GIOCATORI[7].dadi_in_mano[3].NONE~reg0 1 0 0 0 0 0 1 
+
+State Machine - |Perudo_DE1|Perudo_Datapath:datapath|GIOCATORI[7].dadi_in_mano[2]
+Name GIOCATORI[7].dadi_in_mano[2].NONE~reg0 GIOCATORI[7].dadi_in_mano[2].SEI~reg0 GIOCATORI[7].dadi_in_mano[2].CINQUE~reg0 GIOCATORI[7].dadi_in_mano[2].QUATTRO~reg0 GIOCATORI[7].dadi_in_mano[2].TRE~reg0 GIOCATORI[7].dadi_in_mano[2].DUE~reg0 GIOCATORI[7].dadi_in_mano[2].UNO~reg0 
+GIOCATORI[7].dadi_in_mano[2].UNO~reg0 0 0 0 0 0 0 0 
+GIOCATORI[7].dadi_in_mano[2].DUE~reg0 0 0 0 0 0 1 1 
+GIOCATORI[7].dadi_in_mano[2].TRE~reg0 0 0 0 0 1 0 1 
+GIOCATORI[7].dadi_in_mano[2].QUATTRO~reg0 0 0 0 1 0 0 1 
+GIOCATORI[7].dadi_in_mano[2].CINQUE~reg0 0 0 1 0 0 0 1 
+GIOCATORI[7].dadi_in_mano[2].SEI~reg0 0 1 0 0 0 0 1 
+GIOCATORI[7].dadi_in_mano[2].NONE~reg0 1 0 0 0 0 0 1 
+
+State Machine - |Perudo_DE1|Perudo_Datapath:datapath|GIOCATORI[7].dadi_in_mano[1]
+Name GIOCATORI[7].dadi_in_mano[1].NONE~reg0 GIOCATORI[7].dadi_in_mano[1].SEI~reg0 GIOCATORI[7].dadi_in_mano[1].CINQUE~reg0 GIOCATORI[7].dadi_in_mano[1].QUATTRO~reg0 GIOCATORI[7].dadi_in_mano[1].TRE~reg0 GIOCATORI[7].dadi_in_mano[1].DUE~reg0 GIOCATORI[7].dadi_in_mano[1].UNO~reg0 
+GIOCATORI[7].dadi_in_mano[1].UNO~reg0 0 0 0 0 0 0 0 
+GIOCATORI[7].dadi_in_mano[1].DUE~reg0 0 0 0 0 0 1 1 
+GIOCATORI[7].dadi_in_mano[1].TRE~reg0 0 0 0 0 1 0 1 
+GIOCATORI[7].dadi_in_mano[1].QUATTRO~reg0 0 0 0 1 0 0 1 
+GIOCATORI[7].dadi_in_mano[1].CINQUE~reg0 0 0 1 0 0 0 1 
+GIOCATORI[7].dadi_in_mano[1].SEI~reg0 0 1 0 0 0 0 1 
+GIOCATORI[7].dadi_in_mano[1].NONE~reg0 1 0 0 0 0 0 1 
+
+State Machine - |Perudo_DE1|Perudo_Datapath:datapath|GIOCATORI[7].dadi_in_mano[0]
+Name GIOCATORI[7].dadi_in_mano[0].NONE~reg0 GIOCATORI[7].dadi_in_mano[0].SEI~reg0 GIOCATORI[7].dadi_in_mano[0].CINQUE~reg0 GIOCATORI[7].dadi_in_mano[0].QUATTRO~reg0 GIOCATORI[7].dadi_in_mano[0].TRE~reg0 GIOCATORI[7].dadi_in_mano[0].DUE~reg0 GIOCATORI[7].dadi_in_mano[0].UNO~reg0 
+GIOCATORI[7].dadi_in_mano[0].UNO~reg0 0 0 0 0 0 0 0 
+GIOCATORI[7].dadi_in_mano[0].DUE~reg0 0 0 0 0 0 1 1 
+GIOCATORI[7].dadi_in_mano[0].TRE~reg0 0 0 0 0 1 0 1 
+GIOCATORI[7].dadi_in_mano[0].QUATTRO~reg0 0 0 0 1 0 0 1 
+GIOCATORI[7].dadi_in_mano[0].CINQUE~reg0 0 0 1 0 0 0 1 
+GIOCATORI[7].dadi_in_mano[0].SEI~reg0 0 1 0 0 0 0 1 
+GIOCATORI[7].dadi_in_mano[0].NONE~reg0 1 0 0 0 0 0 1 
+
+State Machine - |Perudo_DE1|Perudo_Datapath:datapath|GIOCATORI[6].dadi_in_mano[4]
+Name GIOCATORI[6].dadi_in_mano[4].NONE~reg0 GIOCATORI[6].dadi_in_mano[4].SEI~reg0 GIOCATORI[6].dadi_in_mano[4].CINQUE~reg0 GIOCATORI[6].dadi_in_mano[4].QUATTRO~reg0 GIOCATORI[6].dadi_in_mano[4].TRE~reg0 GIOCATORI[6].dadi_in_mano[4].DUE~reg0 GIOCATORI[6].dadi_in_mano[4].UNO~reg0 
+GIOCATORI[6].dadi_in_mano[4].UNO~reg0 0 0 0 0 0 0 0 
+GIOCATORI[6].dadi_in_mano[4].DUE~reg0 0 0 0 0 0 1 1 
+GIOCATORI[6].dadi_in_mano[4].TRE~reg0 0 0 0 0 1 0 1 
+GIOCATORI[6].dadi_in_mano[4].QUATTRO~reg0 0 0 0 1 0 0 1 
+GIOCATORI[6].dadi_in_mano[4].CINQUE~reg0 0 0 1 0 0 0 1 
+GIOCATORI[6].dadi_in_mano[4].SEI~reg0 0 1 0 0 0 0 1 
+GIOCATORI[6].dadi_in_mano[4].NONE~reg0 1 0 0 0 0 0 1 
+
+State Machine - |Perudo_DE1|Perudo_Datapath:datapath|GIOCATORI[6].dadi_in_mano[3]
+Name GIOCATORI[6].dadi_in_mano[3].NONE~reg0 GIOCATORI[6].dadi_in_mano[3].SEI~reg0 GIOCATORI[6].dadi_in_mano[3].CINQUE~reg0 GIOCATORI[6].dadi_in_mano[3].QUATTRO~reg0 GIOCATORI[6].dadi_in_mano[3].TRE~reg0 GIOCATORI[6].dadi_in_mano[3].DUE~reg0 GIOCATORI[6].dadi_in_mano[3].UNO~reg0 
+GIOCATORI[6].dadi_in_mano[3].UNO~reg0 0 0 0 0 0 0 0 
+GIOCATORI[6].dadi_in_mano[3].DUE~reg0 0 0 0 0 0 1 1 
+GIOCATORI[6].dadi_in_mano[3].TRE~reg0 0 0 0 0 1 0 1 
+GIOCATORI[6].dadi_in_mano[3].QUATTRO~reg0 0 0 0 1 0 0 1 
+GIOCATORI[6].dadi_in_mano[3].CINQUE~reg0 0 0 1 0 0 0 1 
+GIOCATORI[6].dadi_in_mano[3].SEI~reg0 0 1 0 0 0 0 1 
+GIOCATORI[6].dadi_in_mano[3].NONE~reg0 1 0 0 0 0 0 1 
+
+State Machine - |Perudo_DE1|Perudo_Datapath:datapath|GIOCATORI[6].dadi_in_mano[2]
+Name GIOCATORI[6].dadi_in_mano[2].NONE~reg0 GIOCATORI[6].dadi_in_mano[2].SEI~reg0 GIOCATORI[6].dadi_in_mano[2].CINQUE~reg0 GIOCATORI[6].dadi_in_mano[2].QUATTRO~reg0 GIOCATORI[6].dadi_in_mano[2].TRE~reg0 GIOCATORI[6].dadi_in_mano[2].DUE~reg0 GIOCATORI[6].dadi_in_mano[2].UNO~reg0 
+GIOCATORI[6].dadi_in_mano[2].UNO~reg0 0 0 0 0 0 0 0 
+GIOCATORI[6].dadi_in_mano[2].DUE~reg0 0 0 0 0 0 1 1 
+GIOCATORI[6].dadi_in_mano[2].TRE~reg0 0 0 0 0 1 0 1 
+GIOCATORI[6].dadi_in_mano[2].QUATTRO~reg0 0 0 0 1 0 0 1 
+GIOCATORI[6].dadi_in_mano[2].CINQUE~reg0 0 0 1 0 0 0 1 
+GIOCATORI[6].dadi_in_mano[2].SEI~reg0 0 1 0 0 0 0 1 
+GIOCATORI[6].dadi_in_mano[2].NONE~reg0 1 0 0 0 0 0 1 
+
+State Machine - |Perudo_DE1|Perudo_Datapath:datapath|GIOCATORI[6].dadi_in_mano[1]
+Name GIOCATORI[6].dadi_in_mano[1].NONE~reg0 GIOCATORI[6].dadi_in_mano[1].SEI~reg0 GIOCATORI[6].dadi_in_mano[1].CINQUE~reg0 GIOCATORI[6].dadi_in_mano[1].QUATTRO~reg0 GIOCATORI[6].dadi_in_mano[1].TRE~reg0 GIOCATORI[6].dadi_in_mano[1].DUE~reg0 GIOCATORI[6].dadi_in_mano[1].UNO~reg0 
+GIOCATORI[6].dadi_in_mano[1].UNO~reg0 0 0 0 0 0 0 0 
+GIOCATORI[6].dadi_in_mano[1].DUE~reg0 0 0 0 0 0 1 1 
+GIOCATORI[6].dadi_in_mano[1].TRE~reg0 0 0 0 0 1 0 1 
+GIOCATORI[6].dadi_in_mano[1].QUATTRO~reg0 0 0 0 1 0 0 1 
+GIOCATORI[6].dadi_in_mano[1].CINQUE~reg0 0 0 1 0 0 0 1 
+GIOCATORI[6].dadi_in_mano[1].SEI~reg0 0 1 0 0 0 0 1 
+GIOCATORI[6].dadi_in_mano[1].NONE~reg0 1 0 0 0 0 0 1 
+
+State Machine - |Perudo_DE1|Perudo_Datapath:datapath|GIOCATORI[6].dadi_in_mano[0]
+Name GIOCATORI[6].dadi_in_mano[0].NONE~reg0 GIOCATORI[6].dadi_in_mano[0].SEI~reg0 GIOCATORI[6].dadi_in_mano[0].CINQUE~reg0 GIOCATORI[6].dadi_in_mano[0].QUATTRO~reg0 GIOCATORI[6].dadi_in_mano[0].TRE~reg0 GIOCATORI[6].dadi_in_mano[0].DUE~reg0 GIOCATORI[6].dadi_in_mano[0].UNO~reg0 
+GIOCATORI[6].dadi_in_mano[0].UNO~reg0 0 0 0 0 0 0 0 
+GIOCATORI[6].dadi_in_mano[0].DUE~reg0 0 0 0 0 0 1 1 
+GIOCATORI[6].dadi_in_mano[0].TRE~reg0 0 0 0 0 1 0 1 
+GIOCATORI[6].dadi_in_mano[0].QUATTRO~reg0 0 0 0 1 0 0 1 
+GIOCATORI[6].dadi_in_mano[0].CINQUE~reg0 0 0 1 0 0 0 1 
+GIOCATORI[6].dadi_in_mano[0].SEI~reg0 0 1 0 0 0 0 1 
+GIOCATORI[6].dadi_in_mano[0].NONE~reg0 1 0 0 0 0 0 1 
+
+State Machine - |Perudo_DE1|Perudo_Datapath:datapath|GIOCATORI[5].dadi_in_mano[4]
+Name GIOCATORI[5].dadi_in_mano[4].NONE~reg0 GIOCATORI[5].dadi_in_mano[4].SEI~reg0 GIOCATORI[5].dadi_in_mano[4].CINQUE~reg0 GIOCATORI[5].dadi_in_mano[4].QUATTRO~reg0 GIOCATORI[5].dadi_in_mano[4].TRE~reg0 GIOCATORI[5].dadi_in_mano[4].DUE~reg0 GIOCATORI[5].dadi_in_mano[4].UNO~reg0 
+GIOCATORI[5].dadi_in_mano[4].UNO~reg0 0 0 0 0 0 0 0 
+GIOCATORI[5].dadi_in_mano[4].DUE~reg0 0 0 0 0 0 1 1 
+GIOCATORI[5].dadi_in_mano[4].TRE~reg0 0 0 0 0 1 0 1 
+GIOCATORI[5].dadi_in_mano[4].QUATTRO~reg0 0 0 0 1 0 0 1 
+GIOCATORI[5].dadi_in_mano[4].CINQUE~reg0 0 0 1 0 0 0 1 
+GIOCATORI[5].dadi_in_mano[4].SEI~reg0 0 1 0 0 0 0 1 
+GIOCATORI[5].dadi_in_mano[4].NONE~reg0 1 0 0 0 0 0 1 
+
+State Machine - |Perudo_DE1|Perudo_Datapath:datapath|GIOCATORI[5].dadi_in_mano[3]
+Name GIOCATORI[5].dadi_in_mano[3].NONE~reg0 GIOCATORI[5].dadi_in_mano[3].SEI~reg0 GIOCATORI[5].dadi_in_mano[3].CINQUE~reg0 GIOCATORI[5].dadi_in_mano[3].QUATTRO~reg0 GIOCATORI[5].dadi_in_mano[3].TRE~reg0 GIOCATORI[5].dadi_in_mano[3].DUE~reg0 GIOCATORI[5].dadi_in_mano[3].UNO~reg0 
+GIOCATORI[5].dadi_in_mano[3].UNO~reg0 0 0 0 0 0 0 0 
+GIOCATORI[5].dadi_in_mano[3].DUE~reg0 0 0 0 0 0 1 1 
+GIOCATORI[5].dadi_in_mano[3].TRE~reg0 0 0 0 0 1 0 1 
+GIOCATORI[5].dadi_in_mano[3].QUATTRO~reg0 0 0 0 1 0 0 1 
+GIOCATORI[5].dadi_in_mano[3].CINQUE~reg0 0 0 1 0 0 0 1 
+GIOCATORI[5].dadi_in_mano[3].SEI~reg0 0 1 0 0 0 0 1 
+GIOCATORI[5].dadi_in_mano[3].NONE~reg0 1 0 0 0 0 0 1 
+
+State Machine - |Perudo_DE1|Perudo_Datapath:datapath|GIOCATORI[5].dadi_in_mano[2]
+Name GIOCATORI[5].dadi_in_mano[2].NONE~reg0 GIOCATORI[5].dadi_in_mano[2].SEI~reg0 GIOCATORI[5].dadi_in_mano[2].CINQUE~reg0 GIOCATORI[5].dadi_in_mano[2].QUATTRO~reg0 GIOCATORI[5].dadi_in_mano[2].TRE~reg0 GIOCATORI[5].dadi_in_mano[2].DUE~reg0 GIOCATORI[5].dadi_in_mano[2].UNO~reg0 
+GIOCATORI[5].dadi_in_mano[2].UNO~reg0 0 0 0 0 0 0 0 
+GIOCATORI[5].dadi_in_mano[2].DUE~reg0 0 0 0 0 0 1 1 
+GIOCATORI[5].dadi_in_mano[2].TRE~reg0 0 0 0 0 1 0 1 
+GIOCATORI[5].dadi_in_mano[2].QUATTRO~reg0 0 0 0 1 0 0 1 
+GIOCATORI[5].dadi_in_mano[2].CINQUE~reg0 0 0 1 0 0 0 1 
+GIOCATORI[5].dadi_in_mano[2].SEI~reg0 0 1 0 0 0 0 1 
+GIOCATORI[5].dadi_in_mano[2].NONE~reg0 1 0 0 0 0 0 1 
+
+State Machine - |Perudo_DE1|Perudo_Datapath:datapath|GIOCATORI[5].dadi_in_mano[1]
+Name GIOCATORI[5].dadi_in_mano[1].NONE~reg0 GIOCATORI[5].dadi_in_mano[1].SEI~reg0 GIOCATORI[5].dadi_in_mano[1].CINQUE~reg0 GIOCATORI[5].dadi_in_mano[1].QUATTRO~reg0 GIOCATORI[5].dadi_in_mano[1].TRE~reg0 GIOCATORI[5].dadi_in_mano[1].DUE~reg0 GIOCATORI[5].dadi_in_mano[1].UNO~reg0 
+GIOCATORI[5].dadi_in_mano[1].UNO~reg0 0 0 0 0 0 0 0 
+GIOCATORI[5].dadi_in_mano[1].DUE~reg0 0 0 0 0 0 1 1 
+GIOCATORI[5].dadi_in_mano[1].TRE~reg0 0 0 0 0 1 0 1 
+GIOCATORI[5].dadi_in_mano[1].QUATTRO~reg0 0 0 0 1 0 0 1 
+GIOCATORI[5].dadi_in_mano[1].CINQUE~reg0 0 0 1 0 0 0 1 
+GIOCATORI[5].dadi_in_mano[1].SEI~reg0 0 1 0 0 0 0 1 
+GIOCATORI[5].dadi_in_mano[1].NONE~reg0 1 0 0 0 0 0 1 
+
+State Machine - |Perudo_DE1|Perudo_Datapath:datapath|GIOCATORI[5].dadi_in_mano[0]
+Name GIOCATORI[5].dadi_in_mano[0].NONE~reg0 GIOCATORI[5].dadi_in_mano[0].SEI~reg0 GIOCATORI[5].dadi_in_mano[0].CINQUE~reg0 GIOCATORI[5].dadi_in_mano[0].QUATTRO~reg0 GIOCATORI[5].dadi_in_mano[0].TRE~reg0 GIOCATORI[5].dadi_in_mano[0].DUE~reg0 GIOCATORI[5].dadi_in_mano[0].UNO~reg0 
+GIOCATORI[5].dadi_in_mano[0].UNO~reg0 0 0 0 0 0 0 0 
+GIOCATORI[5].dadi_in_mano[0].DUE~reg0 0 0 0 0 0 1 1 
+GIOCATORI[5].dadi_in_mano[0].TRE~reg0 0 0 0 0 1 0 1 
+GIOCATORI[5].dadi_in_mano[0].QUATTRO~reg0 0 0 0 1 0 0 1 
+GIOCATORI[5].dadi_in_mano[0].CINQUE~reg0 0 0 1 0 0 0 1 
+GIOCATORI[5].dadi_in_mano[0].SEI~reg0 0 1 0 0 0 0 1 
+GIOCATORI[5].dadi_in_mano[0].NONE~reg0 1 0 0 0 0 0 1 
+
+State Machine - |Perudo_DE1|Perudo_Datapath:datapath|GIOCATORI[4].dadi_in_mano[4]
+Name GIOCATORI[4].dadi_in_mano[4].NONE~reg0 GIOCATORI[4].dadi_in_mano[4].SEI~reg0 GIOCATORI[4].dadi_in_mano[4].CINQUE~reg0 GIOCATORI[4].dadi_in_mano[4].QUATTRO~reg0 GIOCATORI[4].dadi_in_mano[4].TRE~reg0 GIOCATORI[4].dadi_in_mano[4].DUE~reg0 GIOCATORI[4].dadi_in_mano[4].UNO~reg0 
+GIOCATORI[4].dadi_in_mano[4].UNO~reg0 0 0 0 0 0 0 0 
+GIOCATORI[4].dadi_in_mano[4].DUE~reg0 0 0 0 0 0 1 1 
+GIOCATORI[4].dadi_in_mano[4].TRE~reg0 0 0 0 0 1 0 1 
+GIOCATORI[4].dadi_in_mano[4].QUATTRO~reg0 0 0 0 1 0 0 1 
+GIOCATORI[4].dadi_in_mano[4].CINQUE~reg0 0 0 1 0 0 0 1 
+GIOCATORI[4].dadi_in_mano[4].SEI~reg0 0 1 0 0 0 0 1 
+GIOCATORI[4].dadi_in_mano[4].NONE~reg0 1 0 0 0 0 0 1 
+
+State Machine - |Perudo_DE1|Perudo_Datapath:datapath|GIOCATORI[4].dadi_in_mano[3]
+Name GIOCATORI[4].dadi_in_mano[3].NONE~reg0 GIOCATORI[4].dadi_in_mano[3].SEI~reg0 GIOCATORI[4].dadi_in_mano[3].CINQUE~reg0 GIOCATORI[4].dadi_in_mano[3].QUATTRO~reg0 GIOCATORI[4].dadi_in_mano[3].TRE~reg0 GIOCATORI[4].dadi_in_mano[3].DUE~reg0 GIOCATORI[4].dadi_in_mano[3].UNO~reg0 
+GIOCATORI[4].dadi_in_mano[3].UNO~reg0 0 0 0 0 0 0 0 
+GIOCATORI[4].dadi_in_mano[3].DUE~reg0 0 0 0 0 0 1 1 
+GIOCATORI[4].dadi_in_mano[3].TRE~reg0 0 0 0 0 1 0 1 
+GIOCATORI[4].dadi_in_mano[3].QUATTRO~reg0 0 0 0 1 0 0 1 
+GIOCATORI[4].dadi_in_mano[3].CINQUE~reg0 0 0 1 0 0 0 1 
+GIOCATORI[4].dadi_in_mano[3].SEI~reg0 0 1 0 0 0 0 1 
+GIOCATORI[4].dadi_in_mano[3].NONE~reg0 1 0 0 0 0 0 1 
+
+State Machine - |Perudo_DE1|Perudo_Datapath:datapath|GIOCATORI[4].dadi_in_mano[2]
+Name GIOCATORI[4].dadi_in_mano[2].NONE~reg0 GIOCATORI[4].dadi_in_mano[2].SEI~reg0 GIOCATORI[4].dadi_in_mano[2].CINQUE~reg0 GIOCATORI[4].dadi_in_mano[2].QUATTRO~reg0 GIOCATORI[4].dadi_in_mano[2].TRE~reg0 GIOCATORI[4].dadi_in_mano[2].DUE~reg0 GIOCATORI[4].dadi_in_mano[2].UNO~reg0 
+GIOCATORI[4].dadi_in_mano[2].UNO~reg0 0 0 0 0 0 0 0 
+GIOCATORI[4].dadi_in_mano[2].DUE~reg0 0 0 0 0 0 1 1 
+GIOCATORI[4].dadi_in_mano[2].TRE~reg0 0 0 0 0 1 0 1 
+GIOCATORI[4].dadi_in_mano[2].QUATTRO~reg0 0 0 0 1 0 0 1 
+GIOCATORI[4].dadi_in_mano[2].CINQUE~reg0 0 0 1 0 0 0 1 
+GIOCATORI[4].dadi_in_mano[2].SEI~reg0 0 1 0 0 0 0 1 
+GIOCATORI[4].dadi_in_mano[2].NONE~reg0 1 0 0 0 0 0 1 
+
+State Machine - |Perudo_DE1|Perudo_Datapath:datapath|GIOCATORI[4].dadi_in_mano[1]
+Name GIOCATORI[4].dadi_in_mano[1].NONE~reg0 GIOCATORI[4].dadi_in_mano[1].SEI~reg0 GIOCATORI[4].dadi_in_mano[1].CINQUE~reg0 GIOCATORI[4].dadi_in_mano[1].QUATTRO~reg0 GIOCATORI[4].dadi_in_mano[1].TRE~reg0 GIOCATORI[4].dadi_in_mano[1].DUE~reg0 GIOCATORI[4].dadi_in_mano[1].UNO~reg0 
+GIOCATORI[4].dadi_in_mano[1].UNO~reg0 0 0 0 0 0 0 0 
+GIOCATORI[4].dadi_in_mano[1].DUE~reg0 0 0 0 0 0 1 1 
+GIOCATORI[4].dadi_in_mano[1].TRE~reg0 0 0 0 0 1 0 1 
+GIOCATORI[4].dadi_in_mano[1].QUATTRO~reg0 0 0 0 1 0 0 1 
+GIOCATORI[4].dadi_in_mano[1].CINQUE~reg0 0 0 1 0 0 0 1 
+GIOCATORI[4].dadi_in_mano[1].SEI~reg0 0 1 0 0 0 0 1 
+GIOCATORI[4].dadi_in_mano[1].NONE~reg0 1 0 0 0 0 0 1 
+
+State Machine - |Perudo_DE1|Perudo_Datapath:datapath|GIOCATORI[4].dadi_in_mano[0]
+Name GIOCATORI[4].dadi_in_mano[0].NONE~reg0 GIOCATORI[4].dadi_in_mano[0].SEI~reg0 GIOCATORI[4].dadi_in_mano[0].CINQUE~reg0 GIOCATORI[4].dadi_in_mano[0].QUATTRO~reg0 GIOCATORI[4].dadi_in_mano[0].TRE~reg0 GIOCATORI[4].dadi_in_mano[0].DUE~reg0 GIOCATORI[4].dadi_in_mano[0].UNO~reg0 
+GIOCATORI[4].dadi_in_mano[0].UNO~reg0 0 0 0 0 0 0 0 
+GIOCATORI[4].dadi_in_mano[0].DUE~reg0 0 0 0 0 0 1 1 
+GIOCATORI[4].dadi_in_mano[0].TRE~reg0 0 0 0 0 1 0 1 
+GIOCATORI[4].dadi_in_mano[0].QUATTRO~reg0 0 0 0 1 0 0 1 
+GIOCATORI[4].dadi_in_mano[0].CINQUE~reg0 0 0 1 0 0 0 1 
+GIOCATORI[4].dadi_in_mano[0].SEI~reg0 0 1 0 0 0 0 1 
+GIOCATORI[4].dadi_in_mano[0].NONE~reg0 1 0 0 0 0 0 1 
+
+State Machine - |Perudo_DE1|Perudo_Datapath:datapath|GIOCATORI[3].dadi_in_mano[4]
+Name GIOCATORI[3].dadi_in_mano[4].NONE~reg0 GIOCATORI[3].dadi_in_mano[4].SEI~reg0 GIOCATORI[3].dadi_in_mano[4].CINQUE~reg0 GIOCATORI[3].dadi_in_mano[4].QUATTRO~reg0 GIOCATORI[3].dadi_in_mano[4].TRE~reg0 GIOCATORI[3].dadi_in_mano[4].DUE~reg0 GIOCATORI[3].dadi_in_mano[4].UNO~reg0 
+GIOCATORI[3].dadi_in_mano[4].UNO~reg0 0 0 0 0 0 0 0 
+GIOCATORI[3].dadi_in_mano[4].DUE~reg0 0 0 0 0 0 1 1 
+GIOCATORI[3].dadi_in_mano[4].TRE~reg0 0 0 0 0 1 0 1 
+GIOCATORI[3].dadi_in_mano[4].QUATTRO~reg0 0 0 0 1 0 0 1 
+GIOCATORI[3].dadi_in_mano[4].CINQUE~reg0 0 0 1 0 0 0 1 
+GIOCATORI[3].dadi_in_mano[4].SEI~reg0 0 1 0 0 0 0 1 
+GIOCATORI[3].dadi_in_mano[4].NONE~reg0 1 0 0 0 0 0 1 
+
+State Machine - |Perudo_DE1|Perudo_Datapath:datapath|GIOCATORI[3].dadi_in_mano[3]
+Name GIOCATORI[3].dadi_in_mano[3].NONE~reg0 GIOCATORI[3].dadi_in_mano[3].SEI~reg0 GIOCATORI[3].dadi_in_mano[3].CINQUE~reg0 GIOCATORI[3].dadi_in_mano[3].QUATTRO~reg0 GIOCATORI[3].dadi_in_mano[3].TRE~reg0 GIOCATORI[3].dadi_in_mano[3].DUE~reg0 GIOCATORI[3].dadi_in_mano[3].UNO~reg0 
+GIOCATORI[3].dadi_in_mano[3].UNO~reg0 0 0 0 0 0 0 0 
+GIOCATORI[3].dadi_in_mano[3].DUE~reg0 0 0 0 0 0 1 1 
+GIOCATORI[3].dadi_in_mano[3].TRE~reg0 0 0 0 0 1 0 1 
+GIOCATORI[3].dadi_in_mano[3].QUATTRO~reg0 0 0 0 1 0 0 1 
+GIOCATORI[3].dadi_in_mano[3].CINQUE~reg0 0 0 1 0 0 0 1 
+GIOCATORI[3].dadi_in_mano[3].SEI~reg0 0 1 0 0 0 0 1 
+GIOCATORI[3].dadi_in_mano[3].NONE~reg0 1 0 0 0 0 0 1 
+
+State Machine - |Perudo_DE1|Perudo_Datapath:datapath|GIOCATORI[3].dadi_in_mano[2]
+Name GIOCATORI[3].dadi_in_mano[2].NONE~reg0 GIOCATORI[3].dadi_in_mano[2].SEI~reg0 GIOCATORI[3].dadi_in_mano[2].CINQUE~reg0 GIOCATORI[3].dadi_in_mano[2].QUATTRO~reg0 GIOCATORI[3].dadi_in_mano[2].TRE~reg0 GIOCATORI[3].dadi_in_mano[2].DUE~reg0 GIOCATORI[3].dadi_in_mano[2].UNO~reg0 
+GIOCATORI[3].dadi_in_mano[2].UNO~reg0 0 0 0 0 0 0 0 
+GIOCATORI[3].dadi_in_mano[2].DUE~reg0 0 0 0 0 0 1 1 
+GIOCATORI[3].dadi_in_mano[2].TRE~reg0 0 0 0 0 1 0 1 
+GIOCATORI[3].dadi_in_mano[2].QUATTRO~reg0 0 0 0 1 0 0 1 
+GIOCATORI[3].dadi_in_mano[2].CINQUE~reg0 0 0 1 0 0 0 1 
+GIOCATORI[3].dadi_in_mano[2].SEI~reg0 0 1 0 0 0 0 1 
+GIOCATORI[3].dadi_in_mano[2].NONE~reg0 1 0 0 0 0 0 1 
+
+State Machine - |Perudo_DE1|Perudo_Datapath:datapath|GIOCATORI[3].dadi_in_mano[1]
+Name GIOCATORI[3].dadi_in_mano[1].NONE~reg0 GIOCATORI[3].dadi_in_mano[1].SEI~reg0 GIOCATORI[3].dadi_in_mano[1].CINQUE~reg0 GIOCATORI[3].dadi_in_mano[1].QUATTRO~reg0 GIOCATORI[3].dadi_in_mano[1].TRE~reg0 GIOCATORI[3].dadi_in_mano[1].DUE~reg0 GIOCATORI[3].dadi_in_mano[1].UNO~reg0 
+GIOCATORI[3].dadi_in_mano[1].UNO~reg0 0 0 0 0 0 0 0 
+GIOCATORI[3].dadi_in_mano[1].DUE~reg0 0 0 0 0 0 1 1 
+GIOCATORI[3].dadi_in_mano[1].TRE~reg0 0 0 0 0 1 0 1 
+GIOCATORI[3].dadi_in_mano[1].QUATTRO~reg0 0 0 0 1 0 0 1 
+GIOCATORI[3].dadi_in_mano[1].CINQUE~reg0 0 0 1 0 0 0 1 
+GIOCATORI[3].dadi_in_mano[1].SEI~reg0 0 1 0 0 0 0 1 
+GIOCATORI[3].dadi_in_mano[1].NONE~reg0 1 0 0 0 0 0 1 
+
+State Machine - |Perudo_DE1|Perudo_Datapath:datapath|GIOCATORI[3].dadi_in_mano[0]
+Name GIOCATORI[3].dadi_in_mano[0].NONE~reg0 GIOCATORI[3].dadi_in_mano[0].SEI~reg0 GIOCATORI[3].dadi_in_mano[0].CINQUE~reg0 GIOCATORI[3].dadi_in_mano[0].QUATTRO~reg0 GIOCATORI[3].dadi_in_mano[0].TRE~reg0 GIOCATORI[3].dadi_in_mano[0].DUE~reg0 GIOCATORI[3].dadi_in_mano[0].UNO~reg0 
+GIOCATORI[3].dadi_in_mano[0].UNO~reg0 0 0 0 0 0 0 0 
+GIOCATORI[3].dadi_in_mano[0].DUE~reg0 0 0 0 0 0 1 1 
+GIOCATORI[3].dadi_in_mano[0].TRE~reg0 0 0 0 0 1 0 1 
+GIOCATORI[3].dadi_in_mano[0].QUATTRO~reg0 0 0 0 1 0 0 1 
+GIOCATORI[3].dadi_in_mano[0].CINQUE~reg0 0 0 1 0 0 0 1 
+GIOCATORI[3].dadi_in_mano[0].SEI~reg0 0 1 0 0 0 0 1 
+GIOCATORI[3].dadi_in_mano[0].NONE~reg0 1 0 0 0 0 0 1 
+
+State Machine - |Perudo_DE1|Perudo_Datapath:datapath|GIOCATORI[2].dadi_in_mano[4]
+Name GIOCATORI[2].dadi_in_mano[4].NONE~reg0 GIOCATORI[2].dadi_in_mano[4].SEI~reg0 GIOCATORI[2].dadi_in_mano[4].CINQUE~reg0 GIOCATORI[2].dadi_in_mano[4].QUATTRO~reg0 GIOCATORI[2].dadi_in_mano[4].TRE~reg0 GIOCATORI[2].dadi_in_mano[4].DUE~reg0 GIOCATORI[2].dadi_in_mano[4].UNO~reg0 
+GIOCATORI[2].dadi_in_mano[4].UNO~reg0 0 0 0 0 0 0 0 
+GIOCATORI[2].dadi_in_mano[4].DUE~reg0 0 0 0 0 0 1 1 
+GIOCATORI[2].dadi_in_mano[4].TRE~reg0 0 0 0 0 1 0 1 
+GIOCATORI[2].dadi_in_mano[4].QUATTRO~reg0 0 0 0 1 0 0 1 
+GIOCATORI[2].dadi_in_mano[4].CINQUE~reg0 0 0 1 0 0 0 1 
+GIOCATORI[2].dadi_in_mano[4].SEI~reg0 0 1 0 0 0 0 1 
+GIOCATORI[2].dadi_in_mano[4].NONE~reg0 1 0 0 0 0 0 1 
+
+State Machine - |Perudo_DE1|Perudo_Datapath:datapath|GIOCATORI[2].dadi_in_mano[3]
+Name GIOCATORI[2].dadi_in_mano[3].NONE~reg0 GIOCATORI[2].dadi_in_mano[3].SEI~reg0 GIOCATORI[2].dadi_in_mano[3].CINQUE~reg0 GIOCATORI[2].dadi_in_mano[3].QUATTRO~reg0 GIOCATORI[2].dadi_in_mano[3].TRE~reg0 GIOCATORI[2].dadi_in_mano[3].DUE~reg0 GIOCATORI[2].dadi_in_mano[3].UNO~reg0 
+GIOCATORI[2].dadi_in_mano[3].UNO~reg0 0 0 0 0 0 0 0 
+GIOCATORI[2].dadi_in_mano[3].DUE~reg0 0 0 0 0 0 1 1 
+GIOCATORI[2].dadi_in_mano[3].TRE~reg0 0 0 0 0 1 0 1 
+GIOCATORI[2].dadi_in_mano[3].QUATTRO~reg0 0 0 0 1 0 0 1 
+GIOCATORI[2].dadi_in_mano[3].CINQUE~reg0 0 0 1 0 0 0 1 
+GIOCATORI[2].dadi_in_mano[3].SEI~reg0 0 1 0 0 0 0 1 
+GIOCATORI[2].dadi_in_mano[3].NONE~reg0 1 0 0 0 0 0 1 
+
+State Machine - |Perudo_DE1|Perudo_Datapath:datapath|GIOCATORI[2].dadi_in_mano[2]
+Name GIOCATORI[2].dadi_in_mano[2].NONE~reg0 GIOCATORI[2].dadi_in_mano[2].SEI~reg0 GIOCATORI[2].dadi_in_mano[2].CINQUE~reg0 GIOCATORI[2].dadi_in_mano[2].QUATTRO~reg0 GIOCATORI[2].dadi_in_mano[2].TRE~reg0 GIOCATORI[2].dadi_in_mano[2].DUE~reg0 GIOCATORI[2].dadi_in_mano[2].UNO~reg0 
+GIOCATORI[2].dadi_in_mano[2].UNO~reg0 0 0 0 0 0 0 0 
+GIOCATORI[2].dadi_in_mano[2].DUE~reg0 0 0 0 0 0 1 1 
+GIOCATORI[2].dadi_in_mano[2].TRE~reg0 0 0 0 0 1 0 1 
+GIOCATORI[2].dadi_in_mano[2].QUATTRO~reg0 0 0 0 1 0 0 1 
+GIOCATORI[2].dadi_in_mano[2].CINQUE~reg0 0 0 1 0 0 0 1 
+GIOCATORI[2].dadi_in_mano[2].SEI~reg0 0 1 0 0 0 0 1 
+GIOCATORI[2].dadi_in_mano[2].NONE~reg0 1 0 0 0 0 0 1 
+
+State Machine - |Perudo_DE1|Perudo_Datapath:datapath|GIOCATORI[2].dadi_in_mano[1]
+Name GIOCATORI[2].dadi_in_mano[1].NONE~reg0 GIOCATORI[2].dadi_in_mano[1].SEI~reg0 GIOCATORI[2].dadi_in_mano[1].CINQUE~reg0 GIOCATORI[2].dadi_in_mano[1].QUATTRO~reg0 GIOCATORI[2].dadi_in_mano[1].TRE~reg0 GIOCATORI[2].dadi_in_mano[1].DUE~reg0 GIOCATORI[2].dadi_in_mano[1].UNO~reg0 
+GIOCATORI[2].dadi_in_mano[1].UNO~reg0 0 0 0 0 0 0 0 
+GIOCATORI[2].dadi_in_mano[1].DUE~reg0 0 0 0 0 0 1 1 
+GIOCATORI[2].dadi_in_mano[1].TRE~reg0 0 0 0 0 1 0 1 
+GIOCATORI[2].dadi_in_mano[1].QUATTRO~reg0 0 0 0 1 0 0 1 
+GIOCATORI[2].dadi_in_mano[1].CINQUE~reg0 0 0 1 0 0 0 1 
+GIOCATORI[2].dadi_in_mano[1].SEI~reg0 0 1 0 0 0 0 1 
+GIOCATORI[2].dadi_in_mano[1].NONE~reg0 1 0 0 0 0 0 1 
+
+State Machine - |Perudo_DE1|Perudo_Datapath:datapath|GIOCATORI[2].dadi_in_mano[0]
+Name GIOCATORI[2].dadi_in_mano[0].NONE~reg0 GIOCATORI[2].dadi_in_mano[0].SEI~reg0 GIOCATORI[2].dadi_in_mano[0].CINQUE~reg0 GIOCATORI[2].dadi_in_mano[0].QUATTRO~reg0 GIOCATORI[2].dadi_in_mano[0].TRE~reg0 GIOCATORI[2].dadi_in_mano[0].DUE~reg0 GIOCATORI[2].dadi_in_mano[0].UNO~reg0 
+GIOCATORI[2].dadi_in_mano[0].UNO~reg0 0 0 0 0 0 0 0 
+GIOCATORI[2].dadi_in_mano[0].DUE~reg0 0 0 0 0 0 1 1 
+GIOCATORI[2].dadi_in_mano[0].TRE~reg0 0 0 0 0 1 0 1 
+GIOCATORI[2].dadi_in_mano[0].QUATTRO~reg0 0 0 0 1 0 0 1 
+GIOCATORI[2].dadi_in_mano[0].CINQUE~reg0 0 0 1 0 0 0 1 
+GIOCATORI[2].dadi_in_mano[0].SEI~reg0 0 1 0 0 0 0 1 
+GIOCATORI[2].dadi_in_mano[0].NONE~reg0 1 0 0 0 0 0 1 
+
+State Machine - |Perudo_DE1|Perudo_Datapath:datapath|GIOCATORI[1].dadi_in_mano[4]
+Name GIOCATORI[1].dadi_in_mano[4].NONE~reg0 GIOCATORI[1].dadi_in_mano[4].SEI~reg0 GIOCATORI[1].dadi_in_mano[4].CINQUE~reg0 GIOCATORI[1].dadi_in_mano[4].QUATTRO~reg0 GIOCATORI[1].dadi_in_mano[4].TRE~reg0 GIOCATORI[1].dadi_in_mano[4].DUE~reg0 GIOCATORI[1].dadi_in_mano[4].UNO~reg0 
+GIOCATORI[1].dadi_in_mano[4].UNO~reg0 0 0 0 0 0 0 0 
+GIOCATORI[1].dadi_in_mano[4].DUE~reg0 0 0 0 0 0 1 1 
+GIOCATORI[1].dadi_in_mano[4].TRE~reg0 0 0 0 0 1 0 1 
+GIOCATORI[1].dadi_in_mano[4].QUATTRO~reg0 0 0 0 1 0 0 1 
+GIOCATORI[1].dadi_in_mano[4].CINQUE~reg0 0 0 1 0 0 0 1 
+GIOCATORI[1].dadi_in_mano[4].SEI~reg0 0 1 0 0 0 0 1 
+GIOCATORI[1].dadi_in_mano[4].NONE~reg0 1 0 0 0 0 0 1 
+
+State Machine - |Perudo_DE1|Perudo_Datapath:datapath|GIOCATORI[1].dadi_in_mano[3]
+Name GIOCATORI[1].dadi_in_mano[3].NONE~reg0 GIOCATORI[1].dadi_in_mano[3].SEI~reg0 GIOCATORI[1].dadi_in_mano[3].CINQUE~reg0 GIOCATORI[1].dadi_in_mano[3].QUATTRO~reg0 GIOCATORI[1].dadi_in_mano[3].TRE~reg0 GIOCATORI[1].dadi_in_mano[3].DUE~reg0 GIOCATORI[1].dadi_in_mano[3].UNO~reg0 
+GIOCATORI[1].dadi_in_mano[3].UNO~reg0 0 0 0 0 0 0 0 
+GIOCATORI[1].dadi_in_mano[3].DUE~reg0 0 0 0 0 0 1 1 
+GIOCATORI[1].dadi_in_mano[3].TRE~reg0 0 0 0 0 1 0 1 
+GIOCATORI[1].dadi_in_mano[3].QUATTRO~reg0 0 0 0 1 0 0 1 
+GIOCATORI[1].dadi_in_mano[3].CINQUE~reg0 0 0 1 0 0 0 1 
+GIOCATORI[1].dadi_in_mano[3].SEI~reg0 0 1 0 0 0 0 1 
+GIOCATORI[1].dadi_in_mano[3].NONE~reg0 1 0 0 0 0 0 1 
+
+State Machine - |Perudo_DE1|Perudo_Datapath:datapath|GIOCATORI[1].dadi_in_mano[2]
+Name GIOCATORI[1].dadi_in_mano[2].NONE~reg0 GIOCATORI[1].dadi_in_mano[2].SEI~reg0 GIOCATORI[1].dadi_in_mano[2].CINQUE~reg0 GIOCATORI[1].dadi_in_mano[2].QUATTRO~reg0 GIOCATORI[1].dadi_in_mano[2].TRE~reg0 GIOCATORI[1].dadi_in_mano[2].DUE~reg0 GIOCATORI[1].dadi_in_mano[2].UNO~reg0 
+GIOCATORI[1].dadi_in_mano[2].UNO~reg0 0 0 0 0 0 0 0 
+GIOCATORI[1].dadi_in_mano[2].DUE~reg0 0 0 0 0 0 1 1 
+GIOCATORI[1].dadi_in_mano[2].TRE~reg0 0 0 0 0 1 0 1 
+GIOCATORI[1].dadi_in_mano[2].QUATTRO~reg0 0 0 0 1 0 0 1 
+GIOCATORI[1].dadi_in_mano[2].CINQUE~reg0 0 0 1 0 0 0 1 
+GIOCATORI[1].dadi_in_mano[2].SEI~reg0 0 1 0 0 0 0 1 
+GIOCATORI[1].dadi_in_mano[2].NONE~reg0 1 0 0 0 0 0 1 
+
+State Machine - |Perudo_DE1|Perudo_Datapath:datapath|GIOCATORI[1].dadi_in_mano[1]
+Name GIOCATORI[1].dadi_in_mano[1].NONE~reg0 GIOCATORI[1].dadi_in_mano[1].SEI~reg0 GIOCATORI[1].dadi_in_mano[1].CINQUE~reg0 GIOCATORI[1].dadi_in_mano[1].QUATTRO~reg0 GIOCATORI[1].dadi_in_mano[1].TRE~reg0 GIOCATORI[1].dadi_in_mano[1].DUE~reg0 GIOCATORI[1].dadi_in_mano[1].UNO~reg0 
+GIOCATORI[1].dadi_in_mano[1].UNO~reg0 0 0 0 0 0 0 0 
+GIOCATORI[1].dadi_in_mano[1].DUE~reg0 0 0 0 0 0 1 1 
+GIOCATORI[1].dadi_in_mano[1].TRE~reg0 0 0 0 0 1 0 1 
+GIOCATORI[1].dadi_in_mano[1].QUATTRO~reg0 0 0 0 1 0 0 1 
+GIOCATORI[1].dadi_in_mano[1].CINQUE~reg0 0 0 1 0 0 0 1 
+GIOCATORI[1].dadi_in_mano[1].SEI~reg0 0 1 0 0 0 0 1 
+GIOCATORI[1].dadi_in_mano[1].NONE~reg0 1 0 0 0 0 0 1 
+
+State Machine - |Perudo_DE1|Perudo_Datapath:datapath|GIOCATORI[1].dadi_in_mano[0]
+Name GIOCATORI[1].dadi_in_mano[0].NONE~reg0 GIOCATORI[1].dadi_in_mano[0].SEI~reg0 GIOCATORI[1].dadi_in_mano[0].CINQUE~reg0 GIOCATORI[1].dadi_in_mano[0].QUATTRO~reg0 GIOCATORI[1].dadi_in_mano[0].TRE~reg0 GIOCATORI[1].dadi_in_mano[0].DUE~reg0 GIOCATORI[1].dadi_in_mano[0].UNO~reg0 
+GIOCATORI[1].dadi_in_mano[0].UNO~reg0 0 0 0 0 0 0 0 
+GIOCATORI[1].dadi_in_mano[0].DUE~reg0 0 0 0 0 0 1 1 
+GIOCATORI[1].dadi_in_mano[0].TRE~reg0 0 0 0 0 1 0 1 
+GIOCATORI[1].dadi_in_mano[0].QUATTRO~reg0 0 0 0 1 0 0 1 
+GIOCATORI[1].dadi_in_mano[0].CINQUE~reg0 0 0 1 0 0 0 1 
+GIOCATORI[1].dadi_in_mano[0].SEI~reg0 0 1 0 0 0 0 1 
+GIOCATORI[1].dadi_in_mano[0].NONE~reg0 1 0 0 0 0 0 1 
+
+State Machine - |Perudo_DE1|Perudo_Datapath:datapath|GIOCATORI[0].dadi_in_mano[4]
+Name GIOCATORI[0].dadi_in_mano[4].NONE~reg0 GIOCATORI[0].dadi_in_mano[4].SEI~reg0 GIOCATORI[0].dadi_in_mano[4].CINQUE~reg0 GIOCATORI[0].dadi_in_mano[4].QUATTRO~reg0 GIOCATORI[0].dadi_in_mano[4].TRE~reg0 GIOCATORI[0].dadi_in_mano[4].DUE~reg0 GIOCATORI[0].dadi_in_mano[4].UNO~reg0 
+GIOCATORI[0].dadi_in_mano[4].UNO~reg0 0 0 0 0 0 0 0 
+GIOCATORI[0].dadi_in_mano[4].DUE~reg0 0 0 0 0 0 1 1 
+GIOCATORI[0].dadi_in_mano[4].TRE~reg0 0 0 0 0 1 0 1 
+GIOCATORI[0].dadi_in_mano[4].QUATTRO~reg0 0 0 0 1 0 0 1 
+GIOCATORI[0].dadi_in_mano[4].CINQUE~reg0 0 0 1 0 0 0 1 
+GIOCATORI[0].dadi_in_mano[4].SEI~reg0 0 1 0 0 0 0 1 
+GIOCATORI[0].dadi_in_mano[4].NONE~reg0 1 0 0 0 0 0 1 
+
+State Machine - |Perudo_DE1|Perudo_Datapath:datapath|GIOCATORI[0].dadi_in_mano[3]
+Name GIOCATORI[0].dadi_in_mano[3].NONE~reg0 GIOCATORI[0].dadi_in_mano[3].SEI~reg0 GIOCATORI[0].dadi_in_mano[3].CINQUE~reg0 GIOCATORI[0].dadi_in_mano[3].QUATTRO~reg0 GIOCATORI[0].dadi_in_mano[3].TRE~reg0 GIOCATORI[0].dadi_in_mano[3].DUE~reg0 GIOCATORI[0].dadi_in_mano[3].UNO~reg0 
+GIOCATORI[0].dadi_in_mano[3].UNO~reg0 0 0 0 0 0 0 0 
+GIOCATORI[0].dadi_in_mano[3].DUE~reg0 0 0 0 0 0 1 1 
+GIOCATORI[0].dadi_in_mano[3].TRE~reg0 0 0 0 0 1 0 1 
+GIOCATORI[0].dadi_in_mano[3].QUATTRO~reg0 0 0 0 1 0 0 1 
+GIOCATORI[0].dadi_in_mano[3].CINQUE~reg0 0 0 1 0 0 0 1 
+GIOCATORI[0].dadi_in_mano[3].SEI~reg0 0 1 0 0 0 0 1 
+GIOCATORI[0].dadi_in_mano[3].NONE~reg0 1 0 0 0 0 0 1 
+
+State Machine - |Perudo_DE1|Perudo_Datapath:datapath|GIOCATORI[0].dadi_in_mano[2]
+Name GIOCATORI[0].dadi_in_mano[2].NONE~reg0 GIOCATORI[0].dadi_in_mano[2].SEI~reg0 GIOCATORI[0].dadi_in_mano[2].CINQUE~reg0 GIOCATORI[0].dadi_in_mano[2].QUATTRO~reg0 GIOCATORI[0].dadi_in_mano[2].TRE~reg0 GIOCATORI[0].dadi_in_mano[2].DUE~reg0 GIOCATORI[0].dadi_in_mano[2].UNO~reg0 
+GIOCATORI[0].dadi_in_mano[2].UNO~reg0 0 0 0 0 0 0 0 
+GIOCATORI[0].dadi_in_mano[2].DUE~reg0 0 0 0 0 0 1 1 
+GIOCATORI[0].dadi_in_mano[2].TRE~reg0 0 0 0 0 1 0 1 
+GIOCATORI[0].dadi_in_mano[2].QUATTRO~reg0 0 0 0 1 0 0 1 
+GIOCATORI[0].dadi_in_mano[2].CINQUE~reg0 0 0 1 0 0 0 1 
+GIOCATORI[0].dadi_in_mano[2].SEI~reg0 0 1 0 0 0 0 1 
+GIOCATORI[0].dadi_in_mano[2].NONE~reg0 1 0 0 0 0 0 1 
+
+State Machine - |Perudo_DE1|Perudo_Datapath:datapath|GIOCATORI[0].dadi_in_mano[1]
+Name GIOCATORI[0].dadi_in_mano[1].NONE~reg0 GIOCATORI[0].dadi_in_mano[1].SEI~reg0 GIOCATORI[0].dadi_in_mano[1].CINQUE~reg0 GIOCATORI[0].dadi_in_mano[1].QUATTRO~reg0 GIOCATORI[0].dadi_in_mano[1].TRE~reg0 GIOCATORI[0].dadi_in_mano[1].DUE~reg0 GIOCATORI[0].dadi_in_mano[1].UNO~reg0 
+GIOCATORI[0].dadi_in_mano[1].UNO~reg0 0 0 0 0 0 0 0 
+GIOCATORI[0].dadi_in_mano[1].DUE~reg0 0 0 0 0 0 1 1 
+GIOCATORI[0].dadi_in_mano[1].TRE~reg0 0 0 0 0 1 0 1 
+GIOCATORI[0].dadi_in_mano[1].QUATTRO~reg0 0 0 0 1 0 0 1 
+GIOCATORI[0].dadi_in_mano[1].CINQUE~reg0 0 0 1 0 0 0 1 
+GIOCATORI[0].dadi_in_mano[1].SEI~reg0 0 1 0 0 0 0 1 
+GIOCATORI[0].dadi_in_mano[1].NONE~reg0 1 0 0 0 0 0 1 
+
+State Machine - |Perudo_DE1|Perudo_Datapath:datapath|GIOCATORI[0].dadi_in_mano[0]
+Name GIOCATORI[0].dadi_in_mano[0].NONE~reg0 GIOCATORI[0].dadi_in_mano[0].SEI~reg0 GIOCATORI[0].dadi_in_mano[0].CINQUE~reg0 GIOCATORI[0].dadi_in_mano[0].QUATTRO~reg0 GIOCATORI[0].dadi_in_mano[0].TRE~reg0 GIOCATORI[0].dadi_in_mano[0].DUE~reg0 GIOCATORI[0].dadi_in_mano[0].UNO~reg0 
+GIOCATORI[0].dadi_in_mano[0].UNO~reg0 0 0 0 0 0 0 0 
+GIOCATORI[0].dadi_in_mano[0].DUE~reg0 0 0 0 0 0 1 1 
+GIOCATORI[0].dadi_in_mano[0].TRE~reg0 0 0 0 0 1 0 1 
+GIOCATORI[0].dadi_in_mano[0].QUATTRO~reg0 0 0 0 1 0 0 1 
+GIOCATORI[0].dadi_in_mano[0].CINQUE~reg0 0 0 1 0 0 0 1 
+GIOCATORI[0].dadi_in_mano[0].SEI~reg0 0 1 0 0 0 0 1 
+GIOCATORI[0].dadi_in_mano[0].NONE~reg0 1 0 0 0 0 0 1 
+
+State Machine - |Perudo_DE1|Perudo_Datapath:datapath|SCOMMESSA_ATTUALE.dado_scommesso
+Name SCOMMESSA_ATTUALE.dado_scommesso.NONE~reg0 SCOMMESSA_ATTUALE.dado_scommesso.SEI~reg0 SCOMMESSA_ATTUALE.dado_scommesso.CINQUE~reg0 SCOMMESSA_ATTUALE.dado_scommesso.QUATTRO~reg0 SCOMMESSA_ATTUALE.dado_scommesso.TRE~reg0 SCOMMESSA_ATTUALE.dado_scommesso.DUE~reg0 SCOMMESSA_ATTUALE.dado_scommesso.UNO~reg0 
+SCOMMESSA_ATTUALE.dado_scommesso.UNO~reg0 0 0 0 0 0 0 0 
+SCOMMESSA_ATTUALE.dado_scommesso.DUE~reg0 0 0 0 0 0 1 1 
+SCOMMESSA_ATTUALE.dado_scommesso.TRE~reg0 0 0 0 0 1 0 1 
+SCOMMESSA_ATTUALE.dado_scommesso.QUATTRO~reg0 0 0 0 1 0 0 1 
+SCOMMESSA_ATTUALE.dado_scommesso.CINQUE~reg0 0 0 1 0 0 0 1 
+SCOMMESSA_ATTUALE.dado_scommesso.SEI~reg0 0 1 0 0 0 0 1 
+SCOMMESSA_ATTUALE.dado_scommesso.NONE~reg0 1 0 0 0 0 0 1 
+
+State Machine - |Perudo_DE1|Perudo_Datapath:datapath|scommessa_corrente.dado_scommesso
+Name scommessa_corrente.dado_scommesso.NONE scommessa_corrente.dado_scommesso.SEI scommessa_corrente.dado_scommesso.CINQUE scommessa_corrente.dado_scommesso.QUATTRO scommessa_corrente.dado_scommesso.TRE scommessa_corrente.dado_scommesso.DUE scommessa_corrente.dado_scommesso.UNO 
+scommessa_corrente.dado_scommesso.UNO 0 0 0 0 0 0 0 
+scommessa_corrente.dado_scommesso.DUE 0 0 0 0 0 1 1 
+scommessa_corrente.dado_scommesso.TRE 0 0 0 0 1 0 1 
+scommessa_corrente.dado_scommesso.QUATTRO 0 0 0 1 0 0 1 
+scommessa_corrente.dado_scommesso.CINQUE 0 0 1 0 0 0 1 
+scommessa_corrente.dado_scommesso.SEI 0 1 0 0 0 0 1 
+scommessa_corrente.dado_scommesso.NONE 1 0 0 0 0 0 1 
+
+State Machine - |Perudo_DE1|Perudo_Datapath:datapath|giocatori_in_campo[7].dadi_in_mano[4]
+Name giocatori_in_campo[7].dadi_in_mano[4].UNO giocatori_in_campo[7].dadi_in_mano[4].SEI giocatori_in_campo[7].dadi_in_mano[4].CINQUE giocatori_in_campo[7].dadi_in_mano[4].QUATTRO giocatori_in_campo[7].dadi_in_mano[4].TRE giocatori_in_campo[7].dadi_in_mano[4].DUE giocatori_in_campo[7].dadi_in_mano[4].NONE 
+giocatori_in_campo[7].dadi_in_mano[4].NONE 0 0 0 0 0 0 0 
+giocatori_in_campo[7].dadi_in_mano[4].DUE 0 0 0 0 0 1 1 
+giocatori_in_campo[7].dadi_in_mano[4].TRE 0 0 0 0 1 0 1 
+giocatori_in_campo[7].dadi_in_mano[4].QUATTRO 0 0 0 1 0 0 1 
+giocatori_in_campo[7].dadi_in_mano[4].CINQUE 0 0 1 0 0 0 1 
+giocatori_in_campo[7].dadi_in_mano[4].SEI 0 1 0 0 0 0 1 
+giocatori_in_campo[7].dadi_in_mano[4].UNO 1 0 0 0 0 0 1 
+
+State Machine - |Perudo_DE1|Perudo_Datapath:datapath|giocatori_in_campo[7].dadi_in_mano[3]
+Name giocatori_in_campo[7].dadi_in_mano[3].UNO giocatori_in_campo[7].dadi_in_mano[3].SEI giocatori_in_campo[7].dadi_in_mano[3].CINQUE giocatori_in_campo[7].dadi_in_mano[3].QUATTRO giocatori_in_campo[7].dadi_in_mano[3].TRE giocatori_in_campo[7].dadi_in_mano[3].DUE giocatori_in_campo[7].dadi_in_mano[3].NONE 
+giocatori_in_campo[7].dadi_in_mano[3].NONE 0 0 0 0 0 0 0 
+giocatori_in_campo[7].dadi_in_mano[3].DUE 0 0 0 0 0 1 1 
+giocatori_in_campo[7].dadi_in_mano[3].TRE 0 0 0 0 1 0 1 
+giocatori_in_campo[7].dadi_in_mano[3].QUATTRO 0 0 0 1 0 0 1 
+giocatori_in_campo[7].dadi_in_mano[3].CINQUE 0 0 1 0 0 0 1 
+giocatori_in_campo[7].dadi_in_mano[3].SEI 0 1 0 0 0 0 1 
+giocatori_in_campo[7].dadi_in_mano[3].UNO 1 0 0 0 0 0 1 
+
+State Machine - |Perudo_DE1|Perudo_Datapath:datapath|giocatori_in_campo[7].dadi_in_mano[2]
+Name giocatori_in_campo[7].dadi_in_mano[2].UNO giocatori_in_campo[7].dadi_in_mano[2].SEI giocatori_in_campo[7].dadi_in_mano[2].CINQUE giocatori_in_campo[7].dadi_in_mano[2].QUATTRO giocatori_in_campo[7].dadi_in_mano[2].TRE giocatori_in_campo[7].dadi_in_mano[2].DUE giocatori_in_campo[7].dadi_in_mano[2].NONE 
+giocatori_in_campo[7].dadi_in_mano[2].NONE 0 0 0 0 0 0 0 
+giocatori_in_campo[7].dadi_in_mano[2].DUE 0 0 0 0 0 1 1 
+giocatori_in_campo[7].dadi_in_mano[2].TRE 0 0 0 0 1 0 1 
+giocatori_in_campo[7].dadi_in_mano[2].QUATTRO 0 0 0 1 0 0 1 
+giocatori_in_campo[7].dadi_in_mano[2].CINQUE 0 0 1 0 0 0 1 
+giocatori_in_campo[7].dadi_in_mano[2].SEI 0 1 0 0 0 0 1 
+giocatori_in_campo[7].dadi_in_mano[2].UNO 1 0 0 0 0 0 1 
+
+State Machine - |Perudo_DE1|Perudo_Datapath:datapath|giocatori_in_campo[7].dadi_in_mano[1]
+Name giocatori_in_campo[7].dadi_in_mano[1].UNO giocatori_in_campo[7].dadi_in_mano[1].SEI giocatori_in_campo[7].dadi_in_mano[1].CINQUE giocatori_in_campo[7].dadi_in_mano[1].QUATTRO giocatori_in_campo[7].dadi_in_mano[1].TRE giocatori_in_campo[7].dadi_in_mano[1].DUE giocatori_in_campo[7].dadi_in_mano[1].NONE 
+giocatori_in_campo[7].dadi_in_mano[1].NONE 0 0 0 0 0 0 0 
+giocatori_in_campo[7].dadi_in_mano[1].DUE 0 0 0 0 0 1 1 
+giocatori_in_campo[7].dadi_in_mano[1].TRE 0 0 0 0 1 0 1 
+giocatori_in_campo[7].dadi_in_mano[1].QUATTRO 0 0 0 1 0 0 1 
+giocatori_in_campo[7].dadi_in_mano[1].CINQUE 0 0 1 0 0 0 1 
+giocatori_in_campo[7].dadi_in_mano[1].SEI 0 1 0 0 0 0 1 
+giocatori_in_campo[7].dadi_in_mano[1].UNO 1 0 0 0 0 0 1 
+
+State Machine - |Perudo_DE1|Perudo_Datapath:datapath|giocatori_in_campo[7].dadi_in_mano[0]
+Name giocatori_in_campo[7].dadi_in_mano[0].UNO giocatori_in_campo[7].dadi_in_mano[0].SEI giocatori_in_campo[7].dadi_in_mano[0].CINQUE giocatori_in_campo[7].dadi_in_mano[0].QUATTRO giocatori_in_campo[7].dadi_in_mano[0].TRE giocatori_in_campo[7].dadi_in_mano[0].DUE giocatori_in_campo[7].dadi_in_mano[0].NONE 
+giocatori_in_campo[7].dadi_in_mano[0].NONE 0 0 0 0 0 0 0 
+giocatori_in_campo[7].dadi_in_mano[0].DUE 0 0 0 0 0 1 1 
+giocatori_in_campo[7].dadi_in_mano[0].TRE 0 0 0 0 1 0 1 
+giocatori_in_campo[7].dadi_in_mano[0].QUATTRO 0 0 0 1 0 0 1 
+giocatori_in_campo[7].dadi_in_mano[0].CINQUE 0 0 1 0 0 0 1 
+giocatori_in_campo[7].dadi_in_mano[0].SEI 0 1 0 0 0 0 1 
+giocatori_in_campo[7].dadi_in_mano[0].UNO 1 0 0 0 0 0 1 
+
+State Machine - |Perudo_DE1|Perudo_Datapath:datapath|giocatori_in_campo[6].dadi_in_mano[4]
+Name giocatori_in_campo[6].dadi_in_mano[4].UNO giocatori_in_campo[6].dadi_in_mano[4].SEI giocatori_in_campo[6].dadi_in_mano[4].CINQUE giocatori_in_campo[6].dadi_in_mano[4].QUATTRO giocatori_in_campo[6].dadi_in_mano[4].TRE giocatori_in_campo[6].dadi_in_mano[4].DUE giocatori_in_campo[6].dadi_in_mano[4].NONE 
+giocatori_in_campo[6].dadi_in_mano[4].NONE 0 0 0 0 0 0 0 
+giocatori_in_campo[6].dadi_in_mano[4].DUE 0 0 0 0 0 1 1 
+giocatori_in_campo[6].dadi_in_mano[4].TRE 0 0 0 0 1 0 1 
+giocatori_in_campo[6].dadi_in_mano[4].QUATTRO 0 0 0 1 0 0 1 
+giocatori_in_campo[6].dadi_in_mano[4].CINQUE 0 0 1 0 0 0 1 
+giocatori_in_campo[6].dadi_in_mano[4].SEI 0 1 0 0 0 0 1 
+giocatori_in_campo[6].dadi_in_mano[4].UNO 1 0 0 0 0 0 1 
+
+State Machine - |Perudo_DE1|Perudo_Datapath:datapath|giocatori_in_campo[6].dadi_in_mano[3]
+Name giocatori_in_campo[6].dadi_in_mano[3].UNO giocatori_in_campo[6].dadi_in_mano[3].SEI giocatori_in_campo[6].dadi_in_mano[3].CINQUE giocatori_in_campo[6].dadi_in_mano[3].QUATTRO giocatori_in_campo[6].dadi_in_mano[3].TRE giocatori_in_campo[6].dadi_in_mano[3].DUE giocatori_in_campo[6].dadi_in_mano[3].NONE 
+giocatori_in_campo[6].dadi_in_mano[3].NONE 0 0 0 0 0 0 0 
+giocatori_in_campo[6].dadi_in_mano[3].DUE 0 0 0 0 0 1 1 
+giocatori_in_campo[6].dadi_in_mano[3].TRE 0 0 0 0 1 0 1 
+giocatori_in_campo[6].dadi_in_mano[3].QUATTRO 0 0 0 1 0 0 1 
+giocatori_in_campo[6].dadi_in_mano[3].CINQUE 0 0 1 0 0 0 1 
+giocatori_in_campo[6].dadi_in_mano[3].SEI 0 1 0 0 0 0 1 
+giocatori_in_campo[6].dadi_in_mano[3].UNO 1 0 0 0 0 0 1 
+
+State Machine - |Perudo_DE1|Perudo_Datapath:datapath|giocatori_in_campo[6].dadi_in_mano[2]
+Name giocatori_in_campo[6].dadi_in_mano[2].UNO giocatori_in_campo[6].dadi_in_mano[2].SEI giocatori_in_campo[6].dadi_in_mano[2].CINQUE giocatori_in_campo[6].dadi_in_mano[2].QUATTRO giocatori_in_campo[6].dadi_in_mano[2].TRE giocatori_in_campo[6].dadi_in_mano[2].DUE giocatori_in_campo[6].dadi_in_mano[2].NONE 
+giocatori_in_campo[6].dadi_in_mano[2].NONE 0 0 0 0 0 0 0 
+giocatori_in_campo[6].dadi_in_mano[2].DUE 0 0 0 0 0 1 1 
+giocatori_in_campo[6].dadi_in_mano[2].TRE 0 0 0 0 1 0 1 
+giocatori_in_campo[6].dadi_in_mano[2].QUATTRO 0 0 0 1 0 0 1 
+giocatori_in_campo[6].dadi_in_mano[2].CINQUE 0 0 1 0 0 0 1 
+giocatori_in_campo[6].dadi_in_mano[2].SEI 0 1 0 0 0 0 1 
+giocatori_in_campo[6].dadi_in_mano[2].UNO 1 0 0 0 0 0 1 
+
+State Machine - |Perudo_DE1|Perudo_Datapath:datapath|giocatori_in_campo[6].dadi_in_mano[1]
+Name giocatori_in_campo[6].dadi_in_mano[1].UNO giocatori_in_campo[6].dadi_in_mano[1].SEI giocatori_in_campo[6].dadi_in_mano[1].CINQUE giocatori_in_campo[6].dadi_in_mano[1].QUATTRO giocatori_in_campo[6].dadi_in_mano[1].TRE giocatori_in_campo[6].dadi_in_mano[1].DUE giocatori_in_campo[6].dadi_in_mano[1].NONE 
+giocatori_in_campo[6].dadi_in_mano[1].NONE 0 0 0 0 0 0 0 
+giocatori_in_campo[6].dadi_in_mano[1].DUE 0 0 0 0 0 1 1 
+giocatori_in_campo[6].dadi_in_mano[1].TRE 0 0 0 0 1 0 1 
+giocatori_in_campo[6].dadi_in_mano[1].QUATTRO 0 0 0 1 0 0 1 
+giocatori_in_campo[6].dadi_in_mano[1].CINQUE 0 0 1 0 0 0 1 
+giocatori_in_campo[6].dadi_in_mano[1].SEI 0 1 0 0 0 0 1 
+giocatori_in_campo[6].dadi_in_mano[1].UNO 1 0 0 0 0 0 1 
+
+State Machine - |Perudo_DE1|Perudo_Datapath:datapath|giocatori_in_campo[6].dadi_in_mano[0]
+Name giocatori_in_campo[6].dadi_in_mano[0].UNO giocatori_in_campo[6].dadi_in_mano[0].SEI giocatori_in_campo[6].dadi_in_mano[0].CINQUE giocatori_in_campo[6].dadi_in_mano[0].QUATTRO giocatori_in_campo[6].dadi_in_mano[0].TRE giocatori_in_campo[6].dadi_in_mano[0].DUE giocatori_in_campo[6].dadi_in_mano[0].NONE 
+giocatori_in_campo[6].dadi_in_mano[0].NONE 0 0 0 0 0 0 0 
+giocatori_in_campo[6].dadi_in_mano[0].DUE 0 0 0 0 0 1 1 
+giocatori_in_campo[6].dadi_in_mano[0].TRE 0 0 0 0 1 0 1 
+giocatori_in_campo[6].dadi_in_mano[0].QUATTRO 0 0 0 1 0 0 1 
+giocatori_in_campo[6].dadi_in_mano[0].CINQUE 0 0 1 0 0 0 1 
+giocatori_in_campo[6].dadi_in_mano[0].SEI 0 1 0 0 0 0 1 
+giocatori_in_campo[6].dadi_in_mano[0].UNO 1 0 0 0 0 0 1 
+
+State Machine - |Perudo_DE1|Perudo_Datapath:datapath|giocatori_in_campo[5].dadi_in_mano[4]
+Name giocatori_in_campo[5].dadi_in_mano[4].UNO giocatori_in_campo[5].dadi_in_mano[4].SEI giocatori_in_campo[5].dadi_in_mano[4].CINQUE giocatori_in_campo[5].dadi_in_mano[4].QUATTRO giocatori_in_campo[5].dadi_in_mano[4].TRE giocatori_in_campo[5].dadi_in_mano[4].DUE giocatori_in_campo[5].dadi_in_mano[4].NONE 
+giocatori_in_campo[5].dadi_in_mano[4].NONE 0 0 0 0 0 0 0 
+giocatori_in_campo[5].dadi_in_mano[4].DUE 0 0 0 0 0 1 1 
+giocatori_in_campo[5].dadi_in_mano[4].TRE 0 0 0 0 1 0 1 
+giocatori_in_campo[5].dadi_in_mano[4].QUATTRO 0 0 0 1 0 0 1 
+giocatori_in_campo[5].dadi_in_mano[4].CINQUE 0 0 1 0 0 0 1 
+giocatori_in_campo[5].dadi_in_mano[4].SEI 0 1 0 0 0 0 1 
+giocatori_in_campo[5].dadi_in_mano[4].UNO 1 0 0 0 0 0 1 
+
+State Machine - |Perudo_DE1|Perudo_Datapath:datapath|giocatori_in_campo[5].dadi_in_mano[3]
+Name giocatori_in_campo[5].dadi_in_mano[3].UNO giocatori_in_campo[5].dadi_in_mano[3].SEI giocatori_in_campo[5].dadi_in_mano[3].CINQUE giocatori_in_campo[5].dadi_in_mano[3].QUATTRO giocatori_in_campo[5].dadi_in_mano[3].TRE giocatori_in_campo[5].dadi_in_mano[3].DUE giocatori_in_campo[5].dadi_in_mano[3].NONE 
+giocatori_in_campo[5].dadi_in_mano[3].NONE 0 0 0 0 0 0 0 
+giocatori_in_campo[5].dadi_in_mano[3].DUE 0 0 0 0 0 1 1 
+giocatori_in_campo[5].dadi_in_mano[3].TRE 0 0 0 0 1 0 1 
+giocatori_in_campo[5].dadi_in_mano[3].QUATTRO 0 0 0 1 0 0 1 
+giocatori_in_campo[5].dadi_in_mano[3].CINQUE 0 0 1 0 0 0 1 
+giocatori_in_campo[5].dadi_in_mano[3].SEI 0 1 0 0 0 0 1 
+giocatori_in_campo[5].dadi_in_mano[3].UNO 1 0 0 0 0 0 1 
+
+State Machine - |Perudo_DE1|Perudo_Datapath:datapath|giocatori_in_campo[5].dadi_in_mano[2]
+Name giocatori_in_campo[5].dadi_in_mano[2].UNO giocatori_in_campo[5].dadi_in_mano[2].SEI giocatori_in_campo[5].dadi_in_mano[2].CINQUE giocatori_in_campo[5].dadi_in_mano[2].QUATTRO giocatori_in_campo[5].dadi_in_mano[2].TRE giocatori_in_campo[5].dadi_in_mano[2].DUE giocatori_in_campo[5].dadi_in_mano[2].NONE 
+giocatori_in_campo[5].dadi_in_mano[2].NONE 0 0 0 0 0 0 0 
+giocatori_in_campo[5].dadi_in_mano[2].DUE 0 0 0 0 0 1 1 
+giocatori_in_campo[5].dadi_in_mano[2].TRE 0 0 0 0 1 0 1 
+giocatori_in_campo[5].dadi_in_mano[2].QUATTRO 0 0 0 1 0 0 1 
+giocatori_in_campo[5].dadi_in_mano[2].CINQUE 0 0 1 0 0 0 1 
+giocatori_in_campo[5].dadi_in_mano[2].SEI 0 1 0 0 0 0 1 
+giocatori_in_campo[5].dadi_in_mano[2].UNO 1 0 0 0 0 0 1 
+
+State Machine - |Perudo_DE1|Perudo_Datapath:datapath|giocatori_in_campo[5].dadi_in_mano[1]
+Name giocatori_in_campo[5].dadi_in_mano[1].UNO giocatori_in_campo[5].dadi_in_mano[1].SEI giocatori_in_campo[5].dadi_in_mano[1].CINQUE giocatori_in_campo[5].dadi_in_mano[1].QUATTRO giocatori_in_campo[5].dadi_in_mano[1].TRE giocatori_in_campo[5].dadi_in_mano[1].DUE giocatori_in_campo[5].dadi_in_mano[1].NONE 
+giocatori_in_campo[5].dadi_in_mano[1].NONE 0 0 0 0 0 0 0 
+giocatori_in_campo[5].dadi_in_mano[1].DUE 0 0 0 0 0 1 1 
+giocatori_in_campo[5].dadi_in_mano[1].TRE 0 0 0 0 1 0 1 
+giocatori_in_campo[5].dadi_in_mano[1].QUATTRO 0 0 0 1 0 0 1 
+giocatori_in_campo[5].dadi_in_mano[1].CINQUE 0 0 1 0 0 0 1 
+giocatori_in_campo[5].dadi_in_mano[1].SEI 0 1 0 0 0 0 1 
+giocatori_in_campo[5].dadi_in_mano[1].UNO 1 0 0 0 0 0 1 
+
+State Machine - |Perudo_DE1|Perudo_Datapath:datapath|giocatori_in_campo[5].dadi_in_mano[0]
+Name giocatori_in_campo[5].dadi_in_mano[0].UNO giocatori_in_campo[5].dadi_in_mano[0].SEI giocatori_in_campo[5].dadi_in_mano[0].CINQUE giocatori_in_campo[5].dadi_in_mano[0].QUATTRO giocatori_in_campo[5].dadi_in_mano[0].TRE giocatori_in_campo[5].dadi_in_mano[0].DUE giocatori_in_campo[5].dadi_in_mano[0].NONE 
+giocatori_in_campo[5].dadi_in_mano[0].NONE 0 0 0 0 0 0 0 
+giocatori_in_campo[5].dadi_in_mano[0].DUE 0 0 0 0 0 1 1 
+giocatori_in_campo[5].dadi_in_mano[0].TRE 0 0 0 0 1 0 1 
+giocatori_in_campo[5].dadi_in_mano[0].QUATTRO 0 0 0 1 0 0 1 
+giocatori_in_campo[5].dadi_in_mano[0].CINQUE 0 0 1 0 0 0 1 
+giocatori_in_campo[5].dadi_in_mano[0].SEI 0 1 0 0 0 0 1 
+giocatori_in_campo[5].dadi_in_mano[0].UNO 1 0 0 0 0 0 1 
+
+State Machine - |Perudo_DE1|Perudo_Datapath:datapath|giocatori_in_campo[4].dadi_in_mano[4]
+Name giocatori_in_campo[4].dadi_in_mano[4].UNO giocatori_in_campo[4].dadi_in_mano[4].SEI giocatori_in_campo[4].dadi_in_mano[4].CINQUE giocatori_in_campo[4].dadi_in_mano[4].QUATTRO giocatori_in_campo[4].dadi_in_mano[4].TRE giocatori_in_campo[4].dadi_in_mano[4].DUE giocatori_in_campo[4].dadi_in_mano[4].NONE 
+giocatori_in_campo[4].dadi_in_mano[4].NONE 0 0 0 0 0 0 0 
+giocatori_in_campo[4].dadi_in_mano[4].DUE 0 0 0 0 0 1 1 
+giocatori_in_campo[4].dadi_in_mano[4].TRE 0 0 0 0 1 0 1 
+giocatori_in_campo[4].dadi_in_mano[4].QUATTRO 0 0 0 1 0 0 1 
+giocatori_in_campo[4].dadi_in_mano[4].CINQUE 0 0 1 0 0 0 1 
+giocatori_in_campo[4].dadi_in_mano[4].SEI 0 1 0 0 0 0 1 
+giocatori_in_campo[4].dadi_in_mano[4].UNO 1 0 0 0 0 0 1 
+
+State Machine - |Perudo_DE1|Perudo_Datapath:datapath|giocatori_in_campo[4].dadi_in_mano[3]
+Name giocatori_in_campo[4].dadi_in_mano[3].UNO giocatori_in_campo[4].dadi_in_mano[3].SEI giocatori_in_campo[4].dadi_in_mano[3].CINQUE giocatori_in_campo[4].dadi_in_mano[3].QUATTRO giocatori_in_campo[4].dadi_in_mano[3].TRE giocatori_in_campo[4].dadi_in_mano[3].DUE giocatori_in_campo[4].dadi_in_mano[3].NONE 
+giocatori_in_campo[4].dadi_in_mano[3].NONE 0 0 0 0 0 0 0 
+giocatori_in_campo[4].dadi_in_mano[3].DUE 0 0 0 0 0 1 1 
+giocatori_in_campo[4].dadi_in_mano[3].TRE 0 0 0 0 1 0 1 
+giocatori_in_campo[4].dadi_in_mano[3].QUATTRO 0 0 0 1 0 0 1 
+giocatori_in_campo[4].dadi_in_mano[3].CINQUE 0 0 1 0 0 0 1 
+giocatori_in_campo[4].dadi_in_mano[3].SEI 0 1 0 0 0 0 1 
+giocatori_in_campo[4].dadi_in_mano[3].UNO 1 0 0 0 0 0 1 
+
+State Machine - |Perudo_DE1|Perudo_Datapath:datapath|giocatori_in_campo[4].dadi_in_mano[2]
+Name giocatori_in_campo[4].dadi_in_mano[2].UNO giocatori_in_campo[4].dadi_in_mano[2].SEI giocatori_in_campo[4].dadi_in_mano[2].CINQUE giocatori_in_campo[4].dadi_in_mano[2].QUATTRO giocatori_in_campo[4].dadi_in_mano[2].TRE giocatori_in_campo[4].dadi_in_mano[2].DUE giocatori_in_campo[4].dadi_in_mano[2].NONE 
+giocatori_in_campo[4].dadi_in_mano[2].NONE 0 0 0 0 0 0 0 
+giocatori_in_campo[4].dadi_in_mano[2].DUE 0 0 0 0 0 1 1 
+giocatori_in_campo[4].dadi_in_mano[2].TRE 0 0 0 0 1 0 1 
+giocatori_in_campo[4].dadi_in_mano[2].QUATTRO 0 0 0 1 0 0 1 
+giocatori_in_campo[4].dadi_in_mano[2].CINQUE 0 0 1 0 0 0 1 
+giocatori_in_campo[4].dadi_in_mano[2].SEI 0 1 0 0 0 0 1 
+giocatori_in_campo[4].dadi_in_mano[2].UNO 1 0 0 0 0 0 1 
+
+State Machine - |Perudo_DE1|Perudo_Datapath:datapath|giocatori_in_campo[4].dadi_in_mano[1]
+Name giocatori_in_campo[4].dadi_in_mano[1].UNO giocatori_in_campo[4].dadi_in_mano[1].SEI giocatori_in_campo[4].dadi_in_mano[1].CINQUE giocatori_in_campo[4].dadi_in_mano[1].QUATTRO giocatori_in_campo[4].dadi_in_mano[1].TRE giocatori_in_campo[4].dadi_in_mano[1].DUE giocatori_in_campo[4].dadi_in_mano[1].NONE 
+giocatori_in_campo[4].dadi_in_mano[1].NONE 0 0 0 0 0 0 0 
+giocatori_in_campo[4].dadi_in_mano[1].DUE 0 0 0 0 0 1 1 
+giocatori_in_campo[4].dadi_in_mano[1].TRE 0 0 0 0 1 0 1 
+giocatori_in_campo[4].dadi_in_mano[1].QUATTRO 0 0 0 1 0 0 1 
+giocatori_in_campo[4].dadi_in_mano[1].CINQUE 0 0 1 0 0 0 1 
+giocatori_in_campo[4].dadi_in_mano[1].SEI 0 1 0 0 0 0 1 
+giocatori_in_campo[4].dadi_in_mano[1].UNO 1 0 0 0 0 0 1 
+
+State Machine - |Perudo_DE1|Perudo_Datapath:datapath|giocatori_in_campo[4].dadi_in_mano[0]
+Name giocatori_in_campo[4].dadi_in_mano[0].UNO giocatori_in_campo[4].dadi_in_mano[0].SEI giocatori_in_campo[4].dadi_in_mano[0].CINQUE giocatori_in_campo[4].dadi_in_mano[0].QUATTRO giocatori_in_campo[4].dadi_in_mano[0].TRE giocatori_in_campo[4].dadi_in_mano[0].DUE giocatori_in_campo[4].dadi_in_mano[0].NONE 
+giocatori_in_campo[4].dadi_in_mano[0].NONE 0 0 0 0 0 0 0 
+giocatori_in_campo[4].dadi_in_mano[0].DUE 0 0 0 0 0 1 1 
+giocatori_in_campo[4].dadi_in_mano[0].TRE 0 0 0 0 1 0 1 
+giocatori_in_campo[4].dadi_in_mano[0].QUATTRO 0 0 0 1 0 0 1 
+giocatori_in_campo[4].dadi_in_mano[0].CINQUE 0 0 1 0 0 0 1 
+giocatori_in_campo[4].dadi_in_mano[0].SEI 0 1 0 0 0 0 1 
+giocatori_in_campo[4].dadi_in_mano[0].UNO 1 0 0 0 0 0 1 
+
+State Machine - |Perudo_DE1|Perudo_Datapath:datapath|giocatori_in_campo[3].dadi_in_mano[4]
+Name giocatori_in_campo[3].dadi_in_mano[4].UNO giocatori_in_campo[3].dadi_in_mano[4].SEI giocatori_in_campo[3].dadi_in_mano[4].CINQUE giocatori_in_campo[3].dadi_in_mano[4].QUATTRO giocatori_in_campo[3].dadi_in_mano[4].TRE giocatori_in_campo[3].dadi_in_mano[4].DUE giocatori_in_campo[3].dadi_in_mano[4].NONE 
+giocatori_in_campo[3].dadi_in_mano[4].NONE 0 0 0 0 0 0 0 
+giocatori_in_campo[3].dadi_in_mano[4].DUE 0 0 0 0 0 1 1 
+giocatori_in_campo[3].dadi_in_mano[4].TRE 0 0 0 0 1 0 1 
+giocatori_in_campo[3].dadi_in_mano[4].QUATTRO 0 0 0 1 0 0 1 
+giocatori_in_campo[3].dadi_in_mano[4].CINQUE 0 0 1 0 0 0 1 
+giocatori_in_campo[3].dadi_in_mano[4].SEI 0 1 0 0 0 0 1 
+giocatori_in_campo[3].dadi_in_mano[4].UNO 1 0 0 0 0 0 1 
+
+State Machine - |Perudo_DE1|Perudo_Datapath:datapath|giocatori_in_campo[3].dadi_in_mano[3]
+Name giocatori_in_campo[3].dadi_in_mano[3].UNO giocatori_in_campo[3].dadi_in_mano[3].SEI giocatori_in_campo[3].dadi_in_mano[3].CINQUE giocatori_in_campo[3].dadi_in_mano[3].QUATTRO giocatori_in_campo[3].dadi_in_mano[3].TRE giocatori_in_campo[3].dadi_in_mano[3].DUE giocatori_in_campo[3].dadi_in_mano[3].NONE 
+giocatori_in_campo[3].dadi_in_mano[3].NONE 0 0 0 0 0 0 0 
+giocatori_in_campo[3].dadi_in_mano[3].DUE 0 0 0 0 0 1 1 
+giocatori_in_campo[3].dadi_in_mano[3].TRE 0 0 0 0 1 0 1 
+giocatori_in_campo[3].dadi_in_mano[3].QUATTRO 0 0 0 1 0 0 1 
+giocatori_in_campo[3].dadi_in_mano[3].CINQUE 0 0 1 0 0 0 1 
+giocatori_in_campo[3].dadi_in_mano[3].SEI 0 1 0 0 0 0 1 
+giocatori_in_campo[3].dadi_in_mano[3].UNO 1 0 0 0 0 0 1 
+
+State Machine - |Perudo_DE1|Perudo_Datapath:datapath|giocatori_in_campo[3].dadi_in_mano[2]
+Name giocatori_in_campo[3].dadi_in_mano[2].UNO giocatori_in_campo[3].dadi_in_mano[2].SEI giocatori_in_campo[3].dadi_in_mano[2].CINQUE giocatori_in_campo[3].dadi_in_mano[2].QUATTRO giocatori_in_campo[3].dadi_in_mano[2].TRE giocatori_in_campo[3].dadi_in_mano[2].DUE giocatori_in_campo[3].dadi_in_mano[2].NONE 
+giocatori_in_campo[3].dadi_in_mano[2].NONE 0 0 0 0 0 0 0 
+giocatori_in_campo[3].dadi_in_mano[2].DUE 0 0 0 0 0 1 1 
+giocatori_in_campo[3].dadi_in_mano[2].TRE 0 0 0 0 1 0 1 
+giocatori_in_campo[3].dadi_in_mano[2].QUATTRO 0 0 0 1 0 0 1 
+giocatori_in_campo[3].dadi_in_mano[2].CINQUE 0 0 1 0 0 0 1 
+giocatori_in_campo[3].dadi_in_mano[2].SEI 0 1 0 0 0 0 1 
+giocatori_in_campo[3].dadi_in_mano[2].UNO 1 0 0 0 0 0 1 
+
+State Machine - |Perudo_DE1|Perudo_Datapath:datapath|giocatori_in_campo[3].dadi_in_mano[1]
+Name giocatori_in_campo[3].dadi_in_mano[1].UNO giocatori_in_campo[3].dadi_in_mano[1].SEI giocatori_in_campo[3].dadi_in_mano[1].CINQUE giocatori_in_campo[3].dadi_in_mano[1].QUATTRO giocatori_in_campo[3].dadi_in_mano[1].TRE giocatori_in_campo[3].dadi_in_mano[1].DUE giocatori_in_campo[3].dadi_in_mano[1].NONE 
+giocatori_in_campo[3].dadi_in_mano[1].NONE 0 0 0 0 0 0 0 
+giocatori_in_campo[3].dadi_in_mano[1].DUE 0 0 0 0 0 1 1 
+giocatori_in_campo[3].dadi_in_mano[1].TRE 0 0 0 0 1 0 1 
+giocatori_in_campo[3].dadi_in_mano[1].QUATTRO 0 0 0 1 0 0 1 
+giocatori_in_campo[3].dadi_in_mano[1].CINQUE 0 0 1 0 0 0 1 
+giocatori_in_campo[3].dadi_in_mano[1].SEI 0 1 0 0 0 0 1 
+giocatori_in_campo[3].dadi_in_mano[1].UNO 1 0 0 0 0 0 1 
+
+State Machine - |Perudo_DE1|Perudo_Datapath:datapath|giocatori_in_campo[3].dadi_in_mano[0]
+Name giocatori_in_campo[3].dadi_in_mano[0].UNO giocatori_in_campo[3].dadi_in_mano[0].SEI giocatori_in_campo[3].dadi_in_mano[0].CINQUE giocatori_in_campo[3].dadi_in_mano[0].QUATTRO giocatori_in_campo[3].dadi_in_mano[0].TRE giocatori_in_campo[3].dadi_in_mano[0].DUE giocatori_in_campo[3].dadi_in_mano[0].NONE 
+giocatori_in_campo[3].dadi_in_mano[0].NONE 0 0 0 0 0 0 0 
+giocatori_in_campo[3].dadi_in_mano[0].DUE 0 0 0 0 0 1 1 
+giocatori_in_campo[3].dadi_in_mano[0].TRE 0 0 0 0 1 0 1 
+giocatori_in_campo[3].dadi_in_mano[0].QUATTRO 0 0 0 1 0 0 1 
+giocatori_in_campo[3].dadi_in_mano[0].CINQUE 0 0 1 0 0 0 1 
+giocatori_in_campo[3].dadi_in_mano[0].SEI 0 1 0 0 0 0 1 
+giocatori_in_campo[3].dadi_in_mano[0].UNO 1 0 0 0 0 0 1 
+
+State Machine - |Perudo_DE1|Perudo_Datapath:datapath|giocatori_in_campo[2].dadi_in_mano[4]
+Name giocatori_in_campo[2].dadi_in_mano[4].UNO giocatori_in_campo[2].dadi_in_mano[4].SEI giocatori_in_campo[2].dadi_in_mano[4].CINQUE giocatori_in_campo[2].dadi_in_mano[4].QUATTRO giocatori_in_campo[2].dadi_in_mano[4].TRE giocatori_in_campo[2].dadi_in_mano[4].DUE giocatori_in_campo[2].dadi_in_mano[4].NONE 
+giocatori_in_campo[2].dadi_in_mano[4].NONE 0 0 0 0 0 0 0 
+giocatori_in_campo[2].dadi_in_mano[4].DUE 0 0 0 0 0 1 1 
+giocatori_in_campo[2].dadi_in_mano[4].TRE 0 0 0 0 1 0 1 
+giocatori_in_campo[2].dadi_in_mano[4].QUATTRO 0 0 0 1 0 0 1 
+giocatori_in_campo[2].dadi_in_mano[4].CINQUE 0 0 1 0 0 0 1 
+giocatori_in_campo[2].dadi_in_mano[4].SEI 0 1 0 0 0 0 1 
+giocatori_in_campo[2].dadi_in_mano[4].UNO 1 0 0 0 0 0 1 
+
+State Machine - |Perudo_DE1|Perudo_Datapath:datapath|giocatori_in_campo[2].dadi_in_mano[3]
+Name giocatori_in_campo[2].dadi_in_mano[3].UNO giocatori_in_campo[2].dadi_in_mano[3].SEI giocatori_in_campo[2].dadi_in_mano[3].CINQUE giocatori_in_campo[2].dadi_in_mano[3].QUATTRO giocatori_in_campo[2].dadi_in_mano[3].TRE giocatori_in_campo[2].dadi_in_mano[3].DUE giocatori_in_campo[2].dadi_in_mano[3].NONE 
+giocatori_in_campo[2].dadi_in_mano[3].NONE 0 0 0 0 0 0 0 
+giocatori_in_campo[2].dadi_in_mano[3].DUE 0 0 0 0 0 1 1 
+giocatori_in_campo[2].dadi_in_mano[3].TRE 0 0 0 0 1 0 1 
+giocatori_in_campo[2].dadi_in_mano[3].QUATTRO 0 0 0 1 0 0 1 
+giocatori_in_campo[2].dadi_in_mano[3].CINQUE 0 0 1 0 0 0 1 
+giocatori_in_campo[2].dadi_in_mano[3].SEI 0 1 0 0 0 0 1 
+giocatori_in_campo[2].dadi_in_mano[3].UNO 1 0 0 0 0 0 1 
+
+State Machine - |Perudo_DE1|Perudo_Datapath:datapath|giocatori_in_campo[2].dadi_in_mano[2]
+Name giocatori_in_campo[2].dadi_in_mano[2].UNO giocatori_in_campo[2].dadi_in_mano[2].SEI giocatori_in_campo[2].dadi_in_mano[2].CINQUE giocatori_in_campo[2].dadi_in_mano[2].QUATTRO giocatori_in_campo[2].dadi_in_mano[2].TRE giocatori_in_campo[2].dadi_in_mano[2].DUE giocatori_in_campo[2].dadi_in_mano[2].NONE 
+giocatori_in_campo[2].dadi_in_mano[2].NONE 0 0 0 0 0 0 0 
+giocatori_in_campo[2].dadi_in_mano[2].DUE 0 0 0 0 0 1 1 
+giocatori_in_campo[2].dadi_in_mano[2].TRE 0 0 0 0 1 0 1 
+giocatori_in_campo[2].dadi_in_mano[2].QUATTRO 0 0 0 1 0 0 1 
+giocatori_in_campo[2].dadi_in_mano[2].CINQUE 0 0 1 0 0 0 1 
+giocatori_in_campo[2].dadi_in_mano[2].SEI 0 1 0 0 0 0 1 
+giocatori_in_campo[2].dadi_in_mano[2].UNO 1 0 0 0 0 0 1 
+
+State Machine - |Perudo_DE1|Perudo_Datapath:datapath|giocatori_in_campo[2].dadi_in_mano[1]
+Name giocatori_in_campo[2].dadi_in_mano[1].UNO giocatori_in_campo[2].dadi_in_mano[1].SEI giocatori_in_campo[2].dadi_in_mano[1].CINQUE giocatori_in_campo[2].dadi_in_mano[1].QUATTRO giocatori_in_campo[2].dadi_in_mano[1].TRE giocatori_in_campo[2].dadi_in_mano[1].DUE giocatori_in_campo[2].dadi_in_mano[1].NONE 
+giocatori_in_campo[2].dadi_in_mano[1].NONE 0 0 0 0 0 0 0 
+giocatori_in_campo[2].dadi_in_mano[1].DUE 0 0 0 0 0 1 1 
+giocatori_in_campo[2].dadi_in_mano[1].TRE 0 0 0 0 1 0 1 
+giocatori_in_campo[2].dadi_in_mano[1].QUATTRO 0 0 0 1 0 0 1 
+giocatori_in_campo[2].dadi_in_mano[1].CINQUE 0 0 1 0 0 0 1 
+giocatori_in_campo[2].dadi_in_mano[1].SEI 0 1 0 0 0 0 1 
+giocatori_in_campo[2].dadi_in_mano[1].UNO 1 0 0 0 0 0 1 
+
+State Machine - |Perudo_DE1|Perudo_Datapath:datapath|giocatori_in_campo[2].dadi_in_mano[0]
+Name giocatori_in_campo[2].dadi_in_mano[0].UNO giocatori_in_campo[2].dadi_in_mano[0].SEI giocatori_in_campo[2].dadi_in_mano[0].CINQUE giocatori_in_campo[2].dadi_in_mano[0].QUATTRO giocatori_in_campo[2].dadi_in_mano[0].TRE giocatori_in_campo[2].dadi_in_mano[0].DUE giocatori_in_campo[2].dadi_in_mano[0].NONE 
+giocatori_in_campo[2].dadi_in_mano[0].NONE 0 0 0 0 0 0 0 
+giocatori_in_campo[2].dadi_in_mano[0].DUE 0 0 0 0 0 1 1 
+giocatori_in_campo[2].dadi_in_mano[0].TRE 0 0 0 0 1 0 1 
+giocatori_in_campo[2].dadi_in_mano[0].QUATTRO 0 0 0 1 0 0 1 
+giocatori_in_campo[2].dadi_in_mano[0].CINQUE 0 0 1 0 0 0 1 
+giocatori_in_campo[2].dadi_in_mano[0].SEI 0 1 0 0 0 0 1 
+giocatori_in_campo[2].dadi_in_mano[0].UNO 1 0 0 0 0 0 1 
+
+State Machine - |Perudo_DE1|Perudo_Datapath:datapath|giocatori_in_campo[1].dadi_in_mano[4]
+Name giocatori_in_campo[1].dadi_in_mano[4].UNO giocatori_in_campo[1].dadi_in_mano[4].SEI giocatori_in_campo[1].dadi_in_mano[4].CINQUE giocatori_in_campo[1].dadi_in_mano[4].QUATTRO giocatori_in_campo[1].dadi_in_mano[4].TRE giocatori_in_campo[1].dadi_in_mano[4].DUE giocatori_in_campo[1].dadi_in_mano[4].NONE 
+giocatori_in_campo[1].dadi_in_mano[4].NONE 0 0 0 0 0 0 0 
+giocatori_in_campo[1].dadi_in_mano[4].DUE 0 0 0 0 0 1 1 
+giocatori_in_campo[1].dadi_in_mano[4].TRE 0 0 0 0 1 0 1 
+giocatori_in_campo[1].dadi_in_mano[4].QUATTRO 0 0 0 1 0 0 1 
+giocatori_in_campo[1].dadi_in_mano[4].CINQUE 0 0 1 0 0 0 1 
+giocatori_in_campo[1].dadi_in_mano[4].SEI 0 1 0 0 0 0 1 
+giocatori_in_campo[1].dadi_in_mano[4].UNO 1 0 0 0 0 0 1 
+
+State Machine - |Perudo_DE1|Perudo_Datapath:datapath|giocatori_in_campo[1].dadi_in_mano[3]
+Name giocatori_in_campo[1].dadi_in_mano[3].UNO giocatori_in_campo[1].dadi_in_mano[3].SEI giocatori_in_campo[1].dadi_in_mano[3].CINQUE giocatori_in_campo[1].dadi_in_mano[3].QUATTRO giocatori_in_campo[1].dadi_in_mano[3].TRE giocatori_in_campo[1].dadi_in_mano[3].DUE giocatori_in_campo[1].dadi_in_mano[3].NONE 
+giocatori_in_campo[1].dadi_in_mano[3].NONE 0 0 0 0 0 0 0 
+giocatori_in_campo[1].dadi_in_mano[3].DUE 0 0 0 0 0 1 1 
+giocatori_in_campo[1].dadi_in_mano[3].TRE 0 0 0 0 1 0 1 
+giocatori_in_campo[1].dadi_in_mano[3].QUATTRO 0 0 0 1 0 0 1 
+giocatori_in_campo[1].dadi_in_mano[3].CINQUE 0 0 1 0 0 0 1 
+giocatori_in_campo[1].dadi_in_mano[3].SEI 0 1 0 0 0 0 1 
+giocatori_in_campo[1].dadi_in_mano[3].UNO 1 0 0 0 0 0 1 
+
+State Machine - |Perudo_DE1|Perudo_Datapath:datapath|giocatori_in_campo[1].dadi_in_mano[2]
+Name giocatori_in_campo[1].dadi_in_mano[2].UNO giocatori_in_campo[1].dadi_in_mano[2].SEI giocatori_in_campo[1].dadi_in_mano[2].CINQUE giocatori_in_campo[1].dadi_in_mano[2].QUATTRO giocatori_in_campo[1].dadi_in_mano[2].TRE giocatori_in_campo[1].dadi_in_mano[2].DUE giocatori_in_campo[1].dadi_in_mano[2].NONE 
+giocatori_in_campo[1].dadi_in_mano[2].NONE 0 0 0 0 0 0 0 
+giocatori_in_campo[1].dadi_in_mano[2].DUE 0 0 0 0 0 1 1 
+giocatori_in_campo[1].dadi_in_mano[2].TRE 0 0 0 0 1 0 1 
+giocatori_in_campo[1].dadi_in_mano[2].QUATTRO 0 0 0 1 0 0 1 
+giocatori_in_campo[1].dadi_in_mano[2].CINQUE 0 0 1 0 0 0 1 
+giocatori_in_campo[1].dadi_in_mano[2].SEI 0 1 0 0 0 0 1 
+giocatori_in_campo[1].dadi_in_mano[2].UNO 1 0 0 0 0 0 1 
+
+State Machine - |Perudo_DE1|Perudo_Datapath:datapath|giocatori_in_campo[1].dadi_in_mano[1]
+Name giocatori_in_campo[1].dadi_in_mano[1].UNO giocatori_in_campo[1].dadi_in_mano[1].SEI giocatori_in_campo[1].dadi_in_mano[1].CINQUE giocatori_in_campo[1].dadi_in_mano[1].QUATTRO giocatori_in_campo[1].dadi_in_mano[1].TRE giocatori_in_campo[1].dadi_in_mano[1].DUE giocatori_in_campo[1].dadi_in_mano[1].NONE 
+giocatori_in_campo[1].dadi_in_mano[1].NONE 0 0 0 0 0 0 0 
+giocatori_in_campo[1].dadi_in_mano[1].DUE 0 0 0 0 0 1 1 
+giocatori_in_campo[1].dadi_in_mano[1].TRE 0 0 0 0 1 0 1 
+giocatori_in_campo[1].dadi_in_mano[1].QUATTRO 0 0 0 1 0 0 1 
+giocatori_in_campo[1].dadi_in_mano[1].CINQUE 0 0 1 0 0 0 1 
+giocatori_in_campo[1].dadi_in_mano[1].SEI 0 1 0 0 0 0 1 
+giocatori_in_campo[1].dadi_in_mano[1].UNO 1 0 0 0 0 0 1 
+
+State Machine - |Perudo_DE1|Perudo_Datapath:datapath|giocatori_in_campo[1].dadi_in_mano[0]
+Name giocatori_in_campo[1].dadi_in_mano[0].UNO giocatori_in_campo[1].dadi_in_mano[0].SEI giocatori_in_campo[1].dadi_in_mano[0].CINQUE giocatori_in_campo[1].dadi_in_mano[0].QUATTRO giocatori_in_campo[1].dadi_in_mano[0].TRE giocatori_in_campo[1].dadi_in_mano[0].DUE giocatori_in_campo[1].dadi_in_mano[0].NONE 
+giocatori_in_campo[1].dadi_in_mano[0].NONE 0 0 0 0 0 0 0 
+giocatori_in_campo[1].dadi_in_mano[0].DUE 0 0 0 0 0 1 1 
+giocatori_in_campo[1].dadi_in_mano[0].TRE 0 0 0 0 1 0 1 
+giocatori_in_campo[1].dadi_in_mano[0].QUATTRO 0 0 0 1 0 0 1 
+giocatori_in_campo[1].dadi_in_mano[0].CINQUE 0 0 1 0 0 0 1 
+giocatori_in_campo[1].dadi_in_mano[0].SEI 0 1 0 0 0 0 1 
+giocatori_in_campo[1].dadi_in_mano[0].UNO 1 0 0 0 0 0 1 
+
+State Machine - |Perudo_DE1|Perudo_Datapath:datapath|giocatori_in_campo[0].dadi_in_mano[4]
+Name giocatori_in_campo[0].dadi_in_mano[4].UNO giocatori_in_campo[0].dadi_in_mano[4].SEI giocatori_in_campo[0].dadi_in_mano[4].CINQUE giocatori_in_campo[0].dadi_in_mano[4].QUATTRO giocatori_in_campo[0].dadi_in_mano[4].TRE giocatori_in_campo[0].dadi_in_mano[4].DUE giocatori_in_campo[0].dadi_in_mano[4].NONE 
+giocatori_in_campo[0].dadi_in_mano[4].NONE 0 0 0 0 0 0 0 
+giocatori_in_campo[0].dadi_in_mano[4].DUE 0 0 0 0 0 1 1 
+giocatori_in_campo[0].dadi_in_mano[4].TRE 0 0 0 0 1 0 1 
+giocatori_in_campo[0].dadi_in_mano[4].QUATTRO 0 0 0 1 0 0 1 
+giocatori_in_campo[0].dadi_in_mano[4].CINQUE 0 0 1 0 0 0 1 
+giocatori_in_campo[0].dadi_in_mano[4].SEI 0 1 0 0 0 0 1 
+giocatori_in_campo[0].dadi_in_mano[4].UNO 1 0 0 0 0 0 1 
+
+State Machine - |Perudo_DE1|Perudo_Datapath:datapath|giocatori_in_campo[0].dadi_in_mano[3]
+Name giocatori_in_campo[0].dadi_in_mano[3].UNO giocatori_in_campo[0].dadi_in_mano[3].SEI giocatori_in_campo[0].dadi_in_mano[3].CINQUE giocatori_in_campo[0].dadi_in_mano[3].QUATTRO giocatori_in_campo[0].dadi_in_mano[3].TRE giocatori_in_campo[0].dadi_in_mano[3].DUE giocatori_in_campo[0].dadi_in_mano[3].NONE 
+giocatori_in_campo[0].dadi_in_mano[3].NONE 0 0 0 0 0 0 0 
+giocatori_in_campo[0].dadi_in_mano[3].DUE 0 0 0 0 0 1 1 
+giocatori_in_campo[0].dadi_in_mano[3].TRE 0 0 0 0 1 0 1 
+giocatori_in_campo[0].dadi_in_mano[3].QUATTRO 0 0 0 1 0 0 1 
+giocatori_in_campo[0].dadi_in_mano[3].CINQUE 0 0 1 0 0 0 1 
+giocatori_in_campo[0].dadi_in_mano[3].SEI 0 1 0 0 0 0 1 
+giocatori_in_campo[0].dadi_in_mano[3].UNO 1 0 0 0 0 0 1 
+
+State Machine - |Perudo_DE1|Perudo_Datapath:datapath|giocatori_in_campo[0].dadi_in_mano[2]
+Name giocatori_in_campo[0].dadi_in_mano[2].UNO giocatori_in_campo[0].dadi_in_mano[2].SEI giocatori_in_campo[0].dadi_in_mano[2].CINQUE giocatori_in_campo[0].dadi_in_mano[2].QUATTRO giocatori_in_campo[0].dadi_in_mano[2].TRE giocatori_in_campo[0].dadi_in_mano[2].DUE giocatori_in_campo[0].dadi_in_mano[2].NONE 
+giocatori_in_campo[0].dadi_in_mano[2].NONE 0 0 0 0 0 0 0 
+giocatori_in_campo[0].dadi_in_mano[2].DUE 0 0 0 0 0 1 1 
+giocatori_in_campo[0].dadi_in_mano[2].TRE 0 0 0 0 1 0 1 
+giocatori_in_campo[0].dadi_in_mano[2].QUATTRO 0 0 0 1 0 0 1 
+giocatori_in_campo[0].dadi_in_mano[2].CINQUE 0 0 1 0 0 0 1 
+giocatori_in_campo[0].dadi_in_mano[2].SEI 0 1 0 0 0 0 1 
+giocatori_in_campo[0].dadi_in_mano[2].UNO 1 0 0 0 0 0 1 
+
+State Machine - |Perudo_DE1|Perudo_Datapath:datapath|giocatori_in_campo[0].dadi_in_mano[1]
+Name giocatori_in_campo[0].dadi_in_mano[1].UNO giocatori_in_campo[0].dadi_in_mano[1].SEI giocatori_in_campo[0].dadi_in_mano[1].CINQUE giocatori_in_campo[0].dadi_in_mano[1].QUATTRO giocatori_in_campo[0].dadi_in_mano[1].TRE giocatori_in_campo[0].dadi_in_mano[1].DUE giocatori_in_campo[0].dadi_in_mano[1].NONE 
+giocatori_in_campo[0].dadi_in_mano[1].NONE 0 0 0 0 0 0 0 
+giocatori_in_campo[0].dadi_in_mano[1].DUE 0 0 0 0 0 1 1 
+giocatori_in_campo[0].dadi_in_mano[1].TRE 0 0 0 0 1 0 1 
+giocatori_in_campo[0].dadi_in_mano[1].QUATTRO 0 0 0 1 0 0 1 
+giocatori_in_campo[0].dadi_in_mano[1].CINQUE 0 0 1 0 0 0 1 
+giocatori_in_campo[0].dadi_in_mano[1].SEI 0 1 0 0 0 0 1 
+giocatori_in_campo[0].dadi_in_mano[1].UNO 1 0 0 0 0 0 1 
+
+State Machine - |Perudo_DE1|Perudo_Datapath:datapath|giocatori_in_campo[0].dadi_in_mano[0]
+Name giocatori_in_campo[0].dadi_in_mano[0].UNO giocatori_in_campo[0].dadi_in_mano[0].SEI giocatori_in_campo[0].dadi_in_mano[0].CINQUE giocatori_in_campo[0].dadi_in_mano[0].QUATTRO giocatori_in_campo[0].dadi_in_mano[0].TRE giocatori_in_campo[0].dadi_in_mano[0].DUE giocatori_in_campo[0].dadi_in_mano[0].NONE 
+giocatori_in_campo[0].dadi_in_mano[0].NONE 0 0 0 0 0 0 0 
+giocatori_in_campo[0].dadi_in_mano[0].DUE 0 0 0 0 0 1 1 
+giocatori_in_campo[0].dadi_in_mano[0].TRE 0 0 0 0 1 0 1 
+giocatori_in_campo[0].dadi_in_mano[0].QUATTRO 0 0 0 1 0 0 1 
+giocatori_in_campo[0].dadi_in_mano[0].CINQUE 0 0 1 0 0 0 1 
+giocatori_in_campo[0].dadi_in_mano[0].SEI 0 1 0 0 0 0 1 
+giocatori_in_campo[0].dadi_in_mano[0].UNO 1 0 0 0 0 0 1 
+
+State Machine - |Perudo_DE1|Perudo_Controller:controller|DADO_SCOMMESSO
+Name DADO_SCOMMESSO.NONE~reg0 DADO_SCOMMESSO.SEI~reg0 DADO_SCOMMESSO.CINQUE~reg0 DADO_SCOMMESSO.QUATTRO~reg0 DADO_SCOMMESSO.TRE~reg0 DADO_SCOMMESSO.DUE~reg0 DADO_SCOMMESSO.UNO~reg0 
+DADO_SCOMMESSO.UNO~reg0 0 0 0 0 0 0 0 
+DADO_SCOMMESSO.DUE~reg0 0 0 0 0 0 1 1 
+DADO_SCOMMESSO.TRE~reg0 0 0 0 0 1 0 1 
+DADO_SCOMMESSO.QUATTRO~reg0 0 0 0 1 0 0 1 
+DADO_SCOMMESSO.CINQUE~reg0 0 0 1 0 0 0 1 
+DADO_SCOMMESSO.SEI~reg0 0 1 0 0 0 0 1 
+DADO_SCOMMESSO.NONE~reg0 1 0 0 0 0 0 1 
+
+State Machine - |Perudo_DE1|Perudo_Controller:controller|bet_temp.dado_scommesso
+Name bet_temp.dado_scommesso.NONE bet_temp.dado_scommesso.SEI bet_temp.dado_scommesso.CINQUE bet_temp.dado_scommesso.QUATTRO bet_temp.dado_scommesso.TRE bet_temp.dado_scommesso.DUE bet_temp.dado_scommesso.UNO 
+bet_temp.dado_scommesso.UNO 0 0 0 0 0 0 0 
+bet_temp.dado_scommesso.DUE 0 0 0 0 0 1 1 
+bet_temp.dado_scommesso.TRE 0 0 0 0 1 0 1 
+bet_temp.dado_scommesso.QUATTRO 0 0 0 1 0 0 1 
+bet_temp.dado_scommesso.CINQUE 0 0 1 0 0 0 1 
+bet_temp.dado_scommesso.SEI 0 1 0 0 0 0 1 
+bet_temp.dado_scommesso.NONE 1 0 0 0 0 0 1 
+
+State Machine - |Perudo_DE1|Perudo_Controller:controller|turn_player_state
+Name turn_player_state.NEXT_T_P turn_player_state.RIC turn_player_state.DADO 
+turn_player_state.DADO 0 0 0 
+turn_player_state.RIC 0 1 1 
+turn_player_state.NEXT_T_P 1 0 1 
+
+State Machine - |Perudo_DE1|Perudo_Controller:controller|internal_state
+Name internal_state.FINISH internal_state.CHECK_WINNER internal_state.TURN_FPGA internal_state.TURN_PLAYER internal_state.INIT internal_state.IDLE 
+internal_state.IDLE 0 0 0 0 0 0 
+internal_state.INIT 0 0 0 0 1 1 
+internal_state.TURN_PLAYER 0 0 0 1 0 1 
+internal_state.TURN_FPGA 0 0 1 0 0 1 
+internal_state.CHECK_WINNER 0 1 0 0 0 1 
+internal_state.FINISH 1 0 0 0 0 1 
