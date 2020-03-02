@@ -4,4 +4,4 @@ An implementation of **Perudo Game** developed using an **FPGA** for the DataPat
 
 
 For more information:
-* [Link](https://github.com/bonacciog/Perudo_FPGA/blob/docs_ita/Relazione_Progetto_Perudo.pdf)
+* (https://github.com/bonacciog/Perudo_FPGA/blob/docs_ita/Relazione_Progetto_Perudo.pdf)
